@@ -32,3 +32,4 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 4. Delete - очищает поле
 
 ### Чтобы скачать готовое приложение нажимите [сюда](https://github.com/reyquazar/image-to-text/releases/download/v1.0/imageToText.exe)
+
