@@ -31,4 +31,4 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 3. Copy - копирует считанный текст
 4. Delete - очищает поле
 
-### Чтобы скачать готовое приложение нажимите [сюда]([https://github.com/reyquazar/image-to-text/blob/main/imageToText.exe](https://github.com/reyquazar/image-to-text/releases/download/v1.0/imageToText.exe)https://github.com/reyquazar/image-to-text/releases/download/v1.0/imageToText.exe)
+### Чтобы скачать готовое приложение нажимите [сюда](https://github.com/reyquazar/image-to-text/blob/main/imageToText.exe](https://github.com/reyquazar/image-to-text/releases/download/v1.0/imageToText.exe)https://github.com/reyquazar/image-to-text/releases/download/v1.0/imageToText.exe)
