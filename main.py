@@ -16,7 +16,7 @@ class RoundedTextFrame(Frame):
 class ImageToTextApp:
     def __init__(self, master):
         self.master = master
-        master.title("Image to Text Converter (c) Elshan Gurbanov")
+        master.title("Image to Text Converter (c) reyquazar")
         self.scroll_y = Scrollbar(master, orient=VERTICAL)
         self.scroll_y.pack(side="right", fill="y")
         self.text_frame = RoundedTextFrame(master)
