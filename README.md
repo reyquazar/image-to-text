@@ -1,6 +1,6 @@
 # Image to Text Converter
 
-[Русский](README_ru.md)
+[Русский](/README_ru.md)
 
 ## Description
 
