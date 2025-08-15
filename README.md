@@ -42,5 +42,8 @@ There are 4 buttons:
 3. Copy - copies the recognized text
 4. Delete - clears the field
 
-
+# Comprasion
+LEFT -- main.py
+RIGHT -- original text 
+<img src="img.png">
 
