@@ -43,7 +43,6 @@ There are 4 buttons:
 4. Delete - clears the field
 
 # Comprasion
-LEFT -- main.py
-RIGHT -- original text 
+LEFT -- main.py   RIGHT -- original text 
 <img src="img.png">
 
