@@ -6,6 +6,11 @@
 
 This application allows converting images to text using Optical Character Recognition (OCR). You can choose an image for processing from the file system or use an image from the clipboard.
 
+# Install 
+```
+https://github.com/reyquazar/image-to-text.git
+```
+
 ## Requirements
 
 - Python 3.10
