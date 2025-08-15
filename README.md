@@ -31,7 +31,7 @@ In the program, the path is specified as:
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 ```
 
-Please install it using the same path, and make sure to select the Russian language in the installer.
+Please install it using the same path, and make sure to select the Russian or other language in the installer.
 
 ## Usage
 
