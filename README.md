@@ -8,7 +8,12 @@ This application allows converting images to text using Optical Character Recogn
 
 # Install 
 ```
-https://github.com/reyquazar/image-to-text.git
+git clone https://github.com/reyquazar/image-to-text.git
+```
+## Dependencies
+
+```
+pip install -r req.txt
 ```
 
 ## Requirements
@@ -39,4 +44,3 @@ There are 4 buttons:
 
 
 
-## Download the executable [here](https://github.com/reyquazar/image-to-text/releases/download/v1.0/imageToText.exe)
