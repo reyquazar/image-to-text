@@ -16,7 +16,7 @@ class RoundedTextFrame(Frame):
 class ImageToTextApp:
     def __init__(self, master):
         self.master = master
-        master.title("Image to Text Converter (c) reyquazar")
+        master.title("Image to Text")
         self.scroll_y = Scrollbar(master, orient=VERTICAL)
         self.scroll_y.pack(side="right", fill="y")
         self.text_frame = RoundedTextFrame(master)
@@ -45,11 +45,10 @@ class ImageToTextApp:
         if self.image_path:
             try:
                 image_print = Image.open(self.image_path)
-                text = pytesseract.image_to_string(image_print, lang='rus+eng+aze_cyrl+aze+cyrl')
+                text = pytesseract.image_to_string(image_print, lang='rus+eng+aze_cyrl+aze')
                 # text = pytesseract.image_to_string(image_print, lang='aze')
-
                 text = re.sub(r'\xa0', ' ', text)
-                self.text_frame.text_area.delete("1.0", END)  # Clear previous text
+                self.text_frame.text_area.delete("1.0", END)
                 self.text_frame.text_area.insert("1.0", text)
             except FileNotFoundError:
                 messagebox.showerror("Error", "Image file not found.")
@@ -98,6 +97,7 @@ def set_tesseract_path():
 
 def main():
     root = Tk()
+    app = ImageToTextApp(root)
     root.mainloop()
 
 
