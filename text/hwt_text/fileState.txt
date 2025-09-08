@@ -2,3 +2,6 @@ newData/test2.jpg	1
 newData/test3.jpg	1
 newData/test4.jpg	1
 newData/test5.jpg	1
+hwt_text/test2.jpg	1
+hwt_text/test3.jpg	1
+hwt_text/test4.jpg	1
