@@ -1,0 +1,8 @@
+newData/test2.jpg	1
+newData/test3.jpg	1
+newData/test4.jpg	1
+newData/test5.jpg	1
+newData/test6.jpg	1
+newData/test7.jpg	1
+newData/test8.jpg	1
+newData/test.png	1

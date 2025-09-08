@@ -17,7 +17,7 @@ def POCR(image):
         use_doc_unwarping=False,  # Disables text image rectification model via this parameter
         use_textline_orientation=False,  # Disables text line orientation classification model via this parameter
         text_det_thresh=0.25,
-        lang="ru"
+        lang="az"
 
     )
     # ocr = PaddleOCR(
@@ -41,13 +41,13 @@ def PDet(image):
 
 def main():
     # image = 'img_5.png'
-    image = 'test10.png'
+    image_path = 'newData/test4.jpg'
 
     result = ""
     # result = Pstructure(image)
     # result = PRec(image)
     # result = PDet(image)
-    result = POCR(image)
+    result = POCR(image_path)
     # print(result)
     for res in result:
         res.save_to_img("output")

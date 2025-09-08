@@ -1,0 +1,620 @@
+crop_img/test2_crop_0.jpg	AZƏRBAYCAN RESPUBLİKASI
+crop_img/test2_crop_1.jpg	ÖLÜM HAQQINDA ŞƏHADƏTNAMƏ
+crop_img/test2_crop_2.jpg	Vәtandaş
+crop_img/test2_crop_3.jpg	ildə ölmüşdür.
+crop_img/test2_crop_4.jpg	Bu barədə  ölüm haqqında akt qeydləri kitabında 2014 ilin 12 ayının
+crop_img/test2_crop_5.jpg	03
+crop_img/test2_crop_6.jpg	günündə
+crop_img/test2_crop_7.jpg	14
+crop_img/test2_crop_8.jpg	ilə qeyd edilmişdir
+crop_img/test2_crop_9.jpg	Ölümün səbəbi
+crop_img/test2_crop_10.jpg	Öldüyü yer: şəhər, kənd
+crop_img/test2_crop_11.jpg	rayon
+crop_img/test2_crop_12.jpg	vilayət (ölkə)
+crop_img/test2_crop_13.jpg	respublika
+crop_img/test2_crop_14.jpg	Azərbaycan
+crop_img/test2_crop_15.jpg	Qeyd edilən yer
+crop_img/test2_crop_16.jpg	Verildiyi tarix
+crop_img/test2_crop_17.jpg	03
+crop_img/test2_crop_18.jpg	dekabr
+crop_img/test2_crop_19.jpg	2014 il
+crop_img/test2_crop_20.jpg	Qeydiyyat orqanının
+crop_img/test2_crop_21.jpg	şəxsi
+crop_img/test2_crop_22.jpg	4
+crop_img/test2_crop_23.jpg	12
+crop_img/test2_crop_24.jpg	oğlu
+crop_img/test3_crop_0.jpg	VVADQ orqanının ştampı
+crop_img/test3_crop_1.jpg	NİKAH HAQQINDA AKTIN QEYDİ № 11O3
+crop_img/test3_crop_2.jpg	"25" oktyabr 2008 il
+crop_img/test3_crop_3.jpg	BAKI ŞƏHƏRİ
+crop_img/test3_crop_4.jpg	(Birinci nüsxə)
+crop_img/test3_crop_5.jpg	BİNƏQƏDİ RAYON
+crop_img/test3_crop_6.jpg	QEYDİYYAT ŞÖBƏSİ
+crop_img/test3_crop_7.jpg	Evlənənlər haqqında məlumat
+crop_img/test3_crop_8.jpg	Kişi
+crop_img/test3_crop_9.jpg	Guliyeva
+crop_img/test3_crop_10.jpg	Qadın
+crop_img/test3_crop_11.jpg	ŞÜKÜROV
+crop_img/test3_crop_12.jpg	1. Soyadi: evlənənədək
+crop_img/test3_crop_13.jpg	evlənəndən sonra
+crop_img/test3_crop_14.jpg	ŞÜKÜROV
+crop_img/test3_crop_15.jpg	ŞÜKÜROVA
+crop_img/test3_crop_16.jpg	2. Adı
+crop_img/test3_crop_17.jpg	Samir
+crop_img/test3_crop_18.jpg	Natavan
+crop_img/test3_crop_19.jpg	3. Atasının adı
+crop_img/test3_crop_20.jpg	Nadir
+crop_img/test3_crop_21.jpg	"07" may 1986
+crop_img/test3_crop_22.jpg	4. Doğulduğu tarix
+crop_img/test3_crop_23.jpg	"06"  yanvar 1987
+crop_img/test3_crop_24.jpg	Yaşı: 22 yaşı tamam olmuşdur
+crop_img/test3_crop_25.jpg	21 yaşi tamam olmuşdur
+crop_img/test3_crop_26.jpg	5. Doğulduğu yer
+crop_img/test3_crop_27.jpg	rayon (şəhar), gəsəbə, kənd
+crop_img/test3_crop_28.jpg	rayon (şəhar), gəsəbə, kənd
+crop_img/test3_crop_29.jpg	Bakı
+crop_img/test3_crop_30.jpg	Şuşa
+crop_img/test3_crop_31.jpg	6. Milliyyəti
+crop_img/test3_crop_32.jpg	İş yeri (vəzifasi)
+crop_img/test3_crop_33.jpg	işləmir
+crop_img/test3_crop_34.jpg	işləmir
+crop_img/test3_crop_35.jpg	Təhsili (xətt cəkmək)
+crop_img/test3_crop_36.jpg	ibtidai texniki-peşə əsas
+crop_img/test3_crop_37.jpg	ibtidai texniki-peşə əsas
+crop_img/test3_crop_38.jpg	orta ixtisas ali ixtisas
+crop_img/test3_crop_39.jpg	orta ixtisas ali ixtisas
+crop_img/test3_crop_40.jpg	orta
+crop_img/test3_crop_41.jpg	orta
+crop_img/test3_crop_42.jpg	natamam təhsil
+crop_img/test3_crop_43.jpg	natamam təhsil
+crop_img/test3_crop_44.jpg	Ailə vəziyyati (xətt cəkmək)
+crop_img/test3_crop_45.jpg	evlənməmiş, dul, boşanmış
+crop_img/test3_crop_46.jpg	evlənməmiş, dul, boşanmiş
+crop_img/test3_crop_47.jpg	Ümumi uşaqlar haqqında
+crop_img/test3_crop_48.jpg	soyadı, adı, doğulduğu tarix
+crop_img/test3_crop_49.jpg	məlumat
+crop_img/test3_crop_50.jpg	Daimi yaşadiği yer
+crop_img/test3_crop_51.jpg	rayon (şəhar), gəsəbə, kənd
+crop_img/test3_crop_52.jpg	rayon (şəhar), gəsəbə, kənd
+crop_img/test3_crop_53.jpg	Sultəhə
+crop_img/test3_crop_54.jpg	küçə, bina, mənzil 
+crop_img/test3_crop_55.jpg	küçə, bina,
+crop_img/test3_crop_56.jpg	ev1hm8
+crop_img/test3_crop_57.jpg	ev9
+crop_img/test3_crop_58.jpg	ildən yaşayır
+crop_img/test3_crop_59.jpg	Şaxşiyyəti təsdiq edən
+crop_img/test3_crop_60.jpg	sənədlər
+crop_img/test3_crop_61.jpg	Evlənənlərin imzalari
+crop_img/test3_crop_62.jpg	Evlənənədak soyadları:
+crop_img/test3_crop_63.jpg	Şahidlərin soyadı, adı,
+crop_img/test3_crop_64.jpg	atasının adı və imzaları
+crop_img/test3_crop_65.jpg	Şəhadətnamə verilmişdir
+crop_img/test3_crop_66.jpg	seriyası
+crop_img/test3_crop_67.jpg	Qeydlər üçün
+crop_img/test3_crop_68.jpg	Kargüzar
+crop_img/test3_crop_69.jpg	sobasinin müdiri
+crop_img/test3_crop_70.jpg	soyadı, adı, doğulduğu tarix
+crop_img/test3_crop_71.jpg	respublika (ölkə)
+crop_img/test3_crop_72.jpg	Azərbaycan
+crop_img/test3_crop_73.jpg	respublika (ölkə)
+crop_img/test3_crop_74.jpg	Azərbaycan
+crop_img/test3_crop_75.jpg	respublika (ölkə)
+crop_img/test3_crop_76.jpg	Azərbaycan
+crop_img/test3_crop_77.jpg	respublika (ölkə)
+crop_img/test3_crop_78.jpg	Azərbaycan
+crop_img/test3_crop_79.jpg	Telman
+crop_img/test3_crop_80.jpg	Zakir
+crop_img/test3_crop_81.jpg	ildən yaşayır
+crop_img/test3_crop_82.jpg	16.
+crop_img/test3_crop_83.jpg	15.
+crop_img/test3_crop_84.jpg	14.
+crop_img/test3_crop_85.jpg	13.
+crop_img/test3_crop_86.jpg	12.
+crop_img/test3_crop_87.jpg	11.
+crop_img/test3_crop_88.jpg	10.
+crop_img/test3_crop_89.jpg	9.
+crop_img/test3_crop_90.jpg	8.
+crop_img/test3_crop_91.jpg	6.
+crop_img/test3_crop_92.jpg	7.
+crop_img/test3_crop_93.jpg	5.
+crop_img/test3_crop_94.jpg	4.
+crop_img/test3_crop_95.jpg	3.
+crop_img/test3_crop_96.jpg	2.
+crop_img/test3_crop_97.jpg	1.
+crop_img/test4_crop_0.jpg	DOĞUM HAQQINDA
+crop_img/test4_crop_1.jpg	ŞƏHADƏTNAMƏ
+crop_img/test4_crop_2.jpg	VALİDEYNLӘRİ
+crop_img/test4_crop_3.jpg	Əliyeva
+crop_img/test4_crop_4.jpg	Vətəndaş
+crop_img/test4_crop_5.jpg	Әliyev
+crop_img/test4_crop_6.jpg	Atası
+crop_img/test4_crop_7.jpg	Sabir oğlu
+crop_img/test4_crop_8.jpg	soyadı
+crop_img/test4_crop_9.jpg	08.11.2005
+crop_img/test4_crop_10.jpg	adı, atasının adı
+crop_img/test4_crop_11.jpg	adı. atasının adı
+crop_img/test4_crop_12.jpg	milliyəti
+crop_img/test4_crop_13.jpg	noyabr iki min
+crop_img/test4_crop_14.jpg	gün, ay, il
+crop_img/test4_crop_15.jpg	Vəliyeva
+crop_img/test4_crop_16.jpg	Anası
+crop_img/test4_crop_17.jpg	beşinci ildə
+crop_img/test4_crop_18.jpg	rəgəm və sözlə
+crop_img/test4_crop_19.jpg	doğulmuşdur
+crop_img/test4_crop_20.jpg	Rəna
+crop_img/test4_crop_21.jpg	soyadı
+crop_img/test4_crop_22.jpg	adı atasının adı
+crop_img/test4_crop_23.jpg	milliyəti
+crop_img/test4_crop_24.jpg	Jöycay
+crop_img/test4_crop_25.jpg	rayon
+crop_img/test4_crop_26.jpg	Azərbaycan
+crop_img/test4_crop_27.jpg	respublika (ölkə) 
+crop_img/test4_crop_28.jpg	bu barədə doğum haqqında akt qeydləri kitabında
+crop_img/test4_crop_29.jpg	2005 ilin yanvar ayının 06 günündə
+crop_img/test4_crop_30.jpg	01 № ilə qeyd edilmişdir
+crop_img/test4_crop_31.jpg	soyadı
+crop_img/test4_crop_32.jpg	şəkkiz
+crop_img/test4_crop_33.jpg	Doğulduğu yer: şəhər, kənd, qəsəbə
+crop_img/test4_crop_34.jpg	Jöycay
+crop_img/test4_crop_35.jpg	qizi
+crop_img/test4_crop_36.jpg	Qeyd edilən yer
+crop_img/test4_crop_37.jpg	rayon
+crop_img/test4_crop_38.jpg	Vətəndaşlıq vəziyəti
+crop_img/test4_crop_39.jpg	aktlarinin dövlət qeydiyati
+crop_img/test4_crop_40.jpg	şöbəsinin müdiri
+crop_img/test5_crop_0.jpg	НИКАҺЫН БАҒЛАНМАСЫ ҺАГГЫНДА АКТ ГЕJДИ
+crop_img/test5_crop_1.jpg	ВВАГ органынын штампы
+crop_img/test5_crop_2.jpg	ЗАПИСЬ АКТА О ЗАКЛЮЧЕНИИ БРАКА
+crop_img/test5_crop_3.jpg	Штамп органа ЗАГСа
+crop_img/test5_crop_4.jpg	1981 ил/г.
+crop_img/test5_crop_5.jpg	октjабр
+crop_img/test5_crop_6.jpg	(Икинчи нүcхə - Второй экземпляр)
+crop_img/test5_crop_7.jpg	Евлəнəнлəр hаггында мә'лумат - Сведения о вступающих в брак
+crop_img/test5_crop_8.jpg	Киши - Он
+crop_img/test5_crop_9.jpg	Гадын - Она
+crop_img/test5_crop_10.jpg	Фамилиjасы, əвлəнəнəдəк
+crop_img/test5_crop_11.jpg	1
+crop_img/test5_crop_12.jpg	Фамилия, до заключения брака
+crop_img/test5_crop_13.jpg	Евлəнəндəн сонра
+crop_img/test5_crop_14.jpg	После регистрации брака
+crop_img/test5_crop_15.jpg	Ады
+crop_img/test5_crop_16.jpg	Имя
+crop_img/test5_crop_17.jpg	Атасынын ады
+crop_img/test5_crop_18.jpg	Отчество
+crop_img/test5_crop_19.jpg	Доғулдуғу вахт
+crop_img/test5_crop_20.jpg	24
+crop_img/test5_crop_21.jpg	иjун
+crop_img/test5_crop_22.jpg	1956 ил/г
+crop_img/test5_crop_23.jpg	01 сентjабр 1958 ил/г
+crop_img/test5_crop_24.jpg	Время рождения
+crop_img/test5_crop_25.jpg	23 jашы тамам олмушдур 
+crop_img/test5_crop_26.jpg	Jашы
+crop_img/test5_crop_27.jpg	Возраст
+crop_img/test5_crop_28.jpg	исполнилось
+crop_img/test5_crop_29.jpg	лет
+crop_img/test5_crop_30.jpg	исполнилось
+crop_img/test5_crop_31.jpg	лет
+crop_img/test5_crop_32.jpg	Доғулдуғу jер
+crop_img/test5_crop_33.jpg	шəhəр (кəнд)
+crop_img/test5_crop_34.jpg	шəhəр (кəнд)
+crop_img/test5_crop_35.jpg	Место рождения
+crop_img/test5_crop_36.jpg	5
+crop_img/test5_crop_37.jpg	город (селение)
+crop_img/test5_crop_38.jpg	pajoн
+crop_img/test5_crop_39.jpg	Расым-Исмаилов
+crop_img/test5_crop_40.jpg	раjон
+crop_img/test5_crop_41.jpg	район
+crop_img/test5_crop_42.jpg	район
+crop_img/test5_crop_43.jpg	вилаjəт (өлкə, республика)
+crop_img/test5_crop_44.jpg	Азерб. Сср
+crop_img/test5_crop_45.jpg	вилаjəт (өлкə, республика)
+crop_img/test5_crop_46.jpg	область (край,республика)
+crop_img/test5_crop_47.jpg	Азерб. Сср
+crop_img/test5_crop_48.jpg	область (край,республика)
+crop_img/test5_crop_49.jpg	Миллиjjəти
+crop_img/test5_crop_50.jpg	6
+crop_img/test5_crop_51.jpg	Национальность
+crop_img/test5_crop_52.jpg	азəрбаjчанлы
+crop_img/test5_crop_53.jpg	азəрбаjчанлы
+crop_img/test5_crop_54.jpg	hарада вə нə вəзифəсиндə ишлəjир
+crop_img/test5_crop_55.jpg	7
+crop_img/test5_crop_56.jpg	(əкəр ишлəмирсə, кəлир мəнбəини
+crop_img/test5_crop_57.jpg	костəрмəк)
+crop_img/test5_crop_58.jpg	Где и кем работает (если не
+crop_img/test5_crop_59.jpg	работает, то указать источник средств существования).
+crop_img/test5_crop_60.jpg	Тəhсили (хəтт чəкмəк) али
+crop_img/test5_crop_61.jpg	умуми орта
+crop_img/test5_crop_62.jpg	Образование
+crop_img/test5_crop_63.jpg	высшее
+crop_img/test5_crop_64.jpg	среднее общее
+crop_img/test5_crop_65.jpg	(подчеркнуть):
+crop_img/test5_crop_66.jpg	гуртармамыш али
+crop_img/test5_crop_67.jpg	натамам орта
+crop_img/test5_crop_68.jpg	незаконченное высшее
+crop_img/test5_crop_69.jpg	неполное среднее
+crop_img/test5_crop_70.jpg	орта ихтисас
+crop_img/test5_crop_71.jpg	ибтидан вə ашағы
+crop_img/test5_crop_72.jpg	среднее специальное
+crop_img/test5_crop_73.jpg	начальное и ниже
+crop_img/test5_crop_74.jpg	Киши - Он
+crop_img/test5_crop_75.jpg	Гадын - Она
+crop_img/test5_crop_76.jpg	Евләнмәjиб
+crop_img/test5_crop_77.jpg	дулдур
+crop_img/test5_crop_78.jpg	бошанмыш
+crop_img/test5_crop_79.jpg	вдова
+crop_img/test5_crop_80.jpg	разведена
+crop_img/test5_crop_81.jpg	9
+crop_img/test5_crop_82.jpg	Үмуми ушаглар hаггында мә'лумат
+crop_img/test5_crop_83.jpg	19 .. ил/г
+crop_img/test5_crop_84.jpg	10
+crop_img/test5_crop_85.jpg	19 .. ил/г
+crop_img/test5_crop_86.jpg	(ады, доғулдуғу ил)
+crop_img/test5_crop_87.jpg	19..ma/r.
+crop_img/test5_crop_88.jpg	Сведения об общих детях
+crop_img/test5_crop_89.jpg	19 .. ил/г
+crop_img/test5_crop_90.jpg	(имя, год рождения)
+crop_img/test5_crop_91.jpg	шәhәр (кәнд)
+crop_img/test5_crop_92.jpg	Manmn jamaaurt jep
+crop_img/test5_crop_93.jpg	11
+crop_img/test5_crop_94.jpg	pajon
+crop_img/test5_crop_95.jpg	Расым Исмаjылов
+crop_img/test5_crop_96.jpg	pajon
+crop_img/test5_crop_97.jpg	Расым Исмаилов
+crop_img/test5_crop_98.jpg	район
+crop_img/test5_crop_99.jpg	район
+crop_img/test5_crop_100.jpg	вилаjәт (өлкә, республика)
+crop_img/test5_crop_101.jpg	Азəрб. ССР
+crop_img/test5_crop_102.jpg	вилаjәт (өлкә, республика)
+crop_img/test5_crop_103.jpg	Азəрб-ССР
+crop_img/test5_crop_104.jpg	область (край, республика)
+crop_img/test5_crop_105.jpg	область (край, республика)
+crop_img/test5_crop_106.jpg	ев, дом.
+crop_img/test5_crop_107.jpg	отаг, кв.
+crop_img/test5_crop_108.jpg	кучə, ул.
+crop_img/test5_crop_109.jpg	отаг, кв.
+crop_img/test5_crop_110.jpg	кучə, ул.
+crop_img/test5_crop_111.jpg	года
+crop_img/test5_crop_112.jpg	Постоянно проживает с 19
+crop_img/test5_crop_113.jpg	Постоянно проживает с 19
+crop_img/test5_crop_114.jpg	Шəхсиjjəти тəсдиг сəнəдлəр
+crop_img/test5_crop_115.jpg	Документы, удостоверяющие личность
+crop_img/test5_crop_116.jpg	12
+crop_img/test5_crop_117.jpg	13
+crop_img/test5_crop_118.jpg	(евлəнəнəдəк фамилиjары слайд
+crop_img/test5_crop_119.jpg	Подписи вступающих в брак
+crop_img/test5_crop_120.jpg	(добрачные фамиллии)
+crop_img/test5_crop_121.jpg	Шаhидлəрин ады, фамилиjасы атасынын ады вэ
+crop_img/test5_crop_122.jpg	14
+crop_img/test5_crop_123.jpg	имзалары
+crop_img/test5_crop_124.jpg	Фамилия, Имя, Отчество 
+crop_img/test5_crop_125.jpg	заключение брака и их подписи
+crop_img/test5_crop_126.jpg	Шəhадəтнамə верилмишдир
+crop_img/test5_crop_127.jpg	сериjасы
+crop_img/test5_crop_128.jpg	405479
+crop_img/test5_crop_129.jpg	15
+crop_img/test5_crop_130.jpg	Выдано свидетельств
+crop_img/test5_crop_131.jpg	серия
+crop_img/test5_crop_132.jpg	Для отметок
+crop_img/test5_crop_133.jpg	Геjдлəр учун
+crop_img/test5_crop_134.jpg	ВВАГ шө'бәсини мудири
+crop_img/test5_crop_135.jpg	Заведующий отделом ЗАГСа
+crop_img/test5_crop_136.jpg	2
+crop_img/test5_crop_137.jpg	Kapkyaap
+crop_img/test5_crop_138.jpg	Tun. CM A3ep6. CCP. 3aK M6
+crop_img/test5_crop_139.jpg	Lenonpom3BoAnTens
+crop_img/test5_crop_140.jpg	1
+crop_img/test5_crop_141.jpg	2
+crop_img/test5_crop_142.jpg	3
+crop_img/test5_crop_143.jpg	25 jашы тамам олмушдур
+crop_img/test5_crop_144.jpg	16
+crop_img/test5_crop_145.jpg	81
+crop_img/test5_crop_146.jpg	город (селение)
+crop_img/test5_crop_147.jpg	Расым Исмаилов
+crop_img/test5_crop_148.jpg	али
+crop_img/test5_crop_149.jpg	высшее
+crop_img/test5_crop_150.jpg	гуртармамыш али
+crop_img/test5_crop_151.jpg	незаконченное высшее
+crop_img/test5_crop_152.jpg	орта ихтисас
+crop_img/test5_crop_153.jpg	среднее специальное
+crop_img/test5_crop_154.jpg	умуми орта
+crop_img/test5_crop_155.jpg	среднее общее
+crop_img/test5_crop_156.jpg	натамам орта
+crop_img/test5_crop_157.jpg	неполное среднее
+crop_img/test5_crop_158.jpg	ибтидан вə ашағы
+crop_img/test5_crop_159.jpg	начальное и ниже
+crop_img/test5_crop_160.jpg	Аилә вәзиjjәти (хәтт чәкмәк)
+crop_img/test5_crop_161.jpg	евләнмәjиб
+crop_img/test5_crop_162.jpg	Семейное положение.
+crop_img/test5_crop_163.jpg	бошанмыш
+crop_img/test5_crop_164.jpg	разведен
+crop_img/test5_crop_165.jpg	(подчеркнуть) :
+crop_img/test5_crop_166.jpg	В браке не состоял
+crop_img/test5_crop_167.jpg	В браке не состояла
+crop_img/test5_crop_168.jpg	дулдур
+crop_img/test5_crop_169.jpg	вдов
+crop_img/test5_crop_170.jpg	шәhәр (кәнд)
+crop_img/test5_crop_171.jpg	город (селение)
+crop_img/test5_crop_172.jpg	года
+crop_img/test5_crop_173.jpg	ев, дом.
+crop_img/test5_crop_174.jpg	58
+crop_img/test6_crop_0.jpg	Fo8y
+crop_img/test6_crop_1.jpg	Место рождения: город, селение
+crop_img/test6_crop_2.jpg	Доғулдуғу jер: шəhəр, кəнд
+crop_img/test6_crop_3.jpg	Бакы
+crop_img/test6_crop_4.jpg	район
+crop_img/test6_crop_5.jpg	pajonу
+crop_img/test6_crop_6.jpg	область (край)
+crop_img/test6_crop_7.jpg	Аз. сср
+crop_img/test6_crop_8.jpg	вилаjәт (өлкә)
+crop_img/test6_crop_9.jpg	республика
+crop_img/test6_crop_10.jpg	республика
+crop_img/test6_crop_11.jpg	о чем в книге регистрации актов о рождении
+crop_img/test6_crop_12.jpg	бу барəдə доғум hаггында акт геjдлəри китабында
+crop_img/test6_crop_13.jpg	1961 года 
+crop_img/test6_crop_14.jpg	феврал месяца 
+crop_img/test6_crop_15.jpg	10
+crop_img/test6_crop_16.jpg	числа
+crop_img/test6_crop_17.jpg	аjынын
+crop_img/test6_crop_18.jpg	EYHYEAO
+crop_img/test6_crop_19.jpg	кунундə
+crop_img/test6_crop_20.jpg	илин
+crop_img/test7_crop_0.jpg	Vüsal
+crop_img/test7_crop_1.jpg	E1600
+crop_img/test7_crop_2.jpg	andasın adı vә soyadı
+crop_img/test7_crop_3.jpg	Bilet No
+crop_img/test7_crop_4.jpg	№ imza 
+crop_img/test7_crop_5.jpg	Operaturun adı vә soyadı
+crop_img/test7_crop_6.jpg	imtinanın sababi
+crop_img/test7_crop_7.jpg	djirguu
+crop_img/test7_crop_8.jpg	oluuldu
+crop_img/test7_crop_9.jpg	2.Aygut
+crop_img/test7_crop_10.jpg	im2
+crop_img/test7_crop_11.jpg	Nazaratçinin adi va soyadi
+crop_img/test7_crop_12.jpg	Tarx1910812025
+crop_img/test7_crop_13.jpg	VHTS
+crop_img/test7_crop_14.jpg	Qeyd
+crop_img/test7_crop_15.jpg	2
+crop_img/test7_crop_16.jpg	Notariat harakatini aparmaga
+crop_img/test7_crop_17.jpg	muvakkil edilmis saxsin imzasi
+crop_img/test7_crop_18.jpg	A
+crop_img/test7_crop_19.jpg	2573677005547
+crop_img/test7_crop_20.jpg	Blank nomresi: 702759
+crop_img/test8_crop_0.jpg	Vətəndaşın adı və soyadı
+crop_img/test8_crop_1.jpg	Bilet № K-192
+crop_img/test8_crop_2.jpg	Operatorun adı və soyadı
+crop_img/test8_crop_3.jpg	№39 imza
+crop_img/test8_crop_4.jpg	İmtinanın səbəbi
+crop_img/test8_crop_5.jpg	Nəzərətçinin adı və soyədı
+crop_img/test8_crop_6.jpg	imza
+crop_img/test8_crop_7.jpg	Tarix: 25.08.2025
+crop_img/test8_crop_8.jpg	VHTS
+crop_img/test8_crop_9.jpg	Qeyd
+crop_img/test8_crop_10.jpg	число, месяц, год (цифрами и прописью)
+crop_img/test8_crop_11.jpg	седьмого февраля
+crop_img/test8_crop_12.jpg	две тысячи десятого года
+crop_img/test8_crop_13.jpg	место рождения
+crop_img/test8_crop_14.jpg	город Надым
+crop_img/test8_crop_15.jpg	Надымский район, Ямало-Нелецкий автономный округ
+crop_img/test8_crop_16.jpg	Россия
+crop_img/test8_crop_17.jpg	2009
+crop_img/test8_crop_18.jpg	о чем
+crop_img/test8_crop_19.jpg	года
+crop_img/test8_crop_20.jpg	февраля
+crop_img/test8_crop_21.jpg	месяца
+crop_img/test8_crop_22.jpg	числа
+crop_img/test8_crop_23.jpg	Отец
+crop_img/test8_crop_24.jpg	Сафаров
+crop_img/test8_crop_25.jpg	фамилия
+crop_img/test8_crop_26.jpg	Субхан Тофик оглы
+crop_img/test8_crop_27.jpg	имя, отчество
+crop_img/test8_crop_28.jpg	гражданство
+crop_img/test8_crop_29.jpg	национальность(вносится по желанию отца)
+crop_img/test8_crop_30.jpg	Мать
+crop_img/test8_crop_31.jpg	Гасанова
+crop_img/test8_crop_32.jpg	фамилия
+crop_img/test8_crop_33.jpg	имя, отчество
+crop_img/test8_crop_34.jpg	гражданка Азербайджана
+crop_img/test8_crop_35.jpg	гражданство
+crop_img/test8_crop_36.jpg	национальность(вносится по желанию матери)
+crop_img/test8_crop_37.jpg	Место государственной регистрации
+crop_img/test8_crop_38.jpg	Отдел загс Надымского района
+crop_img/test8_crop_39.jpg	наименование органа записи актов гражданского состояния
+crop_img/test8_crop_40.jpg	Дата выдачи
+crop_img/test8_crop_41.jpg	Руководитель органа
+crop_img/test8_crop_42.jpg	Записи актов гражданского состояния
+crop_img/test8_crop_43.jpg	Гознак, МПФ, Москва, 1998.
+crop_img/test8_crop_44.jpg	Nurlan
+crop_img/test8_crop_45.jpg	25
+crop_img/test8_crop_46.jpg	февраля
+crop_img/test8_crop_47.jpg	25
+crop_img/test8_crop_48.jpg	составлена запись акта о рождении
+crop_img/test_crop_0.jpg	18
+crop_img/test_crop_1.jpg	Сәфәров
+crop_img/test_crop_2.jpg	Ады
+crop_img/test_crop_3.jpg	Имя
+crop_img/test_crop_4.jpg	Маис
+crop_img/test_crop_5.jpg	2
+crop_img/test_crop_6.jpg	Отчество
+crop_img/test_crop_7.jpg	Атасынын ады
+crop_img/test_crop_8.jpg	Ҹинси
+crop_img/test_crop_9.jpg	Аjдын оглу
+crop_img/test_crop_10.jpg	4
+crop_img/test_crop_11.jpg	Киши
+crop_img/test_crop_12.jpg	Пол
+crop_img/test_crop_13.jpg	5
+crop_img/test_crop_14.jpg	Доғулдуғу вахт
+crop_img/test_crop_15.jpg	17
+crop_img/test_crop_16.jpg	Время рождения
+crop_img/test_crop_17.jpg	Доғулдуғу jер
+crop_img/test_crop_18.jpg	шәhәр (кәнд)
+crop_img/test_crop_19.jpg	pajon
+crop_img/test_crop_20.jpg	Расым-Исмаjылов
+crop_img/test_crop_21.jpg	6
+crop_img/test_crop_22.jpg	место рождения город (селение)
+crop_img/test_crop_23.jpg	район
+crop_img/test_crop_24.jpg	вилаjәт (өлкә, республика)
+crop_img/test_crop_25.jpg	Нечә ушаг доғмушдур: бир, ихи, уч
+crop_img/test_crop_26.jpg	Дири доғулмуш вә jа өлу доғулмуш
+crop_img/test_crop_27.jpg	7
+crop_img/test_crop_28.jpg	Сколько родилось детей: один, двойня, тройня
+crop_img/test_crop_29.jpg	Jени доғулан ушаг дахил олмагла ананын саj узрә нечә ушағы доғулуб
+crop_img/test_crop_30.jpg	9
+crop_img/test_crop_31.jpg	(өлу доғулан jох, өләнләр дахил олмагла
+crop_img/test_crop_32.jpg	Который по счету ребенок родился у матери, включая мертворожденного
+crop_img/test_crop_33.jpg	(считая умерших и не считая мертворожденных)
+crop_img/test_crop_34.jpg	Ушағын доғумуну тәсдиг едән сәнәдләр
+crop_img/test_crop_35.jpg	Документы, подтверждающие факт рождения ребенка
+crop_img/test_crop_36.jpg	Ата hаггында мә'лумат - Сведения об отце
+crop_img/test_crop_37.jpg	Ана hаггында мә'лумат - Сведения о матери
+crop_img/test_crop_38.jpg	Фамилиjасы
+crop_img/test_crop_39.jpg	Сәфәров
+crop_img/test_crop_40.jpg	Сәфәрова
+crop_img/test_crop_41.jpg	ΦaM
+crop_img/test_crop_42.jpg	12
+crop_img/test_crop_43.jpg	Ады
+crop_img/test_crop_44.jpg	Аjдын
+crop_img/test_crop_45.jpg	Һәмаjә
+crop_img/test_crop_46.jpg	Имя
+crop_img/test_crop_47.jpg	Атасынын ады
+crop_img/test_crop_48.jpg	13
+crop_img/test_crop_49.jpg	Сурхаj оглу
+crop_img/test_crop_50.jpg	гызы
+crop_img/test_crop_51.jpg	Отчество
+crop_img/test_crop_52.jpg	14
+crop_img/test_crop_53.jpg	Доғулдуғу вахт
+crop_img/test_crop_54.jpg	12 сентjабр
+crop_img/test_crop_55.jpg	01 - апрел
+crop_img/test_crop_56.jpg	1956 ил/г
+crop_img/test_crop_57.jpg	Время рождения
+crop_img/test_crop_58.jpg	Jашы
+crop_img/test_crop_59.jpg	32
+crop_img/test_crop_60.jpg	jашы тамам олмушдур
+crop_img/test_crop_61.jpg	Исполнилось
+crop_img/test_crop_62.jpg	лет
+crop_img/test_crop_63.jpg	Возраст
+crop_img/test_crop_64.jpg	Исполнилось
+crop_img/test_crop_65.jpg	Миллиjәти
+crop_img/test_crop_66.jpg	Азәрбаjчанлы
+crop_img/test_crop_67.jpg	Национальность
+crop_img/test_crop_68.jpg	Азәрбаjчанлы
+crop_img/test_crop_69.jpg	16
+crop_img/test_crop_70.jpg	Даими jашадығы jер шәhәр (кәнд)
+crop_img/test_crop_71.jpg	город (селение)
+crop_img/test_crop_72.jpg	шәhәр (кәнд)
+crop_img/test_crop_73.jpg	Место постоянного жительства
+crop_img/test_crop_74.jpg	город (селение)
+crop_img/test_crop_75.jpg	pajon
+crop_img/test_crop_76.jpg	pajon
+crop_img/test_crop_77.jpg	вилаjәт (өлкә, республика)
+crop_img/test_crop_78.jpg	район
+crop_img/test_crop_79.jpg	район
+crop_img/test_crop_80.jpg	область (край, республика)
+crop_img/test_crop_81.jpg	Азәрб. сср
+crop_img/test_crop_82.jpg	вилаjәт (өлкә, республика)
+crop_img/test_crop_83.jpg	область (край, республика)
+crop_img/test_crop_84.jpg	күчә, ул.
+crop_img/test_crop_85.jpg	күчә, ул.
+crop_img/test_crop_86.jpg	отаг. кв.
+crop_img/test_crop_87.jpg	1976илдән даими jашаjыр
+crop_img/test_crop_88.jpg	ев, дом
+crop_img/test_crop_89.jpg	1944илдән даими jашаjыр - Постоянно проживает с 19
+crop_img/test_crop_90.jpg	года
+crop_img/test_crop_91.jpg	Постоянно проживает с 19
+crop_img/test_crop_92.jpg	года
+crop_img/test_crop_93.jpg	комсомол
+crop_img/test_crop_94.jpg	18
+crop_img/test_crop_95.jpg	Тәhсили
+crop_img/test_crop_96.jpg	(хәтт чәкмәк)
+crop_img/test_crop_97.jpg	үмуми орта
+crop_img/test_crop_98.jpg	высшее
+crop_img/test_crop_99.jpg	среднее общее
+crop_img/test_crop_100.jpg	али
+crop_img/test_crop_101.jpg	үмуми орта
+crop_img/test_crop_102.jpg	Образование
+crop_img/test_crop_103.jpg	гуртармамыш али
+crop_img/test_crop_104.jpg	там олмаjан орта
+crop_img/test_crop_105.jpg	высшее
+crop_img/test_crop_106.jpg	гуртармамыш али
+crop_img/test_crop_107.jpg	cpeanee ooee
+crop_img/test_crop_108.jpg	(подчеркнуть)
+crop_img/test_crop_109.jpg	незаконченное высшее
+crop_img/test_crop_110.jpg	неполное среднее
+crop_img/test_crop_111.jpg	незаконченное высшее
+crop_img/test_crop_112.jpg	там олмаjан орта
+crop_img/test_crop_113.jpg	орта ихтисас
+crop_img/test_crop_114.jpg	ибтидан вә ашагы
+crop_img/test_crop_115.jpg	орта ихтисас
+crop_img/test_crop_116.jpg	неполное среднее
+crop_img/test_crop_117.jpg	среднее специальное
+crop_img/test_crop_118.jpg	начальное и ниже
+crop_img/test_crop_119.jpg	среднее специальное
+crop_img/test_crop_120.jpg	ибтидан вә ашагы
+crop_img/test_crop_121.jpg	Ата hаггында
+crop_img/test_crop_122.jpg	19
+crop_img/test_crop_123.jpg	а) Евләнмә шәhадәтнамәси
+crop_img/test_crop_124.jpg	начальное и ниже
+crop_img/test_crop_125.jpg	геjдин әсаслары
+crop_img/test_crop_126.jpg	Свидетельство о заключении брака акт
+crop_img/test_crop_127.jpg	Основные записи
+crop_img/test_crop_128.jpg	сведений об отце:
+crop_img/test_crop_129.jpg	6) Аталыгы мүәjjен етмәк hаггында шәhадәтнамә
+crop_img/test_crop_130.jpg	где зарегистрирован акт о браке
+crop_img/test_crop_131.jpg	Свидетельство об устаовлении отцовства акт
+crop_img/test_crop_132.jpg	в) Ананын әризәси вә онун имзасы
+crop_img/test_crop_133.jpg	(акт hарада геjд едилмишдир
+crop_img/test_crop_134.jpg	- где зарегистрирован акт)
+crop_img/test_crop_135.jpg	Заявление матери и ее подпись
+crop_img/test_crop_136.jpg	Мә'лумат верәнин фамилиjасы, ады, атасынын
+crop_img/test_crop_137.jpg	Сәфәров Аjдын
+crop_img/test_crop_138.jpg	ады, үнван вә имзасы
+crop_img/test_crop_139.jpg	Фамилия, имя, отчество, адрес заявителя и 
+crop_img/test_crop_140.jpg	сурхаj оглу
+crop_img/test_crop_141.jpg	его подпись
+crop_img/test_crop_142.jpg	21
+crop_img/test_crop_143.jpg	22
+crop_img/test_crop_144.jpg	Выдано свидительство 
+crop_img/test_crop_145.jpg	серия
+crop_img/test_crop_146.jpg	23
+crop_img/test_crop_147.jpg	маj
+crop_img/test_crop_148.jpg	ЗАПИСЬ АКТА О РОЖДЕНИИ
+crop_img/test_crop_149.jpg	(Икинҹи нусхә - второй экземпляр)
+crop_img/test_crop_150.jpg	Фамилиjасы
+crop_img/test_crop_151.jpg	Фамилия
+crop_img/test_crop_152.jpg	март
+crop_img/test_crop_153.jpg	Штамп органа ЗАГСа
+crop_img/test_crop_154.jpg	1
+crop_img/test_crop_155.jpg	3
+crop_img/test_crop_156.jpg	Ушаг hаггында мә'лумат - Сведения о ребенке
+crop_img/test_crop_157.jpg	область (край, республика)
+crop_img/test_crop_158.jpg	8
+crop_img/test_crop_159.jpg	Живорожденный или мертворожденный
+crop_img/test_crop_160.jpg	10
+crop_img/test_crop_161.jpg	араjыш
+crop_img/test_crop_162.jpg	11
+crop_img/test_crop_163.jpg	1981 ил/г.
+crop_img/test_crop_164.jpg	1981 ил/г.
+crop_img/test_crop_165.jpg	jашы тамам олмушдур
+crop_img/test_crop_166.jpg	25
+crop_img/test_crop_167.jpg	15
+crop_img/test_crop_168.jpg	Исмаjылов
+crop_img/test_crop_169.jpg	Исмаjылов
+crop_img/test_crop_170.jpg	Азәрб. сср
+crop_img/test_crop_171.jpg	ев, дом
+crop_img/test_crop_172.jpg	отаг, кв.
+crop_img/test_crop_173.jpg	17
+crop_img/test_crop_174.jpg	али
+crop_img/test_crop_175.jpg	август
+crop_img/test_crop_176.jpg	1976 ил/г
+crop_img/test_crop_177.jpg	Свитедетельство о
+crop_img/test_crop_178.jpg	брака
+crop_img/test_crop_179.jpg	Исмаjилов
+crop_img/test_crop_180.jpg	кәнд
+crop_img/test_crop_181.jpg	акт
+crop_img/test_crop_182.jpg	20
+crop_img/test_crop_183.jpg	Доғум геjдиндә иштирак едәнләрин фамилиjасы,
+crop_img/test_crop_184.jpg	ады вә атасынын ады вә имзасы
+crop_img/test_crop_185.jpg	Фамилия, имя отчество лиц, присутствующих при регистрации рождения, их подписи
+crop_img/test_crop_186.jpg	верилмишдир сериjасы
+crop_img/test_crop_187.jpg	Геjдләр үчун
+crop_img/test_crop_188.jpg	Для отметок
+crop_img/test_crop_189.jpg	Заведующий отделом ЗАГСа

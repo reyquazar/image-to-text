@@ -1,0 +1,56 @@
+test3_crop_26.jpg	5. Doğulduğu yer
+test_crop_72.jpg	шәhәр (кәнд)
+test3_crop_94.jpg	4.
+test_crop_64.jpg	Исполнилось
+test3_crop_15.jpg	ŞÜKÜROVA
+test_crop_134.jpg	- где зарегистрирован акт)
+test4_crop_33.jpg	Doğulduğu yer: şəhər, kənd, qəsəbə
+test_crop_10.jpg	4
+test3_crop_91.jpg	6.
+test7_crop_17.jpg	muvakkil edilmis saxsin imzasi
+test3_crop_21.jpg	"07" may 1986
+test3_crop_46.jpg	evlənməmiş, dul, boşanmiş
+test5_crop_51.jpg	Национальность
+test8_crop_29.jpg	национальность(вносится по желанию отца)
+test5_crop_164.jpg	разведен
+test3_crop_55.jpg	küçə, bina,
+test8_crop_47.jpg	25
+test4_crop_6.jpg	Atası
+test_crop_100.jpg	али
+test3_crop_19.jpg	3. Atasının adı
+test5_crop_131.jpg	серия
+test8_crop_11.jpg	седьмого февраля
+test8_crop_26.jpg	Субхан Тофик оглы
+test3_crop_74.jpg	Azərbaycan
+test_crop_2.jpg	Ады
+test3_crop_69.jpg	sobasinin müdiri
+test_crop_183.jpg	Доғум геjдиндә иштирак едәнләрин фамилиjасы,
+test8_crop_2.jpg	Operatorun adı və soyadı
+test5_crop_77.jpg	дулдур
+test5_crop_7.jpg	Евлəнəнлəр hаггында мә'лумат - Сведения о вступающих в брак
+test_crop_169.jpg	Исмаjылов
+test8_crop_6.jpg	imza
+test_crop_181.jpg	акт
+test5_crop_11.jpg	1
+test2_crop_6.jpg	günündə
+test5_crop_148.jpg	али
+test_crop_89.jpg	1944илдән даими jашаjыр - Постоянно проживает с 19
+test5_crop_82.jpg	Үмуми ушаглар hаггында мә'лумат
+test_crop_52.jpg	14
+test5_crop_60.jpg	Тəhсили (хəтт чəкмəк) али
+test3_crop_2.jpg	"25" oktyabr 2008 il
+test_crop_150.jpg	Фамилиjасы
+test5_crop_96.jpg	pajon
+test5_crop_80.jpg	разведена
+test3_crop_70.jpg	soyadı, adı, doğulduğu tarix
+test3_crop_5.jpg	BİNƏQƏDİ RAYON
+test3_crop_7.jpg	Evlənənlər haqqında məlumat
+test_crop_58.jpg	Jашы
+test3_crop_64.jpg	atasının adı və imzaları
+test3_crop_79.jpg	Telman
+test4_crop_25.jpg	rayon
+test5_crop_85.jpg	19 .. ил/г
+test5_crop_111.jpg	года
+test5_crop_142.jpg	3
+test3_crop_0.jpg	VVADQ orqanının ştampı
+test3_crop_89.jpg	9.

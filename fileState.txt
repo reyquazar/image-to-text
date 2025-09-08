@@ -1,0 +1,3 @@
+test/test.png	1
+test/testCopy — копия.png	1
+test/testCopy.png	1
