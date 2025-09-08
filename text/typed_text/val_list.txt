@@ -1,0 +1,52 @@
+crop_img/test5_crop_151.jpg	Семейное положение.
+crop_img/test2_crop_17.jpg	03
+crop_img/test3_crop_6.jpg	Evlənənlər haqqında məlumat
+crop_img/test5_crop_43.jpg	Азерб. Сср
+crop_img/test2_crop_14.jpg	Azərbaycan
+crop_img/test_crop_149.jpg	Доғум геjдиндә иштирак едәнләрин фамилиjасы,
+crop_img/test8_crop_46.jpg	25
+crop_img/test5_crop_104.jpg	Документы, удостоверяющие личность
+crop_img/test5_crop_68.jpg	Киши - Он
+crop_img/test_crop_118.jpg	Фамилия, имя, отчество, адрес заявителя и
+crop_img/test5_crop_94.jpg	область (край, республика)
+crop_img/test5_crop_56.jpg	Образование
+crop_img/test7_crop_2.jpg	№ imza
+crop_img/test_crop_144.jpg	али
+crop_img/test3_crop_10.jpg	evlənəndən sonra
+crop_img/test_crop_17.jpg	вилаjәт (өлкә, республика)
+crop_img/test_crop_7.jpg	Пол
+crop_img/test3_crop_30.jpg	natamam təhsil
+crop_img/test_crop_130.jpg	1
+crop_img/test5_crop_13.jpg	Евлəнəндəн сонра
+crop_img/test5_crop_31.jpg	шəhəр (кəнд)
+crop_img/test2_crop_8.jpg	ilə qeyd edilmişdir
+crop_img/test4_crop_19.jpg	01 № ilə qeyd edilmişdir
+crop_img/test5_crop_48.jpg	hарада вə нə вəзифəсиндə ишлəjир
+crop_img/test8_crop_7.jpg	Tarix:
+crop_img/test8_crop_15.jpg	Надымский район, Ямало-Нелецкий автономный округ
+crop_img/test2_crop_3.jpg	ildə ölmüşdür.
+crop_img/test_crop_88.jpg	(подчеркнуть)
+crop_img/test_crop_142.jpg	отаг, кв.
+crop_img/test5_crop_129.jpg	1
+crop_img/test5_crop_125.jpg	2
+crop_img/test8_crop_24.jpg	Сафаров
+crop_img/test8_crop_17.jpg	2009
+crop_img/test3_crop_9.jpg	1. Soyadi: evlənənədək
+crop_img/test5_crop_154.jpg	(подчеркнуть) :
+crop_img/test3_crop_68.jpg	6.
+crop_img/test_crop_53.jpg	город (селение)
+crop_img/test5_crop_79.jpg	(ады, доғулдуғу ил)
+crop_img/test_crop_29.jpg	Ата hаггында мә'лумат - Сведения об отце
+crop_img/test7_crop_0.jpg	andasın adı vә soyadı
+crop_img/test6_crop_11.jpg	10
+crop_img/test8_crop_31.jpg	Гасанова
+crop_img/test3_crop_55.jpg	respublika (ölkə)
+crop_img/test_crop_151.jpg	Фамилия, имя отчество лиц, присутствующих при регистрации рождения, их подписи
+crop_img/test_crop_155.jpg	Заведующий отделом ЗАГСа
+crop_img/test5_crop_34.jpg	5
+crop_img/test5_crop_98.jpg	отаг, кв.
+crop_img/test5_crop_131.jpg	3
+crop_img/test5_crop_29.jpg	лет
+crop_img/test5_crop_52.jpg	Где и кем работает (если не
+crop_img/test5_crop_86.jpg	11
+crop_img/test6_crop_1.jpg	Доғулдуғу jер: шəhəр, кəнд

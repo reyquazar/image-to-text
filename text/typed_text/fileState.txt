@@ -1,0 +1,8 @@
+typed_text/test3.jpg	1
+typed_text/test2.jpg	1
+typed_text/test4.jpg	1
+typed_text/test5.jpg	1
+typed_text/test6.jpg	1
+typed_text/test7.jpg	1
+typed_text/test8.jpg	1
+typed_text/test.png	1
