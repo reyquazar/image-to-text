@@ -1,22 +1,16 @@
 # create_dict.py
 def create_vocabulary(input_file, output_file):
-    """
-    Создает словарь из всех уникальных символов в файле с разметкой
-    """
     unique_chars = set()
 
     with open(input_file, 'r', encoding='utf-8') as f:
         for line in f:
-            # Разделяем путь и текст (по табуляции)
             parts = line.strip().split('\t')
             if len(parts) >= 2:
                 text = parts[1]  # Берем текст после табуляции
                 unique_chars.update(text)  # Добавляем все символы текста
 
-    # Сортируем символы для удобства
     sorted_chars = sorted(unique_chars)
 
-    # Записываем в файл
     with open(output_file, 'w', encoding='utf-8') as f:
         for char in sorted_chars:
             f.write(char + '\n')
@@ -26,9 +20,6 @@ def create_vocabulary(input_file, output_file):
     print("Символы:", ''.join(sorted_chars))
 
 
-# Использование
-if __name__ == "__main__":
-    input_file = 'text/typed_text/rec_gt.txt'  # Ваш файл с разметкой
-    output_file = 'text/typed_text/az_ru_dict.txt'  # Выходной файл словаря
-
-    create_vocabulary(input_file, output_file)
+input_file = 'text/typed_text/rec_gt.txt'  # Ваш файл с разметкой
+output_file = 'text/typed_text/az_ru_dict.txt'  # Выходной файл словаря
+create_vocabulary(input_file, output_file)
