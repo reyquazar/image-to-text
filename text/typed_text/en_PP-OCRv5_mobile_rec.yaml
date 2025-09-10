@@ -1,5 +1,5 @@
 Global:
-  model_name: en_PP-OCRv5_mobile_rec # To use static model for inference.
+  model_name: en_PP-OCRv5_mobile_rec
   debug: false
   use_gpu: true
   epoch_num: 75

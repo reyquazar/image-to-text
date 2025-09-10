@@ -35,7 +35,7 @@ opencv-python-headless==4.12.0.88
 opt-einsum==3.3.0
 packaging==25.0
 paddleocr==3.2.0
-paddlepaddle-gpu==2.6.2
+paddlepaddle-gpu
 paddlex==3.2.1
 pandas==2.3.2
 pillow==11.3.0
