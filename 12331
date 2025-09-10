@@ -1,20 +1,15 @@
-(train) [elshan@VCAGRI-AW01 image-to-text]$ python ../PaddleOCR/tools/train.py -c ./text/typed_text/az_ru_rec_config.yaml 
-Error: Can not import paddle core while this file exists: /home/elshan/train/lib/python3.10/site-packages/paddle/fluid/libpaddle.so
+I Version: 11.8
+W0910 14:50:31.353470 752936 gpu_resources.cc:164] device: 0, cuDNN Version: 9.8.
 Traceback (most recent call last):
-  File "/home/elshan/image-to-text/../PaddleOCR/tools/train.py", line 28, in <module>
-    import paddle
-  File "/home/elshan/train/lib/python3.10/site-packages/paddle/__init__.py", line 31, in <module>
-    from .framework import monkey_patch_variable
-  File "/home/elshan/train/lib/python3.10/site-packages/paddle/framework/__init__.py", line 17, in <module>
-    from . import random  # noqa: F401
-  File "/home/elshan/train/lib/python3.10/site-packages/paddle/framework/random.py", line 17, in <module>
-    from paddle import fluid
-  File "/home/elshan/train/lib/python3.10/site-packages/paddle/fluid/__init__.py", line 36, in <module>
-    from . import framework
-  File "/home/elshan/train/lib/python3.10/site-packages/paddle/fluid/framework.py", line 35, in <module>
-    from . import core
-  File "/home/elshan/train/lib/python3.10/site-packages/paddle/fluid/core.py", line 356, in <module>
-    raise e
-  File "/home/elshan/train/lib/python3.10/site-packages/paddle/fluid/core.py", line 269, in <module>
-    from . import libpaddle
-ImportError: libssl.so.1.1: cannot open shared object file: No such file or directory
+  File "/home/elshan/image-to-text/../PaddleOCR/tools/train.py", line 272, in <module>
+    main(config, device, logger, vdl_writer, seed)
+  File "/home/elshan/image-to-text/../PaddleOCR/tools/train.py", line 139, in main
+    model = build_model(config["Architecture"])
+  File "/home/elshan/PaddleOCR/ppocr/modeling/architectures/__init__.py", line 30, in build_model
+    arch = BaseModel(config)
+  File "/home/elshan/PaddleOCR/ppocr/modeling/architectures/base_model.py", line 67, in __init__
+    self.neck = build_neck(config["Neck"])
+  File "/home/elshan/PaddleOCR/ppocr/modeling/necks/__init__.py", line 52, in build_neck
+    assert module_name in support_dict, Exception(
+AssertionError: neck only support ['FPN', 'FCEFPN', 'LKPAN', 'DBFPN', 'RSEFPN', 'EASTFPN', 'SASTFPN', 'SequenceEncoder', 'PGFPN', 'TableFPN', 'PRENFPN', 'CSPPAN', 'CTFPN', 'RFAdaptor', 'FPN_UNet']
+(train) [elshan@VCAGRI-AW01 image-to-text]$ 
