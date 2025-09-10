@@ -1,11 +1,11 @@
 Global:
   use_gpu: true
-  epoch_num: 100
+  epoch_num: 50
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output/
   save_epoch_step: 3
-  eval_batch_step: [0, 2000]
+  eval_batch_step: [0, 1000]
   cal_metric_during_train: true
   pretrained_model: ./cyrillic_PP-OCRv3_rec
   checkpoints:
@@ -24,8 +24,8 @@ Optimizer:
   beta2: 0.999
   lr:
     name: Cosine
-    learning_rate: 0.001
-    warmup_epoch: 5
+    learning_rate: 0.0005
+    warmup_epoch: 2
   regularizer:
     name: L2
     factor: 0.0005
@@ -39,7 +39,12 @@ Architecture:
     scale: 1
     pretrained: false
   Neck:
-    name: Im2Seq
+    name: SequenceEncoder
+    encoder_type: svtr
+    dims: 64
+    depth: 2
+    hidden_dims: 120
+    use_guide: false
   Head:
     name: CTCHead
     fc_decay: 0.00001
@@ -72,9 +77,9 @@ Train:
           keep_keys: ['image', 'label', 'length']
   loader:
     shuffle: true
-    batch_size_per_card: 128
+    batch_size_per_card: 64
     drop_last: true
-    num_workers: 8
+    num_workers: 4
     use_shared_memory: true
 
 Eval:
@@ -95,6 +100,6 @@ Eval:
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 128
-    num_workers: 4
+    batch_size_per_card: 64
+    num_workers: 2
     use_shared_memory: true
