@@ -7,7 +7,7 @@ Global:
   save_epoch_step: 3
   eval_batch_step: [0, 1000]
   cal_metric_during_train: true
-  pretrained_model: ./text/typed_text/pretrained_models/PP-OCRv5_server_rec_pretrained.pdparams
+  pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
   save_inference_dir:
   use_visualdl: false
