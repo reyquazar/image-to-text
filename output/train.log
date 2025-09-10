@@ -1,0 +1,353 @@
+[2025/09/10 14:10:33] ppocr INFO: Architecture : 
+[2025/09/10 14:10:33] ppocr INFO:     Backbone : 
+[2025/09/10 14:10:33] ppocr INFO:         last_conv_stride : [1, 2]
+[2025/09/10 14:10:33] ppocr INFO:         last_pool_type : avg
+[2025/09/10 14:10:33] ppocr INFO:         name : MobileNetV1Enhance
+[2025/09/10 14:10:33] ppocr INFO:         scale : 0.5
+[2025/09/10 14:10:33] ppocr INFO:     Head : 
+[2025/09/10 14:10:33] ppocr INFO:         fc_decay : 0.0
+[2025/09/10 14:10:33] ppocr INFO:         name : CTCHead
+[2025/09/10 14:10:33] ppocr INFO:     Neck : 
+[2025/09/10 14:10:33] ppocr INFO:         depth : 2
+[2025/09/10 14:10:33] ppocr INFO:         dims : 64
+[2025/09/10 14:10:33] ppocr INFO:         encoder_type : svtr
+[2025/09/10 14:10:33] ppocr INFO:         hidden_dims : 120
+[2025/09/10 14:10:33] ppocr INFO:         name : SequenceEncoder
+[2025/09/10 14:10:33] ppocr INFO:         use_guide : False
+[2025/09/10 14:10:33] ppocr INFO:     Transform : None
+[2025/09/10 14:10:33] ppocr INFO:     algorithm : SVTR
+[2025/09/10 14:10:33] ppocr INFO:     model_type : rec
+[2025/09/10 14:10:33] ppocr INFO: Eval : 
+[2025/09/10 14:10:33] ppocr INFO:     dataset : 
+[2025/09/10 14:10:33] ppocr INFO:         data_dir : ./train_data
+[2025/09/10 14:10:33] ppocr INFO:         label_file_list : ['./train_data/rec_gt_val.txt']
+[2025/09/10 14:10:33] ppocr INFO:         name : SimpleDataSet
+[2025/09/10 14:10:33] ppocr INFO:         transforms : 
+[2025/09/10 14:10:33] ppocr INFO:             DecodeImage : 
+[2025/09/10 14:10:33] ppocr INFO:                 channel_first : False
+[2025/09/10 14:10:33] ppocr INFO:                 img_mode : BGR
+[2025/09/10 14:10:33] ppocr INFO:             CTCLabelEncode : None
+[2025/09/10 14:10:33] ppocr INFO:             RecResizeImg : 
+[2025/09/10 14:10:33] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/10 14:10:33] ppocr INFO:             KeepKeys : 
+[2025/09/10 14:10:33] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/10 14:10:33] ppocr INFO:     loader : 
+[2025/09/10 14:10:33] ppocr INFO:         batch_size_per_card : 128
+[2025/09/10 14:10:33] ppocr INFO:         drop_last : False
+[2025/09/10 14:10:33] ppocr INFO:         num_workers : 4
+[2025/09/10 14:10:33] ppocr INFO:         shuffle : False
+[2025/09/10 14:10:33] ppocr INFO: Global : 
+[2025/09/10 14:10:33] ppocr INFO:     cal_metric_during_train : True
+[2025/09/10 14:10:33] ppocr INFO:     character_dict_path : ./train_data/custom_dict.txt
+[2025/09/10 14:10:33] ppocr INFO:     checkpoints : None
+[2025/09/10 14:10:33] ppocr INFO:     distributed : False
+[2025/09/10 14:10:33] ppocr INFO:     epoch_num : 10
+[2025/09/10 14:10:33] ppocr INFO:     eval_batch_step : [0, 100]
+[2025/09/10 14:10:33] ppocr INFO:     infer_img : None
+[2025/09/10 14:10:33] ppocr INFO:     infer_mode : False
+[2025/09/10 14:10:33] ppocr INFO:     log_smooth_window : 20
+[2025/09/10 14:10:33] ppocr INFO:     max_text_length : 25
+[2025/09/10 14:10:33] ppocr INFO:     pretrained_model : ./pretrain_models/en_PP-OCRv3_rec_train/best_accuracy
+[2025/09/10 14:10:33] ppocr INFO:     print_batch_step : 10
+[2025/09/10 14:10:33] ppocr INFO:     save_epoch_step : 1
+[2025/09/10 14:10:33] ppocr INFO:     save_inference_dir : None
+[2025/09/10 14:10:33] ppocr INFO:     save_model_dir : ./output
+[2025/09/10 14:10:33] ppocr INFO:     save_res_path : ./output/rec/predicts_ppocrv3.txt
+[2025/09/10 14:10:33] ppocr INFO:     use_gpu : False
+[2025/09/10 14:10:33] ppocr INFO:     use_space_char : True
+[2025/09/10 14:10:33] ppocr INFO:     use_visualdl : False
+[2025/09/10 14:10:33] ppocr INFO: Loss : 
+[2025/09/10 14:10:33] ppocr INFO:     name : CTCLoss
+[2025/09/10 14:10:33] ppocr INFO: Metric : 
+[2025/09/10 14:10:33] ppocr INFO:     main_indicator : acc
+[2025/09/10 14:10:33] ppocr INFO:     name : RecMetric
+[2025/09/10 14:10:33] ppocr INFO: Optimizer : 
+[2025/09/10 14:10:33] ppocr INFO:     beta1 : 0.9
+[2025/09/10 14:10:33] ppocr INFO:     beta2 : 0.999
+[2025/09/10 14:10:33] ppocr INFO:     lr : 
+[2025/09/10 14:10:33] ppocr INFO:         learning_rate : 0.001
+[2025/09/10 14:10:33] ppocr INFO:         name : Cosine
+[2025/09/10 14:10:33] ppocr INFO:         warmup_epoch : 5
+[2025/09/10 14:10:33] ppocr INFO:     name : Adam
+[2025/09/10 14:10:33] ppocr INFO:     regularizer : 
+[2025/09/10 14:10:33] ppocr INFO:         factor : 0.0
+[2025/09/10 14:10:33] ppocr INFO:         name : L2
+[2025/09/10 14:10:33] ppocr INFO: PostProcess : 
+[2025/09/10 14:10:33] ppocr INFO:     name : CTCLabelDecode
+[2025/09/10 14:10:33] ppocr INFO: Train : 
+[2025/09/10 14:10:33] ppocr INFO:     dataset : 
+[2025/09/10 14:10:33] ppocr INFO:         data_dir : ./train_data
+[2025/09/10 14:10:33] ppocr INFO:         label_file_list : ['./train_data/rec_gt_train.txt']
+[2025/09/10 14:10:33] ppocr INFO:         name : SimpleDataSet
+[2025/09/10 14:10:33] ppocr INFO:         ratio_list : [1.0]
+[2025/09/10 14:10:33] ppocr INFO:         transforms : 
+[2025/09/10 14:10:33] ppocr INFO:             DecodeImage : 
+[2025/09/10 14:10:33] ppocr INFO:                 channel_first : False
+[2025/09/10 14:10:33] ppocr INFO:                 img_mode : BGR
+[2025/09/10 14:10:33] ppocr INFO:             CTCLabelEncode : None
+[2025/09/10 14:10:33] ppocr INFO:             RecResizeImg : 
+[2025/09/10 14:10:33] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/10 14:10:33] ppocr INFO:             KeepKeys : 
+[2025/09/10 14:10:33] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/10 14:10:33] ppocr INFO:     loader : 
+[2025/09/10 14:10:33] ppocr INFO:         batch_size_per_card : 128
+[2025/09/10 14:10:33] ppocr INFO:         drop_last : True
+[2025/09/10 14:10:33] ppocr INFO:         num_workers : 8
+[2025/09/10 14:10:33] ppocr INFO:         shuffle : True
+[2025/09/10 14:10:33] ppocr INFO: profiler_options : None
+[2025/09/10 14:10:33] ppocr INFO: train with paddle 3.2.0 and device Place(cpu)
+[2025/09/10 14:10:33] ppocr INFO: Initialize indexes of datasets:['./train_data/rec_gt_train.txt']
+[2025/09/10 14:10:33] ppocr INFO: Initialize indexes of datasets:['./train_data/rec_gt_val.txt']
+[2025/09/10 14:10:35] ppocr INFO: train dataloader has 3 iters
+[2025/09/10 14:10:35] ppocr INFO: valid dataloader has 1 iters
+[2025/09/10 14:25:45] ppocr INFO: Architecture : 
+[2025/09/10 14:25:45] ppocr INFO:     Backbone : 
+[2025/09/10 14:25:45] ppocr INFO:         last_conv_stride : [1, 2]
+[2025/09/10 14:25:45] ppocr INFO:         last_pool_type : avg
+[2025/09/10 14:25:45] ppocr INFO:         name : MobileNetV1Enhance
+[2025/09/10 14:25:45] ppocr INFO:         scale : 0.5
+[2025/09/10 14:25:45] ppocr INFO:     Head : 
+[2025/09/10 14:25:45] ppocr INFO:         fc_decay : 0.0
+[2025/09/10 14:25:45] ppocr INFO:         name : CTCHead
+[2025/09/10 14:25:45] ppocr INFO:     Neck : 
+[2025/09/10 14:25:45] ppocr INFO:         depth : 2
+[2025/09/10 14:25:45] ppocr INFO:         dims : 64
+[2025/09/10 14:25:45] ppocr INFO:         encoder_type : svtr
+[2025/09/10 14:25:45] ppocr INFO:         hidden_dims : 120
+[2025/09/10 14:25:45] ppocr INFO:         name : SequenceEncoder
+[2025/09/10 14:25:45] ppocr INFO:         use_guide : False
+[2025/09/10 14:25:45] ppocr INFO:     Transform : None
+[2025/09/10 14:25:45] ppocr INFO:     algorithm : SVTR
+[2025/09/10 14:25:45] ppocr INFO:     model_type : rec
+[2025/09/10 14:25:45] ppocr INFO: Eval : 
+[2025/09/10 14:25:45] ppocr INFO:     dataset : 
+[2025/09/10 14:25:45] ppocr INFO:         data_dir : ./train_data
+[2025/09/10 14:25:45] ppocr INFO:         label_file_list : ['./train_data/rec_gt_val.txt']
+[2025/09/10 14:25:45] ppocr INFO:         name : SimpleDataSet
+[2025/09/10 14:25:45] ppocr INFO:         transforms : 
+[2025/09/10 14:25:45] ppocr INFO:             DecodeImage : 
+[2025/09/10 14:25:45] ppocr INFO:                 channel_first : False
+[2025/09/10 14:25:45] ppocr INFO:                 img_mode : BGR
+[2025/09/10 14:25:45] ppocr INFO:             CTCLabelEncode : None
+[2025/09/10 14:25:45] ppocr INFO:             RecResizeImg : 
+[2025/09/10 14:25:45] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/10 14:25:45] ppocr INFO:             KeepKeys : 
+[2025/09/10 14:25:45] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/10 14:25:45] ppocr INFO:     loader : 
+[2025/09/10 14:25:45] ppocr INFO:         batch_size_per_card : 128
+[2025/09/10 14:25:45] ppocr INFO:         drop_last : False
+[2025/09/10 14:25:45] ppocr INFO:         num_workers : 4
+[2025/09/10 14:25:45] ppocr INFO:         shuffle : False
+[2025/09/10 14:25:45] ppocr INFO: Global : 
+[2025/09/10 14:25:45] ppocr INFO:     cal_metric_during_train : True
+[2025/09/10 14:25:45] ppocr INFO:     character_dict_path : ./train_data/custom_dict.txt
+[2025/09/10 14:25:45] ppocr INFO:     checkpoints : None
+[2025/09/10 14:25:45] ppocr INFO:     distributed : False
+[2025/09/10 14:25:45] ppocr INFO:     epoch_num : 10
+[2025/09/10 14:25:45] ppocr INFO:     eval_batch_step : [0, 100]
+[2025/09/10 14:25:45] ppocr INFO:     infer_img : None
+[2025/09/10 14:25:45] ppocr INFO:     infer_mode : False
+[2025/09/10 14:25:45] ppocr INFO:     log_smooth_window : 20
+[2025/09/10 14:25:45] ppocr INFO:     max_text_length : 25
+[2025/09/10 14:25:45] ppocr INFO:     pretrained_model : ./pretrain_models/en_PP-OCRv3_rec_train/best_accuracy
+[2025/09/10 14:25:45] ppocr INFO:     print_batch_step : 10
+[2025/09/10 14:25:45] ppocr INFO:     save_epoch_step : 1
+[2025/09/10 14:25:45] ppocr INFO:     save_inference_dir : None
+[2025/09/10 14:25:45] ppocr INFO:     save_model_dir : ./output
+[2025/09/10 14:25:45] ppocr INFO:     save_res_path : ./output/rec/predicts_ppocrv3.txt
+[2025/09/10 14:25:45] ppocr INFO:     use_gpu : False
+[2025/09/10 14:25:45] ppocr INFO:     use_space_char : True
+[2025/09/10 14:25:45] ppocr INFO:     use_visualdl : False
+[2025/09/10 14:25:45] ppocr INFO: Loss : 
+[2025/09/10 14:25:45] ppocr INFO:     name : CTCLoss
+[2025/09/10 14:25:45] ppocr INFO: Metric : 
+[2025/09/10 14:25:45] ppocr INFO:     main_indicator : acc
+[2025/09/10 14:25:45] ppocr INFO:     name : RecMetric
+[2025/09/10 14:25:45] ppocr INFO: Optimizer : 
+[2025/09/10 14:25:45] ppocr INFO:     beta1 : 0.9
+[2025/09/10 14:25:45] ppocr INFO:     beta2 : 0.999
+[2025/09/10 14:25:45] ppocr INFO:     lr : 
+[2025/09/10 14:25:45] ppocr INFO:         learning_rate : 0.001
+[2025/09/10 14:25:45] ppocr INFO:         name : Cosine
+[2025/09/10 14:25:45] ppocr INFO:         warmup_epoch : 5
+[2025/09/10 14:25:45] ppocr INFO:     name : Adam
+[2025/09/10 14:25:45] ppocr INFO:     regularizer : 
+[2025/09/10 14:25:45] ppocr INFO:         factor : 0.0
+[2025/09/10 14:25:45] ppocr INFO:         name : L2
+[2025/09/10 14:25:45] ppocr INFO: PostProcess : 
+[2025/09/10 14:25:45] ppocr INFO:     name : CTCLabelDecode
+[2025/09/10 14:25:45] ppocr INFO: Train : 
+[2025/09/10 14:25:45] ppocr INFO:     dataset : 
+[2025/09/10 14:25:45] ppocr INFO:         data_dir : ./train_data
+[2025/09/10 14:25:45] ppocr INFO:         label_file_list : ['./train_data/rec_gt_train.txt']
+[2025/09/10 14:25:45] ppocr INFO:         name : SimpleDataSet
+[2025/09/10 14:25:45] ppocr INFO:         ratio_list : [1.0]
+[2025/09/10 14:25:45] ppocr INFO:         transforms : 
+[2025/09/10 14:25:45] ppocr INFO:             DecodeImage : 
+[2025/09/10 14:25:45] ppocr INFO:                 channel_first : False
+[2025/09/10 14:25:45] ppocr INFO:                 img_mode : BGR
+[2025/09/10 14:25:45] ppocr INFO:             CTCLabelEncode : None
+[2025/09/10 14:25:45] ppocr INFO:             RecResizeImg : 
+[2025/09/10 14:25:45] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/10 14:25:45] ppocr INFO:             KeepKeys : 
+[2025/09/10 14:25:45] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/10 14:25:45] ppocr INFO:     loader : 
+[2025/09/10 14:25:45] ppocr INFO:         batch_size_per_card : 128
+[2025/09/10 14:25:45] ppocr INFO:         drop_last : True
+[2025/09/10 14:25:45] ppocr INFO:         num_workers : 8
+[2025/09/10 14:25:45] ppocr INFO:         shuffle : True
+[2025/09/10 14:25:45] ppocr INFO: profiler_options : None
+[2025/09/10 14:25:45] ppocr INFO: train with paddle 3.2.0 and device Place(cpu)
+[2025/09/10 14:25:45] ppocr INFO: Initialize indexes of datasets:['./train_data/rec_gt_train.txt']
+[2025/09/10 14:25:45] ppocr INFO: Initialize indexes of datasets:['./train_data/rec_gt_val.txt']
+[2025/09/10 14:25:45] ppocr INFO: train dataloader has 3 iters
+[2025/09/10 14:25:45] ppocr INFO: valid dataloader has 1 iters
+[2025/09/10 14:27:39] ppocr INFO: Architecture : 
+[2025/09/10 14:27:39] ppocr INFO:     Backbone : 
+[2025/09/10 14:27:39] ppocr INFO:         name : MobileNetV1Enhance
+[2025/09/10 14:27:39] ppocr INFO:         scale : 0.5
+[2025/09/10 14:27:39] ppocr INFO:     Head : 
+[2025/09/10 14:27:39] ppocr INFO:         name : CTCHead
+[2025/09/10 14:27:39] ppocr INFO:     Neck : 
+[2025/09/10 14:27:39] ppocr INFO:         encoder_type : svtr
+[2025/09/10 14:27:39] ppocr INFO:         name : SequenceEncoder
+[2025/09/10 14:27:39] ppocr INFO:     algorithm : SVTR
+[2025/09/10 14:27:39] ppocr INFO:     model_type : rec
+[2025/09/10 14:27:39] ppocr INFO: Eval : 
+[2025/09/10 14:27:39] ppocr INFO:     dataset : 
+[2025/09/10 14:27:39] ppocr INFO:         data_dir : ./train_data
+[2025/09/10 14:27:39] ppocr INFO:         label_file_list : ['./train_data/rec_gt_val.txt']
+[2025/09/10 14:27:39] ppocr INFO:         name : SimpleDataSet
+[2025/09/10 14:27:39] ppocr INFO:     loader : 
+[2025/09/10 14:27:39] ppocr INFO:         batch_size_per_card : 64
+[2025/09/10 14:27:39] ppocr INFO: Global : 
+[2025/09/10 14:27:39] ppocr INFO:     character_dict_path : ./train_data/custom_dict.txt
+[2025/09/10 14:27:39] ppocr INFO:     distributed : False
+[2025/09/10 14:27:39] ppocr INFO:     epoch_num : 20
+[2025/09/10 14:27:39] ppocr INFO:     max_text_length : 50
+[2025/09/10 14:27:39] ppocr INFO:     pretrained_model : ./pretrain_models/cyrillic_PP-OCRv3_rec_train/best_accuracy
+[2025/09/10 14:27:39] ppocr INFO:     save_model_dir : ./output
+[2025/09/10 14:27:39] ppocr INFO:     use_gpu : False
+[2025/09/10 14:27:39] ppocr INFO:     use_space_char : True
+[2025/09/10 14:27:39] ppocr INFO: Optimizer : 
+[2025/09/10 14:27:39] ppocr INFO:     lr : 
+[2025/09/10 14:27:39] ppocr INFO:         learning_rate : 0.0005
+[2025/09/10 14:27:39] ppocr INFO:         name : Cosine
+[2025/09/10 14:27:39] ppocr INFO:     name : Adam
+[2025/09/10 14:27:39] ppocr INFO:     regularizer : 
+[2025/09/10 14:27:39] ppocr INFO:         factor : 1e-05
+[2025/09/10 14:27:39] ppocr INFO:         name : L2
+[2025/09/10 14:27:39] ppocr INFO: Train : 
+[2025/09/10 14:27:39] ppocr INFO:     dataset : 
+[2025/09/10 14:27:39] ppocr INFO:         data_dir : ./train_data
+[2025/09/10 14:27:39] ppocr INFO:         label_file_list : ['./train_data/rec_gt_train.txt']
+[2025/09/10 14:27:39] ppocr INFO:         name : SimpleDataSet
+[2025/09/10 14:27:39] ppocr INFO:         transforms : 
+[2025/09/10 14:27:39] ppocr INFO:             DecodeImage : 
+[2025/09/10 14:27:39] ppocr INFO:                 img_mode : BGR
+[2025/09/10 14:27:39] ppocr INFO:             CTCLabelEncode : None
+[2025/09/10 14:27:39] ppocr INFO:             RecResizeImg : 
+[2025/09/10 14:27:39] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/10 14:27:39] ppocr INFO:             KeepKeys : 
+[2025/09/10 14:27:39] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/10 14:27:39] ppocr INFO:     loader : 
+[2025/09/10 14:27:39] ppocr INFO:         batch_size_per_card : 64
+[2025/09/10 14:27:39] ppocr INFO:         num_workers : 8
+[2025/09/10 14:27:39] ppocr INFO: profiler_options : None
+[2025/09/10 14:27:39] ppocr INFO: train with paddle 3.2.0 and device Place(cpu)
+[2025/09/10 14:32:44] ppocr INFO: Architecture : 
+[2025/09/10 14:32:44] ppocr INFO:     Backbone : 
+[2025/09/10 14:32:44] ppocr INFO:         name : PPLCNetV3
+[2025/09/10 14:32:44] ppocr INFO:         pretrained : False
+[2025/09/10 14:32:44] ppocr INFO:         scale : 1
+[2025/09/10 14:32:44] ppocr INFO:     Head : 
+[2025/09/10 14:32:44] ppocr INFO:         fc_decay : 1e-05
+[2025/09/10 14:32:44] ppocr INFO:         name : CTCHead
+[2025/09/10 14:32:44] ppocr INFO:     Neck : 
+[2025/09/10 14:32:44] ppocr INFO:         name : Im2Seq
+[2025/09/10 14:32:44] ppocr INFO:     Transform : None
+[2025/09/10 14:32:44] ppocr INFO:     algorithm : SVTR
+[2025/09/10 14:32:44] ppocr INFO:     model_type : rec
+[2025/09/10 14:32:44] ppocr INFO: Eval : 
+[2025/09/10 14:32:44] ppocr INFO:     dataset : 
+[2025/09/10 14:32:44] ppocr INFO:         data_dir : ./
+[2025/09/10 14:32:44] ppocr INFO:         label_file_list : ['train_data/rec_gt_val.txt']
+[2025/09/10 14:32:44] ppocr INFO:         name : SimpleDataSet
+[2025/09/10 14:32:44] ppocr INFO:         transforms : 
+[2025/09/10 14:32:44] ppocr INFO:             DecodeImage : 
+[2025/09/10 14:32:44] ppocr INFO:                 channel_first : False
+[2025/09/10 14:32:44] ppocr INFO:                 img_mode : BGR
+[2025/09/10 14:32:44] ppocr INFO:             CTCLabelEncode : None
+[2025/09/10 14:32:44] ppocr INFO:             RecResizeImg : 
+[2025/09/10 14:32:44] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/10 14:32:44] ppocr INFO:             KeepKeys : 
+[2025/09/10 14:32:44] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/10 14:32:44] ppocr INFO:     loader : 
+[2025/09/10 14:32:44] ppocr INFO:         batch_size_per_card : 128
+[2025/09/10 14:32:44] ppocr INFO:         drop_last : False
+[2025/09/10 14:32:44] ppocr INFO:         num_workers : 4
+[2025/09/10 14:32:44] ppocr INFO:         shuffle : False
+[2025/09/10 14:32:44] ppocr INFO:         use_shared_memory : True
+[2025/09/10 14:32:44] ppocr INFO: Global : 
+[2025/09/10 14:32:44] ppocr INFO:     cal_metric_during_train : True
+[2025/09/10 14:32:44] ppocr INFO:     character_dict_path : train_data/custom_dict.txt
+[2025/09/10 14:32:44] ppocr INFO:     checkpoints : None
+[2025/09/10 14:32:44] ppocr INFO:     distributed : False
+[2025/09/10 14:32:44] ppocr INFO:     epoch_num : 100
+[2025/09/10 14:32:44] ppocr INFO:     eval_batch_step : [0, 2000]
+[2025/09/10 14:32:44] ppocr INFO:     infer_img : doc/imgs_words/ch/word_1.jpg
+[2025/09/10 14:32:44] ppocr INFO:     infer_mode : False
+[2025/09/10 14:32:44] ppocr INFO:     log_smooth_window : 20
+[2025/09/10 14:32:44] ppocr INFO:     max_text_length : 25
+[2025/09/10 14:32:44] ppocr INFO:     pretrained_model : ./cyrillic_PP-OCRv3_rec
+[2025/09/10 14:32:44] ppocr INFO:     print_batch_step : 10
+[2025/09/10 14:32:44] ppocr INFO:     save_epoch_step : 3
+[2025/09/10 14:32:44] ppocr INFO:     save_inference_dir : None
+[2025/09/10 14:32:44] ppocr INFO:     save_model_dir : ./output/
+[2025/09/10 14:32:44] ppocr INFO:     save_res_path : ./output/predicts_rec.txt
+[2025/09/10 14:32:44] ppocr INFO:     use_gpu : False
+[2025/09/10 14:32:44] ppocr INFO:     use_space_char : True
+[2025/09/10 14:32:44] ppocr INFO:     use_visualdl : False
+[2025/09/10 14:32:44] ppocr INFO: Loss : 
+[2025/09/10 14:32:44] ppocr INFO:     name : CTCLoss
+[2025/09/10 14:32:44] ppocr INFO: Metric : 
+[2025/09/10 14:32:44] ppocr INFO:     main_indicator : acc
+[2025/09/10 14:32:44] ppocr INFO:     name : RecMetric
+[2025/09/10 14:32:44] ppocr INFO: Optimizer : 
+[2025/09/10 14:32:44] ppocr INFO:     beta1 : 0.9
+[2025/09/10 14:32:44] ppocr INFO:     beta2 : 0.999
+[2025/09/10 14:32:44] ppocr INFO:     lr : 
+[2025/09/10 14:32:44] ppocr INFO:         learning_rate : 0.001
+[2025/09/10 14:32:44] ppocr INFO:         name : Cosine
+[2025/09/10 14:32:44] ppocr INFO:         warmup_epoch : 5
+[2025/09/10 14:32:44] ppocr INFO:     name : Adam
+[2025/09/10 14:32:44] ppocr INFO:     regularizer : 
+[2025/09/10 14:32:44] ppocr INFO:         factor : 0.0005
+[2025/09/10 14:32:44] ppocr INFO:         name : L2
+[2025/09/10 14:32:44] ppocr INFO: PostProcess : 
+[2025/09/10 14:32:44] ppocr INFO:     name : CTCLabelDecode
+[2025/09/10 14:32:44] ppocr INFO: Train : 
+[2025/09/10 14:32:44] ppocr INFO:     dataset : 
+[2025/09/10 14:32:44] ppocr INFO:         data_dir : ./
+[2025/09/10 14:32:44] ppocr INFO:         label_file_list : ['train_data/rec_gt_train.txt']
+[2025/09/10 14:32:44] ppocr INFO:         name : SimpleDataSet
+[2025/09/10 14:32:44] ppocr INFO:         ratio_list : [1.0]
+[2025/09/10 14:32:44] ppocr INFO:         transforms : 
+[2025/09/10 14:32:44] ppocr INFO:             DecodeImage : 
+[2025/09/10 14:32:44] ppocr INFO:                 channel_first : False
+[2025/09/10 14:32:44] ppocr INFO:                 img_mode : BGR
+[2025/09/10 14:32:44] ppocr INFO:             CTCLabelEncode : None
+[2025/09/10 14:32:44] ppocr INFO:             RecResizeImg : 
+[2025/09/10 14:32:44] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/10 14:32:44] ppocr INFO:             KeepKeys : 
+[2025/09/10 14:32:44] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/10 14:32:44] ppocr INFO:     loader : 
+[2025/09/10 14:32:44] ppocr INFO:         batch_size_per_card : 128
+[2025/09/10 14:32:44] ppocr INFO:         drop_last : True
+[2025/09/10 14:32:44] ppocr INFO:         num_workers : 8
+[2025/09/10 14:32:44] ppocr INFO:         shuffle : True
+[2025/09/10 14:32:44] ppocr INFO:         use_shared_memory : True
+[2025/09/10 14:32:44] ppocr INFO: profiler_options : None
+[2025/09/10 14:32:44] ppocr INFO: train with paddle 3.2.0 and device Place(cpu)
+[2025/09/10 14:32:44] ppocr INFO: Initialize indexes of datasets:['train_data/rec_gt_train.txt']
+[2025/09/10 14:32:45] ppocr INFO: Initialize indexes of datasets:['train_data/rec_gt_val.txt']
