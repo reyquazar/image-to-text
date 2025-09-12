@@ -7,7 +7,7 @@ Global:
   save_epoch_step: 10
   eval_batch_step: [0, 2000]
   cal_metric_during_train: true
-  pretrained_model: ./text/typed_text/pretrain_models/cyrillic_PP-OCRv3_rec_train.tar
+  pretrained_model: ./text/typed_text/pretrain_models/best_accuracy
   checkpoints:
   save_inference_dir:
   use_visualdl: false
