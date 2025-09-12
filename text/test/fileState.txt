@@ -1,1 +1,2 @@
 test/MA-S-IV-Guidence-1_page-0001.jpg	1
+test/starostin_09.jpg	1
