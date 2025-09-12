@@ -2,9 +2,9 @@ import os
 from sklearn.model_selection import train_test_split
 
 
-rec_gt_txt = "text/typed_text/rec_gt.txt"
-train_output_file = "text/typed_text/train_list.txt"
-val_output_file = "text/typed_text/val_list.txt"
+rec_gt_txt = "text/test/rec_gt.txt"
+train_output_file = "text/test/train_list.txt"
+val_output_file = "text/test/val_list.txt"
 
 
 with open(rec_gt_txt, 'r', encoding='utf-8') as f:

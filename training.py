@@ -1,26 +1,26 @@
-# def create_vocabulary(input_file, output_file):
-#     unique_chars = set()
+def create_vocabulary(input_file, output_file):
+    unique_chars = set()
+
+    with open(input_file, 'r', encoding='utf-8') as f:
+        for line in f:
+            parts = line.strip().split('\t')
+            if len(parts) >= 2:
+                text = parts[1]
+                unique_chars.update(text)
+
+    sorted_chars = sorted(unique_chars)
+
+    with open(output_file, 'w', encoding='utf-8') as f:
+        for char in sorted_chars:
+            f.write(char + '\n')
+
+    print(f"Создан словарь: {output_file}")
+    print(f"Найдено уникальных символов: {len(sorted_chars)}")
+    print("Символы:", ''.join(sorted_chars))
 #
-#     with open(input_file, 'r', encoding='utf-8') as f:
-#         for line in f:
-#             parts = line.strip().split('\t')
-#             if len(parts) >= 2:
-#                 text = parts[1]
-#                 unique_chars.update(text)
-#
-#     sorted_chars = sorted(unique_chars)
-#
-#     with open(output_file, 'w', encoding='utf-8') as f:
-#         for char in sorted_chars:
-#             f.write(char + '\n')
-#
-#     print(f"Создан словарь: {output_file}")
-#     print(f"Найдено уникальных символов: {len(sorted_chars)}")
-#     print("Символы:", ''.join(sorted_chars))
-#
-#
-# input_file = 'text/typed_text/rec_gt.txt'  # Ваш файл с разметкой
-# output_file = 'text/typed_text/az_ru_dict.txt'  # Выходной файл словаря
+
+input_file = 'text/test/rec_gt.txt'  # Ваш файл с разметкой
+output_file = 'text/test/dict.txt'  # Выходной файл словаря
 # create_vocabulary(input_file, output_file)
 #
 # import os
@@ -48,17 +48,17 @@ import paddle
 import cv2
 import numpy as np
 
-# Проверка одного примера
-sample_line = "путь/к/изображению.jpg\tтекст"
-img_path, true_label = sample_line.split('\t')
-
-# Проверка изображения
-img = cv2.imread(img_path)
-print(f"Image shape: {img.shape}")
-print(f"True label: {true_label}")
-
-# Проверка словаря
-with open('./text/typed_text/az_ru_dict.txt', 'r', encoding='utf-8') as f:
-    chars = [line.strip() for line in f]
-print(f"Chars in dict: {len(chars)}")
-print(f"First 10 chars: {chars[:10]}")
+# # Проверка одного примера
+# sample_line = "путь/к/изображению.jpg\tтекст"
+# img_path, true_label = sample_line.split('\t')
+#
+# # Проверка изображения
+# img = cv2.imread(img_path)
+# print(f"Image shape: {img.shape}")
+# print(f"True label: {true_label}")
+#
+# # Проверка словаря
+# with open('./text/typed_text/az_ru_dict.txt', 'r', encoding='utf-8') as f:
+#     chars = [line.strip() for line in f]
+# print(f"Chars in dict: {len(chars)}")
+# print(f"First 10 chars: {chars[:10]}")
