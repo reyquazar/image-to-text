@@ -4,7 +4,7 @@ Global:
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output/
-  save_epoch_step: 3
+  save_epoch_step: 50
   eval_batch_step: [0, 1000]
   cal_metric_during_train: true
   pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
@@ -62,7 +62,7 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/
+    data_dir: ./text/typed_text/crop_img/
     label_file_list:
       - ./text/typed_text/train_list.txt
     ratio_list: [1.0]
@@ -85,7 +85,7 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/
+    data_dir: ./text/typed_text/crop_img/
     label_file_list:
       - ./text/typed_text/val_list.txt
     transforms:
