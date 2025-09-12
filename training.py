@@ -44,3 +44,21 @@
 #
 # check_images_exist()
 
+import paddle
+import cv2
+import numpy as np
+
+# Проверка одного примера
+sample_line = "путь/к/изображению.jpg\tтекст"
+img_path, true_label = sample_line.split('\t')
+
+# Проверка изображения
+img = cv2.imread(img_path)
+print(f"Image shape: {img.shape}")
+print(f"True label: {true_label}")
+
+# Проверка словаря
+with open('./text/typed_text/az_ru_dict.txt', 'r', encoding='utf-8') as f:
+    chars = [line.strip() for line in f]
+print(f"Chars in dict: {len(chars)}")
+print(f"First 10 chars: {chars[:10]}")
