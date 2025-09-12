@@ -7,7 +7,7 @@ Global:
   save_epoch_step: 10
   eval_batch_step: [0, 1000]
   cal_metric_during_train: true
-  pretrained_model: ./text/typed_text/pretrain_models/en_PP-OCRv3_rec_train/best_accuracy.pdparams
+  pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
   save_inference_dir:
   use_visualdl: false
@@ -24,7 +24,7 @@ Optimizer:
   beta2: 0.999
   lr:
     name: Cosine
-    learning_rate: 0.0001
+    learning_rate: 0.0005
     warmup_epoch: 2
   regularizer:
     name: L2
@@ -71,8 +71,18 @@ Train:
           img_mode: BGR
           channel_first: false
       - CTCLabelEncode:
-      - RecResizeImg:
+      - RecAug: # 1. Базовая аугментация (цвет, контраст, размытие)
+      - RecConAug: # 2. КРИТИЧЕСКИ ВАЖНО! Накладывает слова на другие фоны.
+          prob: 0.5    # Вероятность применения
+          ext_data_num: 1
+          image_shape: [3, 48, 320] # Целевой размер
+      - RandScaleToNet: # 3. НОВЫЙ ВАЖНЫЙ ЭЛЕМЕНТ! Умное масштабирование.
+          target_size: [3, 48, 320]
+          scale_range: [0.5, 2.0]   # Позволяет масштабировать изображение перед резизом
+      - RecResizeImg: # 4. Финализирующий резиз до нужного размера
           image_shape: [3, 48, 320]
+          # ДОБАВЬТЕ ЭТУ СТРОЧКУ ДЛЯ ШИРОКИХ ИЗОБРАЖЕНИЙ:
+          max_wh_ratio: 20 # Разрешает обрабатывать очень широкие изображения (по умолчанию ~8)
       - KeepKeys:
           keep_keys: ['image', 'label', 'length']
   loader:
