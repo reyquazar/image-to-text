@@ -28,8 +28,8 @@ def POCR(image):
 
 
 def PRec(image):
-    model = TextRecognition()
-    result = model.predict(image)
+    ocr = PaddleOCR(lang="az")
+    result = ocr.predict(image)
     return result
 
 
@@ -41,13 +41,13 @@ def PDet(image):
 
 def main():
     # image = 'img_5.png'
-    image_path = 'newData/test4.jpg'
+    image_path = 'text/typed_text/test4.jpg'
 
     result = ""
     # result = Pstructure(image)
-    # result = PRec(image)
+    result = PRec(image_path)
     # result = PDet(image)
-    result = POCR(image_path)
+    # result = POCR(image_path)
     # print(result)
     for res in result:
         res.save_to_img("output")
