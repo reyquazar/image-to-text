@@ -1,20 +1,20 @@
 Global:
   use_gpu: true
-  epoch_num: 100
+  epoch_num: 5
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output/
   save_epoch_step: 3
   eval_batch_step:
   - 0
-  - 2000
+  - 1000
   cal_metric_during_train: true
-  pretrained_model: ./cyrillic_PP-OCRv3_rec
+  pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints: null
   save_inference_dir: null
   use_visualdl: false
   infer_img: doc/imgs_words/ch/word_1.jpg
-  character_dict_path: train_data/custom_dict.txt
+  character_dict_path: ./text/typed_text/az_ru_dict.txt
   max_text_length: 25
   infer_mode: false
   use_space_char: true
@@ -25,8 +25,8 @@ Optimizer:
   beta2: 0.999
   lr:
     name: Cosine
-    learning_rate: 0.001
-    warmup_epoch: 5
+    learning_rate: 0.0005
+    warmup_epoch: 2
   regularizer:
     name: L2
     factor: 0.0005
@@ -39,7 +39,12 @@ Architecture:
     scale: 1
     pretrained: false
   Neck:
-    name: Im2Seq
+    name: SequenceEncoder
+    encoder_type: svtr
+    dims: 64
+    depth: 2
+    hidden_dims: 120
+    use_guide: false
   Head:
     name: CTCHead
     fc_decay: 1.0e-05
@@ -53,9 +58,9 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./
+    data_dir: ./text/typed_text/
     label_file_list:
-    - train_data/rec_gt_train.txt
+    - ./text/typed_text/train_list.txt
     ratio_list:
     - 1.0
     transforms:
@@ -75,16 +80,16 @@ Train:
         - length
   loader:
     shuffle: true
-    batch_size_per_card: 128
+    batch_size_per_card: 64
     drop_last: true
-    num_workers: 8
+    num_workers: 4
     use_shared_memory: true
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./
+    data_dir: ./text/typed_text/
     label_file_list:
-    - train_data/rec_gt_val.txt
+    - ./text/typed_text/val_list.txt
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -103,7 +108,7 @@ Eval:
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 128
-    num_workers: 4
+    batch_size_per_card: 64
+    num_workers: 2
     use_shared_memory: true
 profiler_options: null

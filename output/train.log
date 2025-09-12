@@ -351,3 +351,874 @@
 [2025/09/10 14:32:44] ppocr INFO: train with paddle 3.2.0 and device Place(cpu)
 [2025/09/10 14:32:44] ppocr INFO: Initialize indexes of datasets:['train_data/rec_gt_train.txt']
 [2025/09/10 14:32:45] ppocr INFO: Initialize indexes of datasets:['train_data/rec_gt_val.txt']
+[2025/09/12 10:46:22] ppocr INFO: Architecture : 
+[2025/09/12 10:46:22] ppocr INFO:     Backbone : 
+[2025/09/12 10:46:22] ppocr INFO:         name : PPLCNetV3
+[2025/09/12 10:46:22] ppocr INFO:         pretrained : False
+[2025/09/12 10:46:22] ppocr INFO:         scale : 1
+[2025/09/12 10:46:22] ppocr INFO:     Head : 
+[2025/09/12 10:46:22] ppocr INFO:         fc_decay : 1e-05
+[2025/09/12 10:46:22] ppocr INFO:         name : CTCHead
+[2025/09/12 10:46:22] ppocr INFO:     Neck : 
+[2025/09/12 10:46:22] ppocr INFO:         depth : 2
+[2025/09/12 10:46:22] ppocr INFO:         dims : 64
+[2025/09/12 10:46:22] ppocr INFO:         encoder_type : svtr
+[2025/09/12 10:46:22] ppocr INFO:         hidden_dims : 120
+[2025/09/12 10:46:22] ppocr INFO:         name : SequenceEncoder
+[2025/09/12 10:46:22] ppocr INFO:         use_guide : False
+[2025/09/12 10:46:22] ppocr INFO:     Transform : None
+[2025/09/12 10:46:22] ppocr INFO:     algorithm : SVTR
+[2025/09/12 10:46:22] ppocr INFO:     model_type : rec
+[2025/09/12 10:46:22] ppocr INFO: Eval : 
+[2025/09/12 10:46:22] ppocr INFO:     dataset : 
+[2025/09/12 10:46:22] ppocr INFO:         data_dir : ./text/typed_text/
+[2025/09/12 10:46:22] ppocr INFO:         label_file_list : ['./text/typed_text/val_list.txt']
+[2025/09/12 10:46:22] ppocr INFO:         name : SimpleDataSet
+[2025/09/12 10:46:22] ppocr INFO:         transforms : 
+[2025/09/12 10:46:22] ppocr INFO:             DecodeImage : 
+[2025/09/12 10:46:22] ppocr INFO:                 channel_first : False
+[2025/09/12 10:46:22] ppocr INFO:                 img_mode : BGR
+[2025/09/12 10:46:22] ppocr INFO:             CTCLabelEncode : None
+[2025/09/12 10:46:22] ppocr INFO:             RecResizeImg : 
+[2025/09/12 10:46:22] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/12 10:46:22] ppocr INFO:             KeepKeys : 
+[2025/09/12 10:46:22] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/12 10:46:22] ppocr INFO:     loader : 
+[2025/09/12 10:46:22] ppocr INFO:         batch_size_per_card : 64
+[2025/09/12 10:46:22] ppocr INFO:         drop_last : False
+[2025/09/12 10:46:22] ppocr INFO:         num_workers : 2
+[2025/09/12 10:46:22] ppocr INFO:         shuffle : False
+[2025/09/12 10:46:22] ppocr INFO:         use_shared_memory : True
+[2025/09/12 10:46:22] ppocr INFO: Global : 
+[2025/09/12 10:46:22] ppocr INFO:     cal_metric_during_train : True
+[2025/09/12 10:46:22] ppocr INFO:     character_dict_path : ./text/typed_text/az_ru_dict.txt
+[2025/09/12 10:46:22] ppocr INFO:     checkpoints : None
+[2025/09/12 10:46:22] ppocr INFO:     distributed : False
+[2025/09/12 10:46:22] ppocr INFO:     epoch_num : 5
+[2025/09/12 10:46:22] ppocr INFO:     eval_batch_step : [0, 1000]
+[2025/09/12 10:46:22] ppocr INFO:     infer_img : doc/imgs_words/ch/word_1.jpg
+[2025/09/12 10:46:22] ppocr INFO:     infer_mode : False
+[2025/09/12 10:46:22] ppocr INFO:     log_smooth_window : 20
+[2025/09/12 10:46:22] ppocr INFO:     max_text_length : 25
+[2025/09/12 10:46:22] ppocr INFO:     pretrained_model : ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
+[2025/09/12 10:46:22] ppocr INFO:     print_batch_step : 10
+[2025/09/12 10:46:22] ppocr INFO:     save_epoch_step : 3
+[2025/09/12 10:46:22] ppocr INFO:     save_inference_dir : None
+[2025/09/12 10:46:22] ppocr INFO:     save_model_dir : ./output/
+[2025/09/12 10:46:22] ppocr INFO:     save_res_path : ./output/predicts_rec.txt
+[2025/09/12 10:46:22] ppocr INFO:     use_gpu : True
+[2025/09/12 10:46:22] ppocr INFO:     use_space_char : True
+[2025/09/12 10:46:22] ppocr INFO:     use_visualdl : False
+[2025/09/12 10:46:22] ppocr INFO: Loss : 
+[2025/09/12 10:46:22] ppocr INFO:     name : CTCLoss
+[2025/09/12 10:46:22] ppocr INFO: Metric : 
+[2025/09/12 10:46:22] ppocr INFO:     main_indicator : acc
+[2025/09/12 10:46:22] ppocr INFO:     name : RecMetric
+[2025/09/12 10:46:22] ppocr INFO: Optimizer : 
+[2025/09/12 10:46:22] ppocr INFO:     beta1 : 0.9
+[2025/09/12 10:46:22] ppocr INFO:     beta2 : 0.999
+[2025/09/12 10:46:22] ppocr INFO:     lr : 
+[2025/09/12 10:46:22] ppocr INFO:         learning_rate : 0.0005
+[2025/09/12 10:46:22] ppocr INFO:         name : Cosine
+[2025/09/12 10:46:22] ppocr INFO:         warmup_epoch : 2
+[2025/09/12 10:46:22] ppocr INFO:     name : Adam
+[2025/09/12 10:46:22] ppocr INFO:     regularizer : 
+[2025/09/12 10:46:22] ppocr INFO:         factor : 0.0005
+[2025/09/12 10:46:22] ppocr INFO:         name : L2
+[2025/09/12 10:46:22] ppocr INFO: PostProcess : 
+[2025/09/12 10:46:22] ppocr INFO:     name : CTCLabelDecode
+[2025/09/12 10:46:22] ppocr INFO: Train : 
+[2025/09/12 10:46:22] ppocr INFO:     dataset : 
+[2025/09/12 10:46:22] ppocr INFO:         data_dir : ./text/typed_text/
+[2025/09/12 10:46:22] ppocr INFO:         label_file_list : ['./text/typed_text/train_list.txt']
+[2025/09/12 10:46:22] ppocr INFO:         name : SimpleDataSet
+[2025/09/12 10:46:22] ppocr INFO:         ratio_list : [1.0]
+[2025/09/12 10:46:22] ppocr INFO:         transforms : 
+[2025/09/12 10:46:22] ppocr INFO:             DecodeImage : 
+[2025/09/12 10:46:22] ppocr INFO:                 channel_first : False
+[2025/09/12 10:46:22] ppocr INFO:                 img_mode : BGR
+[2025/09/12 10:46:22] ppocr INFO:             CTCLabelEncode : None
+[2025/09/12 10:46:22] ppocr INFO:             RecResizeImg : 
+[2025/09/12 10:46:22] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/12 10:46:22] ppocr INFO:             KeepKeys : 
+[2025/09/12 10:46:22] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/12 10:46:22] ppocr INFO:     loader : 
+[2025/09/12 10:46:22] ppocr INFO:         batch_size_per_card : 64
+[2025/09/12 10:46:22] ppocr INFO:         drop_last : True
+[2025/09/12 10:46:22] ppocr INFO:         num_workers : 4
+[2025/09/12 10:46:22] ppocr INFO:         shuffle : True
+[2025/09/12 10:46:22] ppocr INFO:         use_shared_memory : True
+[2025/09/12 10:46:22] ppocr INFO: profiler_options : None
+[2025/09/12 10:46:22] ppocr INFO: train with paddle 2.6.2 and device Place(gpu:0)
+[2025/09/12 10:46:22] ppocr INFO: Initialize indexes of datasets:['./text/typed_text/train_list.txt']
+[2025/09/12 10:46:22] ppocr INFO: Initialize indexes of datasets:['./text/typed_text/val_list.txt']
+[2025/09/12 10:46:23] ppocr INFO: train dataloader has 7 iters
+[2025/09/12 10:46:23] ppocr INFO: valid dataloader has 1 iters
+[2025/09/12 10:48:54] ppocr INFO: Architecture : 
+[2025/09/12 10:48:54] ppocr INFO:     Backbone : 
+[2025/09/12 10:48:54] ppocr INFO:         name : PPLCNetV3
+[2025/09/12 10:48:54] ppocr INFO:         pretrained : False
+[2025/09/12 10:48:54] ppocr INFO:         scale : 1
+[2025/09/12 10:48:54] ppocr INFO:     Head : 
+[2025/09/12 10:48:54] ppocr INFO:         fc_decay : 1e-05
+[2025/09/12 10:48:54] ppocr INFO:         name : CTCHead
+[2025/09/12 10:48:54] ppocr INFO:     Neck : 
+[2025/09/12 10:48:54] ppocr INFO:         depth : 2
+[2025/09/12 10:48:54] ppocr INFO:         dims : 64
+[2025/09/12 10:48:54] ppocr INFO:         encoder_type : svtr
+[2025/09/12 10:48:54] ppocr INFO:         hidden_dims : 120
+[2025/09/12 10:48:54] ppocr INFO:         name : SequenceEncoder
+[2025/09/12 10:48:54] ppocr INFO:         use_guide : False
+[2025/09/12 10:48:54] ppocr INFO:     Transform : None
+[2025/09/12 10:48:54] ppocr INFO:     algorithm : SVTR
+[2025/09/12 10:48:54] ppocr INFO:     model_type : rec
+[2025/09/12 10:48:54] ppocr INFO: Eval : 
+[2025/09/12 10:48:54] ppocr INFO:     dataset : 
+[2025/09/12 10:48:54] ppocr INFO:         data_dir : ./text/typed_text/
+[2025/09/12 10:48:54] ppocr INFO:         label_file_list : ['./text/typed_text/val_list.txt']
+[2025/09/12 10:48:54] ppocr INFO:         name : SimpleDataSet
+[2025/09/12 10:48:54] ppocr INFO:         transforms : 
+[2025/09/12 10:48:54] ppocr INFO:             DecodeImage : 
+[2025/09/12 10:48:54] ppocr INFO:                 channel_first : False
+[2025/09/12 10:48:54] ppocr INFO:                 img_mode : BGR
+[2025/09/12 10:48:54] ppocr INFO:             CTCLabelEncode : None
+[2025/09/12 10:48:54] ppocr INFO:             RecResizeImg : 
+[2025/09/12 10:48:54] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/12 10:48:54] ppocr INFO:             KeepKeys : 
+[2025/09/12 10:48:54] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/12 10:48:54] ppocr INFO:     loader : 
+[2025/09/12 10:48:54] ppocr INFO:         batch_size_per_card : 64
+[2025/09/12 10:48:54] ppocr INFO:         drop_last : False
+[2025/09/12 10:48:54] ppocr INFO:         num_workers : 2
+[2025/09/12 10:48:54] ppocr INFO:         shuffle : False
+[2025/09/12 10:48:54] ppocr INFO:         use_shared_memory : True
+[2025/09/12 10:48:54] ppocr INFO: Global : 
+[2025/09/12 10:48:54] ppocr INFO:     cal_metric_during_train : True
+[2025/09/12 10:48:54] ppocr INFO:     character_dict_path : ./text/typed_text/az_ru_dict.txt
+[2025/09/12 10:48:54] ppocr INFO:     checkpoints : None
+[2025/09/12 10:48:54] ppocr INFO:     distributed : False
+[2025/09/12 10:48:54] ppocr INFO:     epoch_num : 5
+[2025/09/12 10:48:54] ppocr INFO:     eval_batch_step : [0, 1000]
+[2025/09/12 10:48:54] ppocr INFO:     infer_img : doc/imgs_words/ch/word_1.jpg
+[2025/09/12 10:48:54] ppocr INFO:     infer_mode : False
+[2025/09/12 10:48:54] ppocr INFO:     log_smooth_window : 20
+[2025/09/12 10:48:54] ppocr INFO:     max_text_length : 25
+[2025/09/12 10:48:54] ppocr INFO:     pretrained_model : ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
+[2025/09/12 10:48:54] ppocr INFO:     print_batch_step : 10
+[2025/09/12 10:48:54] ppocr INFO:     save_epoch_step : 3
+[2025/09/12 10:48:54] ppocr INFO:     save_inference_dir : None
+[2025/09/12 10:48:54] ppocr INFO:     save_model_dir : ./output/
+[2025/09/12 10:48:54] ppocr INFO:     save_res_path : ./output/predicts_rec.txt
+[2025/09/12 10:48:54] ppocr INFO:     use_gpu : True
+[2025/09/12 10:48:54] ppocr INFO:     use_space_char : True
+[2025/09/12 10:48:54] ppocr INFO:     use_visualdl : False
+[2025/09/12 10:48:54] ppocr INFO: Loss : 
+[2025/09/12 10:48:54] ppocr INFO:     name : CTCLoss
+[2025/09/12 10:48:54] ppocr INFO: Metric : 
+[2025/09/12 10:48:54] ppocr INFO:     main_indicator : acc
+[2025/09/12 10:48:54] ppocr INFO:     name : RecMetric
+[2025/09/12 10:48:54] ppocr INFO: Optimizer : 
+[2025/09/12 10:48:54] ppocr INFO:     beta1 : 0.9
+[2025/09/12 10:48:54] ppocr INFO:     beta2 : 0.999
+[2025/09/12 10:48:54] ppocr INFO:     lr : 
+[2025/09/12 10:48:54] ppocr INFO:         learning_rate : 0.0005
+[2025/09/12 10:48:54] ppocr INFO:         name : Cosine
+[2025/09/12 10:48:54] ppocr INFO:         warmup_epoch : 2
+[2025/09/12 10:48:54] ppocr INFO:     name : Adam
+[2025/09/12 10:48:54] ppocr INFO:     regularizer : 
+[2025/09/12 10:48:54] ppocr INFO:         factor : 0.0005
+[2025/09/12 10:48:54] ppocr INFO:         name : L2
+[2025/09/12 10:48:54] ppocr INFO: PostProcess : 
+[2025/09/12 10:48:54] ppocr INFO:     name : CTCLabelDecode
+[2025/09/12 10:48:54] ppocr INFO: Train : 
+[2025/09/12 10:48:54] ppocr INFO:     dataset : 
+[2025/09/12 10:48:54] ppocr INFO:         data_dir : ./text/typed_text/
+[2025/09/12 10:48:54] ppocr INFO:         label_file_list : ['./text/typed_text/train_list.txt']
+[2025/09/12 10:48:54] ppocr INFO:         name : SimpleDataSet
+[2025/09/12 10:48:54] ppocr INFO:         ratio_list : [1.0]
+[2025/09/12 10:48:54] ppocr INFO:         transforms : 
+[2025/09/12 10:48:54] ppocr INFO:             DecodeImage : 
+[2025/09/12 10:48:54] ppocr INFO:                 channel_first : False
+[2025/09/12 10:48:54] ppocr INFO:                 img_mode : BGR
+[2025/09/12 10:48:54] ppocr INFO:             CTCLabelEncode : None
+[2025/09/12 10:48:54] ppocr INFO:             RecResizeImg : 
+[2025/09/12 10:48:54] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/12 10:48:54] ppocr INFO:             KeepKeys : 
+[2025/09/12 10:48:54] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/12 10:48:54] ppocr INFO:     loader : 
+[2025/09/12 10:48:54] ppocr INFO:         batch_size_per_card : 64
+[2025/09/12 10:48:54] ppocr INFO:         drop_last : True
+[2025/09/12 10:48:54] ppocr INFO:         num_workers : 4
+[2025/09/12 10:48:54] ppocr INFO:         shuffle : True
+[2025/09/12 10:48:54] ppocr INFO:         use_shared_memory : True
+[2025/09/12 10:48:54] ppocr INFO: profiler_options : None
+[2025/09/12 10:48:54] ppocr INFO: train with paddle 2.6.2 and device Place(gpu:0)
+[2025/09/12 10:48:54] ppocr INFO: Initialize indexes of datasets:['./text/typed_text/train_list.txt']
+[2025/09/12 10:48:54] ppocr INFO: Initialize indexes of datasets:['./text/typed_text/val_list.txt']
+[2025/09/12 10:48:54] ppocr INFO: train dataloader has 7 iters
+[2025/09/12 10:48:54] ppocr INFO: valid dataloader has 1 iters
+[2025/09/12 10:52:51] ppocr INFO: Architecture : 
+[2025/09/12 10:52:51] ppocr INFO:     Backbone : 
+[2025/09/12 10:52:51] ppocr INFO:         name : PPLCNetV3
+[2025/09/12 10:52:51] ppocr INFO:         pretrained : False
+[2025/09/12 10:52:51] ppocr INFO:         scale : 1
+[2025/09/12 10:52:51] ppocr INFO:     Head : 
+[2025/09/12 10:52:51] ppocr INFO:         fc_decay : 1e-05
+[2025/09/12 10:52:51] ppocr INFO:         name : CTCHead
+[2025/09/12 10:52:51] ppocr INFO:     Neck : 
+[2025/09/12 10:52:51] ppocr INFO:         depth : 2
+[2025/09/12 10:52:51] ppocr INFO:         dims : 64
+[2025/09/12 10:52:51] ppocr INFO:         encoder_type : svtr
+[2025/09/12 10:52:51] ppocr INFO:         hidden_dims : 120
+[2025/09/12 10:52:51] ppocr INFO:         name : SequenceEncoder
+[2025/09/12 10:52:51] ppocr INFO:         use_guide : False
+[2025/09/12 10:52:51] ppocr INFO:     Transform : None
+[2025/09/12 10:52:51] ppocr INFO:     algorithm : SVTR
+[2025/09/12 10:52:51] ppocr INFO:     model_type : rec
+[2025/09/12 10:52:51] ppocr INFO: Eval : 
+[2025/09/12 10:52:51] ppocr INFO:     dataset : 
+[2025/09/12 10:52:51] ppocr INFO:         data_dir : ./text/typed_text/
+[2025/09/12 10:52:51] ppocr INFO:         label_file_list : ['./text/typed_text/val_list.txt']
+[2025/09/12 10:52:51] ppocr INFO:         name : SimpleDataSet
+[2025/09/12 10:52:51] ppocr INFO:         transforms : 
+[2025/09/12 10:52:51] ppocr INFO:             DecodeImage : 
+[2025/09/12 10:52:51] ppocr INFO:                 channel_first : False
+[2025/09/12 10:52:51] ppocr INFO:                 img_mode : BGR
+[2025/09/12 10:52:51] ppocr INFO:             CTCLabelEncode : None
+[2025/09/12 10:52:51] ppocr INFO:             RecResizeImg : 
+[2025/09/12 10:52:51] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/12 10:52:51] ppocr INFO:             KeepKeys : 
+[2025/09/12 10:52:51] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/12 10:52:51] ppocr INFO:     loader : 
+[2025/09/12 10:52:51] ppocr INFO:         batch_size_per_card : 64
+[2025/09/12 10:52:51] ppocr INFO:         drop_last : False
+[2025/09/12 10:52:51] ppocr INFO:         num_workers : 2
+[2025/09/12 10:52:51] ppocr INFO:         shuffle : False
+[2025/09/12 10:52:51] ppocr INFO:         use_shared_memory : True
+[2025/09/12 10:52:51] ppocr INFO: Global : 
+[2025/09/12 10:52:51] ppocr INFO:     cal_metric_during_train : True
+[2025/09/12 10:52:51] ppocr INFO:     character_dict_path : ./text/typed_text/az_ru_dict.txt
+[2025/09/12 10:52:51] ppocr INFO:     checkpoints : None
+[2025/09/12 10:52:51] ppocr INFO:     distributed : False
+[2025/09/12 10:52:51] ppocr INFO:     epoch_num : 5
+[2025/09/12 10:52:51] ppocr INFO:     eval_batch_step : [0, 1000]
+[2025/09/12 10:52:51] ppocr INFO:     infer_img : doc/imgs_words/ch/word_1.jpg
+[2025/09/12 10:52:51] ppocr INFO:     infer_mode : False
+[2025/09/12 10:52:51] ppocr INFO:     log_smooth_window : 20
+[2025/09/12 10:52:51] ppocr INFO:     max_text_length : 25
+[2025/09/12 10:52:51] ppocr INFO:     pretrained_model : ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
+[2025/09/12 10:52:51] ppocr INFO:     print_batch_step : 10
+[2025/09/12 10:52:51] ppocr INFO:     save_epoch_step : 3
+[2025/09/12 10:52:51] ppocr INFO:     save_inference_dir : None
+[2025/09/12 10:52:51] ppocr INFO:     save_model_dir : ./output/
+[2025/09/12 10:52:51] ppocr INFO:     save_res_path : ./output/predicts_rec.txt
+[2025/09/12 10:52:51] ppocr INFO:     use_gpu : True
+[2025/09/12 10:52:51] ppocr INFO:     use_space_char : True
+[2025/09/12 10:52:51] ppocr INFO:     use_visualdl : False
+[2025/09/12 10:52:51] ppocr INFO: Loss : 
+[2025/09/12 10:52:51] ppocr INFO:     name : CTCLoss
+[2025/09/12 10:52:51] ppocr INFO: Metric : 
+[2025/09/12 10:52:51] ppocr INFO:     main_indicator : acc
+[2025/09/12 10:52:51] ppocr INFO:     name : RecMetric
+[2025/09/12 10:52:51] ppocr INFO: Optimizer : 
+[2025/09/12 10:52:51] ppocr INFO:     beta1 : 0.9
+[2025/09/12 10:52:51] ppocr INFO:     beta2 : 0.999
+[2025/09/12 10:52:51] ppocr INFO:     lr : 
+[2025/09/12 10:52:51] ppocr INFO:         learning_rate : 0.0005
+[2025/09/12 10:52:51] ppocr INFO:         name : Cosine
+[2025/09/12 10:52:51] ppocr INFO:         warmup_epoch : 2
+[2025/09/12 10:52:51] ppocr INFO:     name : Adam
+[2025/09/12 10:52:51] ppocr INFO:     regularizer : 
+[2025/09/12 10:52:51] ppocr INFO:         factor : 0.0005
+[2025/09/12 10:52:51] ppocr INFO:         name : L2
+[2025/09/12 10:52:51] ppocr INFO: PostProcess : 
+[2025/09/12 10:52:51] ppocr INFO:     name : CTCLabelDecode
+[2025/09/12 10:52:51] ppocr INFO: Train : 
+[2025/09/12 10:52:51] ppocr INFO:     dataset : 
+[2025/09/12 10:52:51] ppocr INFO:         data_dir : ./text/typed_text/
+[2025/09/12 10:52:51] ppocr INFO:         label_file_list : ['./text/typed_text/train_list.txt']
+[2025/09/12 10:52:51] ppocr INFO:         name : SimpleDataSet
+[2025/09/12 10:52:51] ppocr INFO:         ratio_list : [1.0]
+[2025/09/12 10:52:51] ppocr INFO:         transforms : 
+[2025/09/12 10:52:51] ppocr INFO:             DecodeImage : 
+[2025/09/12 10:52:51] ppocr INFO:                 channel_first : False
+[2025/09/12 10:52:51] ppocr INFO:                 img_mode : BGR
+[2025/09/12 10:52:51] ppocr INFO:             CTCLabelEncode : None
+[2025/09/12 10:52:51] ppocr INFO:             RecResizeImg : 
+[2025/09/12 10:52:51] ppocr INFO:                 image_shape : [3, 48, 320]
+[2025/09/12 10:52:51] ppocr INFO:             KeepKeys : 
+[2025/09/12 10:52:51] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/09/12 10:52:51] ppocr INFO:     loader : 
+[2025/09/12 10:52:51] ppocr INFO:         batch_size_per_card : 64
+[2025/09/12 10:52:51] ppocr INFO:         drop_last : True
+[2025/09/12 10:52:51] ppocr INFO:         num_workers : 4
+[2025/09/12 10:52:51] ppocr INFO:         shuffle : True
+[2025/09/12 10:52:51] ppocr INFO:         use_shared_memory : True
+[2025/09/12 10:52:51] ppocr INFO: profiler_options : None
+[2025/09/12 10:52:51] ppocr INFO: train with paddle 2.6.2 and device Place(gpu:0)
+[2025/09/12 10:52:51] ppocr INFO: Initialize indexes of datasets:['./text/typed_text/train_list.txt']
+[2025/09/12 10:52:51] ppocr INFO: Initialize indexes of datasets:['./text/typed_text/val_list.txt']
+[2025/09/12 10:52:51] ppocr INFO: train dataloader has 7 iters
+[2025/09/12 10:52:51] ppocr INFO: valid dataloader has 1 iters
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem2a.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem2a.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem2a.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem2a.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem2a.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem2b.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem2b.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem2b.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem2b.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem2b.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem3.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem3.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem3.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem3.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem3.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem4.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem4.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem4.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem4.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stem.stem4.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.downsample.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.downsample.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.downsample.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.downsample.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.downsample.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.0.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.0.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.0.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.0.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.0.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.3.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.3.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.3.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.3.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.3.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.4.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.4.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.4.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.4.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.4.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.5.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.5.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.5.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.5.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.layers.5.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.aggregation_squeeze_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.aggregation_squeeze_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.aggregation_squeeze_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.aggregation_squeeze_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.aggregation_squeeze_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.aggregation_excitation_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.aggregation_excitation_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.aggregation_excitation_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.aggregation_excitation_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.0.blocks.0.aggregation_excitation_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.downsample.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.downsample.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.downsample.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.downsample.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.downsample.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.0.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.0.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.0.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.0.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.0.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.3.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.3.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.3.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.3.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.3.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.4.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.4.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.4.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.4.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.4.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.5.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.5.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.5.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.5.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.layers.5.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.aggregation_squeeze_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.aggregation_squeeze_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.aggregation_squeeze_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.aggregation_squeeze_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.aggregation_squeeze_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.aggregation_excitation_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.aggregation_excitation_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.aggregation_excitation_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.aggregation_excitation_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.1.blocks.0.aggregation_excitation_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.downsample.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.downsample.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.downsample.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.downsample.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.downsample.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.0.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.0.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.0.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.0.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.0.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.0.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.0.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.0.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.0.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.0.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.1.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.1.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.1.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.1.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.1.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.1.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.1.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.1.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.1.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.1.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.2.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.2.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.2.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.2.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.2.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.2.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.2.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.2.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.2.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.2.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.3.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.3.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.3.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.3.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.3.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.3.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.3.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.3.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.3.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.3.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.4.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.4.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.4.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.4.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.4.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.4.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.4.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.4.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.4.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.4.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.5.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.5.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.5.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.5.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.5.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.5.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.5.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.5.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.5.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.layers.5.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.aggregation_squeeze_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.aggregation_squeeze_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.aggregation_squeeze_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.aggregation_squeeze_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.aggregation_squeeze_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.aggregation_excitation_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.aggregation_excitation_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.aggregation_excitation_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.aggregation_excitation_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.0.aggregation_excitation_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.0.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.0.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.0.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.0.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.0.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.0.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.0.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.0.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.0.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.0.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.1.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.1.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.1.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.1.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.1.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.1.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.1.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.1.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.1.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.1.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.2.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.2.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.2.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.2.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.2.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.2.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.2.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.2.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.2.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.2.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.3.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.3.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.3.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.3.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.3.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.3.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.3.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.3.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.3.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.3.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.4.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.4.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.4.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.4.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.4.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.4.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.4.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.4.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.4.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.4.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.5.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.5.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.5.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.5.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.5.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.5.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.5.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.5.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.5.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.layers.5.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.aggregation_squeeze_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.aggregation_squeeze_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.aggregation_squeeze_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.aggregation_squeeze_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.aggregation_squeeze_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.aggregation_excitation_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.aggregation_excitation_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.aggregation_excitation_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.aggregation_excitation_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.1.aggregation_excitation_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.0.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.0.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.0.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.0.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.0.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.0.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.0.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.0.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.0.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.0.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.1.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.1.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.1.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.1.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.1.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.1.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.1.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.1.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.1.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.1.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.2.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.2.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.2.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.2.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.2.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.2.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.2.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.2.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.2.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.2.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.3.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.3.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.3.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.3.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.3.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.3.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.3.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.3.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.3.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.3.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.4.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.4.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.4.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.4.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.4.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.4.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.4.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.4.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.4.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.4.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.5.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.5.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.5.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.5.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.5.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.5.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.5.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.5.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.5.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.layers.5.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.aggregation_squeeze_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.aggregation_squeeze_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.aggregation_squeeze_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.aggregation_squeeze_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.aggregation_squeeze_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.aggregation_excitation_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.aggregation_excitation_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.aggregation_excitation_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.aggregation_excitation_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.2.blocks.2.aggregation_excitation_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.downsample.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.downsample.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.downsample.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.downsample.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.downsample.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.0.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.0.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.0.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.0.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.0.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.0.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.0.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.0.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.0.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.0.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.1.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.1.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.1.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.1.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.1.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.1.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.1.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.1.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.1.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.1.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.2.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.2.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.2.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.2.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.2.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.2.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.2.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.2.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.2.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.2.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.3.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.3.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.3.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.3.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.3.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.3.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.3.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.3.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.3.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.3.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.4.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.4.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.4.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.4.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.4.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.4.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.4.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.4.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.4.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.4.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.5.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.5.conv1.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.5.conv1.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.5.conv1.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.5.conv1.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.5.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.5.conv2.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.5.conv2.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.5.conv2.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.layers.5.conv2.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.aggregation_squeeze_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.aggregation_squeeze_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.aggregation_squeeze_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.aggregation_squeeze_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.aggregation_squeeze_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.aggregation_excitation_conv.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.aggregation_excitation_conv.bn.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.aggregation_excitation_conv.bn.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.aggregation_excitation_conv.bn._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.stages.3.blocks.0.aggregation_excitation_conv.bn._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.last_conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.fc.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params backbone.fc.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1.norm.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1.norm.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1.norm._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1.norm._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv2.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv2.norm.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv2.norm.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv2.norm._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv2.norm._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.norm1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.norm1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mixer.qkv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mixer.qkv.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mixer.proj.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mixer.proj.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.norm2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.norm2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mlp.fc1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mlp.fc1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mlp.fc2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mlp.fc2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.norm1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.norm1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mixer.qkv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mixer.qkv.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mixer.proj.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mixer.proj.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.norm2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.norm2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mlp.fc1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mlp.fc1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mlp.fc2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mlp.fc2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.norm.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.norm.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv3.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv3.norm.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv3.norm.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv3.norm._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv3.norm._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv4.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv4.norm.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv4.norm.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv4.norm._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv4.norm._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1x1.conv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1x1.norm.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1x1.norm.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1x1.norm._mean not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1x1.norm._variance not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_head.fc.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.ctc_head.fc.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.before_gtc.1.fc.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.embedding.embedding.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.positional_encoding.pe not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.self_attn.qkv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.self_attn.qkv.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.self_attn.out_proj.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.self_attn.out_proj.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.norm1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.norm1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.cross_attn.q.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.cross_attn.q.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.cross_attn.kv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.cross_attn.kv.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.cross_attn.out_proj.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.cross_attn.out_proj.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.norm2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.norm2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.mlp.fc1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.mlp.fc1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.mlp.fc2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.mlp.fc2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.norm3.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.0.norm3.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.self_attn.qkv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.self_attn.qkv.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.self_attn.out_proj.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.self_attn.out_proj.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.norm1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.norm1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.cross_attn.q.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.cross_attn.q.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.cross_attn.kv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.cross_attn.kv.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.cross_attn.out_proj.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.cross_attn.out_proj.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.norm2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.norm2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.mlp.fc1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.mlp.fc1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.mlp.fc2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.mlp.fc2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.norm3.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.1.norm3.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.self_attn.qkv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.self_attn.qkv.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.self_attn.out_proj.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.self_attn.out_proj.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.norm1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.norm1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.cross_attn.q.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.cross_attn.q.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.cross_attn.kv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.cross_attn.kv.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.cross_attn.out_proj.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.cross_attn.out_proj.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.norm2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.norm2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.mlp.fc1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.mlp.fc1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.mlp.fc2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.mlp.fc2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.norm3.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.2.norm3.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.self_attn.qkv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.self_attn.qkv.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.self_attn.out_proj.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.self_attn.out_proj.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.norm1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.norm1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.cross_attn.q.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.cross_attn.q.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.cross_attn.kv.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.cross_attn.kv.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.cross_attn.out_proj.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.cross_attn.out_proj.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.norm2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.norm2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.mlp.fc1.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.mlp.fc1.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.mlp.fc2.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.mlp.fc2.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.norm3.weight not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.decoder.3.norm3.bias not in model
+[2025/09/12 10:52:52] ppocr WARNING: The pretrained params head.gtc_head.tgt_word_prj.weight not in model
+[2025/09/12 10:52:52] ppocr INFO: load pretrain successful from ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained
+[2025/09/12 10:52:52] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 1000 iterations
+[2025/09/12 10:53:00] ppocr INFO: epoch: [1/5], global_step: 7, lr: 0.000107, acc: 0.000000, norm_edit_dis: 0.033088, loss: 176.985214, avg_reader_cost: 0.02447 s, avg_batch_cost: 0.75826 s, avg_samples: 44.8, ips: 59.08230 samples/s, eta: 0:00:30, max_mem_reserved: 12220 MB, max_mem_allocated: 11873 MB
+[2025/09/12 10:53:00] ppocr INFO: save model in ./output/latest
+[2025/09/12 10:53:03] ppocr INFO: epoch: [2/5], global_step: 10, lr: 0.000161, acc: 0.000000, norm_edit_dis: 0.033697, loss: 174.283340, avg_reader_cost: 0.05181 s, avg_batch_cost: 0.33122 s, avg_samples: 19.2, ips: 57.96806 samples/s, eta: 0:00:27, max_mem_reserved: 12220 MB, max_mem_allocated: 11873 MB
+[2025/09/12 10:53:07] ppocr INFO: epoch: [2/5], global_step: 14, lr: 0.000232, acc: 0.000000, norm_edit_dis: 0.033194, loss: 170.983238, avg_reader_cost: 0.00125 s, avg_batch_cost: 0.36678 s, avg_samples: 25.6, ips: 69.79631 samples/s, eta: 0:00:21, max_mem_reserved: 12220 MB, max_mem_allocated: 11873 MB
+[2025/09/12 10:53:07] ppocr INFO: save model in ./output/latest
+[2025/09/12 10:53:13] ppocr INFO: epoch: [3/5], global_step: 20, lr: 0.000339, acc: 0.000000, norm_edit_dis: 0.032861, loss: 166.937256, avg_reader_cost: 0.05460 s, avg_batch_cost: 0.63012 s, avg_samples: 38.4, ips: 60.94057 samples/s, eta: 0:00:15, max_mem_reserved: 12220 MB, max_mem_allocated: 11873 MB
+[2025/09/12 10:53:14] ppocr INFO: epoch: [3/5], global_step: 21, lr: 0.000375, acc: 0.000000, norm_edit_dis: 0.032861, loss: 165.863121, avg_reader_cost: 0.00030 s, avg_batch_cost: 0.09830 s, avg_samples: 6.4, ips: 65.10544 samples/s, eta: 0:00:14, max_mem_reserved: 12220 MB, max_mem_allocated: 11873 MB
+[2025/09/12 10:53:14] ppocr INFO: save model in ./output/latest
+[2025/09/12 10:53:15] ppocr INFO: save model in ./output/iter_epoch_3
+[2025/09/12 10:53:21] ppocr INFO: epoch: [4/5], global_step: 28, lr: 0.000433, acc: 0.000000, norm_edit_dis: 0.034625, loss: 156.230247, avg_reader_cost: 0.08782 s, avg_batch_cost: 0.72921 s, avg_samples: 44.8, ips: 61.43667 samples/s, eta: 0:00:07, max_mem_reserved: 12220 MB, max_mem_allocated: 11873 MB
+[2025/09/12 10:53:22] ppocr INFO: save model in ./output/latest
+[2025/09/12 10:53:24] ppocr INFO: epoch: [5/5], global_step: 30, lr: 0.000433, acc: 0.000000, norm_edit_dis: 0.034625, loss: 153.839767, avg_reader_cost: 0.05662 s, avg_batch_cost: 0.23860 s, avg_samples: 12.8, ips: 53.64718 samples/s, eta: 0:00:05, max_mem_reserved: 12220 MB, max_mem_allocated: 11873 MB
+[2025/09/12 10:53:28] ppocr INFO: epoch: [5/5], global_step: 35, lr: 0.000397, acc: 0.000000, norm_edit_dis: 0.035958, loss: 148.340477, avg_reader_cost: 0.00160 s, avg_batch_cost: 0.47239 s, avg_samples: 32.0, ips: 67.74059 samples/s, eta: 0:00:00, max_mem_reserved: 12220 MB, max_mem_allocated: 11873 MB
+[2025/09/12 10:53:29] ppocr INFO: save model in ./output/latest
+[2025/09/12 10:53:29] ppocr INFO: best metric, acc: 0, is_float16: False
