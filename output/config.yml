@@ -1,10 +1,10 @@
 Global:
   use_gpu: true
-  epoch_num: 5
+  epoch_num: 500
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output/
-  save_epoch_step: 3
+  save_epoch_step: 50
   eval_batch_step:
   - 0
   - 1000
@@ -58,7 +58,7 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/
+    data_dir: ./text/typed_text/crop_img/
     label_file_list:
     - ./text/typed_text/train_list.txt
     ratio_list:
@@ -87,7 +87,7 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/
+    data_dir: ./text/typed_text/crop_img/
     label_file_list:
     - ./text/typed_text/val_list.txt
     transforms:
