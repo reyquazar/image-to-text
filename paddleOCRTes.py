@@ -17,7 +17,7 @@ def POCR(image):
         use_doc_unwarping=False,  # Disables text image rectification model via this parameter
         use_textline_orientation=False,  # Disables text line orientation classification model via this parameter
         text_det_thresh=0.25,
-        lang="az"
+        lang="ru"
 
     )
     # ocr = PaddleOCR(
@@ -28,7 +28,7 @@ def POCR(image):
 
 
 def PRec(image):
-    ocr = PaddleOCR(lang="az")
+    ocr = PaddleOCR(lang='az', text_recognition_model_name='PP-OCRv5_server_rec')
     result = ocr.predict(image)
     return result
 
@@ -39,10 +39,10 @@ def PDet(image):
     return result
 
 
-def main():
-    # image = 'img_5.png'
-    image_path = 'text/typed_text/test4.jpg'
 
+def main():
+    image_path = 'text/typed_text/test.png'
+    # image_path = 'img.png'
     result = ""
     # result = Pstructure(image)
     result = PRec(image_path)

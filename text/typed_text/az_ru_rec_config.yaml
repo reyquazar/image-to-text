@@ -13,7 +13,7 @@ Global:
   use_visualdl: false
   infer_img:
   character_dict_path: ./text/typed_text/az_ru_dict.txt
-  max_text_length: 25
+  max_text_length: 80
   infer_mode: false
   use_space_char: true
   save_res_path: ./output/predicts_rec.txt
