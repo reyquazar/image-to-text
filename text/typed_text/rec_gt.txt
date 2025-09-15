@@ -1,98 +1,132 @@
-crop_img/test3_crop_0.jpg	VVADQ orqanının ştampı
-crop_img/test3_crop_1.jpg	NİKAH HAQQINDA AKTIN QEYDİ 
-crop_img/test3_crop_2.jpg	BAKI ŞƏHƏRİ
-crop_img/test3_crop_3.jpg	(Birinci nüsxə)
-crop_img/test3_crop_4.jpg	BİNƏQƏDİ RAYON
-crop_img/test3_crop_5.jpg	QEYDİYYAT ŞÖBƏSİ
-crop_img/test3_crop_6.jpg	Evlənənlər haqqında məlumat
-crop_img/test3_crop_7.jpg	Kişi
-crop_img/test3_crop_8.jpg	Qadın
-crop_img/test3_crop_9.jpg	1. Soyadi: evlənənədək
-crop_img/test3_crop_10.jpg	evlənəndən sonra
-crop_img/test3_crop_11.jpg	2. Adı
-crop_img/test3_crop_12.jpg	3. Atasının adı
-crop_img/test3_crop_13.jpg	4. Doğulduğu tarix
-crop_img/test3_crop_14.jpg	yaşı tamam olmuşdur
-crop_img/test3_crop_15.jpg	yaşi tamam olmuşdur
-crop_img/test3_crop_16.jpg	5. Doğulduğu yer
+crop_img/test3_crop_0.jpg	NİKAH HAQQINDA AKTIN QEYDİ 
+crop_img/test3_crop_1.jpg	BAKI ŞƏHƏRİ
+crop_img/test3_crop_2.jpg	(Birinci nüsxə)
+crop_img/test3_crop_3.jpg	BİNƏQƏDİ RAYON
+crop_img/test3_crop_4.jpg	QEYDİYYAT ŞÖBƏSİ
+crop_img/test3_crop_5.jpg	Evlənənlər haqqında məlumat
+crop_img/test3_crop_6.jpg	Kişi
+crop_img/test3_crop_7.jpg	Qadın
+crop_img/test3_crop_8.jpg	1. Soyadi: evlənənədək
+crop_img/test3_crop_9.jpg	evlənəndən sonra
+crop_img/test3_crop_10.jpg	2. Adı
+crop_img/test3_crop_11.jpg	3. Atasının adı
+crop_img/test3_crop_12.jpg	4. Doğulduğu tarix
+crop_img/test3_crop_13.jpg	yaşı tamam olmuşdur
+crop_img/test3_crop_14.jpg	yaşi tamam olmuşdur
+crop_img/test3_crop_15.jpg	5. Doğulduğu yer
+crop_img/test3_crop_16.jpg	rayon (şəhar), gəsəbə, kənd
 crop_img/test3_crop_17.jpg	rayon (şəhar), gəsəbə, kənd
-crop_img/test3_crop_18.jpg	rayon (şəhar), gəsəbə, kənd
-crop_img/test3_crop_19.jpg	6. Milliyyəti
-crop_img/test3_crop_20.jpg	İş yeri (vəzifasi)
-crop_img/test3_crop_21.jpg	Təhsili (xətt cəkmək)
-crop_img/test3_crop_22.jpg	ibtidai texniki-peşə əsas
-crop_img/test3_crop_23.jpg	ibtidai texniki-peşə əsas
-crop_img/test3_crop_24.jpg	orta ixtisas ali ixtisas
-crop_img/test3_crop_25.jpg	orta ixtisas ali ixtisas
-crop_img/test3_crop_26.jpg	orta
-crop_img/test3_crop_27.jpg	orta
-crop_img/test3_crop_28.jpg	natamam təhsil
-crop_img/test3_crop_29.jpg	natamam təhsil
-crop_img/test3_crop_30.jpg	Ailə vəziyyati (xətt cəkmək)
-crop_img/test3_crop_31.jpg	evlənməmiş, dul, boşanmış
-crop_img/test3_crop_32.jpg	evlənməmiş, dul, boşanmiş
-crop_img/test3_crop_33.jpg	Ümumi uşaqlar haqqında
-crop_img/test3_crop_34.jpg	soyadı, adı, doğulduğu tarix
-crop_img/test3_crop_35.jpg	məlumat
-crop_img/test3_crop_36.jpg	Daimi yaşadiği yer
-crop_img/test3_crop_37.jpg	rayon (şəhar), gəsəbə, kənd
-crop_img/test3_crop_38.jpg	küçə, bina, mənzil 
-crop_img/test3_crop_39.jpg	küçə, bina,
-crop_img/test3_crop_40.jpg	ildən yaşayır
-crop_img/test3_crop_41.jpg	Şaxşiyyəti təsdiq edən
-crop_img/test3_crop_42.jpg	sənədlər
-crop_img/test3_crop_43.jpg	Evlənənlərin imzalari
-crop_img/test3_crop_44.jpg	Evlənənədak soyadları:
-crop_img/test3_crop_45.jpg	Şahidlərin soyadı, adı,
-crop_img/test3_crop_46.jpg	atasının adı və imzaları
-crop_img/test3_crop_47.jpg	Şəhadətnamə verilmişdir
-crop_img/test3_crop_48.jpg	seriyası
-crop_img/test3_crop_49.jpg	Qeydlər üçün
-crop_img/test3_crop_50.jpg	Kargüzar
-crop_img/test3_crop_51.jpg	sobasinin müdiri
-crop_img/test3_crop_52.jpg	soyadı, adı, doğulduğu tarix
-crop_img/test3_crop_53.jpg	respublika (ölkə)
-crop_img/test3_crop_54.jpg	respublika (ölkə)
-crop_img/test3_crop_55.jpg	respublika (ölkə)
-crop_img/test3_crop_56.jpg	respublika (ölkə)
-crop_img/test3_crop_57.jpg	ildən yaşayır
-crop_img/test3_crop_58.jpg	16.
-crop_img/test3_crop_59.jpg	15.
-crop_img/test3_crop_60.jpg	14.
-crop_img/test3_crop_61.jpg	13.
-crop_img/test3_crop_62.jpg	12.
-crop_img/test3_crop_63.jpg	11.
-crop_img/test3_crop_64.jpg	10.
-crop_img/test3_crop_65.jpg	9.
-crop_img/test3_crop_66.jpg	8.
-crop_img/test3_crop_67.jpg	6.
-crop_img/test3_crop_68.jpg	7.
-crop_img/test3_crop_69.jpg	5.
-crop_img/test3_crop_70.jpg	4.
-crop_img/test3_crop_71.jpg	3.
-crop_img/test3_crop_72.jpg	2.
-crop_img/test3_crop_73.jpg	1.
-crop_img/test3_crop_74.jpg	Yaşı
-crop_img/test2_crop_0.jpg	AZƏRBAYCAN RESPUBLİKASI
-crop_img/test2_crop_1.jpg	ÖLÜM HAQQINDA ŞƏHADƏTNAMƏ
-crop_img/test2_crop_2.jpg	Vәtandaş
-crop_img/test2_crop_3.jpg	ildə ölmüşdür.
-crop_img/test2_crop_4.jpg	Bu barədə  ölüm haqqında akt qeydləri kitabında 2014 ilin 12 ayının
-crop_img/test2_crop_5.jpg	03
-crop_img/test2_crop_6.jpg	günündə
-crop_img/test2_crop_7.jpg	14
-crop_img/test2_crop_8.jpg	ilə qeyd edilmişdir
-crop_img/test2_crop_9.jpg	Ölümün səbəbi
-crop_img/test2_crop_10.jpg	Öldüyü yer: şəhər, kənd
-crop_img/test2_crop_11.jpg	rayon
-crop_img/test2_crop_12.jpg	vilayət (ölkə)
-crop_img/test2_crop_13.jpg	respublika
-crop_img/test2_crop_14.jpg	Qeyd edilən yer
-crop_img/test2_crop_15.jpg	Verildiyi tarix
-crop_img/test2_crop_16.jpg	03
-crop_img/test2_crop_17.jpg	2014 il
-crop_img/test2_crop_18.jpg	Qeydiyyat orqanının
-crop_img/test2_crop_19.jpg	şəxsi
+crop_img/test3_crop_18.jpg	6. Milliyyəti
+crop_img/test3_crop_19.jpg	İş yeri (vəzifasi)
+crop_img/test3_crop_20.jpg	Təhsili (xətt cəkmək)
+crop_img/test3_crop_21.jpg	orta
+crop_img/test3_crop_22.jpg	orta
+crop_img/test3_crop_23.jpg	natamam təhsil
+crop_img/test3_crop_24.jpg	Ailə vəziyyati (xətt cəkmək)
+crop_img/test3_crop_25.jpg	evlənməmiş, dul, boşanmış
+crop_img/test3_crop_26.jpg	evlənməmiş,
+crop_img/test3_crop_27.jpg	Ümumi uşaqlar haqqında
+crop_img/test3_crop_28.jpg	soyadı, adı, doğulduğu tarix
+crop_img/test3_crop_29.jpg	məlumat
+crop_img/test3_crop_30.jpg	Daimi yaşadiği yer
+crop_img/test3_crop_31.jpg	rayon (şəhar), gəsəbə, kənd
+crop_img/test3_crop_32.jpg	küçə, bina, mənzil 
+crop_img/test3_crop_33.jpg	küçə, bina,
+crop_img/test3_crop_34.jpg	ildən yaşayır
+crop_img/test3_crop_35.jpg	Şaxşiyyəti təsdiq edən
+crop_img/test3_crop_36.jpg	sənədlər
+crop_img/test3_crop_37.jpg	Evlənənlərin imzalari
+crop_img/test3_crop_38.jpg	Evlənənədak soyadları:
+crop_img/test3_crop_39.jpg	Şahidlərin soyadı, adı,
+crop_img/test3_crop_40.jpg	atasının adı və imzaları
+crop_img/test3_crop_41.jpg	Şəhadətnamə verilmişdir
+crop_img/test3_crop_42.jpg	seriyası
+crop_img/test3_crop_43.jpg	Qeydlər üçün
+crop_img/test3_crop_44.jpg	Kargüzar
+crop_img/test3_crop_45.jpg	sobasinin müdiri
+crop_img/test3_crop_46.jpg	soyadı, adı, doğulduğu tarix
+crop_img/test3_crop_47.jpg	respublika (ölkə)
+crop_img/test3_crop_48.jpg	respublika (ölkə)
+crop_img/test3_crop_49.jpg	respublika (ölkə)
+crop_img/test3_crop_50.jpg	respublika (ölkə)
+crop_img/test3_crop_51.jpg	ildən yaşayır
+crop_img/test3_crop_52.jpg	16.
+crop_img/test3_crop_53.jpg	15.
+crop_img/test3_crop_54.jpg	14.
+crop_img/test3_crop_55.jpg	13.
+crop_img/test3_crop_56.jpg	12.
+crop_img/test3_crop_57.jpg	11.
+crop_img/test3_crop_58.jpg	10.
+crop_img/test3_crop_59.jpg	9.
+crop_img/test3_crop_60.jpg	8.
+crop_img/test3_crop_61.jpg	6.
+crop_img/test3_crop_62.jpg	7.
+crop_img/test3_crop_63.jpg	5.
+crop_img/test3_crop_64.jpg	4.
+crop_img/test3_crop_65.jpg	3.
+crop_img/test3_crop_66.jpg	2.
+crop_img/test3_crop_67.jpg	1.
+crop_img/test3_crop_68.jpg	Yaşı
+crop_img/test3_crop_69.jpg	VVADQ
+crop_img/test3_crop_70.jpg	orqanının
+crop_img/test3_crop_71.jpg	ştampı
+crop_img/test3_crop_72.jpg	dul,
+crop_img/test3_crop_73.jpg	boşanmiş
+crop_img/test3_crop_74.jpg	natamam
+crop_img/test3_crop_75.jpg	təhsil
+crop_img/test3_crop_76.jpg	ibtidai
+crop_img/test3_crop_77.jpg	texniki-peşə
+crop_img/test3_crop_78.jpg	əsas
+crop_img/test3_crop_79.jpg	orta
+crop_img/test3_crop_80.jpg	ixtisas
+crop_img/test3_crop_81.jpg	ali
+crop_img/test3_crop_82.jpg	ixtisas
+crop_img/test3_crop_83.jpg	ibtidai
+crop_img/test3_crop_84.jpg	texniki-peşə
+crop_img/test3_crop_85.jpg	ixtisas
+crop_img/test3_crop_86.jpg	orta
+crop_img/test3_crop_87.jpg	ali
+crop_img/test3_crop_88.jpg	ixtisas
+crop_img/test3_crop_89.jpg	əsas
+crop_img/test2_crop_0.jpg	AZƏRBAYCAN
+crop_img/test2_crop_1.jpg	Vәtandaş
+crop_img/test2_crop_2.jpg	03
+crop_img/test2_crop_3.jpg	günündə
+crop_img/test2_crop_4.jpg	14
+crop_img/test2_crop_5.jpg	ilə
+crop_img/test2_crop_6.jpg	Öldüyü
+crop_img/test2_crop_7.jpg	rayon
+crop_img/test2_crop_8.jpg	vilayət (ölkə)
+crop_img/test2_crop_9.jpg	respublika
+crop_img/test2_crop_10.jpg	Verildiyi
+crop_img/test2_crop_11.jpg	orqanının
+crop_img/test2_crop_12.jpg	şəxsi
+crop_img/test2_crop_13.jpg	ÖLÜM
+crop_img/test2_crop_14.jpg	HAQQINDA
+crop_img/test2_crop_15.jpg	ŞƏHADƏTNAMƏ
+crop_img/test2_crop_16.jpg	RESPUBLİKASI
+crop_img/test2_crop_17.jpg	ildə
+crop_img/test2_crop_18.jpg	ölmüşdür.
+crop_img/test2_crop_19.jpg	Bu
+crop_img/test2_crop_20.jpg	barədə
+crop_img/test2_crop_21.jpg	ölüm
+crop_img/test2_crop_22.jpg	haqqında
+crop_img/test2_crop_23.jpg	akt
+crop_img/test2_crop_24.jpg	qeydləri
+crop_img/test2_crop_25.jpg	kitabında
+crop_img/test2_crop_26.jpg	ilin
+crop_img/test2_crop_27.jpg	ayının
+crop_img/test2_crop_28.jpg	Ölümün
+crop_img/test2_crop_29.jpg	səbəbi
+crop_img/test2_crop_30.jpg	yer:
+crop_img/test2_crop_31.jpg	şəhər,
+crop_img/test2_crop_32.jpg	kənd
+crop_img/test2_crop_33.jpg	Qeyd
+crop_img/test2_crop_34.jpg	edilən
+crop_img/test2_crop_35.jpg	yer
+crop_img/test2_crop_36.jpg	tarix
+crop_img/test2_crop_37.jpg	qeyd
+crop_img/test2_crop_38.jpg	edilmişdir
 crop_img/test4_crop_0.jpg	DOĞUM HAQQINDA
 crop_img/test4_crop_1.jpg	ŞƏHADƏTNAMƏ
 crop_img/test4_crop_2.jpg	VALİDEYNLӘRİ
