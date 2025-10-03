@@ -111,29 +111,107 @@ class AdvancedSyntheticDataGenerator:
 
             return base
 
-    def apply_advanced_augmentations(self, image):
-        """Продвинутые аугментации"""
+    def apply_document_augmentations(self, image):
+        """Улучшенные аугментации для документов"""
         img_array = np.array(image)
 
-        # Случайные преобразования
-        transformations = [
-            self.add_gaussian_blur,
-            self.add_motion_blur,
-            self.add_gaussian_noise,
-            self.add_salt_pepper_noise,
-            self.adjust_brightness_contrast,
-            self.adjust_gamma,
-            self.add_perspective_distortion,
-            self.add_elastic_distortion
-        ]
+        # 1. Искажения перспективы (как сканированные документы)
+        if random.random() > 0.7:
+            h, w = img_array.shape
+            pts1 = np.float32([[0, 0], [w, 0], [0, h], [w, h]])
 
-        # Применяем 2-4 случайные трансформации
-        for _ in range(random.randint(1, 4)):
-            transform = random.choice(transformations)
-            img_array = transform(img_array)
+            # Случайные смещения углов
+            max_offset = 5
+            pts2 = np.float32([
+                [random.randint(-max_offset, max_offset), random.randint(-max_offset, max_offset)],
+                [w - random.randint(-max_offset, max_offset), random.randint(-max_offset, max_offset)],
+                [random.randint(-max_offset, max_offset), h - random.randint(-max_offset, max_offset)],
+                [w - random.randint(-max_offset, max_offset), h - random.randint(-max_offset, max_offset)]
+            ])
+
+            matrix = cv2.getPerspectiveTransform(pts1, pts2)
+            img_array = cv2.warpPerspective(img_array, matrix, (w, h), borderMode=cv2.BORDER_REPLICATE)
+
+        # 2. Эластичные деформации (эффект бумаги)
+        if random.random() > 0.6:
+            alpha = random.randint(30, 80)  # интенсивность
+            sigma = random.randint(5, 10)  # гладкость
+
+            dx = np.random.uniform(-1, 1, img_array.shape) * alpha
+            dy = np.random.uniform(-1, 1, img_array.shape) * alpha
+
+            x, y = np.meshgrid(np.arange(img_array.shape[1]), np.arange(img_array.shape[0]))
+            indices = np.reshape(y + dy, (-1, 1)), np.reshape(x + dx, (-1, 1))
+
+            img_array = cv2.remap(img_array, indices[1].astype(np.float32),
+                                  indices[0].astype(np.float32), cv2.INTER_LINEAR)
+
+        # 3. Шумы, характерные для документов
+        noise_type = random.choice(['gaussian', 'salt_pepper', 'speckle'])
+
+        if noise_type == 'gaussian':
+            noise = np.random.normal(0, random.uniform(1, 3), img_array.shape)
+            img_array = np.clip(img_array + noise, 0, 255).astype(np.uint8)
+
+        elif noise_type == 'salt_pepper':
+            salt_vs_pepper = 0.5
+            amount = random.uniform(0.01, 0.05)
+
+            # Соль
+            num_salt = np.ceil(amount * img_array.size * salt_vs_pepper)
+            coords = [np.random.randint(0, i - 1, int(num_salt)) for i in img_array.shape]
+            img_array[coords[0], coords[1]] = 255
+
+            # Перец
+            num_pepper = np.ceil(amount * img_array.size * (1. - salt_vs_pepper))
+            coords = [np.random.randint(0, i - 1, int(num_pepper)) for i in img_array.shape]
+            img_array[coords[0], coords[1]] = 0
+
+        # 4. Размытие (имитация сканера)
+        blur_type = random.choice(['gaussian', 'median', 'motion'])
+
+        if blur_type == 'gaussian':
+            ksize = random.choice([3, 5])
+            img_array = cv2.GaussianBlur(img_array, (ksize, ksize), 0)
+
+        elif blur_type == 'median':
+            ksize = random.choice([3, 5])
+            img_array = cv2.medianBlur(img_array, ksize)
+
+        elif blur_type == 'motion':
+            size = random.randint(5, 15)
+            kernel = np.zeros((size, size))
+            kernel[int((size - 1) / 2), :] = np.ones(size)
+            kernel = kernel / size
+            img_array = cv2.filter2D(img_array, -1, kernel)
+
+        # 5. Изменение контраста и яркости (разные условия сканирования)
+        contrast = random.uniform(0.7, 1.3)
+        brightness = random.randint(-20, 20)
+        img_array = cv2.convertScaleAbs(img_array, alpha=contrast, beta=brightness)
+
+        # 6. Морфологические операции (износ документа)
+        if random.random() > 0.8:
+            op_type = random.choice(['erode', 'dilate'])
+            kernel = np.ones((2, 2), np.uint8)
+
+            if op_type == 'erode':
+                img_array = cv2.erode(img_array, kernel, iterations=1)
+            else:
+                img_array = cv2.dilate(img_array, kernel, iterations=1)
+
+        # 7. Имитация складок и теней на бумаге
+        if random.random() > 0.9:
+            h, w = img_array.shape
+            for _ in range(random.randint(1, 3)):
+                x1, y1 = random.randint(0, w - 1), random.randint(0, h - 1)
+                x2, y2 = random.randint(0, w - 1), random.randint(0, h - 1)
+
+                # Рисуем линию с размытием (складка)
+                cv2.line(img_array, (x1, y1), (x2, y2), (200, 200, 200),
+                         random.randint(2, 4), lineType=cv2.LINE_AA)
 
         return Image.fromarray(img_array)
-
     def add_gaussian_blur(self, img):
         """Добавление Gaussian blur"""
         if random.random() > 0.7:
@@ -358,7 +436,7 @@ class AdvancedSyntheticDataGenerator:
 if __name__ == "__main__":
     GT_FILE_PATH = "text/typed_text/rec_gt.txt"
     OUTPUT_DIR = "text/typed_text/synthetic_data_advanced"
-    NUM_SAMPLES = 5000
+    NUM_SAMPLES = 100
 
     generator = AdvancedSyntheticDataGenerator(GT_FILE_PATH, OUTPUT_DIR, NUM_SAMPLES)
     generator.generate_dataset()

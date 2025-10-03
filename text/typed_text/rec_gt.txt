@@ -15,208 +15,230 @@ crop_img/test1_crop_13.jpg	6
 crop_img/test1_crop_14.jpg	место
 crop_img/test1_crop_15.jpg	7
 crop_img/test1_crop_16.jpg	9
-crop_img/test1_crop_17.jpg	(өлу доғулан jох, өләнләр дахил олмагла
-crop_img/test1_crop_18.jpg	Ушағын доғумуну тәсдиг едән сәнәдләр
-crop_img/test1_crop_19.jpg	Документы, подтверждающие факт рождения ребенка
-crop_img/test1_crop_20.jpg	Фамилиjасы
-crop_img/test1_crop_21.jpg	ΦaM
-crop_img/test1_crop_22.jpg	12
-crop_img/test1_crop_23.jpg	Ады
-crop_img/test1_crop_24.jpg	Имя
-crop_img/test1_crop_25.jpg	Атасынын ады
-crop_img/test1_crop_26.jpg	13
-crop_img/test1_crop_27.jpg	Отчество
-crop_img/test1_crop_28.jpg	14
-crop_img/test1_crop_29.jpg	Доғулдуғу вахт
-crop_img/test1_crop_30.jpg	Время рождения
-crop_img/test1_crop_31.jpg	Jашы
-crop_img/test1_crop_32.jpg	32
+crop_img/test1_crop_17.jpg	Фамилиjасы
+crop_img/test1_crop_18.jpg	Фамилия
+crop_img/test1_crop_19.jpg	12
+crop_img/test1_crop_20.jpg	Ады
+crop_img/test1_crop_21.jpg	Имя
+crop_img/test1_crop_22.jpg	Атасынын ады
+crop_img/test1_crop_23.jpg	13
+crop_img/test1_crop_24.jpg	Отчество
+crop_img/test1_crop_25.jpg	14
+crop_img/test1_crop_26.jpg	Доғулдуғу вахт
+crop_img/test1_crop_27.jpg	Время рождения
+crop_img/test1_crop_28.jpg	Jашы
+crop_img/test1_crop_29.jpg	32
+crop_img/test1_crop_30.jpg	Исполнилось
+crop_img/test1_crop_31.jpg	лет
+crop_img/test1_crop_32.jpg	Возраст
 crop_img/test1_crop_33.jpg	Исполнилось
-crop_img/test1_crop_34.jpg	лет
-crop_img/test1_crop_35.jpg	Возраст
-crop_img/test1_crop_36.jpg	Исполнилось
-crop_img/test1_crop_37.jpg	Миллиjәти
-crop_img/test1_crop_38.jpg	Национальность
-crop_img/test1_crop_39.jpg	16
-crop_img/test1_crop_40.jpg	Даими jашадығы jер шәhәр (кәнд)
-crop_img/test1_crop_41.jpg	город (селение)
-crop_img/test1_crop_42.jpg	шәhәр (кәнд)
-crop_img/test1_crop_43.jpg	Место постоянного жительства
-crop_img/test1_crop_44.jpg	город (селение)
-crop_img/test1_crop_45.jpg	pajon
-crop_img/test1_crop_46.jpg	pajon
-crop_img/test1_crop_47.jpg	вилаjәт (өлкә, республика)
-crop_img/test1_crop_48.jpg	район
-crop_img/test1_crop_49.jpg	район
-crop_img/test1_crop_50.jpg	область (край, республика)
-crop_img/test1_crop_51.jpg	вилаjәт (өлкә, республика)
-crop_img/test1_crop_52.jpg	область (край, республика)
-crop_img/test1_crop_53.jpg	күчә, ул.
-crop_img/test1_crop_54.jpg	күчә, ул.
-crop_img/test1_crop_55.jpg	отаг. кв.
-crop_img/test1_crop_56.jpg	1976илдән даими jашаjыр
-crop_img/test1_crop_57.jpg	ев, дом
-crop_img/test1_crop_58.jpg	1944илдән даими jашаjыр - Постоянно проживает с 19
-crop_img/test1_crop_59.jpg	года
-crop_img/test1_crop_60.jpg	Постоянно проживает с 19
-crop_img/test1_crop_61.jpg	года
-crop_img/test1_crop_62.jpg	18
-crop_img/test1_crop_63.jpg	Тәhсили
-crop_img/test1_crop_64.jpg	(хәтт чәкмәк)
-crop_img/test1_crop_65.jpg	үмуми орта
-crop_img/test1_crop_66.jpg	высшее
+crop_img/test1_crop_34.jpg	Миллиjәти
+crop_img/test1_crop_35.jpg	Национальность
+crop_img/test1_crop_36.jpg	16
+crop_img/test1_crop_37.jpg	город (селение)
+crop_img/test1_crop_38.jpg	шәhәр (кәнд)
+crop_img/test1_crop_39.jpg	город (селение)
+crop_img/test1_crop_40.jpg	pajon
+crop_img/test1_crop_41.jpg	pajon
+crop_img/test1_crop_42.jpg	вилаjәт (өлкә, республика)
+crop_img/test1_crop_43.jpg	район
+crop_img/test1_crop_44.jpg	район
+crop_img/test1_crop_45.jpg	область (край, республика)
+crop_img/test1_crop_46.jpg	вилаjәт (өлкә, республика)
+crop_img/test1_crop_47.jpg	область (край, республика)
+crop_img/test1_crop_48.jpg	күчә, ул.
+crop_img/test1_crop_49.jpg	күчә, ул.
+crop_img/test1_crop_50.jpg	отаг. кв.
+crop_img/test1_crop_51.jpg	ев, дом
+crop_img/test1_crop_52.jpg	года
+crop_img/test1_crop_53.jpg	года
+crop_img/test1_crop_54.jpg	18
+crop_img/test1_crop_55.jpg	Тәhсили
+crop_img/test1_crop_56.jpg	(хәтт чәкмәк)
+crop_img/test1_crop_57.jpg	үмуми орта
+crop_img/test1_crop_58.jpg	высшее
+crop_img/test1_crop_59.jpg	среднее общее
+crop_img/test1_crop_60.jpg	али
+crop_img/test1_crop_61.jpg	үмуми орта
+crop_img/test1_crop_62.jpg	Образование
+crop_img/test1_crop_63.jpg	гуртармамыш али
+crop_img/test1_crop_64.jpg	там олмаjан орта
+crop_img/test1_crop_65.jpg	высшее
+crop_img/test1_crop_66.jpg	гуртармамыш али
 crop_img/test1_crop_67.jpg	среднее общее
-crop_img/test1_crop_68.jpg	али
-crop_img/test1_crop_69.jpg	үмуми орта
-crop_img/test1_crop_70.jpg	Образование
-crop_img/test1_crop_71.jpg	гуртармамыш али
+crop_img/test1_crop_68.jpg	(подчеркнуть)
+crop_img/test1_crop_69.jpg	незаконченное высшее
+crop_img/test1_crop_70.jpg	неполное среднее
+crop_img/test1_crop_71.jpg	незаконченное высшее
 crop_img/test1_crop_72.jpg	там олмаjан орта
-crop_img/test1_crop_73.jpg	высшее
-crop_img/test1_crop_74.jpg	гуртармамыш али
-crop_img/test1_crop_75.jpg	cpeanee ooee
-crop_img/test1_crop_76.jpg	(подчеркнуть)
-crop_img/test1_crop_77.jpg	незаконченное высшее
-crop_img/test1_crop_78.jpg	неполное среднее
-crop_img/test1_crop_79.jpg	незаконченное высшее
-crop_img/test1_crop_80.jpg	там олмаjан орта
-crop_img/test1_crop_81.jpg	орта ихтисас
-crop_img/test1_crop_82.jpg	ибтидан вә ашагы
-crop_img/test1_crop_83.jpg	орта ихтисас
-crop_img/test1_crop_84.jpg	неполное среднее
-crop_img/test1_crop_85.jpg	среднее специальное
-crop_img/test1_crop_86.jpg	начальное и ниже
-crop_img/test1_crop_87.jpg	среднее специальное
-crop_img/test1_crop_88.jpg	ибтидан вә ашагы
-crop_img/test1_crop_89.jpg	Ата hаггында
-crop_img/test1_crop_90.jpg	19
-crop_img/test1_crop_91.jpg	а) Евләнмә шәhадәтнамәси
-crop_img/test1_crop_92.jpg	начальное и ниже
-crop_img/test1_crop_93.jpg	геjдин әсаслары
-crop_img/test1_crop_94.jpg	Свидетельство о заключении брака акт
-crop_img/test1_crop_95.jpg	Основные записи
-crop_img/test1_crop_96.jpg	сведений об отце:
-crop_img/test1_crop_97.jpg	6) Аталыгы мүәjjен етмәк hаггында шәhадәтнамә
-crop_img/test1_crop_98.jpg	где зарегистрирован акт о браке
-crop_img/test1_crop_99.jpg	Свидетельство об устаовлении отцовства акт
-crop_img/test1_crop_100.jpg	в) Ананын әризәси вә онун имзасы
-crop_img/test1_crop_101.jpg	(акт hарада геjд едилмишдир
-crop_img/test1_crop_102.jpg	- где зарегистрирован акт)
-crop_img/test1_crop_103.jpg	Заявление матери и ее подпись
-crop_img/test1_crop_104.jpg	Мә'лумат верәнин фамилиjасы, ады, атасынын
-crop_img/test1_crop_105.jpg	ады, үнван вә имзасы
-crop_img/test1_crop_106.jpg	Фамилия, имя, отчество, адрес заявителя и 
-crop_img/test1_crop_107.jpg	его подпись
-crop_img/test1_crop_108.jpg	21
-crop_img/test1_crop_109.jpg	22
-crop_img/test1_crop_110.jpg	Выдано свидительство 
-crop_img/test1_crop_111.jpg	серия
-crop_img/test1_crop_112.jpg	23
-crop_img/test1_crop_113.jpg	ЗАПИСЬ
-crop_img/test1_crop_114.jpg	Икинҹи
-crop_img/test1_crop_115.jpg	Фамилиjасы
-crop_img/test1_crop_116.jpg	Фамилия
-crop_img/test1_crop_117.jpg	Штамп
-crop_img/test1_crop_118.jpg	1
-crop_img/test1_crop_119.jpg	3
-crop_img/test1_crop_120.jpg	Ушаг
-crop_img/test1_crop_121.jpg	8
-crop_img/test1_crop_122.jpg	10
-crop_img/test1_crop_123.jpg	11
-crop_img/test1_crop_124.jpg	15
-crop_img/test1_crop_125.jpg	ев, дом
-crop_img/test1_crop_126.jpg	отаг, кв.
-crop_img/test1_crop_127.jpg	17
-crop_img/test1_crop_128.jpg	али
-crop_img/test1_crop_129.jpg	Свитедетельство о
-crop_img/test1_crop_130.jpg	брака
-crop_img/test1_crop_131.jpg	акт
-crop_img/test1_crop_132.jpg	20
-crop_img/test1_crop_133.jpg	Доғум геjдиндә иштирак едәнләрин фамилиjасы,
-crop_img/test1_crop_134.jpg	ады вә атасынын ады вә имзасы
-crop_img/test1_crop_135.jpg	Фамилия, имя отчество лиц, присутствующих при регистрации рождения, их подписи
-crop_img/test1_crop_136.jpg	верилмишдир сериjасы
-crop_img/test1_crop_137.jpg	Геjдләр үчун
-crop_img/test1_crop_138.jpg	Для отметок
-crop_img/test1_crop_139.jpg	Заведующий отделом ЗАГСа
-crop_img/test1_crop_140.jpg	органа
-crop_img/test1_crop_141.jpg	ЗАГСа
-crop_img/test1_crop_142.jpg	РОЖДЕНИИ
-crop_img/test1_crop_143.jpg	АКТА
-crop_img/test1_crop_144.jpg	О
-crop_img/test1_crop_145.jpg	нусхә
-crop_img/test1_crop_146.jpg	второй
-crop_img/test1_crop_147.jpg	экземпляр
-crop_img/test1_crop_148.jpg	hаггында
-crop_img/test1_crop_149.jpg	мә'лумат
-crop_img/test1_crop_150.jpg	Сведения
-crop_img/test1_crop_151.jpg	ребенке
-crop_img/test1_crop_152.jpg	о
-crop_img/test1_crop_153.jpg	рождения
-crop_img/test1_crop_154.jpg	город
-crop_img/test1_crop_155.jpg	селение
-crop_img/test1_crop_156.jpg	вилаjәт
-crop_img/test1_crop_157.jpg	өлкә,
-crop_img/test1_crop_158.jpg	республика
-crop_img/test1_crop_159.jpg	республика
-crop_img/test1_crop_160.jpg	край,
-crop_img/test1_crop_161.jpg	область
-crop_img/test1_crop_162.jpg	pajon
-crop_img/test1_crop_163.jpg	paйon
-crop_img/test1_crop_164.jpg	Нечә
-crop_img/test1_crop_165.jpg	ушаг
-crop_img/test1_crop_166.jpg	доғмушдур:
-crop_img/test1_crop_167.jpg	бир,
-crop_img/test1_crop_168.jpg	ихи,
-crop_img/test1_crop_169.jpg	үч
-crop_img/test1_crop_170.jpg	Сколько
-crop_img/test1_crop_171.jpg	родилось
-crop_img/test1_crop_172.jpg	детей:
-crop_img/test1_crop_173.jpg	один,
-crop_img/test1_crop_174.jpg	двойня,
-crop_img/test1_crop_175.jpg	тройня
-crop_img/test1_crop_176.jpg	Дири
-crop_img/test1_crop_177.jpg	доғулмуш
-crop_img/test1_crop_178.jpg	вә
-crop_img/test1_crop_179.jpg	jа
-crop_img/test1_crop_180.jpg	өлү
-crop_img/test1_crop_181.jpg	доғулмуш
-crop_img/test1_crop_182.jpg	Живорожденный
-crop_img/test1_crop_183.jpg	мертворожденный
-crop_img/test1_crop_184.jpg	или
-crop_img/test1_crop_185.jpg	Который
-crop_img/test1_crop_186.jpg	ребенок
-crop_img/test1_crop_187.jpg	родился
-crop_img/test1_crop_188.jpg	матери,
-crop_img/test1_crop_189.jpg	включая
-crop_img/test1_crop_190.jpg	новорожденного 
-crop_img/test1_crop_191.jpg	счету
-crop_img/test1_crop_192.jpg	по
-crop_img/test1_crop_193.jpg	у
-crop_img/test1_crop_194.jpg	считая
-crop_img/test1_crop_195.jpg	умерших
-crop_img/test1_crop_196.jpg	считая
-crop_img/test1_crop_197.jpg	мертворожденных
-crop_img/test1_crop_198.jpg	и
-crop_img/test1_crop_199.jpg	не
-crop_img/test1_crop_200.jpg	Ата
-crop_img/test1_crop_201.jpg	hаггында
-crop_img/test1_crop_202.jpg	мә'лумат
-crop_img/test1_crop_203.jpg	Сведения
-crop_img/test1_crop_204.jpg	отце
-crop_img/test1_crop_205.jpg	об
-crop_img/test1_crop_206.jpg	Ана
-crop_img/test1_crop_207.jpg	hаггында
-crop_img/test1_crop_208.jpg	мә'лумат
-crop_img/test1_crop_209.jpg	Сведения
-crop_img/test1_crop_210.jpg	о
-crop_img/test1_crop_211.jpg	матери
-crop_img/test1_crop_212.jpg	jашы
-crop_img/test1_crop_213.jpg	тамам
-crop_img/test1_crop_214.jpg	олмушдур
-crop_img/test1_crop_215.jpg	олмушдур
-crop_img/test1_crop_216.jpg	тамам
-crop_img/test1_crop_217.jpg	jашы
-crop_img/test1_crop_218.jpg	TEMPORARY
+crop_img/test1_crop_73.jpg	орта ихтисас
+crop_img/test1_crop_74.jpg	ибтидан вә ашагы
+crop_img/test1_crop_75.jpg	орта ихтисас
+crop_img/test1_crop_76.jpg	неполное среднее
+crop_img/test1_crop_77.jpg	среднее специальное
+crop_img/test1_crop_78.jpg	начальное и ниже
+crop_img/test1_crop_79.jpg	среднее специальное
+crop_img/test1_crop_80.jpg	ибтидан вә ашагы
+crop_img/test1_crop_81.jpg	Ата hаггында
+crop_img/test1_crop_82.jpg	19
+crop_img/test1_crop_83.jpg	а) Евләнмә шәhадәтнамәси
+crop_img/test1_crop_84.jpg	начальное и ниже
+crop_img/test1_crop_85.jpg	геjдин әсаслары
+crop_img/test1_crop_86.jpg	Основные записи
+crop_img/test1_crop_87.jpg	где зарегистрирован акт о браке
+crop_img/test1_crop_88.jpg	- где зарегистрирован акт)
+crop_img/test1_crop_89.jpg	21
+crop_img/test1_crop_90.jpg	22
+crop_img/test1_crop_91.jpg	серия
+crop_img/test1_crop_92.jpg	23
+crop_img/test1_crop_93.jpg	ЗАПИСЬ
+crop_img/test1_crop_94.jpg	Икинҹи
+crop_img/test1_crop_95.jpg	Фамилиjасы
+crop_img/test1_crop_96.jpg	Фамилия
+crop_img/test1_crop_97.jpg	Штамп
+crop_img/test1_crop_98.jpg	1
+crop_img/test1_crop_99.jpg	3
+crop_img/test1_crop_100.jpg	Ушаг
+crop_img/test1_crop_101.jpg	8
+crop_img/test1_crop_102.jpg	10
+crop_img/test1_crop_103.jpg	11
+crop_img/test1_crop_104.jpg	15
+crop_img/test1_crop_105.jpg	ев, дом
+crop_img/test1_crop_106.jpg	отаг, кв.
+crop_img/test1_crop_107.jpg	17
+crop_img/test1_crop_108.jpg	али
+crop_img/test1_crop_109.jpg	акт
+crop_img/test1_crop_110.jpg	20
+crop_img/test1_crop_111.jpg	Геjдләр үчун
+crop_img/test1_crop_112.jpg	Для отметок
+crop_img/test1_crop_113.jpg	органа
+crop_img/test1_crop_114.jpg	ЗАГСа
+crop_img/test1_crop_115.jpg	РОЖДЕНИИ
+crop_img/test1_crop_116.jpg	АКТА
+crop_img/test1_crop_117.jpg	О
+crop_img/test1_crop_118.jpg	нусхә
+crop_img/test1_crop_119.jpg	второй
+crop_img/test1_crop_120.jpg	экземпляр
+crop_img/test1_crop_121.jpg	hаггында
+crop_img/test1_crop_122.jpg	мә'лумат
+crop_img/test1_crop_123.jpg	Сведения
+crop_img/test1_crop_124.jpg	ребенке
+crop_img/test1_crop_125.jpg	о
+crop_img/test1_crop_126.jpg	рождения
+crop_img/test1_crop_127.jpg	город
+crop_img/test1_crop_128.jpg	селение
+crop_img/test1_crop_129.jpg	вилаjәт
+crop_img/test1_crop_130.jpg	өлкә,
+crop_img/test1_crop_131.jpg	республика
+crop_img/test1_crop_132.jpg	республика
+crop_img/test1_crop_133.jpg	край,
+crop_img/test1_crop_134.jpg	область
+crop_img/test1_crop_135.jpg	pajon
+crop_img/test1_crop_136.jpg	paйon
+crop_img/test1_crop_137.jpg	Нечә
+crop_img/test1_crop_138.jpg	ушаг
+crop_img/test1_crop_139.jpg	доғмушдур:
+crop_img/test1_crop_140.jpg	бир,
+crop_img/test1_crop_141.jpg	ихи,
+crop_img/test1_crop_142.jpg	үч
+crop_img/test1_crop_143.jpg	Сколько
+crop_img/test1_crop_144.jpg	родилось
+crop_img/test1_crop_145.jpg	детей:
+crop_img/test1_crop_146.jpg	один,
+crop_img/test1_crop_147.jpg	двойня,
+crop_img/test1_crop_148.jpg	тройня
+crop_img/test1_crop_149.jpg	Дири
+crop_img/test1_crop_150.jpg	доғулмуш
+crop_img/test1_crop_151.jpg	вә
+crop_img/test1_crop_152.jpg	jа
+crop_img/test1_crop_153.jpg	өлү
+crop_img/test1_crop_154.jpg	доғулмуш
+crop_img/test1_crop_155.jpg	Живорожденный
+crop_img/test1_crop_156.jpg	мертворожденный
+crop_img/test1_crop_157.jpg	или
+crop_img/test1_crop_158.jpg	Который
+crop_img/test1_crop_159.jpg	ребенок
+crop_img/test1_crop_160.jpg	родился
+crop_img/test1_crop_161.jpg	матери,
+crop_img/test1_crop_162.jpg	включая
+crop_img/test1_crop_163.jpg	новорожденного 
+crop_img/test1_crop_164.jpg	счету
+crop_img/test1_crop_165.jpg	по
+crop_img/test1_crop_166.jpg	у
+crop_img/test1_crop_167.jpg	считая
+crop_img/test1_crop_168.jpg	умерших
+crop_img/test1_crop_169.jpg	считая
+crop_img/test1_crop_170.jpg	мертворожденных
+crop_img/test1_crop_171.jpg	и
+crop_img/test1_crop_172.jpg	не
+crop_img/test1_crop_173.jpg	Ата
+crop_img/test1_crop_174.jpg	hаггында
+crop_img/test1_crop_175.jpg	мә'лумат
+crop_img/test1_crop_176.jpg	Сведения
+crop_img/test1_crop_177.jpg	отце
+crop_img/test1_crop_178.jpg	об
+crop_img/test1_crop_179.jpg	Ана
+crop_img/test1_crop_180.jpg	hаггында
+crop_img/test1_crop_181.jpg	мә'лумат
+crop_img/test1_crop_182.jpg	Сведения
+crop_img/test1_crop_183.jpg	о
+crop_img/test1_crop_184.jpg	матери
+crop_img/test1_crop_185.jpg	jашы
+crop_img/test1_crop_186.jpg	тамам
+crop_img/test1_crop_187.jpg	олмушдур
+crop_img/test1_crop_188.jpg	олмушдур
+crop_img/test1_crop_189.jpg	тамам
+crop_img/test1_crop_190.jpg	jашы
+crop_img/test1_crop_191.jpg	Jени
+crop_img/test1_crop_192.jpg	доғулан
+crop_img/test1_crop_193.jpg	ушаг
+crop_img/test1_crop_194.jpg	дахил
+crop_img/test1_crop_195.jpg	олмагла
+crop_img/test1_crop_196.jpg	ананын
+crop_img/test1_crop_197.jpg	саj
+crop_img/test1_crop_198.jpg	узрә
+crop_img/test1_crop_199.jpg	нечә
+crop_img/test1_crop_200.jpg	ушағы
+crop_img/test1_crop_201.jpg	доғулуб
+crop_img/test1_crop_202.jpg	Ушағын
+crop_img/test1_crop_203.jpg	доғумуну
+crop_img/test1_crop_204.jpg	тәсдиг
+crop_img/test1_crop_205.jpg	едән
+crop_img/test1_crop_206.jpg	сәнәдләр
+crop_img/test1_crop_207.jpg	өлу
+crop_img/test1_crop_208.jpg	доғулан
+crop_img/test1_crop_209.jpg	jох,
+crop_img/test1_crop_210.jpg	өләнләр
+crop_img/test1_crop_211.jpg	дахил
+crop_img/test1_crop_212.jpg	олмагла
+crop_img/test1_crop_213.jpg	Даими
+crop_img/test1_crop_214.jpg	шәhәр
+crop_img/test1_crop_215.jpg	jашадығы
+crop_img/test1_crop_216.jpg	jер
+crop_img/test1_crop_217.jpg	кәнд
+crop_img/test1_crop_218.jpg	Место
+crop_img/test1_crop_219.jpg	постоянного
+crop_img/test1_crop_220.jpg	жительства
+crop_img/test1_crop_221.jpg	jашаjыр
+crop_img/test1_crop_222.jpg	даими
+crop_img/test1_crop_223.jpg	илдән
+crop_img/test1_crop_224.jpg	Постоянно
+crop_img/test1_crop_225.jpg	проживает
+crop_img/test1_crop_226.jpg	проживает
+crop_img/test1_crop_227.jpg	Постоянно
+crop_img/test1_crop_228.jpg	jашаjыр
+crop_img/test1_crop_229.jpg	даими
+crop_img/test1_crop_230.jpg	илдән
+crop_img/test1_crop_231.jpg	сериjасы
+crop_img/test1_crop_232.jpg	верилмишдир
+crop_img/test1_crop_233.jpg	сведений
+crop_img/test1_crop_234.jpg	об
+crop_img/test1_crop_235.jpg	отце:
+crop_img/test1_crop_236.jpg	Аталыгы
+crop_img/test1_crop_237.jpg	мүәjjен
+crop_img/test1_crop_238.jpg	етмәк
+crop_img/test1_crop_239.jpg	hаггында
+crop_img/test1_crop_240.jpg	шәhадәтнамә
 crop_img/test3_crop_0.jpg	(Birinci nüsxə)
 crop_img/test3_crop_1.jpg	Kişi
 crop_img/test3_crop_2.jpg	Qadın

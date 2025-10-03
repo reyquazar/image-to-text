@@ -125,10 +125,10 @@ def analyze_dataset(gt_file_path):
 # Основное выполнение
 if __name__ == "__main__":
     # Настройки
-    REAL_GT_PATH = "text/typed_text/train_list.txt"  # ваши реальные данные
+    REAL_GT_PATH = "text/typed_text/rec_gt.txt"  # ваши реальные данные
     SYNTHETIC_GT_PATH = "text/typed_text/synthetic_data/synthetic_gt.txt"  # синтетические данные
     OUTPUT_DIR = "text/typed_text/mixed_data"  # выходная директория
-    VAL_RATIO = 0.15  # 15% на validation (можно изменить)
+    VAL_RATIO = 0.25  # 15% на validation (можно изменить)
     RANDOM_SEED = 42  # для воспроизводимости
 
     # Анализируем исходные данные

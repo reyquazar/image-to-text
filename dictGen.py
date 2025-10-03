@@ -17,10 +17,12 @@ def create_vocabulary(input_file, output_file):
     print(f"Создан словарь: {output_file}")
     print(f"Найдено уникальных символов: {len(sorted_chars)}")
     print("Символы:", ''.join(sorted_chars))
-#
 
-input_file = 'text/test/rec_gt.txt'  # Ваш файл с разметкой
-output_file = 'text/test/dict.txt'  # Выходной файл словаря
+
+
+
+input_file = './text/typed_text/rec_gt.txt'  # Ваш файл с разметкой
+output_file = './text/typed_text/python/dict.txt'  # Выходной файл словаря
 create_vocabulary(input_file, output_file)
 #
 # import os
