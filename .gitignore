@@ -10,3 +10,4 @@ venv/
 .idea/
 text/typed_text/pretrain_models
 output
+*.pdparamas
