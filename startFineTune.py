@@ -13,7 +13,7 @@ def run_training():
     # Базовая команда
     command = f"python ../PaddleOCR/tools/train.py -c {config_path}"
 
-    print("🚀 Запуск fine-tuning PaddleOCR")
+    print("Запуск fine-tuning PaddleOCR")
     print("=" * 50)
     print(f"Конфиг: {config_path}")
     print(f"Команда: {command}")
@@ -21,14 +21,14 @@ def run_training():
 
     # Проверка существования конфига
     if not os.path.exists(config_path):
-        print(f"❌ ОШИБКА: Конфиг не найден: {config_path}")
+        print(f"- ОШИБКА: Конфиг не найден: {config_path}")
         print("Проверьте путь к az_ru_rec_config.yaml")
         return False
 
     # Запуск обучения
     try:
-        print("⏳ Запускаю обучение...")
-        print("ℹ️  Логи будут выводиться ниже:")
+        print("Запускаю обучение...")
+        print("Логи будут выводиться ниже:")
         print("-" * 50)
 
         # Запускаем процесс с выводом в реальном времени
@@ -49,14 +49,14 @@ def run_training():
         process.wait()
 
         if process.returncode == 0:
-            print("✅ Обучение успешно завершено!")
+            print("+ Обучение успешно завершено!")
             return True
         else:
-            print(f"❌ Ошибка при обучении (код: {process.returncode})")
+            print(f"- Ошибка при обучении (код: {process.returncode})")
             return False
 
     except Exception as e:
-        print(f"❌ Ошибка при запуске: {e}")
+        print(f"- Ошибка при запуске: {e}")
         return False
 
 
@@ -76,9 +76,9 @@ def check_environment():
 
     for file_path in required_files:
         if os.path.exists(file_path):
-            print(f"✅ {file_path}")
+            print(f"+ {file_path}")
         else:
-            print(f"❌ {file_path} - НЕ НАЙДЕН!")
+            print(f"- {file_path} - НЕ НАЙДЕН!")
 
     print("-" * 50)
 
@@ -95,8 +95,8 @@ if __name__ == "__main__":
     if response.lower() in ['y', 'yes', 'д', 'да']:
         success = run_training()
         if success:
-            print("🎉 Обучение завершено успешно!")
+            print("Обучение завершено успешно!")
         else:
-            print("💥 Обучение завершилось с ошибками")
+            print("Обучение завершилось с ошибками")
     else:
         print("Обучение отменено")
