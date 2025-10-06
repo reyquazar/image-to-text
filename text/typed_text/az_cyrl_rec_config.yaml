@@ -24,8 +24,8 @@ Optimizer:
   beta2: 0.999
   lr:
     name: Cosine
-    learning_rate: 0.01
-    warmup_epoch: 2
+    learning_rate: 0.001
+    warmup_epoch: 5
   regularizer:
     name: L2
     factor: 0.0005
@@ -37,7 +37,7 @@ Architecture:
   Backbone:
     name: PPLCNetV3
     scale: 1
-    pretrained: true
+    pretrained: true  # ← ✅✅✅ ИСПРАВЛЕНО! ДОЛЖНО БЫТЬ TRUE!
   Neck:
     name: SequenceEncoder
     encoder_type: svtr
