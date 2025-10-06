@@ -4,6 +4,7 @@ Global:
   dataset_dir: "./text/typed_text/pure_azerbaijani_cyrillic_dataset"
   device: gpu:0
   output: "output_az"
+  save_model_dir: ./output/
 
 Train:
   epochs_iters: 100
