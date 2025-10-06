@@ -77,7 +77,7 @@ Train:
           keep_keys: ['image', 'label', 'length']
   loader:
     shuffle: true
-    batch_size_per_card: 32
+    batch_size_per_card: 10
     drop_last: true
     num_workers: 4
     use_shared_memory: true
