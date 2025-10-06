@@ -12,7 +12,7 @@ Global:
   save_inference_dir:
   use_visualdl: false
   infer_img:
-  character_dict_path: ./text/typed_text/azerbaijani_cyrillic_dataset/dict.txt
+  character_dict_path: ./azerbaijani_cyrillic_dataset/dict.txt
   max_text_length: 40
   infer_mode: false
   use_space_char: true
