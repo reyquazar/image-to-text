@@ -1,0 +1,19 @@
+test1_crop_175.jpg	мә'лумат
+test1_crop_85.jpg	геjдин әсаслары
+test5_crop_50.jpg	шәhәр (кәнд)
+test1_crop_57.jpg	үмуми орта
+test5_crop_57.jpg	вилаjәт (өлкә, республика)
+test5_crop_230.jpg	едән
+test1_crop_198.jpg	узрә
+test1_crop_80.jpg	ибтидан вә ашагы
+test1_crop_205.jpg	едән
+test1_crop_74.jpg	ибтидан вә ашагы
+test1_crop_12.jpg	шәhәр (кәнд)
+test1_crop_111.jpg	Геjдләр үчун
+test5_crop_247.jpg	шөбәсинин
+test1_crop_208.jpg	доғулан
+test1_crop_210.jpg	өләнләр
+test6_crop_3.jpg	вилаjәт (өлкә)
+test7_crop_14.jpg	vә
+test1_crop_9.jpg	Доғулдуғу вахт
+test1_crop_122.jpg	мә'лумат
