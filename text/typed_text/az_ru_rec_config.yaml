@@ -1,11 +1,11 @@
 Global:
   use_gpu: true
-  epoch_num: 500
+  epoch_num: 100
   log_smooth_window: 20
-  print_batch_step: 10
+  print_batch_step: 50
   save_model_dir: ./output/
-  save_epoch_step: 10
-  eval_batch_step: [0, 1000]
+  save_epoch_step: 5
+  eval_batch_step: [0, 500]
   cal_metric_during_train: true
   pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
@@ -24,7 +24,7 @@ Optimizer:
   beta2: 0.999
   lr:
     name: Cosine
-    learning_rate: 0.0001
+    learning_rate: 0.001
     warmup_epoch: 2
   regularizer:
     name: L2
