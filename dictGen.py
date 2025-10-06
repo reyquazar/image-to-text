@@ -21,8 +21,8 @@ def create_vocabulary(input_file, output_file):
 
 
 
-input_file = './text/typed_text/rec_gt.txt'  # Ваш файл с разметкой
-output_file = './text/typed_text/python/dict.txt'  # Выходной файл словаря
+input_file = './text/typed_text/pure_azerbaijani_cyrillic_dataset/rec_gt.txt'  # Ваш файл с разметкой
+output_file = './text/typed_text/pure_azerbaijani_cyrillic_dataset/dict.txt'  # Выходной файл словаря
 create_vocabulary(input_file, output_file)
 #
 # import os
