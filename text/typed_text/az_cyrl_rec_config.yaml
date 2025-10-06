@@ -37,7 +37,7 @@ Architecture:
   Backbone:
     name: PPLCNetV3
     scale: 1
-    pretrained: false
+    pretrained: true
   Neck:
     name: SequenceEncoder
     encoder_type: svtr
