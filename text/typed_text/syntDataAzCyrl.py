@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 def generate_synthetic_data():
-    output_dir = "synthetic_dataset"
+    output_dir = "pure_azerbaijani_cyrillic_dataset"
     os.makedirs(output_dir, exist_ok=True)
 
     # Словарь азербайджанских кириллических слов
@@ -26,7 +26,7 @@ def generate_synthetic_data():
     generated_count = 0
     labels = []
 
-    for i in range(500):  # Генерируем 500 примеров
+    for i in range(5000):  # Генерируем 500 примеров
         word = random.choice(azerbaijani_words)
         font_size = random.randint(20, 35)
 
@@ -67,7 +67,7 @@ def generate_synthetic_data():
             continue
 
     # Сохраняем labels
-    with open(os.path.join(output_dir, "labels.txt"), 'w', encoding='utf-8') as f:
+    with open(os.path.join(output_dir, "rec_gt.txt"), 'a', encoding='utf-8') as f:
         for label in labels:
             f.write(label + '\n')
 
