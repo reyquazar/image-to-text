@@ -12,7 +12,7 @@ Global:
   save_inference_dir:
   use_visualdl: false
   infer_img:
-  character_dict_path: ./text/typed_text/pure_azerbaijani_cyrillic_dataset/dict.txt
+  character_dict_path: ./text/typed_text/pure_azerbaijani_cyrillic_dataset3/dict.txt
   max_text_length: 40
   infer_mode: false
   use_space_char: true
@@ -62,9 +62,9 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset
+    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset3
     label_file_list:
-      - ./text/typed_text/pure_azerbaijani_cyrillic_dataset/train_list.txt
+      - ./text/typed_text/pure_azerbaijani_cyrillic_dataset3/train_list.txt
     ratio_list: [1.0]
     transforms:
       - DecodeImage:
@@ -85,9 +85,9 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset
+    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset3
     label_file_list:
-      - ./text/typed_text/pure_azerbaijani_cyrillic_dataset/val_list.txt
+      - ./text/typed_text/pure_azerbaijani_cyrillic_dataset3/val_list.txt
     transforms:
       - DecodeImage:
           img_mode: BGR
