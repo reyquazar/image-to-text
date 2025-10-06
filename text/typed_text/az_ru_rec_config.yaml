@@ -94,7 +94,7 @@ Eval:
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [3, 100, 320]
+          image_shape: [3, 32, 320]
       - KeepKeys:
           keep_keys: ['image', 'label', 'length']
   loader:
