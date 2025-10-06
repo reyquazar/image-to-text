@@ -1,12 +1,11 @@
 Global:
-  debug: false
   use_gpu: true
-  epoch_num: 300
+  epoch_num: 100
   log_smooth_window: 20
   print_batch_step: 10
-  save_model_dir: ./output/rec_ppocr_v3
-  save_epoch_step: 5
-  eval_batch_step: [0, 500]
+  save_model_dir: ./output/
+  save_epoch_step: 3
+  eval_batch_step: [0, 200]
   cal_metric_during_train: true
   pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
@@ -14,95 +13,49 @@ Global:
   use_visualdl: false
   infer_img:
   character_dict_path: ./text/typed_text/pure_azerbaijani_cyrillic_dataset/dict.txt
-  max_text_length: &max_text_length 40
+  max_text_length: 25
   infer_mode: false
-  use_space_char: true
-  save_res_path: ./output/rec/predicts_ppocrv3.txt
+  use_space_char: false
+  save_res_path: ./output/predicts_rec.txt
 
 Optimizer:
   name: Adam
   beta1: 0.9
   beta2: 0.999
   lr:
-    name: Piecewise
-    decay_epochs: [200]
-    values: [0.0005, 0.00005]
-    warmup_epoch: 5
+    learning_rate: 0.0005
   regularizer:
     name: L2
-    factor: 0.0005
+    factor: 0.00001
 
 Architecture:
-  model_type: &model_type "rec"
-  name: DistillationModel
-  algorithm: Distillation
-  Models:
-    Teacher:
-      pretrained: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
-      freeze_params: true
-      return_all_feats: false
-      model_type: *model_type
-      algorithm: SVTR
-      Transform:
-      Backbone:
-        name: PPLCNetV3
-        scale: 1
-        pretrained: false
-      Neck:
-        name: SequenceEncoder
-        encoder_type: svtr
-        dims: 64
-        depth: 2
-        hidden_dims: 120
-        use_guide: false
-      Head:
-        name: CTCHead
-        fc_decay: 0.00001
-    Student:
-      pretrained:
-      freeze_params: false
-      return_all_feats: false
-      model_type: *model_type
-      algorithm: SVTR
-      Transform:
-      Backbone:
-        name: PPLCNetV3
-        scale: 1
-        pretrained: false
-      Neck:
-        name: SequenceEncoder
-        encoder_type: svtr
-        dims: 64
-        depth: 2
-        hidden_dims: 120
-        use_guide: false
-      Head:
-        name: CTCHead
-        fc_decay: 0.00001
+  model_type: rec
+  algorithm: CRNN
+  Transform:
+  Backbone:
+    name: MobileNetV1Enhance
+    scale: 0.5
+  Neck:
+    name: SequenceEncoder
+    encoder_type: rnn
+    hidden_size: 48
+  Head:
+    name: CTCHead
 
 Loss:
-  name: CombinedLoss
-  loss_config_list:
-  - DistillationCTCLoss:
-      weight: 1.0
-      model_name_list: ["Student", "Teacher"]
-      key: head_out
+  name: CTCLoss
 
 PostProcess:
-  name: DistillationCTCLabelDecode
-  model_name: ["Student", "Teacher"]
-  key: head_out
+  name: CTCLabelDecode
 
 Metric:
-  name: DistillationMetric
-  base_metric_name: RecMetric
+  name: RecMetric
   main_indicator: acc
-  key: "Student"
 
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset
+    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset/
     label_file_list:
       - ./text/typed_text/pure_azerbaijani_cyrillic_dataset/train_list.txt
     transforms:
@@ -116,15 +69,14 @@ Train:
           keep_keys: ['image', 'label', 'length']
   loader:
     shuffle: true
-    batch_size_per_card: 128
+    batch_size_per_card: 64
     drop_last: true
     num_workers: 4
-    use_shared_memory: true
 
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset
+    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset/
     label_file_list:
       - ./text/typed_text/pure_azerbaijani_cyrillic_dataset/val_list.txt
     transforms:
@@ -140,5 +92,4 @@ Eval:
     shuffle: false
     drop_last: false
     batch_size_per_card: 64
-    num_workers: 2
-    use_shared_memory: true
+    num_workers: 4
