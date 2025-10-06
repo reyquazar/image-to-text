@@ -5,9 +5,9 @@ Global:
   print_batch_step: 2
   save_model_dir: ./output_test/
   save_epoch_step: 10
-  eval_batch_step: [0, 5]
+  eval_batch_step: [ 0, 5 ]
   cal_metric_during_train: true
-  pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
+  pretrained_model: ./text/typed_text/pretrain_models/best_accuracy.pdparams
   checkpoints:
   save_inference_dir:
   use_visualdl: false
@@ -69,9 +69,9 @@ Train:
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [3, 32, 320]
+          image_shape: [ 3, 32, 320 ]
       - KeepKeys:
-          keep_keys: ['image', 'label', 'length']
+          keep_keys: [ 'image', 'label', 'length' ]
   loader:
     shuffle: true
     batch_size_per_card: 4
@@ -91,9 +91,9 @@ Eval:
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [3, 32, 320]
+          image_shape: [ 3, 32, 320 ]
       - KeepKeys:
-          keep_keys: ['image', 'label', 'length']
+          keep_keys: [ 'image', 'label', 'length' ]
   loader:
     shuffle: false
     drop_last: false
