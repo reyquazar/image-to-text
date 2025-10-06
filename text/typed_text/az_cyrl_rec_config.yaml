@@ -32,22 +32,17 @@ Optimizer:
 
 Architecture:
   model_type: rec
-  algorithm: SVTR
+  algorithm: CRNN  # ← ПРОСТАЯ архитектура
   Transform:
   Backbone:
-    name: PPLCNetV3
-    scale: 1
-    pretrained: true  # ← ✅✅✅ ИСПРАВЛЕНО! ДОЛЖНО БЫТЬ TRUE!
+    name: MobileNetV1Enhance
+    scale: 0.5
   Neck:
     name: SequenceEncoder
-    encoder_type: svtr
-    dims: 64
-    depth: 2
-    hidden_dims: 120
-    use_guide: false
+    encoder_type: rnn
+    hidden_size: 48
   Head:
     name: CTCHead
-    fc_decay: 0.00001
 
 Loss:
   name: CTCLoss
