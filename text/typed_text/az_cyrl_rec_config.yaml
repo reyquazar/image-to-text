@@ -1,11 +1,11 @@
 Global:
   use_gpu: true
-  epoch_num: 100
-  log_smooth_window: 20
-  print_batch_step: 50
-  save_model_dir: ./output/
-  save_epoch_step: 5
-  eval_batch_step: [0, 500]
+  epoch_num: 50  # Уменьшил для теста
+  log_smooth_window: 5
+  print_batch_step: 2  # Вывод каждые 2 батча
+  save_model_dir: ./output_test/
+  save_epoch_step: 10
+  eval_batch_step: [0, 10]  # Чаще валидация
   cal_metric_during_train: true
   pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
@@ -15,39 +15,32 @@ Global:
   character_dict_path: ./text/typed_text/pure_azerbaijani_cyrillic_dataset3/dict.txt
   max_text_length: 40
   infer_mode: false
-  use_space_char: true
-  save_res_path: ./output/predicts_rec.txt
+  use_space_char: false  # Поставь false если нет пробелов
+  save_res_path: ./output_test/predicts_rec.txt
 
 Optimizer:
   name: Adam
   beta1: 0.9
   beta2: 0.999
   lr:
-    name: Cosine
-    learning_rate: 0.0001
-    warmup_epoch: 5
+    learning_rate: 0.001  # Увеличил LR для быстрого обучения
   regularizer:
     name: L2
-    factor: 0.0005
+    factor: 0.00001
 
 Architecture:
   model_type: rec
-  algorithm: SVTR
+  algorithm: CRNN  # Вернул старую работающую архитектуру!
   Transform:
   Backbone:
-    name: PPLCNetV3
-    scale: 1
-    pretrained: true  # ← ✅✅✅ ИСПРАВЛЕНО! ДОЛЖНО БЫТЬ TRUE!
+    name: MobileNetV1Enhance
+    scale: 0.5
   Neck:
     name: SequenceEncoder
-    encoder_type: svtr
-    dims: 64
-    depth: 2
-    hidden_dims: 120
-    use_guide: false
+    encoder_type: rnn
+    hidden_size: 48
   Head:
     name: CTCHead
-    fc_decay: 0.00001
 
 Loss:
   name: CTCLoss
@@ -65,7 +58,6 @@ Train:
     data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset3
     label_file_list:
       - ./text/typed_text/pure_azerbaijani_cyrillic_dataset3/train_list.txt
-    ratio_list: [1.0]
     transforms:
       - DecodeImage:
           img_mode: BGR
@@ -77,10 +69,10 @@ Train:
           keep_keys: ['image', 'label', 'length']
   loader:
     shuffle: true
-    batch_size_per_card: 5
-    drop_last: true
-    num_workers: 4
-    use_shared_memory: true
+    batch_size_per_card: 4  # 20 картинок / 4 = 5 батчей за эпоху
+    drop_last: false  # Важно: false чтобы использовать все данные
+    num_workers: 2
+    use_shared_memory: false
 
 Eval:
   dataset:
@@ -100,6 +92,6 @@ Eval:
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 64
-    num_workers: 2
-    use_shared_memory: true
+    batch_size_per_card: 4
+    num_workers: 1
+    use_shared_memory: false

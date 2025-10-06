@@ -1,2 +1,16 @@
+synthetic_0019.jpg	çəkmə
+synthetic_0018.jpg	qış
+synthetic_0013.jpg	dəhə
+synthetic_0005.jpg	payız
+synthetic_0007.jpg	milyon
+synthetic_0002.jpg	plov
+synthetic_0003.jpg	sülh
+synthetic_0016.jpg	çevik
+synthetic_0015.jpg	gür
+synthetic_0010.jpg	müharibə
+synthetic_0012.jpg	şərbət
 synthetic_0000.jpg	jurnalist
+synthetic_0008.jpg	bir
 synthetic_0001.jpg	yaşıl
+synthetic_0004.jpg	şəffaf
+synthetic_0009.jpg	immet
