@@ -10,6 +10,6 @@ venv/
 .idea/
 text/typed_text/pretrain_models
 output
-!output/train.log
+!output/*.log
 text/PP-OCRv5_mobile_det_pretrained.pdparams
 text/PP-OCRv5_mobile_rec_pretrained.pdparams
