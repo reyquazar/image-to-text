@@ -1,0 +1,345 @@
+[2025/10/08 10:30:00] ppocr INFO: Architecture : 
+[2025/10/08 10:30:00] ppocr INFO:     Backbone : 
+[2025/10/08 10:30:00] ppocr INFO:         name : PPLCNetV3
+[2025/10/08 10:30:00] ppocr INFO:         pretrained : True
+[2025/10/08 10:30:00] ppocr INFO:         scale : 1
+[2025/10/08 10:30:00] ppocr INFO:     Head : 
+[2025/10/08 10:30:00] ppocr INFO:         fc_decay : 1e-05
+[2025/10/08 10:30:00] ppocr INFO:         name : CTCHead
+[2025/10/08 10:30:00] ppocr INFO:     Neck : 
+[2025/10/08 10:30:00] ppocr INFO:         depth : 2
+[2025/10/08 10:30:00] ppocr INFO:         dims : 64
+[2025/10/08 10:30:00] ppocr INFO:         encoder_type : svtr
+[2025/10/08 10:30:00] ppocr INFO:         hidden_dims : 120
+[2025/10/08 10:30:00] ppocr INFO:         name : SequenceEncoder
+[2025/10/08 10:30:00] ppocr INFO:         use_guide : False
+[2025/10/08 10:30:00] ppocr INFO:     Transform : None
+[2025/10/08 10:30:00] ppocr INFO:     algorithm : SVTR
+[2025/10/08 10:30:00] ppocr INFO:     model_type : rec
+[2025/10/08 10:30:00] ppocr INFO: Eval : 
+[2025/10/08 10:30:00] ppocr INFO:     dataset : 
+[2025/10/08 10:30:00] ppocr INFO:         data_dir : ./text/typed_text/pure_azerbaijani_cyrillic_dataset3
+[2025/10/08 10:30:00] ppocr INFO:         label_file_list : ['./text/typed_text/pure_azerbaijani_cyrillic_dataset3/val_list.txt']
+[2025/10/08 10:30:00] ppocr INFO:         name : SimpleDataSet
+[2025/10/08 10:30:00] ppocr INFO:         transforms : 
+[2025/10/08 10:30:00] ppocr INFO:             DecodeImage : 
+[2025/10/08 10:30:00] ppocr INFO:                 channel_first : False
+[2025/10/08 10:30:00] ppocr INFO:                 img_mode : BGR
+[2025/10/08 10:30:00] ppocr INFO:             CTCLabelEncode : None
+[2025/10/08 10:30:00] ppocr INFO:             RecResizeImg : 
+[2025/10/08 10:30:00] ppocr INFO:                 image_shape : [3, 32, 320]
+[2025/10/08 10:30:00] ppocr INFO:             KeepKeys : 
+[2025/10/08 10:30:00] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/10/08 10:30:00] ppocr INFO:     loader : 
+[2025/10/08 10:30:00] ppocr INFO:         batch_size_per_card : 4
+[2025/10/08 10:30:00] ppocr INFO:         drop_last : False
+[2025/10/08 10:30:00] ppocr INFO:         num_workers : 1
+[2025/10/08 10:30:00] ppocr INFO:         shuffle : False
+[2025/10/08 10:30:00] ppocr INFO:         use_shared_memory : False
+[2025/10/08 10:30:00] ppocr INFO: Global : 
+[2025/10/08 10:30:00] ppocr INFO:     cal_metric_during_train : True
+[2025/10/08 10:30:00] ppocr INFO:     character_dict_path : ./text/typed_text/pure_azerbaijani_cyrillic_dataset/dict.txt
+[2025/10/08 10:30:00] ppocr INFO:     checkpoints : None
+[2025/10/08 10:30:00] ppocr INFO:     distributed : False
+[2025/10/08 10:30:00] ppocr INFO:     epoch_num : 1
+[2025/10/08 10:30:00] ppocr INFO:     eval_batch_step : [0, 5]
+[2025/10/08 10:30:00] ppocr INFO:     infer_img : None
+[2025/10/08 10:30:00] ppocr INFO:     infer_mode : False
+[2025/10/08 10:30:00] ppocr INFO:     log_smooth_window : 5
+[2025/10/08 10:30:00] ppocr INFO:     max_text_length : 25
+[2025/10/08 10:30:00] ppocr INFO:     pretrained_model : ./text/typed_text/pretrain_models/best_accuracy.pdparams
+[2025/10/08 10:30:00] ppocr INFO:     print_batch_step : 2
+[2025/10/08 10:30:00] ppocr INFO:     save_epoch_step : 10
+[2025/10/08 10:30:00] ppocr INFO:     save_inference_dir : None
+[2025/10/08 10:30:00] ppocr INFO:     save_model_dir : ./output/
+[2025/10/08 10:30:00] ppocr INFO:     save_res_path : ./output/predicts_rec.txt
+[2025/10/08 10:30:00] ppocr INFO:     use_gpu : True
+[2025/10/08 10:30:00] ppocr INFO:     use_space_char : True
+[2025/10/08 10:30:00] ppocr INFO:     use_visualdl : False
+[2025/10/08 10:30:00] ppocr INFO: Loss : 
+[2025/10/08 10:30:00] ppocr INFO:     name : CTCLoss
+[2025/10/08 10:30:00] ppocr INFO: Metric : 
+[2025/10/08 10:30:00] ppocr INFO:     main_indicator : acc
+[2025/10/08 10:30:00] ppocr INFO:     name : RecMetric
+[2025/10/08 10:30:00] ppocr INFO: Optimizer : 
+[2025/10/08 10:30:00] ppocr INFO:     beta1 : 0.9
+[2025/10/08 10:30:00] ppocr INFO:     beta2 : 0.999
+[2025/10/08 10:30:00] ppocr INFO:     lr : 
+[2025/10/08 10:30:00] ppocr INFO:         learning_rate : 0.0005
+[2025/10/08 10:30:00] ppocr INFO:     name : Adam
+[2025/10/08 10:30:00] ppocr INFO:     regularizer : 
+[2025/10/08 10:30:00] ppocr INFO:         factor : 1e-05
+[2025/10/08 10:30:00] ppocr INFO:         name : L2
+[2025/10/08 10:30:00] ppocr INFO: PostProcess : 
+[2025/10/08 10:30:00] ppocr INFO:     name : CTCLabelDecode
+[2025/10/08 10:30:00] ppocr INFO: Train : 
+[2025/10/08 10:30:00] ppocr INFO:     dataset : 
+[2025/10/08 10:30:00] ppocr INFO:         data_dir : ./text/typed_text/pure_azerbaijani_cyrillic_dataset3
+[2025/10/08 10:30:00] ppocr INFO:         label_file_list : ['./text/typed_text/pure_azerbaijani_cyrillic_dataset3/train_list.txt']
+[2025/10/08 10:30:00] ppocr INFO:         name : SimpleDataSet
+[2025/10/08 10:30:00] ppocr INFO:         transforms : 
+[2025/10/08 10:30:00] ppocr INFO:             DecodeImage : 
+[2025/10/08 10:30:00] ppocr INFO:                 channel_first : False
+[2025/10/08 10:30:00] ppocr INFO:                 img_mode : BGR
+[2025/10/08 10:30:00] ppocr INFO:             CTCLabelEncode : None
+[2025/10/08 10:30:00] ppocr INFO:             RecResizeImg : 
+[2025/10/08 10:30:00] ppocr INFO:                 image_shape : [3, 32, 320]
+[2025/10/08 10:30:00] ppocr INFO:             KeepKeys : 
+[2025/10/08 10:30:00] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/10/08 10:30:00] ppocr INFO:     loader : 
+[2025/10/08 10:30:00] ppocr INFO:         batch_size_per_card : 4
+[2025/10/08 10:30:00] ppocr INFO:         drop_last : False
+[2025/10/08 10:30:00] ppocr INFO:         num_workers : 2
+[2025/10/08 10:30:00] ppocr INFO:         shuffle : True
+[2025/10/08 10:30:00] ppocr INFO:         use_shared_memory : False
+[2025/10/08 10:30:00] ppocr INFO: profiler_options : None
+[2025/10/08 10:30:00] ppocr INFO: train with paddle 2.6.2 and device Place(gpu:0)
+[2025/10/08 10:30:00] ppocr INFO: Initialize indexes of datasets:['./text/typed_text/pure_azerbaijani_cyrillic_dataset3/train_list.txt']
+[2025/10/08 10:30:00] ppocr INFO: Initialize indexes of datasets:['./text/typed_text/pure_azerbaijani_cyrillic_dataset3/val_list.txt']
+[2025/10/08 10:30:01] ppocr INFO: train dataloader has 4 iters
+[2025/10/08 10:30:01] ppocr INFO: valid dataloader has 2 iters
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.conv1._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.conv1._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.conv1._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.conv1._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.conv1._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.0._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.0._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.0._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.0._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.0._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.0._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.0._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.0._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.0._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.0._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.1._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.1._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.1._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.1._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.1._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.1._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.1._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.1._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.1._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.1._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.2._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.2._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.2._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.2._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.2._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.2._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.2._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.2._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.2._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.2._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.3._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.3._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.3._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.3._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.3._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.3._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.3._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.3._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.3._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.3._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.4._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.4._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.4._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.4._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.4._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.4._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.4._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.4._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.4._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.4._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.5._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.5._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.5._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.5._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.5._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.5._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.5._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.5._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.5._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.5._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.6._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.6._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.6._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.6._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.6._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.6._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.6._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.6._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.6._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.6._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.7._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.7._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.7._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.7._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.7._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.7._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.7._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.7._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.7._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.7._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.8._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.8._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.8._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.8._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.8._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.8._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.8._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.8._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.8._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.8._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.9._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.9._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.9._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.9._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.9._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.9._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.9._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.9._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.9._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.9._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.10._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.10._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.10._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.10._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.10._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.10._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.10._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.10._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.10._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.10._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._se.conv1.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._se.conv1.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._se.conv2.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._se.conv2.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.11._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._depthwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._depthwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._depthwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._depthwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._depthwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._se.conv1.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._se.conv1.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._se.conv2.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._se.conv2.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._pointwise_conv._conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._pointwise_conv._batch_norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._pointwise_conv._batch_norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._pointwise_conv._batch_norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params backbone.block_list.12._pointwise_conv._batch_norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1.conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1.norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1.norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1.norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1.norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv2.conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv2.norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv2.norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv2.norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv2.norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.norm1.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.norm1.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mixer.qkv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mixer.qkv.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mixer.proj.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mixer.proj.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.norm2.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.norm2.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mlp.fc1.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mlp.fc1.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mlp.fc2.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.0.mlp.fc2.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.norm1.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.norm1.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mixer.qkv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mixer.qkv.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mixer.proj.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mixer.proj.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.norm2.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.norm2.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mlp.fc1.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mlp.fc1.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mlp.fc2.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.svtr_block.1.mlp.fc2.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv3.conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv3.norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv3.norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv3.norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv3.norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv4.conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv4.norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv4.norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv4.norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv4.norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1x1.conv.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1x1.norm.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1x1.norm.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1x1.norm._mean not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_encoder.encoder.conv1x1.norm._variance not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_head.fc.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.ctc_head.fc.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.weight_ih_l0 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.weight_hh_l0 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.bias_ih_l0 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.bias_hh_l0 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.weight_ih_l1 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.weight_hh_l1 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.bias_ih_l1 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.bias_hh_l1 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.0.cell.weight_ih not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.0.cell.weight_hh not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.0.cell.bias_ih not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.0.cell.bias_hh not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.1.cell.weight_ih not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.1.cell.weight_hh not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.1.cell.bias_ih not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.rnn_encoder.1.cell.bias_hh not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.linear.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.encoder.linear.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.conv1x1_1.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.conv1x1_1.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.conv3x3_1.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.conv3x3_1.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.conv1x1_2.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.conv1x1_2.bias not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.weight_ih_l0 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.weight_hh_l0 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.bias_ih_l0 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.bias_hh_l0 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.weight_ih_l1 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.weight_hh_l1 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.bias_ih_l1 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.bias_hh_l1 not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.0.cell.weight_ih not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.0.cell.weight_hh not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.0.cell.bias_ih not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.0.cell.bias_hh not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.1.cell.weight_ih not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.1.cell.weight_hh not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.1.cell.bias_ih not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.rnn_decoder.1.cell.bias_hh not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.embedding.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.prediction.weight not in model
+[2025/10/08 10:30:01] ppocr WARNING: The pretrained params head.sar_head.decoder.prediction.bias not in model
+[2025/10/08 10:30:01] ppocr INFO: load pretrain successful from ./text/typed_text/pretrain_models/best_accuracy
+[2025/10/08 10:30:01] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 5 iterations
+[2025/10/08 10:30:02] ppocr INFO: epoch: [1/1], global_step: 2, lr: 0.000500, acc: 0.000000, norm_edit_dis: 0.043058, loss: 136.194244, avg_reader_cost: 0.07130 s, avg_batch_cost: 0.53712 s, avg_samples: 4.0, ips: 7.44709 samples/s, eta: 0:00:01, max_mem_reserved: 627 MB, max_mem_allocated: 596 MB
+[2025/10/08 10:30:02] ppocr INFO: epoch: [1/1], global_step: 4, lr: 0.000500, acc: 0.000000, norm_edit_dis: 0.067363, loss: 130.479401, avg_reader_cost: 0.00254 s, avg_batch_cost: 0.10222 s, avg_samples: 4.0, ips: 39.12971 samples/s, eta: 0:00:00, max_mem_reserved: 627 MB, max_mem_allocated: 596 MB
+[2025/10/08 10:30:03] ppocr INFO: save model in ./output/latest
+[2025/10/08 10:30:03] ppocr INFO: best metric, acc: 0, is_float16: False
