@@ -1,6 +1,5 @@
 import os
 import subprocess
-import sys
 
 
 def run_training():
@@ -61,7 +60,7 @@ def run_training():
 
 
 def check_environment():
-    """
+    """x
     Проверка окружения
     """
     print("🔍 Проверка окружения...")
