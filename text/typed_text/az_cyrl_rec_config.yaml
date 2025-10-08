@@ -72,13 +72,6 @@ Train:
       - RecResizeImg:
           image_shape: [3, 48, 400]  # Увеличил размер для лучшего качества
           padding: true
-      - ColorJitter:
-          brightness: 0.4
-          contrast: 0.4
-          saturation: 0.4
-      - RandAugment:
-          num_layers: 2
-          magnitude: 8
       - KeepKeys:
           keep_keys: ['image', 'label', 'length']
   loader:
@@ -99,7 +92,7 @@ Eval:
           img_mode: BGR
           channel_first: false
       - CTCLabelEncode:
-      - RecResizeImg:
+      - SVTRRecResizeImg:
           image_shape: [3, 48, 400]
           padding: true
       - KeepKeys:
