@@ -1,131 +1,595 @@
-[2025/10/08 11:31:41] ppocr INFO: Architecture : 
-[2025/10/08 11:31:41] ppocr INFO:     Backbone : 
-[2025/10/08 11:31:41] ppocr INFO:         name : PPLCNetV3
-[2025/10/08 11:31:41] ppocr INFO:         pretrained : False
-[2025/10/08 11:31:41] ppocr INFO:         scale : 0.5
-[2025/10/08 11:31:41] ppocr INFO:     Head : 
-[2025/10/08 11:31:41] ppocr INFO:         fc_decay : 1e-05
-[2025/10/08 11:31:41] ppocr INFO:         name : CTCHead
-[2025/10/08 11:31:41] ppocr INFO:     Neck : 
-[2025/10/08 11:31:41] ppocr INFO:         depth : 2
-[2025/10/08 11:31:41] ppocr INFO:         dims : 64
-[2025/10/08 11:31:41] ppocr INFO:         encoder_type : svtr
-[2025/10/08 11:31:41] ppocr INFO:         hidden_dims : 120
-[2025/10/08 11:31:41] ppocr INFO:         name : SequenceEncoder
-[2025/10/08 11:31:41] ppocr INFO:         use_guide : False
-[2025/10/08 11:31:41] ppocr INFO:     Transform : None
-[2025/10/08 11:31:41] ppocr INFO:     algorithm : SVTR
-[2025/10/08 11:31:41] ppocr INFO:     model_type : rec
-[2025/10/08 11:31:41] ppocr INFO: Eval : 
-[2025/10/08 11:31:41] ppocr INFO:     dataset : 
-[2025/10/08 11:31:41] ppocr INFO:         data_dir : ./text/debug
-[2025/10/08 11:31:41] ppocr INFO:         label_file_list : ['./text/debug/val_list.txt']
-[2025/10/08 11:31:41] ppocr INFO:         name : SimpleDataSet
-[2025/10/08 11:31:41] ppocr INFO:         transforms : 
-[2025/10/08 11:31:41] ppocr INFO:             DecodeImage : 
-[2025/10/08 11:31:41] ppocr INFO:                 channel_first : False
-[2025/10/08 11:31:41] ppocr INFO:                 img_mode : BGR
-[2025/10/08 11:31:41] ppocr INFO:             CTCLabelEncode : None
-[2025/10/08 11:31:41] ppocr INFO:             RecResizeImg : 
-[2025/10/08 11:31:41] ppocr INFO:                 image_shape : [3, 32, 320]
-[2025/10/08 11:31:41] ppocr INFO:             KeepKeys : 
-[2025/10/08 11:31:41] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
-[2025/10/08 11:31:41] ppocr INFO:     loader : 
-[2025/10/08 11:31:41] ppocr INFO:         batch_size_per_card : 2
-[2025/10/08 11:31:41] ppocr INFO:         drop_last : False
-[2025/10/08 11:31:41] ppocr INFO:         num_workers : 0
-[2025/10/08 11:31:41] ppocr INFO:         shuffle : False
-[2025/10/08 11:31:41] ppocr INFO:         use_shared_memory : False
-[2025/10/08 11:31:41] ppocr INFO: Global : 
-[2025/10/08 11:31:41] ppocr INFO:     cal_metric_during_train : True
-[2025/10/08 11:31:41] ppocr INFO:     character_dict_path : ./text/debug/dict.txt
-[2025/10/08 11:31:41] ppocr INFO:     checkpoints : None
-[2025/10/08 11:31:41] ppocr INFO:     distributed : False
-[2025/10/08 11:31:41] ppocr INFO:     epoch_num : 3
-[2025/10/08 11:31:41] ppocr INFO:     eval_batch_step : [0, 1]
-[2025/10/08 11:31:41] ppocr INFO:     infer_mode : False
-[2025/10/08 11:31:41] ppocr INFO:     log_smooth_window : 1
-[2025/10/08 11:31:41] ppocr INFO:     max_text_length : 10
-[2025/10/08 11:31:41] ppocr INFO:     pretrained_model : None
-[2025/10/08 11:31:41] ppocr INFO:     print_batch_step : 1
-[2025/10/08 11:31:41] ppocr INFO:     save_epoch_step : 1
-[2025/10/08 11:31:41] ppocr INFO:     save_model_dir : ./output/
-[2025/10/08 11:31:41] ppocr INFO:     save_res_path : ./output/debug_predicts.txt
-[2025/10/08 11:31:41] ppocr INFO:     use_gpu : True
-[2025/10/08 11:31:41] ppocr INFO:     use_space_char : False
-[2025/10/08 11:31:41] ppocr INFO:     use_visualdl : False
-[2025/10/08 11:31:41] ppocr INFO: Loss : 
-[2025/10/08 11:31:41] ppocr INFO:     name : CTCLoss
-[2025/10/08 11:31:41] ppocr INFO: Metric : 
-[2025/10/08 11:31:41] ppocr INFO:     main_indicator : acc
-[2025/10/08 11:31:41] ppocr INFO:     name : RecMetric
-[2025/10/08 11:31:41] ppocr INFO: Optimizer : 
-[2025/10/08 11:31:41] ppocr INFO:     beta1 : 0.9
-[2025/10/08 11:31:41] ppocr INFO:     beta2 : 0.999
-[2025/10/08 11:31:41] ppocr INFO:     lr : 
-[2025/10/08 11:31:41] ppocr INFO:         learning_rate : 0.001
-[2025/10/08 11:31:41] ppocr INFO:     name : Adam
-[2025/10/08 11:31:41] ppocr INFO:     regularizer : 
-[2025/10/08 11:31:41] ppocr INFO:         factor : 1e-05
-[2025/10/08 11:31:41] ppocr INFO:         name : L2
-[2025/10/08 11:31:41] ppocr INFO: PostProcess : 
-[2025/10/08 11:31:41] ppocr INFO:     name : CTCLabelDecode
-[2025/10/08 11:31:41] ppocr INFO: Train : 
-[2025/10/08 11:31:41] ppocr INFO:     dataset : 
-[2025/10/08 11:31:41] ppocr INFO:         data_dir : ./text/debug
-[2025/10/08 11:31:41] ppocr INFO:         label_file_list : ['./text/debug/train_list.txt']
-[2025/10/08 11:31:41] ppocr INFO:         name : SimpleDataSet
-[2025/10/08 11:31:41] ppocr INFO:         transforms : 
-[2025/10/08 11:31:41] ppocr INFO:             DecodeImage : 
-[2025/10/08 11:31:41] ppocr INFO:                 channel_first : False
-[2025/10/08 11:31:41] ppocr INFO:                 img_mode : BGR
-[2025/10/08 11:31:41] ppocr INFO:             CTCLabelEncode : None
-[2025/10/08 11:31:41] ppocr INFO:             RecResizeImg : 
-[2025/10/08 11:31:41] ppocr INFO:                 image_shape : [3, 32, 320]
-[2025/10/08 11:31:41] ppocr INFO:             KeepKeys : 
-[2025/10/08 11:31:41] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
-[2025/10/08 11:31:41] ppocr INFO:     loader : 
-[2025/10/08 11:31:41] ppocr INFO:         batch_size_per_card : 2
-[2025/10/08 11:31:41] ppocr INFO:         drop_last : False
-[2025/10/08 11:31:41] ppocr INFO:         num_workers : 0
-[2025/10/08 11:31:41] ppocr INFO:         shuffle : True
-[2025/10/08 11:31:41] ppocr INFO:         use_shared_memory : False
-[2025/10/08 11:31:41] ppocr INFO: profiler_options : None
-[2025/10/08 11:31:41] ppocr INFO: train with paddle 2.6.2 and device Place(gpu:0)
-[2025/10/08 11:31:41] ppocr INFO: Initialize indexes of datasets:['./text/debug/train_list.txt']
-[2025/10/08 11:31:41] ppocr INFO: Initialize indexes of datasets:['./text/debug/val_list.txt']
-[2025/10/08 11:31:41] ppocr INFO: train dataloader has 2 iters
-[2025/10/08 11:31:41] ppocr INFO: valid dataloader has 1 iters
-[2025/10/08 11:31:41] ppocr INFO: train from scratch
-[2025/10/08 11:31:41] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 1 iterations
-[2025/10/08 11:31:42] ppocr INFO: epoch: [1/3], global_step: 1, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.205886, loss: 35.353230, avg_reader_cost: 0.10208 s, avg_batch_cost: 0.83356 s, avg_samples: 2.0, ips: 2.39935 samples/s, eta: 0:00:04, max_mem_reserved: 136 MB, max_mem_allocated: 134 MB
-[2025/10/08 11:31:42] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.2500037499812501, fps: 51.882092450799696
-[2025/10/08 11:31:43] ppocr INFO: save best model is to ./output/best_accuracy
-[2025/10/08 11:31:43] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.2500037499812501, fps: 51.882092450799696, best_epoch: 1
-[2025/10/08 11:31:43] ppocr INFO: epoch: [1/3], global_step: 2, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.500005, loss: 28.198153, avg_reader_cost: 0.00284 s, avg_batch_cost: 0.12163 s, avg_samples: 1.0, ips: 8.22182 samples/s, eta: 0:00:01, max_mem_reserved: 138 MB, max_mem_allocated: 134 MB
-[2025/10/08 11:31:43] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.2500037499812501, fps: 73.71425056459195
-[2025/10/08 11:31:43] ppocr INFO: save best model is to ./output/best_accuracy
-[2025/10/08 11:31:43] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.2500037499812501, fps: 73.71425056459195, best_epoch: 1
-[2025/10/08 11:31:44] ppocr INFO: save model in ./output/latest
-[2025/10/08 11:31:44] ppocr INFO: save model in ./output/iter_epoch_1
-[2025/10/08 11:31:44] ppocr INFO: epoch: [2/3], global_step: 3, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.500002, loss: 25.440128, avg_reader_cost: 0.54353 s, avg_batch_cost: 0.81744 s, avg_samples: 2.0, ips: 2.44666 samples/s, eta: 0:00:01, max_mem_reserved: 164 MB, max_mem_allocated: 156 MB
-[2025/10/08 11:31:44] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.2500037499812501, fps: 57.025403968647815
-[2025/10/08 11:31:45] ppocr INFO: save best model is to ./output/best_accuracy
-[2025/10/08 11:31:45] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.2500037499812501, fps: 57.025403968647815, best_epoch: 2
-[2025/10/08 11:31:45] ppocr INFO: epoch: [2/3], global_step: 4, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.500005, loss: 24.201481, avg_reader_cost: 0.00399 s, avg_batch_cost: 0.13792 s, avg_samples: 1.0, ips: 7.25082 samples/s, eta: 0:00:00, max_mem_reserved: 164 MB, max_mem_allocated: 156 MB
-[2025/10/08 11:31:45] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.2500037499812501, fps: 54.438605257863756
-[2025/10/08 11:31:46] ppocr INFO: save best model is to ./output/best_accuracy
-[2025/10/08 11:31:46] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.2500037499812501, fps: 54.438605257863756, best_epoch: 2
-[2025/10/08 11:31:46] ppocr INFO: save model in ./output/latest
-[2025/10/08 11:31:46] ppocr INFO: save model in ./output/iter_epoch_2
-[2025/10/08 11:31:46] ppocr INFO: epoch: [3/3], global_step: 5, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.500002, loss: 22.588808, avg_reader_cost: 0.56723 s, avg_batch_cost: 0.70914 s, avg_samples: 2.0, ips: 2.82030 samples/s, eta: 0:00:00, max_mem_reserved: 164 MB, max_mem_allocated: 156 MB
-[2025/10/08 11:31:46] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.2500037499812501, fps: 58.61937206068357
-[2025/10/08 11:31:47] ppocr INFO: save best model is to ./output/best_accuracy
-[2025/10/08 11:31:47] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.2500037499812501, fps: 58.61937206068357, best_epoch: 3
-[2025/10/08 11:31:47] ppocr INFO: epoch: [3/3], global_step: 6, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.500005, loss: 21.591066, avg_reader_cost: 0.00323 s, avg_batch_cost: 0.11831 s, avg_samples: 1.0, ips: 8.45220 samples/s, eta: 0:00:00, max_mem_reserved: 164 MB, max_mem_allocated: 156 MB
-[2025/10/08 11:31:47] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.2500037499812501, fps: 55.60893602916805
-[2025/10/08 11:31:48] ppocr INFO: save best model is to ./output/best_accuracy
-[2025/10/08 11:31:48] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.2500037499812501, fps: 55.60893602916805, best_epoch: 3
-[2025/10/08 11:31:48] ppocr INFO: save model in ./output/latest
-[2025/10/08 11:31:48] ppocr INFO: save model in ./output/iter_epoch_3
-[2025/10/08 11:31:48] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.2500037499812501, fps: 55.60893602916805, best_epoch: 3
+[2025/10/08 11:38:46] ppocr INFO: Architecture : 
+[2025/10/08 11:38:46] ppocr INFO:     Backbone : 
+[2025/10/08 11:38:46] ppocr INFO:         name : PPLCNetV3
+[2025/10/08 11:38:46] ppocr INFO:         pretrained : False
+[2025/10/08 11:38:46] ppocr INFO:         scale : 0.5
+[2025/10/08 11:38:46] ppocr INFO:     Head : 
+[2025/10/08 11:38:46] ppocr INFO:         fc_decay : 1e-05
+[2025/10/08 11:38:46] ppocr INFO:         name : CTCHead
+[2025/10/08 11:38:46] ppocr INFO:     Neck : 
+[2025/10/08 11:38:46] ppocr INFO:         depth : 2
+[2025/10/08 11:38:46] ppocr INFO:         dims : 64
+[2025/10/08 11:38:46] ppocr INFO:         encoder_type : svtr
+[2025/10/08 11:38:46] ppocr INFO:         hidden_dims : 120
+[2025/10/08 11:38:46] ppocr INFO:         name : SequenceEncoder
+[2025/10/08 11:38:46] ppocr INFO:         use_guide : False
+[2025/10/08 11:38:46] ppocr INFO:     Transform : None
+[2025/10/08 11:38:46] ppocr INFO:     algorithm : SVTR
+[2025/10/08 11:38:46] ppocr INFO:     model_type : rec
+[2025/10/08 11:38:46] ppocr INFO: Eval : 
+[2025/10/08 11:38:46] ppocr INFO:     dataset : 
+[2025/10/08 11:38:46] ppocr INFO:         data_dir : ./text/debug
+[2025/10/08 11:38:46] ppocr INFO:         label_file_list : ['./text/debug/val_list.txt']
+[2025/10/08 11:38:46] ppocr INFO:         name : SimpleDataSet
+[2025/10/08 11:38:46] ppocr INFO:         transforms : 
+[2025/10/08 11:38:46] ppocr INFO:             DecodeImage : 
+[2025/10/08 11:38:46] ppocr INFO:                 channel_first : False
+[2025/10/08 11:38:46] ppocr INFO:                 img_mode : BGR
+[2025/10/08 11:38:46] ppocr INFO:             CTCLabelEncode : None
+[2025/10/08 11:38:46] ppocr INFO:             RecResizeImg : 
+[2025/10/08 11:38:46] ppocr INFO:                 image_shape : [3, 32, 320]
+[2025/10/08 11:38:46] ppocr INFO:             KeepKeys : 
+[2025/10/08 11:38:46] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/10/08 11:38:46] ppocr INFO:     loader : 
+[2025/10/08 11:38:46] ppocr INFO:         batch_size_per_card : 2
+[2025/10/08 11:38:46] ppocr INFO:         drop_last : False
+[2025/10/08 11:38:46] ppocr INFO:         num_workers : 0
+[2025/10/08 11:38:46] ppocr INFO:         shuffle : False
+[2025/10/08 11:38:46] ppocr INFO:         use_shared_memory : False
+[2025/10/08 11:38:46] ppocr INFO: Global : 
+[2025/10/08 11:38:46] ppocr INFO:     cal_metric_during_train : True
+[2025/10/08 11:38:46] ppocr INFO:     character_dict_path : ./text/debug/dict.txt
+[2025/10/08 11:38:46] ppocr INFO:     checkpoints : None
+[2025/10/08 11:38:46] ppocr INFO:     distributed : False
+[2025/10/08 11:38:46] ppocr INFO:     epoch_num : 50
+[2025/10/08 11:38:46] ppocr INFO:     eval_batch_step : [0, 1]
+[2025/10/08 11:38:46] ppocr INFO:     infer_mode : False
+[2025/10/08 11:38:46] ppocr INFO:     log_smooth_window : 1
+[2025/10/08 11:38:46] ppocr INFO:     max_text_length : 10
+[2025/10/08 11:38:46] ppocr INFO:     pretrained_model : None
+[2025/10/08 11:38:46] ppocr INFO:     print_batch_step : 1
+[2025/10/08 11:38:46] ppocr INFO:     save_epoch_step : 1
+[2025/10/08 11:38:46] ppocr INFO:     save_model_dir : ./output/
+[2025/10/08 11:38:46] ppocr INFO:     save_res_path : ./output/debug_predicts.txt
+[2025/10/08 11:38:46] ppocr INFO:     use_gpu : True
+[2025/10/08 11:38:46] ppocr INFO:     use_space_char : False
+[2025/10/08 11:38:46] ppocr INFO:     use_visualdl : False
+[2025/10/08 11:38:46] ppocr INFO: Loss : 
+[2025/10/08 11:38:46] ppocr INFO:     name : CTCLoss
+[2025/10/08 11:38:46] ppocr INFO: Metric : 
+[2025/10/08 11:38:46] ppocr INFO:     main_indicator : acc
+[2025/10/08 11:38:46] ppocr INFO:     name : RecMetric
+[2025/10/08 11:38:46] ppocr INFO: Optimizer : 
+[2025/10/08 11:38:46] ppocr INFO:     beta1 : 0.9
+[2025/10/08 11:38:46] ppocr INFO:     beta2 : 0.999
+[2025/10/08 11:38:46] ppocr INFO:     lr : 
+[2025/10/08 11:38:46] ppocr INFO:         learning_rate : 0.001
+[2025/10/08 11:38:46] ppocr INFO:     name : Adam
+[2025/10/08 11:38:46] ppocr INFO:     regularizer : 
+[2025/10/08 11:38:46] ppocr INFO:         factor : 1e-05
+[2025/10/08 11:38:46] ppocr INFO:         name : L2
+[2025/10/08 11:38:46] ppocr INFO: PostProcess : 
+[2025/10/08 11:38:46] ppocr INFO:     name : CTCLabelDecode
+[2025/10/08 11:38:46] ppocr INFO: Train : 
+[2025/10/08 11:38:46] ppocr INFO:     dataset : 
+[2025/10/08 11:38:46] ppocr INFO:         data_dir : ./text/debug
+[2025/10/08 11:38:46] ppocr INFO:         label_file_list : ['./text/debug/train_list.txt']
+[2025/10/08 11:38:46] ppocr INFO:         name : SimpleDataSet
+[2025/10/08 11:38:46] ppocr INFO:         transforms : 
+[2025/10/08 11:38:46] ppocr INFO:             DecodeImage : 
+[2025/10/08 11:38:46] ppocr INFO:                 channel_first : False
+[2025/10/08 11:38:46] ppocr INFO:                 img_mode : BGR
+[2025/10/08 11:38:46] ppocr INFO:             CTCLabelEncode : None
+[2025/10/08 11:38:46] ppocr INFO:             RecResizeImg : 
+[2025/10/08 11:38:46] ppocr INFO:                 image_shape : [3, 32, 320]
+[2025/10/08 11:38:46] ppocr INFO:             KeepKeys : 
+[2025/10/08 11:38:46] ppocr INFO:                 keep_keys : ['image', 'label', 'length']
+[2025/10/08 11:38:46] ppocr INFO:     loader : 
+[2025/10/08 11:38:46] ppocr INFO:         batch_size_per_card : 2
+[2025/10/08 11:38:46] ppocr INFO:         drop_last : False
+[2025/10/08 11:38:46] ppocr INFO:         num_workers : 0
+[2025/10/08 11:38:46] ppocr INFO:         shuffle : True
+[2025/10/08 11:38:46] ppocr INFO:         use_shared_memory : False
+[2025/10/08 11:38:46] ppocr INFO: profiler_options : None
+[2025/10/08 11:38:46] ppocr INFO: train with paddle 2.6.2 and device Place(gpu:0)
+[2025/10/08 11:38:46] ppocr INFO: Initialize indexes of datasets:['./text/debug/train_list.txt']
+[2025/10/08 11:38:46] ppocr INFO: Initialize indexes of datasets:['./text/debug/val_list.txt']
+[2025/10/08 11:38:46] ppocr INFO: train dataloader has 2 iters
+[2025/10/08 11:38:46] ppocr INFO: valid dataloader has 1 iters
+[2025/10/08 11:38:46] ppocr INFO: train from scratch
+[2025/10/08 11:38:46] ppocr INFO: During the training process, after the 0th iteration, an evaluation is run every 1 iterations
+[2025/10/08 11:38:47] ppocr INFO: epoch: [1/50], global_step: 1, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.354170, loss: 41.252621, avg_reader_cost: 0.09755 s, avg_batch_cost: 0.72552 s, avg_samples: 2.0, ips: 2.75664 samples/s, eta: 0:01:11, max_mem_reserved: 136 MB, max_mem_allocated: 134 MB
+[2025/10/08 11:38:47] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 4.99997500014171e-06, fps: 54.02907362441309
+[2025/10/08 11:38:47] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:47] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 4.99997500014171e-06, fps: 54.02907362441309, best_epoch: 1
+[2025/10/08 11:38:47] ppocr INFO: epoch: [1/50], global_step: 2, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.500005, loss: 35.814587, avg_reader_cost: 0.00271 s, avg_batch_cost: 0.11669 s, avg_samples: 1.0, ips: 8.56991 samples/s, eta: 0:00:41, max_mem_reserved: 138 MB, max_mem_allocated: 134 MB
+[2025/10/08 11:38:47] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 4.99997500014171e-06, fps: 74.84148637194986
+[2025/10/08 11:38:48] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:48] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 4.99997500014171e-06, fps: 74.84148637194986, best_epoch: 1
+[2025/10/08 11:38:48] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:38:48] ppocr INFO: save model in ./output/iter_epoch_1
+[2025/10/08 11:38:49] ppocr INFO: epoch: [2/50], global_step: 3, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.437503, loss: 33.906883, avg_reader_cost: 0.50374 s, avg_batch_cost: 0.65414 s, avg_samples: 2.0, ips: 3.05744 samples/s, eta: 0:00:48, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:49] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 4.99997500014171e-06, fps: 53.92245191813226
+[2025/10/08 11:38:49] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:49] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 4.99997500014171e-06, fps: 53.92245191813226, best_epoch: 2
+[2025/10/08 11:38:49] ppocr INFO: epoch: [2/50], global_step: 4, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 32.162781, avg_reader_cost: 0.00305 s, avg_batch_cost: 0.10708 s, avg_samples: 1.0, ips: 9.33896 samples/s, eta: 0:00:38, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:49] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 4.99997500014171e-06, fps: 56.43042232297819
+[2025/10/08 11:38:50] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:50] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 4.99997500014171e-06, fps: 56.43042232297819, best_epoch: 2
+[2025/10/08 11:38:50] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:38:51] ppocr INFO: save model in ./output/iter_epoch_2
+[2025/10/08 11:38:51] ppocr INFO: epoch: [3/50], global_step: 5, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 30.499285, avg_reader_cost: 0.58333 s, avg_batch_cost: 0.72723 s, avg_samples: 2.0, ips: 2.75016 samples/s, eta: 0:00:44, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:51] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 4.99997500014171e-06, fps: 56.92633636221744
+[2025/10/08 11:38:51] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:51] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 4.99997500014171e-06, fps: 56.92633636221744, best_epoch: 3
+[2025/10/08 11:38:51] ppocr INFO: epoch: [3/50], global_step: 6, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 29.390587, avg_reader_cost: 0.00388 s, avg_batch_cost: 0.13917 s, avg_samples: 1.0, ips: 7.18520 samples/s, eta: 0:00:38, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:51] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 4.99997500014171e-06, fps: 54.646064048779216
+[2025/10/08 11:38:52] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:52] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 4.99997500014171e-06, fps: 54.646064048779216, best_epoch: 3
+[2025/10/08 11:38:52] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:38:53] ppocr INFO: save model in ./output/iter_epoch_3
+[2025/10/08 11:38:53] ppocr INFO: epoch: [4/50], global_step: 7, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 28.310173, avg_reader_cost: 0.57087 s, avg_batch_cost: 0.72015 s, avg_samples: 2.0, ips: 2.77720 samples/s, eta: 0:00:42, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:53] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 4.99997500014171e-06, fps: 52.78808893028173
+[2025/10/08 11:38:53] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:53] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 4.99997500014171e-06, fps: 52.78808893028173, best_epoch: 4
+[2025/10/08 11:38:54] ppocr INFO: epoch: [4/50], global_step: 8, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 26.853254, avg_reader_cost: 0.00385 s, avg_batch_cost: 0.13869 s, avg_samples: 1.0, ips: 7.21018 samples/s, eta: 0:00:38, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:54] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 4.99997500014171e-06, fps: 52.880931968329214
+[2025/10/08 11:38:54] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:54] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 4.99997500014171e-06, fps: 52.880931968329214, best_epoch: 4
+[2025/10/08 11:38:54] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:38:55] ppocr INFO: save model in ./output/iter_epoch_4
+[2025/10/08 11:38:55] ppocr INFO: epoch: [5/50], global_step: 9, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 25.267729, avg_reader_cost: 0.57604 s, avg_batch_cost: 0.73236 s, avg_samples: 2.0, ips: 2.73092 samples/s, eta: 0:00:41, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:55] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.2500037499812501, fps: 50.22336642199418
+[2025/10/08 11:38:55] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:55] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.2500037499812501, fps: 50.22336642199418, best_epoch: 5
+[2025/10/08 11:38:56] ppocr INFO: epoch: [5/50], global_step: 10, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 24.298046, avg_reader_cost: 0.00391 s, avg_batch_cost: 0.13965 s, avg_samples: 1.0, ips: 7.16085 samples/s, eta: 0:00:37, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:56] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 53.43266621654331
+[2025/10/08 11:38:56] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:56] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 53.43266621654331, best_epoch: 5
+[2025/10/08 11:38:57] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:38:57] ppocr INFO: save model in ./output/iter_epoch_5
+[2025/10/08 11:38:57] ppocr INFO: epoch: [6/50], global_step: 11, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 22.982803, avg_reader_cost: 0.54326 s, avg_batch_cost: 0.69094 s, avg_samples: 2.0, ips: 2.89459 samples/s, eta: 0:00:39, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:57] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 55.43841283688224
+[2025/10/08 11:38:58] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:58] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 55.43841283688224, best_epoch: 6
+[2025/10/08 11:38:58] ppocr INFO: epoch: [6/50], global_step: 12, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 21.995142, avg_reader_cost: 0.00380 s, avg_batch_cost: 0.14523 s, avg_samples: 1.0, ips: 6.88582 samples/s, eta: 0:00:36, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:58] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 49.55785170350153
+[2025/10/08 11:38:58] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:38:58] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 49.55785170350153, best_epoch: 6
+[2025/10/08 11:38:59] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:38:59] ppocr INFO: save model in ./output/iter_epoch_6
+[2025/10/08 11:38:59] ppocr INFO: epoch: [7/50], global_step: 13, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 21.117794, avg_reader_cost: 0.58481 s, avg_batch_cost: 0.73299 s, avg_samples: 2.0, ips: 2.72856 samples/s, eta: 0:00:38, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:38:59] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 55.75752419440604
+[2025/10/08 11:39:00] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:00] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 55.75752419440604, best_epoch: 7
+[2025/10/08 11:39:00] ppocr INFO: epoch: [7/50], global_step: 14, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 20.127653, avg_reader_cost: 0.00399 s, avg_batch_cost: 0.14903 s, avg_samples: 1.0, ips: 6.71008 samples/s, eta: 0:00:36, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:00] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 48.390324943900595
+[2025/10/08 11:39:00] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:00] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 48.390324943900595, best_epoch: 7
+[2025/10/08 11:39:01] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:01] ppocr INFO: save model in ./output/iter_epoch_7
+[2025/10/08 11:39:01] ppocr INFO: epoch: [8/50], global_step: 15, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 19.123945, avg_reader_cost: 0.57089 s, avg_batch_cost: 0.71882 s, avg_samples: 2.0, ips: 2.78233 samples/s, eta: 0:00:37, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:01] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 46.12851039026027
+[2025/10/08 11:39:02] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:02] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 46.12851039026027, best_epoch: 8
+[2025/10/08 11:39:02] ppocr INFO: epoch: [8/50], global_step: 16, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 18.374441, avg_reader_cost: 0.00307 s, avg_batch_cost: 0.10638 s, avg_samples: 1.0, ips: 9.39984 samples/s, eta: 0:00:35, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:02] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 73.9358000317298
+[2025/10/08 11:39:02] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:02] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 73.9358000317298, best_epoch: 8
+[2025/10/08 11:39:03] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:03] ppocr INFO: save model in ./output/iter_epoch_8
+[2025/10/08 11:39:03] ppocr INFO: epoch: [9/50], global_step: 17, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 17.354118, avg_reader_cost: 0.55492 s, avg_batch_cost: 0.70681 s, avg_samples: 2.0, ips: 2.82961 samples/s, eta: 0:00:36, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:03] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 53.03069842714813
+[2025/10/08 11:39:04] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:04] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.7500012499937501, fps: 53.03069842714813, best_epoch: 9
+[2025/10/08 11:39:04] ppocr INFO: epoch: [9/50], global_step: 18, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 16.504383, avg_reader_cost: 0.00409 s, avg_batch_cost: 0.14002 s, avg_samples: 1.0, ips: 7.14173 samples/s, eta: 0:00:34, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:04] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 54.503333116756544
+[2025/10/08 11:39:05] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:05] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.7500012499937501, fps: 54.503333116756544, best_epoch: 9
+[2025/10/08 11:39:05] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:05] ppocr INFO: save model in ./output/iter_epoch_9
+[2025/10/08 11:39:05] ppocr INFO: epoch: [10/50], global_step: 19, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 15.700415, avg_reader_cost: 0.57870 s, avg_batch_cost: 0.73256 s, avg_samples: 2.0, ips: 2.73016 samples/s, eta: 0:00:35, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:05] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 51.578083977397796
+[2025/10/08 11:39:06] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:06] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.7500012499937501, fps: 51.578083977397796, best_epoch: 10
+[2025/10/08 11:39:06] ppocr INFO: epoch: [10/50], global_step: 20, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 14.898975, avg_reader_cost: 0.00406 s, avg_batch_cost: 0.13953 s, avg_samples: 1.0, ips: 7.16704 samples/s, eta: 0:00:33, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:06] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 54.10818272120954
+[2025/10/08 11:39:07] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:07] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.7500012499937501, fps: 54.10818272120954, best_epoch: 10
+[2025/10/08 11:39:07] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:07] ppocr INFO: save model in ./output/iter_epoch_10
+[2025/10/08 11:39:07] ppocr INFO: epoch: [11/50], global_step: 21, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 14.765594, avg_reader_cost: 0.57389 s, avg_batch_cost: 0.72245 s, avg_samples: 2.0, ips: 2.76836 samples/s, eta: 0:00:34, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:07] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 54.51466746383499
+[2025/10/08 11:39:08] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:08] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 54.51466746383499, best_epoch: 11
+[2025/10/08 11:39:08] ppocr INFO: epoch: [11/50], global_step: 22, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 14.163952, avg_reader_cost: 0.00393 s, avg_batch_cost: 0.15794 s, avg_samples: 1.0, ips: 6.33168 samples/s, eta: 0:00:33, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:08] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 34.1000325203252
+[2025/10/08 11:39:09] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:09] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 34.1000325203252, best_epoch: 11
+[2025/10/08 11:39:09] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:09] ppocr INFO: save model in ./output/iter_epoch_11
+[2025/10/08 11:39:10] ppocr INFO: epoch: [12/50], global_step: 23, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 13.345409, avg_reader_cost: 0.61501 s, avg_batch_cost: 0.77384 s, avg_samples: 2.0, ips: 2.58451 samples/s, eta: 0:00:33, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:10] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 49.20928268062041
+[2025/10/08 11:39:10] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:10] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 49.20928268062041, best_epoch: 12
+[2025/10/08 11:39:10] ppocr INFO: epoch: [12/50], global_step: 24, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 12.634163, avg_reader_cost: 0.00392 s, avg_batch_cost: 0.13849 s, avg_samples: 1.0, ips: 7.22088 samples/s, eta: 0:00:32, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:10] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 53.505600204107665
+[2025/10/08 11:39:11] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:11] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 53.505600204107665, best_epoch: 12
+[2025/10/08 11:39:11] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:12] ppocr INFO: save model in ./output/iter_epoch_12
+[2025/10/08 11:39:12] ppocr INFO: epoch: [13/50], global_step: 25, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 12.001932, avg_reader_cost: 0.53007 s, avg_batch_cost: 0.67832 s, avg_samples: 2.0, ips: 2.94848 samples/s, eta: 0:00:32, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:12] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 52.90427719125642
+[2025/10/08 11:39:12] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:12] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 52.90427719125642, best_epoch: 13
+[2025/10/08 11:39:13] ppocr INFO: epoch: [13/50], global_step: 26, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 11.332930, avg_reader_cost: 0.00355 s, avg_batch_cost: 0.14148 s, avg_samples: 1.0, ips: 7.06820 samples/s, eta: 0:00:31, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:13] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 52.929980755276524
+[2025/10/08 11:39:13] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:13] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 52.929980755276524, best_epoch: 13
+[2025/10/08 11:39:13] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:14] ppocr INFO: save model in ./output/iter_epoch_13
+[2025/10/08 11:39:14] ppocr INFO: epoch: [14/50], global_step: 27, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750001, loss: 10.788102, avg_reader_cost: 0.57035 s, avg_batch_cost: 0.72124 s, avg_samples: 2.0, ips: 2.77301 samples/s, eta: 0:00:31, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:14] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.5000024999875001, fps: 55.058171817877515
+[2025/10/08 11:39:14] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:14] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.5000024999875001, fps: 55.058171817877515, best_epoch: 14
+[2025/10/08 11:39:15] ppocr INFO: epoch: [14/50], global_step: 28, lr: 0.001000, acc: 0.000000, norm_edit_dis: 0.750002, loss: 10.378789, avg_reader_cost: 0.00393 s, avg_batch_cost: 0.14023 s, avg_samples: 1.0, ips: 7.13102 samples/s, eta: 0:00:30, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:15] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 53.49945790124874
+[2025/10/08 11:39:15] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:15] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.7500012499937501, fps: 53.49945790124874, best_epoch: 14
+[2025/10/08 11:39:16] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:16] ppocr INFO: save model in ./output/iter_epoch_14
+[2025/10/08 11:39:16] ppocr INFO: epoch: [15/50], global_step: 29, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 9.730301, avg_reader_cost: 0.58268 s, avg_batch_cost: 0.73413 s, avg_samples: 2.0, ips: 2.72432 samples/s, eta: 0:00:31, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:16] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 53.609550346378995
+[2025/10/08 11:39:17] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:17] ppocr INFO: best metric, acc: 0.0, is_float16: False, norm_edit_dis: 0.7500012499937501, fps: 53.609550346378995, best_epoch: 15
+[2025/10/08 11:39:17] ppocr INFO: epoch: [15/50], global_step: 30, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 9.111068, avg_reader_cost: 0.00389 s, avg_batch_cost: 0.13987 s, avg_samples: 1.0, ips: 7.14938 samples/s, eta: 0:00:29, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:17] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 54.02872563795391
+[2025/10/08 11:39:17] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:17] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 54.02872563795391, best_epoch: 15
+[2025/10/08 11:39:18] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:18] ppocr INFO: save model in ./output/iter_epoch_15
+[2025/10/08 11:39:18] ppocr INFO: epoch: [16/50], global_step: 31, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 8.724280, avg_reader_cost: 0.58274 s, avg_batch_cost: 0.73186 s, avg_samples: 2.0, ips: 2.73276 samples/s, eta: 0:00:30, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:18] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 44.77769177800671
+[2025/10/08 11:39:18] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 54.02872563795391, best_epoch: 15
+[2025/10/08 11:39:18] ppocr INFO: epoch: [16/50], global_step: 32, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 8.263322, avg_reader_cost: 0.00305 s, avg_batch_cost: 0.14003 s, avg_samples: 1.0, ips: 7.14125 samples/s, eta: 0:00:29, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:18] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 54.5955613407094
+[2025/10/08 11:39:18] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 54.02872563795391, best_epoch: 15
+[2025/10/08 11:39:19] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:19] ppocr INFO: save model in ./output/iter_epoch_16
+[2025/10/08 11:39:19] ppocr INFO: epoch: [17/50], global_step: 33, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 7.840110, avg_reader_cost: 0.58550 s, avg_batch_cost: 0.73600 s, avg_samples: 2.0, ips: 2.71740 samples/s, eta: 0:00:29, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:19] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 54.280792799321866
+[2025/10/08 11:39:19] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 54.02872563795391, best_epoch: 15
+[2025/10/08 11:39:19] ppocr INFO: epoch: [17/50], global_step: 34, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 7.489258, avg_reader_cost: 0.00233 s, avg_batch_cost: 0.12595 s, avg_samples: 1.0, ips: 7.93967 samples/s, eta: 0:00:28, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:19] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 57.19180501107891
+[2025/10/08 11:39:19] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 54.02872563795391, best_epoch: 15
+[2025/10/08 11:39:20] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:20] ppocr INFO: save model in ./output/iter_epoch_17
+[2025/10/08 11:39:20] ppocr INFO: epoch: [18/50], global_step: 35, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 7.090153, avg_reader_cost: 0.58087 s, avg_batch_cost: 0.73851 s, avg_samples: 2.0, ips: 2.70816 samples/s, eta: 0:00:28, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:20] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.7500012499937501, fps: 49.31226486079759
+[2025/10/08 11:39:20] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 54.02872563795391, best_epoch: 15
+[2025/10/08 11:39:20] ppocr INFO: epoch: [18/50], global_step: 36, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 6.751743, avg_reader_cost: 0.00241 s, avg_batch_cost: 0.13522 s, avg_samples: 1.0, ips: 7.39538 samples/s, eta: 0:00:27, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:20] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 50.63474759912838
+[2025/10/08 11:39:21] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:21] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 50.63474759912838, best_epoch: 18
+[2025/10/08 11:39:21] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:21] ppocr INFO: save model in ./output/iter_epoch_18
+[2025/10/08 11:39:22] ppocr INFO: epoch: [19/50], global_step: 37, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 6.437773, avg_reader_cost: 0.57061 s, avg_batch_cost: 0.71808 s, avg_samples: 2.0, ips: 2.78522 samples/s, eta: 0:00:27, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:22] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 54.72127960755918
+[2025/10/08 11:39:22] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:22] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 54.72127960755918, best_epoch: 19
+[2025/10/08 11:39:22] ppocr INFO: epoch: [19/50], global_step: 38, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 6.130908, avg_reader_cost: 0.00380 s, avg_batch_cost: 0.14231 s, avg_samples: 1.0, ips: 7.02691 samples/s, eta: 0:00:26, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:22] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 51.93605666241533
+[2025/10/08 11:39:23] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:23] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 51.93605666241533, best_epoch: 19
+[2025/10/08 11:39:23] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:24] ppocr INFO: save model in ./output/iter_epoch_19
+[2025/10/08 11:39:24] ppocr INFO: epoch: [20/50], global_step: 39, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 5.847965, avg_reader_cost: 0.56303 s, avg_batch_cost: 0.70871 s, avg_samples: 2.0, ips: 2.82203 samples/s, eta: 0:00:26, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:24] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 56.776841492551455
+[2025/10/08 11:39:24] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:24] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 56.776841492551455, best_epoch: 20
+[2025/10/08 11:39:24] ppocr INFO: epoch: [20/50], global_step: 40, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 5.571979, avg_reader_cost: 0.00423 s, avg_batch_cost: 0.14231 s, avg_samples: 1.0, ips: 7.02699 samples/s, eta: 0:00:25, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:25] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 47.36703971812217
+[2025/10/08 11:39:25] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:25] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 47.36703971812217, best_epoch: 20
+[2025/10/08 11:39:25] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:26] ppocr INFO: save model in ./output/iter_epoch_20
+[2025/10/08 11:39:26] ppocr INFO: epoch: [21/50], global_step: 41, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 5.327508, avg_reader_cost: 0.57914 s, avg_batch_cost: 0.73308 s, avg_samples: 2.0, ips: 2.72822 samples/s, eta: 0:00:25, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:26] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 52.6264782087717
+[2025/10/08 11:39:26] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:26] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 52.6264782087717, best_epoch: 21
+[2025/10/08 11:39:27] ppocr INFO: epoch: [21/50], global_step: 42, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 5.088486, avg_reader_cost: 0.00399 s, avg_batch_cost: 0.13992 s, avg_samples: 1.0, ips: 7.14699 samples/s, eta: 0:00:24, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:27] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 53.6657966119044
+[2025/10/08 11:39:27] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:27] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 53.6657966119044, best_epoch: 21
+[2025/10/08 11:39:28] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:28] ppocr INFO: save model in ./output/iter_epoch_21
+[2025/10/08 11:39:28] ppocr INFO: epoch: [22/50], global_step: 43, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 4.872667, avg_reader_cost: 0.58066 s, avg_batch_cost: 0.72287 s, avg_samples: 2.0, ips: 2.76676 samples/s, eta: 0:00:24, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:28] ppocr INFO: cur metric, acc: 0.0, norm_edit_dis: 0.800000999995, fps: 58.28417381154204
+[2025/10/08 11:39:28] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 53.6657966119044, best_epoch: 21
+[2025/10/08 11:39:28] ppocr INFO: epoch: [22/50], global_step: 44, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 4.656779, avg_reader_cost: 0.00237 s, avg_batch_cost: 0.12020 s, avg_samples: 1.0, ips: 8.31962 samples/s, eta: 0:00:23, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:28] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 59.833579412121345
+[2025/10/08 11:39:29] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:29] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 59.833579412121345, best_epoch: 22
+[2025/10/08 11:39:29] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:29] ppocr INFO: save model in ./output/iter_epoch_22
+[2025/10/08 11:39:29] ppocr INFO: epoch: [23/50], global_step: 45, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 4.458658, avg_reader_cost: 0.57743 s, avg_batch_cost: 0.72427 s, avg_samples: 2.0, ips: 2.76141 samples/s, eta: 0:00:23, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:30] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 56.03051130481248
+[2025/10/08 11:39:30] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:30] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 56.03051130481248, best_epoch: 23
+[2025/10/08 11:39:30] ppocr INFO: epoch: [23/50], global_step: 46, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 4.278668, avg_reader_cost: 0.00378 s, avg_batch_cost: 0.13845 s, avg_samples: 1.0, ips: 7.22259 samples/s, eta: 0:00:23, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:30] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 53.9824833488851
+[2025/10/08 11:39:31] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:31] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 53.9824833488851, best_epoch: 23
+[2025/10/08 11:39:31] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:31] ppocr INFO: save model in ./output/iter_epoch_23
+[2025/10/08 11:39:32] ppocr INFO: epoch: [24/50], global_step: 47, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 4.110856, avg_reader_cost: 0.56259 s, avg_batch_cost: 0.67751 s, avg_samples: 2.0, ips: 2.95197 samples/s, eta: 0:00:22, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:32] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 58.22228083204353
+[2025/10/08 11:39:32] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:32] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 58.22228083204353, best_epoch: 24
+[2025/10/08 11:39:32] ppocr INFO: epoch: [24/50], global_step: 48, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 3.934794, avg_reader_cost: 0.00385 s, avg_batch_cost: 0.13502 s, avg_samples: 1.0, ips: 7.40620 samples/s, eta: 0:00:22, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:32] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 55.31850015167302
+[2025/10/08 11:39:33] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:33] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 55.31850015167302, best_epoch: 24
+[2025/10/08 11:39:33] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:33] ppocr INFO: save model in ./output/iter_epoch_24
+[2025/10/08 11:39:34] ppocr INFO: epoch: [25/50], global_step: 49, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 3.788803, avg_reader_cost: 0.57765 s, avg_batch_cost: 0.72329 s, avg_samples: 2.0, ips: 2.76514 samples/s, eta: 0:00:22, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:34] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 57.49835838594038
+[2025/10/08 11:39:34] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:34] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 57.49835838594038, best_epoch: 25
+[2025/10/08 11:39:34] ppocr INFO: epoch: [25/50], global_step: 50, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 3.619235, avg_reader_cost: 0.00413 s, avg_batch_cost: 0.13928 s, avg_samples: 1.0, ips: 7.18002 samples/s, eta: 0:00:21, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:34] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 52.79207546932328
+[2025/10/08 11:39:35] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:35] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 52.79207546932328, best_epoch: 25
+[2025/10/08 11:39:35] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:36] ppocr INFO: save model in ./output/iter_epoch_25
+[2025/10/08 11:39:36] ppocr INFO: epoch: [26/50], global_step: 51, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 3.487101, avg_reader_cost: 0.56887 s, avg_batch_cost: 0.71544 s, avg_samples: 2.0, ips: 2.79549 samples/s, eta: 0:00:21, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:36] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 55.9594943464194
+[2025/10/08 11:39:36] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:36] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 55.9594943464194, best_epoch: 26
+[2025/10/08 11:39:37] ppocr INFO: epoch: [26/50], global_step: 52, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 3.345441, avg_reader_cost: 0.00401 s, avg_batch_cost: 0.14028 s, avg_samples: 1.0, ips: 7.12847 samples/s, eta: 0:00:20, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:37] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 53.235990709127144
+[2025/10/08 11:39:37] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:37] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 53.235990709127144, best_epoch: 26
+[2025/10/08 11:39:37] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:38] ppocr INFO: save model in ./output/iter_epoch_26
+[2025/10/08 11:39:38] ppocr INFO: epoch: [27/50], global_step: 53, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 3.203003, avg_reader_cost: 0.56673 s, avg_batch_cost: 0.71295 s, avg_samples: 2.0, ips: 2.80523 samples/s, eta: 0:00:20, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:38] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 55.725299764174444
+[2025/10/08 11:39:39] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:39] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 55.725299764174444, best_epoch: 27
+[2025/10/08 11:39:39] ppocr INFO: epoch: [27/50], global_step: 54, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 3.084686, avg_reader_cost: 0.00422 s, avg_batch_cost: 0.14039 s, avg_samples: 1.0, ips: 7.12284 samples/s, eta: 0:00:19, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:39] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 55.00185555519129
+[2025/10/08 11:39:39] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:39] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 55.00185555519129, best_epoch: 27
+[2025/10/08 11:39:40] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:40] ppocr INFO: save model in ./output/iter_epoch_27
+[2025/10/08 11:39:40] ppocr INFO: epoch: [28/50], global_step: 55, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 2.962271, avg_reader_cost: 0.60888 s, avg_batch_cost: 0.75605 s, avg_samples: 2.0, ips: 2.64532 samples/s, eta: 0:00:19, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:40] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 56.26388721209438
+[2025/10/08 11:39:41] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:41] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 56.26388721209438, best_epoch: 28
+[2025/10/08 11:39:41] ppocr INFO: epoch: [28/50], global_step: 56, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 2.848202, avg_reader_cost: 0.00388 s, avg_batch_cost: 0.14303 s, avg_samples: 1.0, ips: 6.99175 samples/s, eta: 0:00:18, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:41] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 51.3856708811134
+[2025/10/08 11:39:41] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:41] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 51.3856708811134, best_epoch: 28
+[2025/10/08 11:39:42] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:42] ppocr INFO: save model in ./output/iter_epoch_28
+[2025/10/08 11:39:42] ppocr INFO: epoch: [29/50], global_step: 57, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 2.748927, avg_reader_cost: 0.56795 s, avg_batch_cost: 0.72307 s, avg_samples: 2.0, ips: 2.76599 samples/s, eta: 0:00:18, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:42] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 58.409982174688054
+[2025/10/08 11:39:43] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:43] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 58.409982174688054, best_epoch: 29
+[2025/10/08 11:39:43] ppocr INFO: epoch: [29/50], global_step: 58, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 2.653118, avg_reader_cost: 0.00425 s, avg_batch_cost: 0.13912 s, avg_samples: 1.0, ips: 7.18791 samples/s, eta: 0:00:17, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:43] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 49.055613384638775
+[2025/10/08 11:39:43] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:43] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 49.055613384638775, best_epoch: 29
+[2025/10/08 11:39:44] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:44] ppocr INFO: save model in ./output/iter_epoch_29
+[2025/10/08 11:39:44] ppocr INFO: epoch: [30/50], global_step: 59, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 2.562688, avg_reader_cost: 0.50096 s, avg_batch_cost: 0.61179 s, avg_samples: 2.0, ips: 3.26910 samples/s, eta: 0:00:17, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:44] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 73.40013649965876
+[2025/10/08 11:39:45] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:45] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 73.40013649965876, best_epoch: 30
+[2025/10/08 11:39:45] ppocr INFO: epoch: [30/50], global_step: 60, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 2.466853, avg_reader_cost: 0.00275 s, avg_batch_cost: 0.09814 s, avg_samples: 1.0, ips: 10.18908 samples/s, eta: 0:00:17, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:45] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 77.29726143525856
+[2025/10/08 11:39:45] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:45] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 77.29726143525856, best_epoch: 30
+[2025/10/08 11:39:46] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:46] ppocr INFO: save model in ./output/iter_epoch_30
+[2025/10/08 11:39:46] ppocr INFO: epoch: [31/50], global_step: 61, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 2.382319, avg_reader_cost: 0.51719 s, avg_batch_cost: 0.65789 s, avg_samples: 2.0, ips: 3.04003 samples/s, eta: 0:00:16, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:46] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 58.562079822399696
+[2025/10/08 11:39:47] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:47] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 58.562079822399696, best_epoch: 31
+[2025/10/08 11:39:47] ppocr INFO: epoch: [31/50], global_step: 62, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 2.294940, avg_reader_cost: 0.00302 s, avg_batch_cost: 0.10564 s, avg_samples: 1.0, ips: 9.46590 samples/s, eta: 0:00:16, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:47] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 73.17156738745497
+[2025/10/08 11:39:47] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:47] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 73.17156738745497, best_epoch: 31
+[2025/10/08 11:39:47] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:48] ppocr INFO: save model in ./output/iter_epoch_31
+[2025/10/08 11:39:48] ppocr INFO: epoch: [32/50], global_step: 63, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 2.218757, avg_reader_cost: 0.49917 s, avg_batch_cost: 0.61016 s, avg_samples: 2.0, ips: 3.27786 samples/s, eta: 0:00:15, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:48] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 62.86521080951453
+[2025/10/08 11:39:48] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:48] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 62.86521080951453, best_epoch: 32
+[2025/10/08 11:39:48] ppocr INFO: epoch: [32/50], global_step: 64, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 2.148150, avg_reader_cost: 0.00297 s, avg_batch_cost: 0.10464 s, avg_samples: 1.0, ips: 9.55636 samples/s, eta: 0:00:15, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:48] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 71.19790190203784
+[2025/10/08 11:39:49] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:49] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 71.19790190203784, best_epoch: 32
+[2025/10/08 11:39:49] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:50] ppocr INFO: save model in ./output/iter_epoch_32
+[2025/10/08 11:39:50] ppocr INFO: epoch: [33/50], global_step: 65, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 2.079169, avg_reader_cost: 0.50607 s, avg_batch_cost: 0.60660 s, avg_samples: 2.0, ips: 3.29708 samples/s, eta: 0:00:14, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:50] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 81.81294009791874
+[2025/10/08 11:39:50] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:50] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 81.81294009791874, best_epoch: 33
+[2025/10/08 11:39:50] ppocr INFO: epoch: [33/50], global_step: 66, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 2.016083, avg_reader_cost: 0.00299 s, avg_batch_cost: 0.09778 s, avg_samples: 1.0, ips: 10.22672 samples/s, eta: 0:00:14, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:50] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 79.54001365394826
+[2025/10/08 11:39:51] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:51] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 79.54001365394826, best_epoch: 33
+[2025/10/08 11:39:51] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:51] ppocr INFO: save model in ./output/iter_epoch_33
+[2025/10/08 11:39:51] ppocr INFO: epoch: [34/50], global_step: 67, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.947410, avg_reader_cost: 0.48826 s, avg_batch_cost: 0.58904 s, avg_samples: 2.0, ips: 3.39536 samples/s, eta: 0:00:13, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:51] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 81.69342838222119
+[2025/10/08 11:39:52] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:52] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 81.69342838222119, best_epoch: 34
+[2025/10/08 11:39:52] ppocr INFO: epoch: [34/50], global_step: 68, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.888286, avg_reader_cost: 0.00306 s, avg_batch_cost: 0.10444 s, avg_samples: 1.0, ips: 9.57516 samples/s, eta: 0:00:13, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:52] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 74.08336865903631
+[2025/10/08 11:39:53] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:53] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 74.08336865903631, best_epoch: 34
+[2025/10/08 11:39:53] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:53] ppocr INFO: save model in ./output/iter_epoch_34
+[2025/10/08 11:39:53] ppocr INFO: epoch: [35/50], global_step: 69, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.832254, avg_reader_cost: 0.49661 s, avg_batch_cost: 0.59681 s, avg_samples: 2.0, ips: 3.35113 samples/s, eta: 0:00:13, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:53] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 81.87202810853016
+[2025/10/08 11:39:54] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:54] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 81.87202810853016, best_epoch: 35
+[2025/10/08 11:39:54] ppocr INFO: epoch: [35/50], global_step: 70, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.774675, avg_reader_cost: 0.00295 s, avg_batch_cost: 0.09639 s, avg_samples: 1.0, ips: 10.37488 samples/s, eta: 0:00:12, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:54] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 81.81214219534793
+[2025/10/08 11:39:54] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:54] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 81.81214219534793, best_epoch: 35
+[2025/10/08 11:39:54] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:55] ppocr INFO: save model in ./output/iter_epoch_35
+[2025/10/08 11:39:55] ppocr INFO: epoch: [36/50], global_step: 71, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.728982, avg_reader_cost: 0.49438 s, avg_batch_cost: 0.60216 s, avg_samples: 2.0, ips: 3.32136 samples/s, eta: 0:00:12, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:55] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 74.82146010792489
+[2025/10/08 11:39:55] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:55] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 74.82146010792489, best_epoch: 36
+[2025/10/08 11:39:55] ppocr INFO: epoch: [36/50], global_step: 72, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.677783, avg_reader_cost: 0.00299 s, avg_batch_cost: 0.11917 s, avg_samples: 1.0, ips: 8.39160 samples/s, eta: 0:00:11, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:56] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 56.05672090614454
+[2025/10/08 11:39:56] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:56] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 56.05672090614454, best_epoch: 36
+[2025/10/08 11:39:56] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:57] ppocr INFO: save model in ./output/iter_epoch_36
+[2025/10/08 11:39:57] ppocr INFO: epoch: [37/50], global_step: 73, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.630419, avg_reader_cost: 0.50720 s, avg_batch_cost: 0.63828 s, avg_samples: 2.0, ips: 3.13343 samples/s, eta: 0:00:11, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:57] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 72.26823805093215
+[2025/10/08 11:39:57] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:57] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 72.26823805093215, best_epoch: 37
+[2025/10/08 11:39:57] ppocr INFO: epoch: [37/50], global_step: 74, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.589557, avg_reader_cost: 0.00296 s, avg_batch_cost: 0.10495 s, avg_samples: 1.0, ips: 9.52850 samples/s, eta: 0:00:10, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:57] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 74.95852023947815
+[2025/10/08 11:39:58] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:58] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 74.95852023947815, best_epoch: 37
+[2025/10/08 11:39:58] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:39:58] ppocr INFO: save model in ./output/iter_epoch_37
+[2025/10/08 11:39:58] ppocr INFO: epoch: [38/50], global_step: 75, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.542418, avg_reader_cost: 0.50024 s, avg_batch_cost: 0.60946 s, avg_samples: 2.0, ips: 3.28160 samples/s, eta: 0:00:10, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:58] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 74.47603320459892
+[2025/10/08 11:39:59] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:39:59] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 74.47603320459892, best_epoch: 38
+[2025/10/08 11:39:59] ppocr INFO: epoch: [38/50], global_step: 76, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.499384, avg_reader_cost: 0.00314 s, avg_batch_cost: 0.10506 s, avg_samples: 1.0, ips: 9.51858 samples/s, eta: 0:00:09, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:39:59] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 73.81868741090128
+[2025/10/08 11:40:00] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:00] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 73.81868741090128, best_epoch: 38
+[2025/10/08 11:40:00] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:00] ppocr INFO: save model in ./output/iter_epoch_38
+[2025/10/08 11:40:00] ppocr INFO: epoch: [39/50], global_step: 77, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.458063, avg_reader_cost: 0.51278 s, avg_batch_cost: 0.62986 s, avg_samples: 2.0, ips: 3.17531 samples/s, eta: 0:00:09, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:00] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 75.39915150643562
+[2025/10/08 11:40:01] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:01] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 75.39915150643562, best_epoch: 39
+[2025/10/08 11:40:01] ppocr INFO: epoch: [39/50], global_step: 78, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.417946, avg_reader_cost: 0.00308 s, avg_batch_cost: 0.10431 s, avg_samples: 1.0, ips: 9.58656 samples/s, eta: 0:00:09, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:01] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 75.18223289746095
+[2025/10/08 11:40:01] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:01] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 75.18223289746095, best_epoch: 39
+[2025/10/08 11:40:02] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:02] ppocr INFO: save model in ./output/iter_epoch_39
+[2025/10/08 11:40:02] ppocr INFO: epoch: [40/50], global_step: 79, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.386185, avg_reader_cost: 0.50432 s, avg_batch_cost: 0.60738 s, avg_samples: 2.0, ips: 3.29281 samples/s, eta: 0:00:08, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:02] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 77.79330810891015
+[2025/10/08 11:40:03] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:03] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 77.79330810891015, best_epoch: 40
+[2025/10/08 11:40:03] ppocr INFO: epoch: [40/50], global_step: 80, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.347569, avg_reader_cost: 0.00296 s, avg_batch_cost: 0.09740 s, avg_samples: 1.0, ips: 10.26697 samples/s, eta: 0:00:08, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:03] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 80.94299278243082
+[2025/10/08 11:40:03] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:03] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 80.94299278243082, best_epoch: 40
+[2025/10/08 11:40:03] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:04] ppocr INFO: save model in ./output/iter_epoch_40
+[2025/10/08 11:40:04] ppocr INFO: epoch: [41/50], global_step: 81, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.312984, avg_reader_cost: 0.49536 s, avg_batch_cost: 0.60952 s, avg_samples: 2.0, ips: 3.28125 samples/s, eta: 0:00:07, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:04] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 59.05224773677615
+[2025/10/08 11:40:04] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:04] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 59.05224773677615, best_epoch: 41
+[2025/10/08 11:40:05] ppocr INFO: epoch: [41/50], global_step: 82, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.279509, avg_reader_cost: 0.00381 s, avg_batch_cost: 0.14376 s, avg_samples: 1.0, ips: 6.95627 samples/s, eta: 0:00:07, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:05] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 51.53783959795043
+[2025/10/08 11:40:05] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:05] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 51.53783959795043, best_epoch: 41
+[2025/10/08 11:40:05] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:06] ppocr INFO: save model in ./output/iter_epoch_41
+[2025/10/08 11:40:06] ppocr INFO: epoch: [42/50], global_step: 83, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.248193, avg_reader_cost: 0.47594 s, avg_batch_cost: 0.57690 s, avg_samples: 2.0, ips: 3.46682 samples/s, eta: 0:00:06, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:06] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 80.56054087277197
+[2025/10/08 11:40:06] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:06] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 80.56054087277197, best_epoch: 42
+[2025/10/08 11:40:06] ppocr INFO: epoch: [42/50], global_step: 84, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.221307, avg_reader_cost: 0.00274 s, avg_batch_cost: 0.09935 s, avg_samples: 1.0, ips: 10.06567 samples/s, eta: 0:00:06, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:06] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 75.73474896851837
+[2025/10/08 11:40:07] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:07] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 75.73474896851837, best_epoch: 42
+[2025/10/08 11:40:07] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:07] ppocr INFO: save model in ./output/iter_epoch_42
+[2025/10/08 11:40:08] ppocr INFO: epoch: [43/50], global_step: 85, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.189431, avg_reader_cost: 0.49541 s, avg_batch_cost: 0.61074 s, avg_samples: 2.0, ips: 3.27473 samples/s, eta: 0:00:06, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:08] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 47.55797195938476
+[2025/10/08 11:40:08] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:08] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 47.55797195938476, best_epoch: 43
+[2025/10/08 11:40:08] ppocr INFO: epoch: [43/50], global_step: 86, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.165331, avg_reader_cost: 0.00415 s, avg_batch_cost: 0.14681 s, avg_samples: 1.0, ips: 6.81152 samples/s, eta: 0:00:05, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:08] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 50.724151484184624
+[2025/10/08 11:40:09] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:09] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 50.724151484184624, best_epoch: 43
+[2025/10/08 11:40:09] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:10] ppocr INFO: save model in ./output/iter_epoch_43
+[2025/10/08 11:40:10] ppocr INFO: epoch: [44/50], global_step: 87, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.133736, avg_reader_cost: 0.56517 s, avg_batch_cost: 0.69684 s, avg_samples: 2.0, ips: 2.87009 samples/s, eta: 0:00:05, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:10] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 50.55845322115008
+[2025/10/08 11:40:10] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:10] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 50.55845322115008, best_epoch: 44
+[2025/10/08 11:40:10] ppocr INFO: epoch: [44/50], global_step: 88, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.109710, avg_reader_cost: 0.00416 s, avg_batch_cost: 0.14552 s, avg_samples: 1.0, ips: 6.87208 samples/s, eta: 0:00:04, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:11] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 52.969084663568395
+[2025/10/08 11:40:11] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:11] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 52.969084663568395, best_epoch: 44
+[2025/10/08 11:40:11] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:12] ppocr INFO: save model in ./output/iter_epoch_44
+[2025/10/08 11:40:12] ppocr INFO: epoch: [45/50], global_step: 89, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.085922, avg_reader_cost: 0.57412 s, avg_batch_cost: 0.72147 s, avg_samples: 2.0, ips: 2.77212 samples/s, eta: 0:00:04, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:12] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 55.094332683125465
+[2025/10/08 11:40:12] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:12] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 55.094332683125465, best_epoch: 45
+[2025/10/08 11:40:13] ppocr INFO: epoch: [45/50], global_step: 90, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.057536, avg_reader_cost: 0.00383 s, avg_batch_cost: 0.14701 s, avg_samples: 1.0, ips: 6.80204 samples/s, eta: 0:00:04, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:13] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 49.25464591247776
+[2025/10/08 11:40:13] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:13] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 49.25464591247776, best_epoch: 45
+[2025/10/08 11:40:14] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:14] ppocr INFO: save model in ./output/iter_epoch_45
+[2025/10/08 11:40:14] ppocr INFO: epoch: [46/50], global_step: 91, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 1.038695, avg_reader_cost: 0.57487 s, avg_batch_cost: 0.72914 s, avg_samples: 2.0, ips: 2.74296 samples/s, eta: 0:00:03, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:14] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 53.389816700611
+[2025/10/08 11:40:15] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:15] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 53.389816700611, best_epoch: 46
+[2025/10/08 11:40:15] ppocr INFO: epoch: [46/50], global_step: 92, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 1.015974, avg_reader_cost: 0.00393 s, avg_batch_cost: 0.13693 s, avg_samples: 1.0, ips: 7.30324 samples/s, eta: 0:00:03, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:15] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 55.565470828254995
+[2025/10/08 11:40:15] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:15] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 55.565470828254995, best_epoch: 46
+[2025/10/08 11:40:16] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:16] ppocr INFO: save model in ./output/iter_epoch_46
+[2025/10/08 11:40:16] ppocr INFO: epoch: [47/50], global_step: 93, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 0.995004, avg_reader_cost: 0.62377 s, avg_batch_cost: 0.77547 s, avg_samples: 2.0, ips: 2.57909 samples/s, eta: 0:00:02, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:16] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 52.627138528328636
+[2025/10/08 11:40:17] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:17] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 52.627138528328636, best_epoch: 47
+[2025/10/08 11:40:17] ppocr INFO: epoch: [47/50], global_step: 94, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 0.971111, avg_reader_cost: 0.00403 s, avg_batch_cost: 0.14124 s, avg_samples: 1.0, ips: 7.08022 samples/s, eta: 0:00:02, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:17] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 52.66480415361338
+[2025/10/08 11:40:18] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:18] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 52.66480415361338, best_epoch: 47
+[2025/10/08 11:40:18] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:18] ppocr INFO: save model in ./output/iter_epoch_47
+[2025/10/08 11:40:18] ppocr INFO: epoch: [48/50], global_step: 95, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 0.951132, avg_reader_cost: 0.58586 s, avg_batch_cost: 0.73697 s, avg_samples: 2.0, ips: 2.71380 samples/s, eta: 0:00:02, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:18] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 53.426540646574786
+[2025/10/08 11:40:19] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:19] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 53.426540646574786, best_epoch: 48
+[2025/10/08 11:40:19] ppocr INFO: epoch: [48/50], global_step: 96, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 0.932896, avg_reader_cost: 0.00431 s, avg_batch_cost: 0.14705 s, avg_samples: 1.0, ips: 6.80060 samples/s, eta: 0:00:01, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:19] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 49.14499299904506
+[2025/10/08 11:40:20] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:20] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 49.14499299904506, best_epoch: 48
+[2025/10/08 11:40:20] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:20] ppocr INFO: save model in ./output/iter_epoch_48
+[2025/10/08 11:40:20] ppocr INFO: epoch: [49/50], global_step: 97, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 0.915027, avg_reader_cost: 0.58980 s, avg_batch_cost: 0.74674 s, avg_samples: 2.0, ips: 2.67831 samples/s, eta: 0:00:01, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:20] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 49.73679592078738
+[2025/10/08 11:40:21] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:21] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 49.73679592078738, best_epoch: 49
+[2025/10/08 11:40:21] ppocr INFO: epoch: [49/50], global_step: 98, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 0.898128, avg_reader_cost: 0.00369 s, avg_batch_cost: 0.11347 s, avg_samples: 1.0, ips: 8.81275 samples/s, eta: 0:00:00, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:21] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 70.93360392355827
+[2025/10/08 11:40:22] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:22] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 70.93360392355827, best_epoch: 49
+[2025/10/08 11:40:22] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:22] ppocr INFO: save model in ./output/iter_epoch_49
+[2025/10/08 11:40:22] ppocr INFO: epoch: [50/50], global_step: 99, lr: 0.001000, acc: 0.999995, norm_edit_dis: 1.000000, loss: 0.881547, avg_reader_cost: 0.57360 s, avg_batch_cost: 0.72425 s, avg_samples: 2.0, ips: 2.76150 samples/s, eta: 0:00:00, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:22] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 53.697744832574784
+[2025/10/08 11:40:23] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:23] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 53.697744832574784, best_epoch: 50
+[2025/10/08 11:40:23] ppocr INFO: epoch: [50/50], global_step: 100, lr: 0.001000, acc: 0.999990, norm_edit_dis: 1.000000, loss: 0.865006, avg_reader_cost: 0.00301 s, avg_batch_cost: 0.10710 s, avg_samples: 1.0, ips: 9.33692 samples/s, eta: 0:00:00, max_mem_reserved: 165 MB, max_mem_allocated: 156 MB
+[2025/10/08 11:40:23] ppocr INFO: cur metric, acc: 0.9999950000249999, norm_edit_dis: 1.0, fps: 71.75453993345137
+[2025/10/08 11:40:24] ppocr INFO: save best model is to ./output/best_accuracy
+[2025/10/08 11:40:24] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 71.75453993345137, best_epoch: 50
+[2025/10/08 11:40:24] ppocr INFO: save model in ./output/latest
+[2025/10/08 11:40:24] ppocr INFO: save model in ./output/iter_epoch_50
+[2025/10/08 11:40:24] ppocr INFO: best metric, acc: 0.9999950000249999, is_float16: False, norm_edit_dis: 1.0, fps: 71.75453993345137, best_epoch: 50
