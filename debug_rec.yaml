@@ -1,12 +1,13 @@
 Global:
+  model_name: PP-OCRv5_server_rec
   use_gpu: true
   epoch_num: 500
   log_smooth_window: 1
-  print_batch_step: 1
+  print_batch_step: 20
   save_model_dir: ./output/
   save_inference_dir: ./output_inference/
   save_epoch_step: 10
-  eval_batch_step: [0, 1]
+  eval_batch_step: [ 50, 100 ]
   cal_metric_during_train: true
   pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
@@ -15,14 +16,14 @@ Global:
   use_space_char: false
   infer_mode: false
   save_res_path: ./output/debug_predicts.txt
-  use_visualdl: false
+  use_visualdl: true
 
 Optimizer:
   name: Adam
   beta1: 0.9
   beta2: 0.999
   lr:
-    learning_rate: 0.001
+    learning_rate: 0.0005
   regularizer:
     name: L2
     factor: 0.00001
@@ -33,13 +34,13 @@ Architecture:
   Transform:
   Backbone:
     name: PPLCNetV3
-    scale: 0.5
+    scale: 1
     pretrained: false
   Neck:
     name: SequenceEncoder
     encoder_type: svtr
-    dims: 64
-    depth: 2
+    dims: 128
+    depth: 4
     hidden_dims: 120
     use_guide: false
   Head:
@@ -68,14 +69,19 @@ Train:
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [3, 32, 320]
+          image_shape: [ 3, 32, 320 ]
+      - RecConAug: # Добавил аугментацию
+          prob: 0.5
+          image_shape: [ 3, 32, 320 ]
+      - RandAugment: # Добавил аугментацию
+          prob: 0.5
       - KeepKeys:
           keep_keys: [ 'image', 'label', 'length' ]
   loader:
     shuffle: true
-    batch_size_per_card: 2
+    batch_size_per_card: 32
     drop_last: false
-    num_workers: 0
+    num_workers: 8
     use_shared_memory: false
 
 Eval:
@@ -90,7 +96,7 @@ Eval:
           channel_first: false
       - CTCLabelEncode:
       - SVTRRecResizeImg:
-          image_shape: [3, 32, 320]
+          image_shape: [ 3, 32, 320 ]
       - KeepKeys:
           keep_keys: [ 'image', 'label', 'length' ]
   loader:
