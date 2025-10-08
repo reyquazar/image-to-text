@@ -30,19 +30,16 @@ Optimizer:
 
 Architecture:
   model_type: rec
-  algorithm: SVTR
+  algorithm: CRNN
   Transform:
   Backbone:
-    name: PPLCNetV3
-    scale: 1
-    pretrained: false
+    name: ResNet
+    layers: 34
+    pretrained: true
   Neck:
     name: SequenceEncoder
-    encoder_type: svtr
-    dims: 128
-    depth: 4
-    hidden_dims: 120
-    use_guide: false
+    encoder_type: rnn
+    hidden_size: 256
   Head:
     name: CTCHead
     fc_decay: 0.00001
@@ -68,7 +65,7 @@ Train:
           img_mode: BGR
           channel_first: false
       - CTCLabelEncode:
-      - SVTRRecResizeImg:
+      - RecResizeImg:
           image_shape: [ 3, 32, 320 ]
       - KeepKeys:
           keep_keys: [ 'image', 'label', 'length' ]
