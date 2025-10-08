@@ -4,7 +4,7 @@ Global:
   epoch_num: 300
   log_smooth_window: 20
   print_batch_step: 10
-  save_model_dir: ./output_aze/
+  save_model_dir: ./output/
   save_inference_dir: ./output_inference_aze/
   save_epoch_step: 10
   eval_batch_step: [100, 200]
