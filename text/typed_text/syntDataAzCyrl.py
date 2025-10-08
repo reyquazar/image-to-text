@@ -6,79 +6,79 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 def generate_synthetic_data():
-    output_dir = "../debug/"
+    output_dir = "pure_azerbaijani_cyrillic_dataset"
     os.makedirs(output_dir, exist_ok=True)
 
     # Словарь азербайджанских кириллических слов
-    azerbaijani_words = ["çəpik"
-        # # 1. Слова с уникальными диакритиками
-        # "şəhər", "kənd", "vilayət", "ölkə", "bölgü", "cəmiyyət", "muxtar",
-        # "əhali", "yaşayış", "yerləşmə", "qurutu", "dəyiş", "qədəbəy", "şağıl",
-        # "güzək", "təpə", "çələbi", "dəhə", "bəlgən", "cəbrail", "qubalı", "dəvəçi",
-        # "hacıqabul", "beyləqan", "göygöl", "daşkəsən", "qoca", "immet", "adam", "alma",
-        #
-        # # 2. Слова с редкими символами
-        # "ğəlb", "ğümüş", "ğızıl", "ğüdrət", "ğədir", "ğəzəb", "ğəfil", "ğəmir",
-        # "çəngəl", "çəpik", "çətin", "çəkir", "çəlik", "çəpər", "çətinə", "çəvən",
-        # "şəffaf", "şəkill", "şərab", "şərik", "şəhla", "şəms", "şəfəq", "şərq",
-        # "əcəb", "ədalət", "əfsanə", "əlbəttə", "əmanət", "əngəl", "əsr", "əvvəl",
-        #
-        # # 3. Слова с умлаутами
-        # "göz", "göl", "gün", "gür", "gəz", "gərək", "gəmir", "gəlin",
-        # "öz", "öl", "örək", "ötür", "ömür", "örgü", "öyüd", "övrət",
-        # "üç", "ülkə", "ürək", "üst", "ümid", "ünvan", "üzbəüz", "üşü",
-        #
-        # # 4. Слова с ç/ş/ğ комбинациями
-        # "çıraq", "çörək", "çiçək", "çəkmə", "çanta", "çimdik", "çevik", "çapıq",
-        # "şalvar", "şəkər", "şüur", "şəxsi", "şirin", "şərik", "şoul", "şəffaf",
-        # "qağayı", "qarğa", "ağac", "dağ", "yağış", "bağ", "çağ", "sağlam",
-        #
-        # # 5. Слова с редкими сочетаниями
-        # "müəllim", "müasir", "müəyyən", "müzakirə", "müqavimət", "müstəqil", "müraciət",
-        # "təhsil", "təbii", "təklif", "tərcümə", "təşkil", "təəssüf", "təbrik",
-        # "dərs", "dəyər", "dəqiqə", "dəvət", "dəyişik", "dəmir", "dəyirmi",
-        # "kitab", "külək", "kəpənək", "kəndir", "kərpic", "kəfgir", "kömək",
-        #
-        # # 6. Географические названия
-        # "Bakı", "Gəncə", "Sumqayıt", "Mingəçevir", "Naxçıvan", "Şəki", "Yevlax",
-        # "Lənkəran", "Şirvan", "Quba", "Xaçmaz", "Şamaxı", "Ağdam", "Cəbrayıl",
-        # "Füzuli", "Zəngilan", "Qazax", "Tovuz", "Balakən", "Zaqatala",
-        #
-        # # 7. Природные объекты
-        # "Xəzər", "Kür", "Araz", "Qanıx", "Tərtər", "Bazarçay", "Viləşçay",
-        # "Qafqaz", "BöyükQafqaz", "KiçikQafqaz", "Talış", "Naxçıvandağ",
-        #
-        # # 8. Культурные термины
-        # "muğam", "tar", "kamança", "balaban", "nəğmə", "rəqs", "xalça", "bədii",
-        # "şeir", "poeziya", "rəssam", "heykəl", "memar", "abidə", "mədəniyyət",
-        #
-        # # 9. Еда и напитки
-        # "plov", "dolma", "kebab", "lavash", "tendir", "çörək", "pendir", "bal",
-        # "çay", "qənd", "şərbət", "meyvə", "tərəvəz", "ət", "balıq", "düyü",
-        #
-        # # 10. Абстрактные понятия
-        # "sevgi", "dostluq", "sədaqət", "qəhrəman", "zəka", "hünər", "qüdrət",
-        # "sülh", "müharibə", "azadlıq", "müstəqillik", "inqilab", "tərəqqi",
-        #
-        # # 11. Профессии
-        # "həkim", "müəllim", "mühəndis", "işçi", "fermer", "tacir", "sənətkar",
-        # "rəssam", "yazıçı", "şair", "jurnalist", "aktyor", "rejissor",
-        #
-        # # 12. Семья и отношения
-        # "ata", "ana", "qardaş", "bacı", "oğul", "qız", "nəvə", "bala",
-        # "əmi", "dayı", "xala", "bibi", "yoldaş", "ər", "arvad", "sevgili",
-        #
-        # # 13. Время и дата
-        # "il", "ay", "həftə", "gün", "saat", "dəqiqə", "saniyə", "bu gün",
-        # "dünən", "sabah", "yaz", "yay", "payız", "qış", "fəsil", "əsr",
-        #
-        # # 14. Цвета
-        # "qırmızı", "yaşıl", "mavi", "sarı", "qara", "ağ", "boz", "tünd",
-        # "açıq", "təmiz", "parlaq", "tər", "rəng", "çalarlı", "alabalıq",
-        #
-        # # 15. Числа и количественные
-        # "bir", "iki", "üç", "dörd", "beş", "altı", "yeddi", "səkkiz",
-        # "doqquz", "on", "yüz", "min", "milyon", "çox", "az", "kifayət"
+    azerbaijani_words = [
+        # 1. Слова с уникальными диакритиками
+        "şəhər", "kənd", "vilayət", "ölkə", "bölgü", "cəmiyyət", "muxtar",
+        "əhali", "yaşayış", "yerləşmə", "qurutu", "dəyiş", "qədəbəy", "şağıl",
+        "güzək", "təpə", "çələbi", "dəhə", "bəlgən", "cəbrail", "qubalı", "dəvəçi",
+        "hacıqabul", "beyləqan", "göygöl", "daşkəsən", "qoca", "immet", "adam", "alma",
+
+        # 2. Слова с редкими символами
+        "ğəlb", "ğümüş", "ğızıl", "ğüdrət", "ğədir", "ğəzəb", "ğəfil", "ğəmir",
+        "çəngəl", "çəpik", "çətin", "çəkir", "çəlik", "çəpər", "çətinə", "çəvən",
+        "şəffaf", "şəkill", "şərab", "şərik", "şəhla", "şəms", "şəfəq", "şərq",
+        "əcəb", "ədalət", "əfsanə", "əlbəttə", "əmanət", "əngəl", "əsr", "əvvəl",
+
+        # 3. Слова с умлаутами
+        "göz", "göl", "gün", "gür", "gəz", "gərək", "gəmir", "gəlin",
+        "öz", "öl", "örək", "ötür", "ömür", "örgü", "öyüd", "övrət",
+        "üç", "ülkə", "ürək", "üst", "ümid", "ünvan", "üzbəüz", "üşü",
+
+        # 4. Слова с ç/ş/ğ комбинациями
+        "çıraq", "çörək", "çiçək", "çəkmə", "çanta", "çimdik", "çevik", "çapıq",
+        "şalvar", "şəkər", "şüur", "şəxsi", "şirin", "şərik", "şoul", "şəffaf",
+        "qağayı", "qarğa", "ağac", "dağ", "yağış", "bağ", "çağ", "sağlam",
+
+        # 5. Слова с редкими сочетаниями
+        "müəllim", "müasir", "müəyyən", "müzakirə", "müqavimət", "müstəqil", "müraciət",
+        "təhsil", "təbii", "təklif", "tərcümə", "təşkil", "təəssüf", "təbrik",
+        "dərs", "dəyər", "dəqiqə", "dəvət", "dəyişik", "dəmir", "dəyirmi",
+        "kitab", "külək", "kəpənək", "kəndir", "kərpic", "kəfgir", "kömək",
+
+        # 6. Географические названия
+        "Bakı", "Gəncə", "Sumqayıt", "Mingəçevir", "Naxçıvan", "Şəki", "Yevlax",
+        "Lənkəran", "Şirvan", "Quba", "Xaçmaz", "Şamaxı", "Ağdam", "Cəbrayıl",
+        "Füzuli", "Zəngilan", "Qazax", "Tovuz", "Balakən", "Zaqatala",
+
+        # 7. Природные объекты
+        "Xəzər", "Kür", "Araz", "Qanıx", "Tərtər", "Bazarçay", "Viləşçay",
+        "Qafqaz", "BöyükQafqaz", "KiçikQafqaz", "Talış", "Naxçıvandağ",
+
+        # 8. Культурные термины
+        "muğam", "tar", "kamança", "balaban", "nəğmə", "rəqs", "xalça", "bədii",
+        "şeir", "poeziya", "rəssam", "heykəl", "memar", "abidə", "mədəniyyət",
+
+        # 9. Еда и напитки
+        "plov", "dolma", "kebab", "lavash", "tendir", "çörək", "pendir", "bal",
+        "çay", "qənd", "şərbət", "meyvə", "tərəvəz", "ət", "balıq", "düyü",
+
+        # 10. Абстрактные понятия
+        "sevgi", "dostluq", "sədaqət", "qəhrəman", "zəka", "hünər", "qüdrət",
+        "sülh", "müharibə", "azadlıq", "müstəqillik", "inqilab", "tərəqqi",
+
+        # 11. Профессии
+        "həkim", "müəllim", "mühəndis", "işçi", "fermer", "tacir", "sənətkar",
+        "rəssam", "yazıçı", "şair", "jurnalist", "aktyor", "rejissor",
+
+        # 12. Семья и отношения
+        "ata", "ana", "qardaş", "bacı", "oğul", "qız", "nəvə", "bala",
+        "əmi", "dayı", "xala", "bibi", "yoldaş", "ər", "arvad", "sevgili",
+
+        # 13. Время и дата
+        "il", "ay", "həftə", "gün", "saat", "dəqiqə", "saniyə", "bu gün",
+        "dünən", "sabah", "yaz", "yay", "payız", "qış", "fəsil", "əsr",
+
+        # 14. Цвета
+        "qırmızı", "yaşıl", "mavi", "sarı", "qara", "ağ", "boz", "tünd",
+        "açıq", "təmiz", "parlaq", "tər", "rəng", "çalarlı", "alabalıq",
+
+        # 15. Числа и количественные
+        "bir", "iki", "üç", "dörd", "beş", "altı", "yeddi", "səkkiz",
+        "doqquz", "on", "yüz", "min", "milyon", "çox", "az", "kifayət"
         # "әҹә",
         # "ҝүл",
         # "һәш",
@@ -146,7 +146,7 @@ def generate_synthetic_data():
     generated_count = 0
     labels = []
 
-    for i in range(500):  # Генерируем 500 примеров
+    for i in range(5000):  # Генерируем 500 примеров
         word = random.choice(azerbaijani_words)
         font_size = random.randint(20, 35)
 
@@ -187,7 +187,7 @@ def generate_synthetic_data():
             continue
 
     # Сохраняем labels
-    with open(os.path.join("../debug/", "rec_gt.txt"), 'w', encoding='utf-8') as f:
+    with open(os.path.join(output_dir, "rec_gt.txt"), 'w', encoding='utf-8') as f:
         for label in labels:
             f.write(label + '\n')
 

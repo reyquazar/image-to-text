@@ -1,50 +1,49 @@
 Global:
+  model_name: PP-OCRv5_server_rec
   use_gpu: true
-  epoch_num: 100
+  epoch_num: 300
   log_smooth_window: 20
-  print_batch_step: 50
+  print_batch_step: 10
   save_model_dir: ./output/
-  save_epoch_step: 5
-  eval_batch_step: [0, 500]
+  save_inference_dir: ./output_inference/
+  save_epoch_step: 10
+  eval_batch_step: [100, 200]
   cal_metric_during_train: true
-  pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
+  pretrained_model: null
   checkpoints:
-  save_inference_dir:
-  use_visualdl: false
-  infer_img:
-  character_dict_path: ./text/typed_text/python/dict.txt
-  max_text_length: 80
+  character_dict_path: ./text/azerbaijani_dict.txt
+  max_text_length: 15  # Увеличил для длинных слов
+  use_space_char: false
   infer_mode: false
-  use_space_char: true
-  save_res_path: ./output/predicts_rec.txt
+  save_res_path: ./output/aze_predicts.txt
+  use_visualdl: true
 
 Optimizer:
-  name: Adam
+  name: AdamW
   beta1: 0.9
   beta2: 0.999
   lr:
-    name: Cosine
     learning_rate: 0.001
-    warmup_epoch: 2
+    schedulers:
+      - name: CosineAnnealingLR
+        T_max: 300
+        eta_min: 0.00001
   regularizer:
     name: L2
-    factor: 0.0005
+    factor: 0.00001
 
 Architecture:
   model_type: rec
-  algorithm: SVTR
+  algorithm: CRNN
   Transform:
   Backbone:
-    name: PPLCNetV3
-    scale: 1
+    name: ResNet
+    layers: 34
     pretrained: false
   Neck:
     name: SequenceEncoder
-    encoder_type: svtr
-    dims: 64
-    depth: 2
-    hidden_dims: 120
-    use_guide: false
+    encoder_type: rnn
+    hidden_size: 512  # Увеличил для сложных символов
   Head:
     name: CTCHead
     fc_decay: 0.00001
@@ -62,44 +61,52 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/
+    data_dir: ./text/azerbaijani/
     label_file_list:
-      - ./text/typed_text/python/train_list.txt
-    ratio_list: [1.0]
+      - ./text/azerbaijani/train_list.txt
     transforms:
       - DecodeImage:
           img_mode: BGR
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [3, 32, 320]
+          image_shape: [3, 48, 400]  # Увеличил размер для лучшего качества
+          padding: true
+      - ColorJitter:
+          brightness: 0.4
+          contrast: 0.4
+          saturation: 0.4
+      - RandAugment:
+          num_layers: 2
+          magnitude: 8
       - KeepKeys:
           keep_keys: ['image', 'label', 'length']
   loader:
     shuffle: true
-    batch_size_per_card: 64
+    batch_size_per_card: 32
     drop_last: true
-    num_workers: 4
+    num_workers: 8
     use_shared_memory: true
 
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/
+    data_dir: ./text/azerbaijani/
     label_file_list:
-      - ./text/typed_text/python/val_list.txt
+      - ./text/azerbaijani/val_list.txt
     transforms:
       - DecodeImage:
           img_mode: BGR
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [3, 32, 320]
+          image_shape: [3, 48, 400]
+          padding: true
       - KeepKeys:
           keep_keys: ['image', 'label', 'length']
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 64
-    num_workers: 2
+    batch_size_per_card: 32
+    num_workers: 8
     use_shared_memory: true
