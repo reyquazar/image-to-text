@@ -16,7 +16,7 @@ Global:
   use_space_char: false
   infer_mode: false
   save_res_path: ./output/debug_predicts.txt
-  use_visualdl: false
+  use_visualdl: true
 
 Optimizer:
   name: Adam

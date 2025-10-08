@@ -6,7 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 def generate_synthetic_data():
-    output_dir = "../debug"
+    output_dir = "../debug/"
     os.makedirs(output_dir, exist_ok=True)
 
     # Словарь азербайджанских кириллических слов
@@ -187,7 +187,7 @@ def generate_synthetic_data():
             continue
 
     # Сохраняем labels
-    with open(os.path.join(output_dir, "rec_gt.txt"), 'a', encoding='utf-8') as f:
+    with open(os.path.join("../debug/", "rec_gt.txt"), 'w', encoding='utf-8') as f:
         for label in labels:
             f.write(label + '\n')
 
