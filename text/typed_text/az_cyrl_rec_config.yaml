@@ -61,9 +61,9 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset3
+    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset
     label_file_list:
-      - ./text/typed_text/pure_azerbaijani_cyrillic_dataset3/train_list.txt
+      - ./text/typed_text/pure_azerbaijani_cyrillic_dataset/train_list.txt
     transforms:
       - DecodeImage:
           img_mode: BGR
@@ -91,9 +91,9 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset3
+    data_dir: ./text/typed_text/pure_azerbaijani_cyrillic_dataset
     label_file_list:
-      - ./text/typed_text/pure_azerbaijani_cyrillic_dataset3/val_list.txt
+      - ./text/typed_text/pure_azerbaijani_cyrillic_dataset/val_list.txt
     transforms:
       - DecodeImage:
           img_mode: BGR
