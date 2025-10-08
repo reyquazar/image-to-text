@@ -1,5 +1,5 @@
 Global:
-  model: PP-OCRv5_server_rec
+  model_name: one_word
   use_gpu: true
   epoch_num: 500
   log_smooth_window: 1
