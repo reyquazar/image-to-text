@@ -5,8 +5,10 @@ def PRec_old(image):
     ocr = PaddleOCR()
     result = ocr.predict(image)
     return result
+
+
 def PRec_new(image):
-    ocr = PaddleOCR(text_recognition_model_dir="./output/best_accuracy.pdparams")
+    ocr = PaddleOCR(text_recognition_model_dir="./output/")
     result = ocr.predict(image)
     return result
 
