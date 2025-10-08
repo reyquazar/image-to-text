@@ -1,30 +1,33 @@
 Global:
-  model_name: PP-OCRv5_server_rec
   use_gpu: true
-  epoch_num: 100  # Достаточно для одного слова
+  epoch_num: 100
   log_smooth_window: 1
-  print_batch_step: 5
+  print_batch_step: 1
   save_model_dir: ./output/
-  save_epoch_step: 20
-  eval_batch_step: [0, 10]  # Чаще смотрим прогресс
+  save_inference_dir: ./output_inference/
+  save_epoch_step: 10
+  eval_batch_step: [0, 1]
   cal_metric_during_train: true
   pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
+  checkpoints:
   character_dict_path: ./text/debug/dict.txt
   max_text_length: 10
   use_space_char: false
+  infer_mode: false
+  save_res_path: ./output/debug_predicts.txt
+  use_visualdl: false
 
 Optimizer:
   name: Adam
   beta1: 0.9
   beta2: 0.999
   lr:
-    learning_rate: 0.0005  # Оптимально для быстрого старта
+    learning_rate: 0.001
   regularizer:
     name: L2
     factor: 0.00001
 
 Architecture:
-  # Без изменений - оставляем PP-OCRv5_server_rec
   model_type: rec
   algorithm: SVTR
   Transform:
@@ -65,15 +68,15 @@ Train:
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [ 3, 32, 320 ]
+          image_shape: [3, 32, 320]
       - KeepKeys:
           keep_keys: [ 'image', 'label', 'length' ]
   loader:
     shuffle: true
-    batch_size_per_card: 32  # УВЕЛИЧИТЬ! A40 потянет
+    batch_size_per_card: 2
     drop_last: false
-    num_workers: 4  # Увеличить для скорости
-    use_shared_memory: true
+    num_workers: 0
+    use_shared_memory: false
 
 Eval:
   dataset:
@@ -86,13 +89,13 @@ Eval:
           img_mode: BGR
           channel_first: false
       - CTCLabelEncode:
-      - SVTRRecResizeImg:
-          image_shape: [ 3, 32, 320 ]
+      - RecResizeImg:
+          image_shape: [3, 32, 320]
       - KeepKeys:
           keep_keys: [ 'image', 'label', 'length' ]
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 32
-    num_workers: 4
-    use_shared_memory: true
+    batch_size_per_card: 2
+    num_workers: 0
+    use_shared_memory: false
