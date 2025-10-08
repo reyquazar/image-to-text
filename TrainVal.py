@@ -48,8 +48,12 @@ def split_dataset(input_file, output_dir, train_ratio=0.8):
 
 # Использование
 if __name__ == "__main__":
-    input_file = './text/typed_text/pure_azerbaijani_cyrillic_dataset/rec_gt.txt'  # Ваш файл с разметкой
-    output_dir = './text/typed_text/pure_azerbaijani_cyrillic_dataset/'
+    input_file = './text/debug/rec_gt.txt'  # Ваш файл с разметкой
+    output_dir = './text/debug/'
+
+
+    # input_file = './text/typed_text/pure_azerbaijani_cyrillic_dataset/rec_gt.txt'  # Ваш файл с разметкой
+    # output_dir = './text/typed_text/pure_azerbaijani_cyrillic_dataset/'
 
     train_file, val_file = split_dataset(input_file, output_dir)
 
