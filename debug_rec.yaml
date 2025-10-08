@@ -1,6 +1,6 @@
 Global:
   use_gpu: true
-  epoch_num: 20
+  epoch_num: 50
   log_smooth_window: 1
   print_batch_step: 1
   save_model_dir: ./output/
