@@ -90,7 +90,7 @@ Eval:
           img_mode: BGR
           channel_first: false
       - CTCLabelEncode:
-      - RecResizeImg:
+      - SVTRRecResizeImg:
           image_shape: [3, 32, 320]
       - KeepKeys:
           keep_keys: [ 'image', 'label', 'length' ]
