@@ -2,7 +2,7 @@ from paddleocr import *
 
 
 def PRec_old(image):
-    ocr = PaddleOCR()
+    ocr = PaddleOCR(text_recognition_model_name="PP-OCRv5_server_rec")
     result = ocr.predict(image)
     return result
 
