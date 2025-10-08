@@ -21,14 +21,14 @@ def main():
         page = result[0]
         texts = page.get('rec_texts', [])
         combined_text = ' '.join(texts)
-    print(combined_text)
+    print("="*100, combined_text)
     result = PRec_new(image_path)
     # save_txt(result, filename='temp1.txt')
     if result and len(result) > 0:
         page = result[0]
         texts = page.get('rec_texts', [])
         combined_text = ' '.join(texts)
-    print(combined_text)
+    print("="*100, combined_text)
 
 
 if __name__ == "__main__":
