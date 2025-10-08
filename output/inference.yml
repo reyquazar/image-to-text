@@ -1,0 +1,26 @@
+Global:
+  model_name: PP-OCRv5_server_rec
+PreProcess:
+  transform_ops:
+  - DecodeImage:
+      channel_first: false
+      img_mode: BGR
+  - CTCLabelEncode: null
+  - SVTRRecResizeImg:
+      image_shape:
+      - 3
+      - 32
+      - 320
+  - KeepKeys:
+      keep_keys:
+      - image
+      - label
+      - length
+PostProcess:
+  name: CTCLabelDecode
+  character_dict:
+  - ç
+  - ə
+  - p
+  - i
+  - k
