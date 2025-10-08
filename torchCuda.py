@@ -1,17 +1,25 @@
-import torch
+print("=== ПРОВЕРКА СОВПАДЕНИЯ СИМВОЛОВ ===")
 
-print({torch.cuda.is_available()})
+# Загрузи словарь
+with open('./text/typed_text/pure_azerbaijani_cyrillic_dataset3/dict.txt', 'r', encoding='utf-8') as f:
+    dict_chars = {line.strip() for line in f.readlines()}
 
-print({torch.cuda.device_count()})
+print(f"Символов в словаре: {len(dict_chars)}")
+print(f"Первые 10 символов: {list(dict_chars)[:10]}")
 
-if torch.cuda.is_available():
-    print(f"Название GPU: {torch.cuda.get_device_name(0)}")
-    print(f"Память GPU: {torch.cuda.get_device_properties(0).total_memory / 1024 ** 3:.2f} GB")
+# Проверь символы из твоих лейблов
+with open('./text/typed_text/pure_azerbaijani_cyrillic_dataset3/train_list.txt', 'r', encoding='utf-8') as f:
+    missing_chars = set()
+    for line in f.readlines()[:10]:
+        _, label = line.strip().split('\t')
+        for char in label:
+            if char not in dict_chars:
+                missing_chars.add(char)
 
-    a = torch.tensor([1.0, 2.0, 3.0]).cuda()
-    b = torch.tensor([4.0, 5.0, 6.0]).cuda()
-    c = a + b
-    print(f"Результат вычисления на GPU: {c}")
-    print(f"Где находится тензор: {c.device}")
-else:
-    print("CUDA недоступна. Убедитесь, что установлены драйверы NVIDIA.")
+    if missing_chars:
+        print(f"🚨 ОТСУТСТВУЮТ СИМВОЛЫ В СЛОВАРЕ: {missing_chars}")
+    else:
+        print("✅ Все символы из лейблов есть в словаре")
+
+# Проверь обратное - есть ли в словаре лишние символы
+print(f"Пример символов из словаря: {''.join(list(dict_chars)[:20])}")
