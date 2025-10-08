@@ -1,0 +1,3 @@
+img1.jpg	çəpik
+img2.jpg	çəpik
+img3.jpg	çəpik
