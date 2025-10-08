@@ -1,4 +1,4 @@
-synthetic_0000.jpg	jurnalist
+img1.jpg	TEST
 synthetic_0001.jpg	yaşıl
 synthetic_0002.jpg	plov
 synthetic_0003.jpg	sülh

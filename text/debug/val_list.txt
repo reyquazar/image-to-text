@@ -1,2 +1,2 @@
-img1.jpg    TEST
-img2.jpg    TEST
+img1.jpg	TEST
+img2.jpg	TEST
