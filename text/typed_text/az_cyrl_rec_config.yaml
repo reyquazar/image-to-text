@@ -67,11 +67,11 @@ Train:
     label_file_list:
       - ./text/typed_text/pure_azerbaijani_cyrillic_dataset/train_list.txt
     transforms:
-      - - RandAugment:
-            num_layers: 2
-            magnitude: 5
-        - RandomErasing:
-            probability: 0.2
+      - RandAugment:
+          num_layers: 2
+          magnitude: 5
+      - RandomErasing:
+          probability: 0.2
       - DecodeImage:
           img_mode: BGR
           channel_first: false
