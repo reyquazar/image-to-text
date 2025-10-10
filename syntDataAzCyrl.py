@@ -202,6 +202,8 @@ import numpy as np
 import random
 import os
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
+from fontTools.ttLib import TTFont
+import matplotlib.font_manager as fm
 
 
 def generate_synthetic_data():
@@ -338,10 +340,29 @@ def generate_synthetic_data():
     ]
 
     # Больше шрифтов (скачайте дополнительные)
-    fonts = [
-        "arial.ttf", "times.ttf", "verdana.ttf", "georgia.ttf",
-        "cour.ttf", "tahoma.ttf"  # Добавьте реальные пути к шрифтам
-    ]
+    fonts = []
+    for font_path in fm.findSystemFonts():
+        try:
+            font = TTFont(font_path)
+            fonts.append(font_path)
+            if len(fonts) >= 10:  # Ограничиваем количество шрифтов для производительности
+                break
+        except:
+            continue
+
+    # Если системных шрифтов нет, используем fallback
+    if not fonts:
+        fonts = [
+            "arial.ttf",
+            "times.ttf",
+            "verdana.ttf",
+            "cour.ttf"
+        ]
+        print("⚠️ Используются стандартные шрифты. Для лучшего качества установите дополнительные шрифты.")
+    else:
+        print(f"✅ Найдено {len(fonts)} системных шрифтов")
+
+
 
     # Фоны
     backgrounds = [
@@ -462,4 +483,3 @@ def generate_synthetic_data():
 
 
 generate_synthetic_data()
-
