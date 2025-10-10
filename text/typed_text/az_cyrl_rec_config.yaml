@@ -1,13 +1,13 @@
 Global:
   model_name: PP-OCRv5_server_rec
   use_gpu: true
-  epoch_num: 300
+  epoch_num: 500
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output/
   save_inference_dir: ./output_inference_aze/
-  save_epoch_step: 10
-  eval_batch_step: [100, 200]
+  save_epoch_step: 20
+  eval_batch_step: [0, 500]
   cal_metric_during_train: true
   pretrained_model: null
   checkpoints:
@@ -23,7 +23,7 @@ Optimizer:
   beta1: 0.9
   beta2: 0.999
   lr:
-    learning_rate: 0.001
+    learning_rate: 0.0005
     schedulers:
       - name: CosineAnnealingLR
         T_max: 300
@@ -76,7 +76,7 @@ Train:
           keep_keys: ['image', 'label', 'length']
   loader:
     shuffle: true
-    batch_size_per_card: 128
+    batch_size_per_card: 256
     drop_last: true
     num_workers: 16
     use_shared_memory: true
@@ -100,6 +100,6 @@ Eval:
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 32
-    num_workers: 8
+    batch_size_per_card: 256
+    num_workers: 16
     use_shared_memory: true
