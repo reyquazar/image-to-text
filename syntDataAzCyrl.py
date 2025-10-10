@@ -205,7 +205,7 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
 
 
 def generate_synthetic_data():
-    output_dir = "pure_azerbaijani_cyrillic_dataset"
+    output_dir = "./text/typed_text/pure_azerbaijani_cyrillic_dataset"
     os.makedirs(output_dir, exist_ok=True)
     azerbaijani_words = [
         # 1. Слова с уникальными диакритиками
@@ -352,7 +352,7 @@ def generate_synthetic_data():
     generated_count = 0
     labels = []
 
-    for i in range(25000):  # Увеличил до 10k
+    for i in range(3):  # Увеличил до 10k
         word = random.choice(azerbaijani_words)
 
         # Случайные параметры
