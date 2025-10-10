@@ -70,7 +70,7 @@ Train:
       - RandAugment:
           num_layers: 2
           magnitude: 5
-      - RandomErasing:
+      - RandomScaling:
           probability: 0.2
       - DecodeImage:
           img_mode: BGR
