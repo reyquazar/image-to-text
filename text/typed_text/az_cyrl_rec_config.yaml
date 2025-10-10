@@ -7,7 +7,7 @@ Global:
   save_model_dir: ./output/
   save_inference_dir: ./output_inference_aze/
   save_epoch_step: 20
-  eval_batch_step: [0, 500]
+  eval_batch_step: [ 0, 500 ]
   cal_metric_during_train: true
   pretrained_model: null
   checkpoints:
@@ -22,6 +22,8 @@ Optimizer:
   name: AdamW
   beta1: 0.9
   beta2: 0.999
+  Optimizer:
+    weight_decay: 0.0001
   lr:
     learning_rate: 0.0005
     schedulers:
@@ -65,15 +67,20 @@ Train:
     label_file_list:
       - ./text/typed_text/pure_azerbaijani_cyrillic_dataset/train_list.txt
     transforms:
+      - - RandAugment:
+            num_layers: 2
+            magnitude: 5
+        - RandomErasing:
+            probability: 0.2
       - DecodeImage:
           img_mode: BGR
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [3, 48, 400]  # Увеличил размер для лучшего качества
+          image_shape: [ 3, 48, 400 ]  # Увеличил размер для лучшего качества
           padding: true
       - KeepKeys:
-          keep_keys: ['image', 'label', 'length']
+          keep_keys: [ 'image', 'label', 'length' ]
   loader:
     shuffle: true
     batch_size_per_card: 256
@@ -93,13 +100,13 @@ Eval:
           channel_first: false
       - CTCLabelEncode:
       - SVTRRecResizeImg:
-          image_shape: [3, 48, 400]
+          image_shape: [ 3, 48, 400 ]
           padding: true
       - KeepKeys:
-          keep_keys: ['image', 'label', 'length']
+          keep_keys: [ 'image', 'label', 'length' ]
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 256
+    batch_size_per_card: 512
     num_workers: 16
     use_shared_memory: true
