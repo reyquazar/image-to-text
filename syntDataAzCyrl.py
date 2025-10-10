@@ -338,31 +338,33 @@ def generate_synthetic_data():
         # "Ҹәм", "Ҹан", "Ҹәнг", "Ҹумһуријјәт", "Ҹәсд", "Ҹәми", "Ҹәһан", "Ҹүрә",
         # "Шәм", "Шәһәр", "Шәрг", "Шәрәф", "Шәмшәр", "Ширин", "Шәфәг", "Шәмс"
     ]
+    # Используем 7 скопированных шрифтов из папки fonts/3
+    fonts_dir = "./text/typed_text/pure_azerbaijani_cyrillic_dataset/fonts/3"
 
-    # Больше шрифтов (скачайте дополнительные)
-    fonts = []
-    for font_path in fm.findSystemFonts():
-        try:
-            font = TTFont(font_path)
-            fonts.append(font_path)
-            if len(fonts) >= 10:  # Ограничиваем количество шрифтов для производительности
-                break
-        except:
-            continue
+    print(f"🔍 Поиск шрифтов в: {fonts_dir}")
 
-    # Если системных шрифтов нет, используем fallback
-    if not fonts:
-        fonts = [
-            "arial.ttf",
-            "times.ttf",
-            "verdana.ttf",
-            "cour.ttf"
-        ]
-        print("⚠️ Используются стандартные шрифты. Для лучшего качества установите дополнительные шрифты.")
+    # Получаем список всех .ttf файлов в папке
+    available_fonts = []
+    if os.path.exists(fonts_dir):
+        for file in os.listdir(fonts_dir):
+            if file.lower().endswith('.ttf'):
+                font_path = os.path.join(fonts_dir, file)
+                # Проверяем, можно ли загрузить шрифт
+                try:
+                    test_font = ImageFont.truetype(font_path, 20)
+                    available_fonts.append(font_path)
+                    print(f"✅ Шрифт загружен: {file}")
+                except Exception as e:
+                    print(f"❌ Ошибка загрузки {file}: {e}")
     else:
-        print(f"✅ Найдено {len(fonts)} системных шрифтов")
+        print(f"❌ Папка со шрифтами не найдена: {fonts_dir}")
+        return
 
+    if not available_fonts:
+        print("❌ Нет доступных шрифтов!")
+        return
 
+    print(f"🎯 Будет использовано {len(available_fonts)} шрифтов")
 
     # Фоны
     backgrounds = [
@@ -373,7 +375,7 @@ def generate_synthetic_data():
     generated_count = 0
     labels = []
 
-    for i in range(25000):  # Увеличил до 10k
+    for i in range(25000):  # Увеличил количество генераций
         word = random.choice(azerbaijani_words)
 
         # Случайные параметры
@@ -386,14 +388,14 @@ def generate_synthetic_data():
         )
 
         # Случайные трансформации
-        rotation = random.randint(-5, 5)  # Небольшой поворот
-        blur_radius = random.uniform(0, 0.8)  # Размытие
-        contrast = random.uniform(0.8, 1.5)  # Контраст
-        brightness = random.uniform(0.8, 1.2)  # Яркость
+        rotation = random.randint(-5, 5)
+        blur_radius = random.uniform(0, 0.8)
+        contrast = random.uniform(0.8, 1.5)
+        brightness = random.uniform(0.8, 1.2)
 
         try:
             # Выбираем шрифт
-            font_path = random.choice(fonts)
+            font_path = random.choice(available_fonts)
             font = ImageFont.truetype(font_path, font_size)
 
             # Вычисляем размер текста с запасом
@@ -422,7 +424,7 @@ def generate_synthetic_data():
             enhancer = ImageEnhance.Brightness(img)
             img = enhancer.enhance(brightness)
 
-            # Добавляем шум (разные типы)
+            # Добавляем шум
             img_array = np.array(img)
 
             noise_type = random.choice(['gaussian', 'salt_pepper', 'speckle'])
@@ -431,23 +433,20 @@ def generate_synthetic_data():
                 img_array = cv2.add(img_array, noise)
             elif noise_type == 'salt_pepper':
                 salt_pepper_ratio = random.uniform(0.01, 0.05)
-                # Соль
                 salt = np.random.random(img_array.shape[:2]) < salt_pepper_ratio / 2
                 img_array[salt] = 255
-                # Перец
                 pepper = np.random.random(img_array.shape[:2]) < salt_pepper_ratio / 2
                 img_array[pepper] = 0
 
-            # Иногда добавляем линии или точки
+            # Иногда добавляем линии
             if random.random() < 0.2:
                 h, w = img_array.shape[:2]
-                # Случайные линии
                 for _ in range(random.randint(1, 3)):
                     color = random.randint(150, 200)
                     y = random.randint(0, h - 1)
                     cv2.line(img_array, (0, y), (w - 1, y), (color, color, color), 1)
 
-            # Ресайз до финального размера (как в конфиге)
+            # Ресайз до финального размера
             final_width = 400
             final_height = 48
             img_resized = cv2.resize(img_array, (final_width, final_height))
@@ -468,7 +467,7 @@ def generate_synthetic_data():
 
     # Разделяем на train/val
     random.shuffle(labels)
-    split_idx = int(0.9 * len(labels))  # 90% train, 10% val
+    split_idx = int(0.9 * len(labels))
 
     with open(os.path.join(output_dir, "train_list.txt"), 'w', encoding='utf-8') as f:
         for label in labels[:split_idx]:
