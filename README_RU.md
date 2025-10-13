@@ -52,3 +52,9 @@ vim output/inference.yml
 - Реализован функционал в папке ```./image-to-text/ExtensionServerPaddleOCR```
 - Проведена работа с JavaScript для создания интерфейса
 - Основной функционал расширения работает
+
+Полезные команды
+
+```find . -maxdepth 1 -type f ! -name "./text/typed_text/az_config_train/dict.txt" -delete```
+```git reset --hard HEAD~1```
+``````

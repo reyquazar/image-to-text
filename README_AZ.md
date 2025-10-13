@@ -25,7 +25,7 @@ python -m pip install albumentations  RapidFuzz lmdb scikit-image PyYAML
 
 ### 4. Sintetik məlumatların yaradılması
 - Sintetik məlumatların yaradılması üçün `genDataTrainVal.py` proqramı hazırlandı
-- Məlumat miqdarı üçün parametr dəstəyi təmin edildi (nümunə: `python .\genDataTrainVal.py 25000`)
+- Məlumat miqdarı üçün parametr dəstəyi təmin edildi (nümunə: `python .\genDataTrainVal.py 80000`)
 - `crop_img` qovluğundan orijinal məlumatların istifadəsi üçün alternativ `TrainVal.py` proqramı yaradıldı
 - `train_list.txt` və `val_list.txt` faylları yaradıldı
 

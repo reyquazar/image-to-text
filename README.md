@@ -26,7 +26,7 @@ python -m pip install albumentations  RapidFuzz lmdb scikit-image PyYAML
 
 ### 4. Synthetic Data Generation
 - Created `genDataTrainVal.py` program for synthetic data generation
-- Implemented parameter support for data quantity (example: `python .\genDataTrainVal.py 25000`)
+- Implemented parameter support for data quantity (example: `python .\genDataTrainVal.py 80000`)
 - Created alternative program `TrainVal.py` for using original data from `crop_img`
 - Generated `train_list.txt` and `val_list.txt` files
 
