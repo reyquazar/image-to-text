@@ -37,7 +37,7 @@ python -m pip install albumentations  RapidFuzz lmdb scikit-image PyYAML
 
 ### 6. Modelin ixracı
 - İnferens modeli yaradıldı: `python ../PaddleOCR/tools/export_model.py -c ./text/typed_text/az_rec_config.yaml -o Global.pretrained_model=output/best_accuracy.pdparams Global.save_inference_dir=output`
-- Konfiqurasiya faylında dəyişiklik edildi: `CTCLABELENCODE: null` parametri silindi
+- REMOVE CTCLABELENCODE: null vim output/inference.yml does not work with it
 
 ### 7. Modelin sınaqdan keçirilməsi
 - Test skripti hazırlandı: `python .\testFast.py .\text\typed_text\textX.png`
