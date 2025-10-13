@@ -14,7 +14,7 @@ def PRec_new(image):
 
 
 def main():
-    image_path = './text/typed_text/test20.png'
+    image_path = './text/typed_text/testWords.png'
     result = PRec_old(image_path)
     # save_txt(result, filename='temp1.txt')
     if result and len(result) > 0:
