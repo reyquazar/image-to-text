@@ -71,14 +71,10 @@ Train:
           img_mode: BGR
           channel_first: false
       - RecResizeImg:
-          image_shape: [3, 48, 320]  # МЕНЯЕМ 400 на 320
+          image_shape: [ 3, 48, 320 ]  # Увеличил размер для лучшего качества
           padding: true
-      - NormalizeImage:    # ДОБАВЛЯЕМ
-          scale: 1.0/255.0
-          mean: [0.5, 0.5, 0.5]
-          std: [0.5, 0.5, 0.5]
       - KeepKeys:
-          keep_keys: ['image', 'label', 'length']
+          keep_keys: [ 'image', 'label', 'length' ]
   loader:
     shuffle: true
     batch_size_per_card: 256
@@ -97,14 +93,10 @@ Eval:
           img_mode: BGR
           channel_first: false
       - RecResizeImg:
-          image_shape: [3, 48, 320]  # МЕНЯЕМ 400 на 320
+          image_shape: [ 3, 48, 320 ]
           padding: true
-      - NormalizeImage:    # ДОБАВЛЯЕМ
-          scale: 1.0/255.0
-          mean: [0.5, 0.5, 0.5]
-          std: [0.5, 0.5, 0.5]
       - KeepKeys:
-          keep_keys: ['image', 'label', 'length']
+          keep_keys: [ 'image', 'label', 'length' ]
   loader:
     shuffle: false
     drop_last: false
