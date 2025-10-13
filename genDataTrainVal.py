@@ -12,7 +12,6 @@ def generate_synthetic_data():
 
     parser = argparse.ArgumentParser()
     parser.add_argument('number', type=int)
-    parser.add_argument('image_path', type=str)
     args = parser.parse_args()
 
 
