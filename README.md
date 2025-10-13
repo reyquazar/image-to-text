@@ -1,55 +1,51 @@
-# Отчет по выполнению задачи по созданию OCR расширения для браузера
+# Report on Browser Extension OCR Task Implementation
 
-## Выполненные работы:
+## Completed Work:
 
-### 1. Настройка окружения и выбор технологии
-- Выбран PaddleOCR как более мощная альтернатива TesseractOCR
-- Создан репозиторий: ```git clone https://github.com/reyquazar/image-to-text.git``` (ветка develop)
-- Установка зависимостей: 
-- 
+### 1. Environment Setup and Technology Selection
+- Selected PaddleOCR as more powerful alternative to TesseractOCR
+- Repository cloned: `git clone https://github.com/reyquazar/image-to-text.git` (develop branch)
+- Dependencies installation: 
 ```
 python -m pip install paddlepaddle-gpu==3.0.0 -i https://www.paddlepaddle.org.cn/packages/stable/cu118/
 python -m pip install "paddleocr[all]"
 python -m pip install albumentations  RapidFuzz lmdb scikit-image PyYAML
 ```
 
-### 2. Разметка данных
-- Запущена разметка данных через Python скрипт: ```python .\PPOCRLabel.py --lang en```
-- Размечено 8 изображений для обучения модели
-- Размеченные изображения сохранены в ```./text/typed_text/crop_image```
-- Файл разметки: ```rec_gt.txt```
+### 2. Data Annotation
+- Data annotation launched via Python script: `python .\PPOCRLabel.py --lang en`
+- 8 images annotated for model training
+- Annotated images saved in `./text/typed_text/crop_image`
+- Annotation file: `rec_gt.txt`
 
-### 3. Подготовка к обучению модели
-- Изучена документация PaddleOCR по fine-tuning
-- Создан рабочий конфигурационный файл: ```./text/typed_text/az_rec_config.yaml```
-- Подготовлен словарь для аугментации: ```./text/typed_text/az_config_train/dict.txt```
-- Скачаны дополнительные шрифты для обучения
+### 3. Model Training Preparation
+- Studied PaddleOCR fine-tuning documentation
+- Created working configuration file: `./text/typed_text/az_rec_config.yaml`
+- Prepared augmentation dictionary: `dict.txt`
+- Downloaded additional fonts for training
 
-### 4. Генерация синтетических данных
-- Создана программа ```genDataTrainVal.py``` для генерации синтетических данных
-- Реализована поддержка параметра количества данных (пример: ```python .\genDataTrainVal.py 25000```)
-- Создана альтернативная программа ```TrainVal.py``` для использования оригинальных данных из ```crop_img```
-- Сгенерированы файлы ```train_list.txt``` и ```val_list.txt```
+### 4. Synthetic Data Generation
+- Created `genDataTrainVal.py` program for synthetic data generation
+- Implemented parameter support for data quantity (example: `python .\genDataTrainVal.py 25000`)
+- Created alternative program `TrainVal.py` for using original data from `crop_img`
+- Generated `train_list.txt` and `val_list.txt` files
 
-### 5. Обучение модели
-- Скачан репозиторий PaddleOCR: ```git clone https://github.com/PaddlePaddle/PaddleOCR.git```
-- Загружена предобученная модель: ```wget https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-OCRv5_server_rec_pretrained -P ./text/typed_text/pretrain_models```
-- Запущен процесс обучения: ```python ../PaddleOCR/tools/train.py -c ./text/typed_text/az_rec_config.yaml```
-- Достигнута точность (accuracy) выше 90%
+### 5. Model Training
+- Downloaded PaddleOCR repository: `git clone https://github.com/PaddlePaddle/PaddleOCR.git`
+- Downloaded pre-trained model: `wget https://paddle-model-ecology.bj.bcebos.com/paddlex/official_pretrained_model/PP-OCRv5_server_rec_pretrained -P ./text/typed_text/pretrain_models`
+- Launched training process: `python ../PaddleOCR/tools/train.py -c ./text/typed_text/az_rec_config.yaml`
+- Achieved accuracy above 90%
 
-### 6. Экспорт модели
-- Создана inference модель: ```python ../PaddleOCR/tools/export_model.py -c ./text/typed_text/az_rec_config.yaml -o Global.pretrained_model=output/best_accuracy.pdparams Global.save_inference_dir=output```
-- Выполнена модификация конфигурационного файла: удалить параметр ```- CTCLABELENCODE: null```
-```
-vim output/inference.yml
-```
+### 6. Model Export
+- Created inference model: `python ../PaddleOCR/tools/export_model.py -c ./text/typed_text/az_rec_config.yaml -o Global.pretrained_model=output/best_accuracy.pdparams Global.save_inference_dir=output`
+- Modified configuration file: removed `CTCLABELENCODE: null` parameter
 
-### 7. Тестирование модели
-- Реализован скрипт тестирования: ```python .\testFast.py .\text\typed_text\text20.png```
-- Сравнение результатов между оригинальной и дообученной моделью
+### 7. Model Testing
+- Implemented testing script: `python .\testFast.py .\text\typed_text\textX.png`
+- Comparison between original and fine-tuned model results
 
-### 8. Разработка расширения для браузера
-- Создана серверная архитектура для интеграции PaddleOCR в браузерное расширение
-- Реализован функционал в папке ```./image-to-text/ExtensionServerPaddleOCR```
-- Проведена работа с JavaScript для создания интерфейса
-- Основной функционал расширения работает
+### 8. Browser Extension Development
+- Created server architecture for PaddleOCR integration into browser extension
+- Functionality implemented in `./image-to-text/ExtensionServerPaddleOCR` folder
+- Worked with JavaScript for interface creation
+- Core extension functionality is operational
