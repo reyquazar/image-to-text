@@ -94,7 +94,7 @@ Eval:
           img_mode: BGR
           channel_first: false
       - CTCLabelEncode:
-      - SVTRRecResizeImg:
+      - RecResizeImg:
           image_shape: [ 3, 48, 400 ]
           padding: true
       - KeepKeys:
