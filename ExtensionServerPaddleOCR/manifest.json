@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "OCR с PaddleOCR",
+  "version": "1.0",
+  "permissions": ["tabs", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
