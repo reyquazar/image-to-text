@@ -2,7 +2,8 @@ import cv2
 import numpy as np
 import random
 import os
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance, ImageOps
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
+import argparse
 
 
 def generate_synthetic_data():
@@ -11,7 +12,7 @@ def generate_synthetic_data():
 
     fonts_dir = "./text/typed_text/pure_azerbaijani_cyrillic_dataset/fonts/3"
 
-    print(f"🔍 Поиск шрифтов в: {fonts_dir}")
+    print(f"🔍 Find fonts: {fonts_dir}")
 
     azerbaijani_words = ["şəğıl", "ölkə", "ğümüş"
                          # # 1. Слова с уникальными диакритиками
@@ -132,25 +133,28 @@ def generate_synthetic_data():
                 try:
                     test_font = ImageFont.truetype(font_path, 20)
                     available_fonts.append(font_path)
-                    print(f"✅ Шрифт загружен: {file}")
+                    print(f"✅ Font loaded: {file}")
                 except Exception as e:
-                    print(f"❌ Ошибка загрузки {file}: {e}")
+                    print(f"❌ Error font load: {file}: {e}")
     else:
-        print(f"❌ Папка со шрифтами не найдена: {fonts_dir}")
+        print(f"❌ Dir with fonts: {fonts_dir}")
         return
 
     if not available_fonts:
-        print("❌ Нет доступных шрифтов!")
+        print("❌ Not available fonts!")
         return
 
-    print(f"🎯 Будет использовано {len(available_fonts)} шрифтов")
+    print(f"🎯 Used {len(available_fonts)} fonts")
 
     backgrounds = ['white', 'lightgray', 'aliceblue', 'seashell']
 
     generated_count = 0
     labels = []
+    parser = argparse.ArgumentParser()
+    parser.add_argument('number', type=int)
+    args = parser.parse_args()
 
-    for i in range(10000):
+    for i in range(args.number):
         word = random.choice(azerbaijani_words)
 
         font_size = random.randint(22, 32)
@@ -220,10 +224,10 @@ def generate_synthetic_data():
             generated_count += 1
 
             if generated_count % 10 == 0:
-                print(f"Сгенерировано: {generated_count}")
+                print(f"Generated: {generated_count}")
 
         except Exception as e:
-            print(f"Ошибка генерации: {e}")
+            print(f"Gen error: {e}")
             continue
 
     random.shuffle(labels)
@@ -237,7 +241,7 @@ def generate_synthetic_data():
         for label in labels[split_idx:]:
             f.write(label + '\n')
 
-    print(f"✅ Сгенерировано {generated_count} синтетических примеров")
+    print(f"✅ Generated {generated_count} synt data")
     print(f"📊 Train: {split_idx}, Val: {len(labels) - split_idx}")
 
 

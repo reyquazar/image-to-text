@@ -43,7 +43,7 @@ Architecture:
   Neck:
     name: SequenceEncoder
     encoder_type: rnn
-    hidden_size: 512  # Увеличил для сложных символов
+    hidden_size: 512
   Head:
     name: CTCHead
     fc_decay: 0.00001
@@ -70,7 +70,7 @@ Train:
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [3, 48, 400]  # Увеличил размер для лучшего качества
+          image_shape: [3, 48, 400]
           padding: true
       - ColorJitter:
           brightness: 0.4
