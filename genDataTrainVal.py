@@ -372,7 +372,7 @@ def generate_synthetic_data():
     generated_count = 0
     labels = []
 
-    for i in range(1000):  # Уменьшил количество для тестирования
+    for i in range(10000):  # Уменьшил количество для тестирования
         word = random.choice(azerbaijani_words)
 
         # Более консервативные параметры
