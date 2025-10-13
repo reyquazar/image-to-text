@@ -70,6 +70,7 @@ Train:
       - DecodeImage:
           img_mode: BGR
           channel_first: false
+      - CTCLabelEncode:
       - RecResizeImg:
           image_shape: [ 3, 48, 320 ]  # Увеличил размер для лучшего качества
           padding: true
@@ -92,6 +93,7 @@ Eval:
       - DecodeImage:
           img_mode: BGR
           channel_first: false
+      - CTCLabelEncode:
       - RecResizeImg:
           image_shape: [ 3, 48, 320 ]
           padding: true
