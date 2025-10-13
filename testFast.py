@@ -8,7 +8,7 @@ def PRec_old(image):
 
 
 def PRec_new(image):
-    ocr = PaddleOCR(text_recognition_model_name="PP-OCRv5_server_rec")
+    ocr = PaddleOCR(text_recognition_model_dir="./output/")
     result = ocr.predict(image)
     return result
 
