@@ -70,12 +70,15 @@ Train:
       - DecodeImage:
           img_mode: BGR
           channel_first: false
-      - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [ 3, 48, 400 ]  # Увеличил размер для лучшего качества
+          image_shape: [3, 48, 320]  # МЕНЯЕМ 400 на 320
           padding: true
+      - NormalizeImage:    # ДОБАВЛЯЕМ
+          scale: 1.0/255.0
+          mean: [0.5, 0.5, 0.5]
+          std: [0.5, 0.5, 0.5]
       - KeepKeys:
-          keep_keys: [ 'image', 'label', 'length' ]
+          keep_keys: ['image', 'label', 'length']
   loader:
     shuffle: true
     batch_size_per_card: 256
@@ -93,12 +96,15 @@ Eval:
       - DecodeImage:
           img_mode: BGR
           channel_first: false
-      - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [ 3, 48, 400 ]
+          image_shape: [3, 48, 320]  # МЕНЯЕМ 400 на 320
           padding: true
+      - NormalizeImage:    # ДОБАВЛЯЕМ
+          scale: 1.0/255.0
+          mean: [0.5, 0.5, 0.5]
+          std: [0.5, 0.5, 0.5]
       - KeepKeys:
-          keep_keys: [ 'image', 'label', 'length' ]
+          keep_keys: ['image', 'label', 'length']
   loader:
     shuffle: false
     drop_last: false

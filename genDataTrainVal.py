@@ -26,7 +26,6 @@ def add_document_noise(img_array):
     """Добавляет шумы, характерные для документов"""
     h, w = img_array.shape[:2]
 
-    # 1. Пятна и кляксы (как на старых документах)
     if random.random() < 0.2:
         num_spots = random.randint(1, 5)
         for _ in range(num_spots):
@@ -35,7 +34,6 @@ def add_document_noise(img_array):
             intensity = random.randint(5, 20)
             cv2.circle(img_array, (x, y), radius, (intensity, intensity, intensity), -1)
 
-    # 2. Линии и царапины
     if random.random() < 0.15:
         num_lines = random.randint(1, 3)
         for _ in range(num_lines):
@@ -45,7 +43,6 @@ def add_document_noise(img_array):
             intensity = random.randint(10, 30)
             cv2.line(img_array, (x1, y1), (x2, y2), (intensity, intensity, intensity), thickness)
 
-    # 3. Тень от копировального аппарата
     if random.random() < 0.1:
         shadow_intensity = random.randint(5, 15)
         direction = random.choice(['top', 'bottom', 'left', 'right'])
@@ -64,7 +61,6 @@ def add_document_noise(img_array):
 def apply_document_effects(img):
     """Применяет эффекты, характерные для отсканированных документов"""
 
-    # 1. Размытие (имитация плохого сканирования)
     if random.random() < 0.3:
         blur_type = random.choice(['motion', 'gaussian', 'defocus'])
         if blur_type == 'motion':
@@ -74,22 +70,18 @@ def apply_document_effects(img):
             kernel_motion_blur[int((size - 1) / 2), :] = np.ones(size)
             kernel_motion_blur = kernel_motion_blur / size
 
-            # Конвертируем PIL в numpy для OpenCV
             img_array = np.array(img)
             img_array = cv2.filter2D(img_array, -1, kernel_motion_blur)
             img = Image.fromarray(img_array)
 
         elif blur_type == 'defocus':
-            # Defocus blur
             img = img.filter(ImageFilter.GaussianBlur(random.uniform(0.3, 0.8)))
         else:
             # Gaussian blur
             img = img.filter(ImageFilter.GaussianBlur(random.uniform(0.2, 0.5)))
 
-    # 2. Сжатие JPEG артефакты
     if random.random() < 0.25:
         try:
-            # Имитация артефактов сжатия
             quality = random.randint(30, 85)
             from io import BytesIO
             output = BytesIO()
@@ -97,9 +89,7 @@ def apply_document_effects(img):
             img = Image.open(output)
         except Exception as e:
             print(f"⚠️ JPEG compression error: {e}")
-            # Продолжаем без JPEG сжатия
 
-    # 3. Наклон текста (как в неправильно отсканированном документе)
     if random.random() < 0.1:
         try:
             skew = random.uniform(-0.1, 0.1)
@@ -110,7 +100,6 @@ def apply_document_effects(img):
                                 (1, skew, -xshift if skew > 0 else 0, 0, 1, 0))
         except Exception as e:
             print(f"⚠️ Skew error: {e}")
-            # Продолжаем без наклона
 
     return img
 
@@ -180,11 +169,9 @@ def generate_synthetic_data():
         for i in range(count):
             word = random.choice(word_list)
 
-            # Параметры, характерные для документов
             font_size = random.randint(18, 28)
             bg_color = random.choice(document_backgrounds)
 
-            # Цвета текста для документов
             text_color_variants = [
                 (0, 0, 0),
                 (20, 20, 20),
@@ -194,7 +181,6 @@ def generate_synthetic_data():
             ]
             text_color = random.choice(text_color_variants)
 
-            # Более тонкие аугментации для документов
             rotation = random.randint(-2, 2)
             blur_radius = random.uniform(0, 0.2)
             contrast = random.uniform(0.9, 1.1)
@@ -211,7 +197,6 @@ def generate_synthetic_data():
                 img = Image.new('RGB', (text_width, text_height), color=bg_color)
                 draw = ImageDraw.Draw(img)
 
-                # Градиентный фон (реже для документов)
                 if random.random() < 0.05:
                     for y in range(img.height):
                         shade = 245 + int(10 * (y / img.height))
@@ -222,7 +207,6 @@ def generate_synthetic_data():
                 y_offset = (img.height - (bbox[3] - bbox[1])) // 2
                 draw.text((x_offset, y_offset), word, font=font, fill=text_color)
 
-                # Эффекты документов (с обработкой ошибок)
                 try:
                     img = apply_document_effects(img)
                 except Exception as e:
@@ -242,13 +226,11 @@ def generate_synthetic_data():
 
                 img_array = np.array(img)
 
-                # Шумы документов
                 try:
                     img_array = add_document_noise(img_array)
                 except Exception as e:
                     print(f"⚠️ Document noise skipped for '{word}': {e}")
 
-                # Добавляем Gaussian шум
                 if random.random() < 0.2:
                     noise = np.random.normal(0, random.randint(1, 4), img_array.shape).astype('uint8')
                     img_array = cv2.add(img_array, noise)
@@ -256,7 +238,6 @@ def generate_synthetic_data():
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                # Дополнительная пост-обработка
                 if random.random() < 0.15:
                     img_resized = cv2.GaussianBlur(img_resized, (3, 3), 0)
 
