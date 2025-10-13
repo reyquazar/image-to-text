@@ -201,7 +201,7 @@ import cv2
 import numpy as np
 import random
 import os
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance, ImageOps
 from fontTools.ttLib import TTFont
 import matplotlib.font_manager as fm
 
@@ -338,6 +338,7 @@ def generate_synthetic_data():
                          # "Ҹәм", "Ҹан", "Ҹәнг", "Ҹумһуријјәт", "Ҹәсд", "Ҹәми", "Ҹәһан", "Ҹүрә",
                          # "Шәм", "Шәһәр", "Шәрг", "Шәрәф", "Шәмшәр", "Ширин", "Шәфәг", "Шәмс"
                          ]
+
     # Используем 7 скопированных шрифтов из папки fonts/3
     fonts_dir = "./text/typed_text/pure_azerbaijani_cyrillic_dataset/fonts/3"
 
@@ -349,7 +350,6 @@ def generate_synthetic_data():
         for file in os.listdir(fonts_dir):
             if file.lower().endswith('.ttf'):
                 font_path = os.path.join(fonts_dir, file)
-                # Проверяем, можно ли загрузить шрифт
                 try:
                     test_font = ImageFont.truetype(font_path, 20)
                     available_fonts.append(font_path)
@@ -367,39 +367,39 @@ def generate_synthetic_data():
     print(f"🎯 Будет использовано {len(available_fonts)} шрифтов")
 
     # Фоны
-    backgrounds = [
-        'white', 'lightgray', 'lightblue', 'lightyellow',
-        'lightgreen', 'lightpink', 'antiquewhite'
-    ]
+    backgrounds = ['white', 'lightgray', 'aliceblue', 'seashell']
 
     generated_count = 0
     labels = []
 
-    for i in range(3000):  # Увеличил количество генераций
+    for i in range(1000):  # Уменьшил количество для тестирования
         word = random.choice(azerbaijani_words)
 
-        # Случайные параметры
-        font_size = random.randint(18, 40)
+        # Более консервативные параметры
+        font_size = random.randint(22, 32)
         bg_color = random.choice(backgrounds)
         text_color = (
-            random.randint(0, 100),
-            random.randint(0, 100),
-            random.randint(0, 100)
+            random.randint(0, 80),  # Более темный текст для лучшей читаемости
+            random.randint(0, 80),
+            random.randint(0, 80)
         )
 
-        # Случайные трансформации
-        rotation = random.randint(-5, 5)
-        blur_radius = random.uniform(0, 0.8)
-        contrast = random.uniform(0.8, 1.5)
-        brightness = random.uniform(0.8, 1.2)
+        # Уменьшил силу трансформаций
+        rotation = random.randint(-3, 3)
+        blur_radius = random.uniform(0, 0.3)  # Сильно уменьшил размытие
+        contrast = random.uniform(0.9, 1.2)
+        brightness = random.uniform(0.9, 1.1)
 
         try:
+            # Убрал межбуквенное расстояние для упрощения
+            word_to_draw = word
+
             # Выбираем шрифт
             font_path = random.choice(available_fonts)
             font = ImageFont.truetype(font_path, font_size)
 
-            # Вычисляем размер текста с запасом
-            bbox = font.getbbox(word)
+            # Вычисляем размер текста с умеренным запасом
+            bbox = font.getbbox(word_to_draw)
             text_width = bbox[2] - bbox[0] + 40
             text_height = bbox[3] - bbox[1] + 40
 
@@ -407,49 +407,56 @@ def generate_synthetic_data():
             img = Image.new('RGB', (text_width, text_height), color=bg_color)
             draw = ImageDraw.Draw(img)
 
-            # Рисуем текст
-            draw.text((20, 20), word, font=font, fill=text_color)
+            # Упрощенный фон - реже добавляем текстуры
+            if random.random() < 0.1:  # Только 10% случаев
+                # Очень легкий градиент
+                for y in range(img.height):
+                    shade = 240 + int(10 * (y / img.height))
+                    for x in range(img.width):
+                        img.putpixel((x, y), (shade, shade, shade))
 
-            # Применяем трансформации
+            # Центрируем текст лучше
+            x_offset = (img.width - (bbox[2] - bbox[0])) // 2
+            y_offset = (img.height - (bbox[3] - bbox[1])) // 2
+            draw.text((x_offset, y_offset), word_to_draw, font=font, fill=text_color)
+
+            # Убрал масштабирование и перспективу - они создают много проблем
+
+            # Применяем легкое вращение
             if rotation != 0:
                 img = img.rotate(rotation, expand=True, fillcolor=bg_color)
 
-            if blur_radius > 0.1:
+            # Очень легкое размытие
+            if blur_radius > 0.05:
                 img = img.filter(ImageFilter.GaussianBlur(blur_radius))
 
-            # Изменяем контраст и яркость
+            # Легкая коррекция контраста и яркости
             enhancer = ImageEnhance.Contrast(img)
             img = enhancer.enhance(contrast)
 
             enhancer = ImageEnhance.Brightness(img)
             img = enhancer.enhance(brightness)
 
-            # Добавляем шум
+            # Конвертируем в numpy для минимального шума
             img_array = np.array(img)
 
-            noise_type = random.choice(['gaussian', 'salt_pepper', 'speckle'])
-            if noise_type == 'gaussian':
-                noise = np.random.normal(0, random.randint(5, 20), img_array.shape).astype('uint8')
-                img_array = cv2.add(img_array, noise)
-            elif noise_type == 'salt_pepper':
-                salt_pepper_ratio = random.uniform(0.01, 0.05)
-                salt = np.random.random(img_array.shape[:2]) < salt_pepper_ratio / 2
-                img_array[salt] = 255
-                pepper = np.random.random(img_array.shape[:2]) < salt_pepper_ratio / 2
-                img_array[pepper] = 0
+            # ОЧЕНЬ легкий шум - только в 30% случаев
+            if random.random() < 0.3:
+                noise_type = random.choice(['gaussian', 'none'])
+                if noise_type == 'gaussian':
+                    # Минимальный шум
+                    noise = np.random.normal(0, random.randint(1, 5), img_array.shape).astype('uint8')
+                    img_array = cv2.add(img_array, noise)
 
-            # Иногда добавляем линии
-            if random.random() < 0.2:
-                h, w = img_array.shape[:2]
-                for _ in range(random.randint(1, 3)):
-                    color = random.randint(150, 200)
-                    y = random.randint(0, h - 1)
-                    cv2.line(img_array, (0, y), (w - 1, y), (color, color, color), 1)
+            # Убрал линии и артефакты - они создают лишние пиксели
 
-            # Ресайз до финального размера
-            final_width = 400
-            final_height = 48
-            img_resized = cv2.resize(img_array, (final_width, final_height))
+            # Стандартный размер для лучшей консистентности
+            final_width, final_height = 320, 48
+
+            # Ресайз с хорошей интерполяцией
+            img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
+
+            # Убрал дополнительное размытие после ресайза
 
             # Сохраняем
             filename = f"synthetic_{i:05d}.jpg"
@@ -458,7 +465,7 @@ def generate_synthetic_data():
             labels.append(f"{filename}\t{word}")
             generated_count += 1
 
-            if generated_count % 100 == 0:
+            if generated_count % 10 == 0:
                 print(f"Сгенерировано: {generated_count}")
 
         except Exception as e:

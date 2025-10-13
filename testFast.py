@@ -8,13 +8,13 @@ def PRec_old(image):
 
 
 def PRec_new(image):
-    ocr = PaddleOCR(text_recognition_model_dir="./output/")
+    ocr = PaddleOCR(text_recognition_model_name="PP-OCRv5_server_rec")
     result = ocr.predict(image)
     return result
 
 
 def main():
-    image_path = './text/typed_text/pure_azerbaijani_cyrillic_dataset/test.jpg'
+    image_path = './text/typed_text/000D2DCD-15E0-453B-9F85-F5E16770F038.jpg'
     result = PRec_old(image_path)
     # save_txt(result, filename='temp1.txt')
     if result and len(result) > 0:
