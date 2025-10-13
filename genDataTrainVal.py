@@ -10,6 +10,13 @@ def generate_synthetic_data():
     output_dir = "./text/typed_text/pure_azerbaijani_cyrillic_dataset"
     os.makedirs(output_dir, exist_ok=True)
 
+    parser = argparse.ArgumentParser()
+    parser.add_argument('number', type=int)
+    parser.add_argument('image_path', type=str)
+    args = parser.parse_args()
+
+
+
     fonts_dir = "./text/typed_text/pure_azerbaijani_cyrillic_dataset/fonts/3"
 
     print(f"🔍 Find fonts: {fonts_dir}")
@@ -150,9 +157,6 @@ def generate_synthetic_data():
 
     generated_count = 0
     labels = []
-    parser = argparse.ArgumentParser()
-    parser.add_argument('number', type=int)
-    args = parser.parse_args()
 
     for i in range(args.number):
         word = random.choice(azerbaijani_words)
