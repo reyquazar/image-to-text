@@ -1,0 +1,95 @@
+Global:
+  model_name: PP-OCRv5_server_rec
+PreProcess:
+  transform_ops:
+  - DecodeImage:
+      channel_first: false
+      img_mode: BGR
+  - RecResizeImg:
+      image_shape:
+      - 3
+      - 48
+      - 320
+      padding: true
+  - NormalizeImage:
+      mean:
+      - 0.5
+      - 0.5
+      - 0.5
+      scale: 1.0/255.0
+      std:
+      - 0.5
+      - 0.5
+      - 0.5
+  - KeepKeys:
+      keep_keys:
+      - image
+      - label
+      - length
+PostProcess:
+  name: CTCLabelDecode
+  character_dict:
+  - A
+  - B
+  - C
+  - Ç
+  - D
+  - E
+  - Ə
+  - F
+  - G
+  - Ğ
+  - H
+  - X
+  - I
+  - İ
+  - J
+  - K
+  - Q
+  - L
+  - M
+  - N
+  - O
+  - Ö
+  - P
+  - R
+  - S
+  - Ş
+  - T
+  - U
+  - Ü
+  - V
+  - Y
+  - Z
+  - a
+  - b
+  - c
+  - ç
+  - d
+  - e
+  - ə
+  - f
+  - g
+  - ğ
+  - h
+  - x
+  - ı
+  - i
+  - j
+  - k
+  - q
+  - l
+  - m
+  - n
+  - o
+  - ö
+  - p
+  - r
+  - s
+  - ş
+  - t
+  - u
+  - ü
+  - v
+  - y
+  - z
