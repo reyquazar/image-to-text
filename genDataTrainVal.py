@@ -7,7 +7,7 @@ import argparse
 
 
 def generate_synthetic_data():
-    output_dir = "./text/typed_text/pure_azerbaijani_cyrillic_dataset"
+    output_dir = "./text/typed_text/az_config_train"
     os.makedirs(output_dir, exist_ok=True)
 
     parser = argparse.ArgumentParser()
@@ -16,7 +16,7 @@ def generate_synthetic_data():
 
 
 
-    fonts_dir = "./text/typed_text/pure_azerbaijani_cyrillic_dataset/fonts/3"
+    fonts_dir = "./text/typed_text/az_config_train/fonts/3"
 
     print(f"🔍 Find fonts: {fonts_dir}")
 
