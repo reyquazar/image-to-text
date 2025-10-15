@@ -35,10 +35,11 @@ Architecture:
   Transform:
   Backbone:
     name: SVTRNet
+    img_size: [48, 320]  # ДОБАВЛЕНО: указываем правильный размер
   Neck:
     name: SequenceEncoder
-    encoder_type: svtr  # ИСПРАВЛЕНО: вынесен на верхний уровень
-    hidden_size: 192    # ДОБАВЛЕНО: обязательный параметр
+    encoder_type: svtr
+    hidden_size: 192
   Head:
     name: CTCHead
     out_channels: 6625  # ЗАМЕНИТЕ на ваше количество классов + 1
@@ -65,7 +66,7 @@ Train:
           channel_first: false
       - CTCLabelEncode: {}
       - RecResizeImg:
-          image_shape: [3, 48, 320]
+          image_shape: [3, 48, 320]  # Размер должен совпадать с img_size в Backbone
       - KeepKeys:
           keep_keys:
             - image
@@ -89,7 +90,7 @@ Eval:
           channel_first: false
       - CTCLabelEncode: {}
       - RecResizeImg:
-          image_shape: [3, 48, 320]
+          image_shape: [3, 48, 320]  # Размер должен совпадать с img_size в Backbone
       - KeepKeys:
           keep_keys:
             - image
