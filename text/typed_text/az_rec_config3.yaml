@@ -1,39 +1,103 @@
 Global:
-  model: PP-OCRv5_server_rec
-  mode: check_dataset # check_dataset/train/evaluate/predict
-  dataset_dir: "./text/typed_text/az_config_train"
-  device: gpu:0
-  output: "output"
+  model_name: PP-OCRv5_server_rec
+  use_gpu: true
+  epoch_num: 500
+  log_smooth_window: 20
+  print_batch_step: 10
+  save_model_dir: ./output/
+  save_epoch_step: 20
+  eval_batch_step: [0, 250]
+  cal_metric_during_train: true
+  pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
+  checkpoints:
+  character_dict_path: ./text/typed_text/az_config_train/dict.txt
+  max_text_length: 25
+  use_space_char: false
+  infer_mode: false
+  save_res_path: ./output/aze_predicts.txt
+  use_visualdl: true
 
-CheckDataset:
-  convert:
-    enable: False
-    src_dataset_type: null
-  split:
-    enable: False
-    train_percent: null
-    val_percent: null
+Optimizer:
+  name: Adam
+  beta1: 0.9
+  beta2: 0.999
+  lr:
+    name: Cosine
+    learning_rate: 0.0005
+    warmup_epoch: 1
+  regularizer:
+    name: L2
+    factor: 0.00003
+
+Architecture:
+  model_type: rec
+  algorithm: SVTR  # ИСПРАВЛЕНО: SVTR вместо SVTR_HGNet
+  Transform:
+  Backbone:
+    name: SVTRNet  # ИСПРАВЛЕНО: SVTRNet вместо PPHGNetV2_B4
+  Neck:
+    name: SequenceEncoder  # ДОБАВЛЕНО: Neck для SVTR
+    args:
+      encoder_type: svtr
+  Head:
+    name: CTCHead  # ИСПРАВЛЕНО: Простой CTCHead вместо MultiHead
+    args:
+      out_channels: 6625  # ЗАМЕНИТЕ на ваше количество классов + 1
+
+Loss:
+  name: CTCLoss  # ИСПРАВЛЕНО: Простой CTCLoss вместо MultiLoss
+
+PostProcess:
+  name: CTCLabelDecode
+
+Metric:
+  name: RecMetric
+  main_indicator: acc
 
 Train:
-  epochs_iters: 20
-  batch_size: 8
-  learning_rate: 0.001
-  pretrain_weight_path: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
-  resume_path: null
-  log_interval: 20
-  eval_interval: 1
-  save_interval: 1
+  dataset:
+    name: SimpleDataSet  # ИСПРАВЛЕНО: Простой датасет вместо MultiScaleDataSet
+    data_dir: ./text/typed_text/az_config_train
+    label_file_list:
+      - ./text/typed_text/az_config_train/train_list.txt
+    transforms:
+      - DecodeImage:
+          img_mode: BGR
+          channel_first: false
+      - CTCLabelEncode: {}  # ИСПРАВЛЕНО: Простое кодирование
+      - RecResizeImg:
+          image_shape: [3, 48, 320]  # Стандартный размер для PP-OCRv5
+      - KeepKeys:
+          keep_keys:
+            - image
+            - label
+            - length
+  loader:
+    shuffle: true
+    batch_size_per_card: 128
+    drop_last: true
+    num_workers: 8  # УМЕНЬШЕНО для стабильности
 
-Evaluate:
-  weight_path: "output/best_accuracy/best_accuracy.pdparams"
-  log_interval: 1
-
-Export:
-  weight_path: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
-
-Predict:
-  batch_size: 1
-  model_dir: "output/best_accuracy/inference"
-  input: "./text/typed_text/az_config_train/test_0000006.jpg"
-  kernel_option:
-    run_mode: paddle
+Eval:
+  dataset:
+    name: SimpleDataSet
+    data_dir: ./text/typed_text/az_config_train
+    label_file_list:
+      - ./text/typed_text/az_config_train/val_list.txt
+    transforms:
+      - DecodeImage:
+          img_mode: BGR
+          channel_first: false
+      - CTCLabelEncode: {}
+      - RecResizeImg:
+          image_shape: [3, 48, 320]
+      - KeepKeys:
+          keep_keys:
+            - image
+            - label
+            - length
+  loader:
+    shuffle: false
+    drop_last: false
+    batch_size_per_card: 128
+    num_workers: 8
