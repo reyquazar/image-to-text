@@ -31,21 +31,20 @@ Optimizer:
 
 Architecture:
   model_type: rec
-  algorithm: SVTR  # ИСПРАВЛЕНО: SVTR вместо SVTR_HGNet
+  algorithm: SVTR
   Transform:
   Backbone:
-    name: SVTRNet  # ИСПРАВЛЕНО: SVTRNet вместо PPHGNetV2_B4
+    name: SVTRNet
   Neck:
-    name: SequenceEncoder  # ДОБАВЛЕНО: Neck для SVTR
-    args:
-      encoder_type: svtr
+    name: SequenceEncoder
+    encoder_type: svtr  # ИСПРАВЛЕНО: вынесен на верхний уровень
+    hidden_size: 192    # ДОБАВЛЕНО: обязательный параметр
   Head:
-    name: CTCHead  # ИСПРАВЛЕНО: Простой CTCHead вместо MultiHead
-    args:
-      out_channels: 6625  # ЗАМЕНИТЕ на ваше количество классов + 1
+    name: CTCHead
+    out_channels: 6625  # ЗАМЕНИТЕ на ваше количество классов + 1
 
 Loss:
-  name: CTCLoss  # ИСПРАВЛЕНО: Простой CTCLoss вместо MultiLoss
+  name: CTCLoss
 
 PostProcess:
   name: CTCLabelDecode
@@ -56,7 +55,7 @@ Metric:
 
 Train:
   dataset:
-    name: SimpleDataSet  # ИСПРАВЛЕНО: Простой датасет вместо MultiScaleDataSet
+    name: SimpleDataSet
     data_dir: ./text/typed_text/az_config_train
     label_file_list:
       - ./text/typed_text/az_config_train/train_list.txt
@@ -64,9 +63,9 @@ Train:
       - DecodeImage:
           img_mode: BGR
           channel_first: false
-      - CTCLabelEncode: {}  # ИСПРАВЛЕНО: Простое кодирование
+      - CTCLabelEncode: {}
       - RecResizeImg:
-          image_shape: [3, 48, 320]  # Стандартный размер для PP-OCRv5
+          image_shape: [3, 48, 320]
       - KeepKeys:
           keep_keys:
             - image
@@ -76,7 +75,7 @@ Train:
     shuffle: true
     batch_size_per_card: 128
     drop_last: true
-    num_workers: 8  # УМЕНЬШЕНО для стабильности
+    num_workers: 8
 
 Eval:
   dataset:
