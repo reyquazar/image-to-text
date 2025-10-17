@@ -158,5 +158,5 @@ Eval:
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 256
+    batch_size_per_card: 30
     num_workers: 32
