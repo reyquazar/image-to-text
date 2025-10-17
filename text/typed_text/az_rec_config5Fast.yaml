@@ -1,17 +1,18 @@
 Global:
   use_gpu: true
-  epoch_num: 5                    # Всего 5 эпох для быстрой проверки
+  epoch_num: 5
   log_smooth_window: 5
   print_batch_step: 10
-  save_model_dir: ./output/
+  save_model_dir: ./output/test/
   save_epoch_step: 1
   eval_batch_step: [0, 100]
   cal_metric_during_train: true
   pretrained_model: null
   checkpoints: null
-  character_dict_path: ppocr/utils/dict/azerbaijani_dict.txt
+  character_dict_path: ./azerbaijani_dict.txt  # Убедись что файл существует
   max_text_length: 25
   use_space_char: false
+  save_res_path: ./output/rec/predicts_azerbaijani.txt
 
 Optimizer:
   name: Adam
@@ -21,6 +22,9 @@ Optimizer:
     name: Cosine
     learning_rate: 0.001
     warmup_epoch: 1
+  regularizer:
+    name: L2
+    factor: 0.00001
 
 Architecture:
   model_type: rec
@@ -31,7 +35,7 @@ Architecture:
   Neck:
     name: SequenceEncoder
     encoder_type: rnn
-    hidden_size: 128              # Уменьшено для скорости
+    hidden_size: 128
   Head:
     name: CTCHead
 
@@ -61,11 +65,11 @@ Train:
       - KeepKeys:
           keep_keys: ['image', 'label', 'length']
     loader:
-      batch_size_per_card: 32     # Меньше batch size
+      batch_size_per_card: 32
       shuffle: true
       drop_last: true
       num_workers: 4
-      use_shared_memory: true
+      use_shared_memory: false  # Измени на false для избежания ошибок
 
 Eval:
   dataset:
@@ -87,3 +91,4 @@ Eval:
       shuffle: false
       drop_last: false
       num_workers: 2
+      use_shared_memory: false
