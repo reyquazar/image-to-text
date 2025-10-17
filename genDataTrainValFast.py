@@ -69,7 +69,7 @@ def generate_ocr_dataset_from_file():
             y = (64 - text_height) // 2
 
             draw.text((x, y), word, fill=text_color, font=font)
-            filename = f"train_{i + 1:03d}_{j + 1:02d}.jpg"
+            filename = f"train_{i + 1:03d}_{j + 1:02d}.png"
             img_path = f'./text/typed_text/az_config_train/{filename}'
             img.save(img_path)
             train_lines.append(f"images/{filename} {word}\n")
@@ -89,7 +89,7 @@ def generate_ocr_dataset_from_file():
         y = (64 - text_height) // 2
 
         draw.text((x, y), word, fill=text_color, font=font)
-        filename = f"val_{i + 1:03d}.jpg"
+        filename = f"val_{i + 1:03d}.png"
         img_path = f'./text/typed_text/az_config_train/{filename}'
         img.save(img_path)
         val_lines.append(f"images/{filename} {word}\n")
