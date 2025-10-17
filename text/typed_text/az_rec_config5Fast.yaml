@@ -31,7 +31,7 @@ Architecture:
   algorithm: CRNN
   Transform: null
   Backbone:
-    name: ResNet34
+    name: ResNet
   Neck:
     name: SequenceEncoder
     encoder_type: rnn
