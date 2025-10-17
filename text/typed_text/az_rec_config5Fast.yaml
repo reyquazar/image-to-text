@@ -65,7 +65,7 @@ Train:
       - KeepKeys:
           keep_keys: [ 'image', 'label', 'length' ]
   loader:
-    batch_size_per_card: 300
+    batch_size_per_card: 200
     shuffle: true
     drop_last: true
     num_workers: 32
