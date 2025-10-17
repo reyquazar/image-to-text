@@ -13,3 +13,5 @@ output
 !output/*.log
 text/PP-OCRv5_mobile_det_pretrained.pdparams
 text/PP-OCRv5_mobile_rec_pretrained.pdparams
+PP-OCRv5_server_rec_pretrained.pdparams
+./checkpretrain.py

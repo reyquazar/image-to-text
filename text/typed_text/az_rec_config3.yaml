@@ -1,137 +1,120 @@
-Architecture:
-  Backbone:
-    name: PPHGNetV2_B4
-    text_rec: true
-  Head:
-    head_list:
-    - CTCHead:
-        Head:
-          fc_decay: 1.0e-05
-        Neck:
-          depth: 2
-          dims: 120
-          hidden_dims: 120
-          kernel_size:
-          - 1
-          - 3
-          name: svtr
-          use_guide: true
-    - NRTRHead:
-        max_text_length: 25
-        nrtr_dim: 384
-    name: MultiHead
-  Transform: null
-  algorithm: SVTR_HGNet
-  model_type: rec
-Eval:
-  dataset:
-    data_dir: ./text/typed_text/az_config_train
-    label_file_list:
-    - ./text/typed_text/az_config_train/val_list.txt
-    name: SimpleDataSet
-    transforms:
-    - DecodeImage:
-        channel_first: false
-        img_mode: BGR
-    - MultiLabelEncode:
-        gtc_encode: NRTRLabelEncode
-    - RecResizeImg:
-        image_shape:
-        - 3
-        - 48
-        - 320
-    - KeepKeys:
-        keep_keys:
-        - image
-        - label_ctc
-        - label_gtc
-        - length
-        - valid_ratio
-  loader:
-    batch_size_per_card: 300
-    drop_last: false
-    num_workers: 16
-    shuffle: false
 Global:
-  cal_metric_during_train: true
-  character_dict_path: ./text/typed_text/az_config_train/dict.txt
-  checkpoints: null
-  epoch_num: 500
-  eval_batch_step:
-  - 0
-  - 250
-  infer_mode: false
-  log_smooth_window: 20
-  max_text_length: 25
   model_name: PP-OCRv5_server_rec
-  pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
-  print_batch_step: 10
-  save_epoch_step: 20
-  save_model_dir: ./output/
-  save_res_path: ./output/aze_predicts.txt
   use_gpu: true
+  epoch_num: 500
+  log_smooth_window: 20
+  print_batch_step: 10
+  save_model_dir: ./output/
+  save_epoch_step: 20
+  eval_batch_step: [0, 250]
+  cal_metric_during_train: true
+  pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
+  checkpoints:
+  character_dict_path: ./text/typed_text/az_config_train/dict.txt
+  max_text_length: 25
   use_space_char: false
+  infer_mode: false
+  save_res_path: ./output/aze_predicts.txt
   use_visualdl: true
-Loss:
-  loss_config_list:
-  - CTCLoss: null
-  - NRTRLoss: null
-  name: MultiLoss
-Metric:
-  main_indicator: acc
-  name: RecMetric
+
 Optimizer:
+  name: Adam
   beta1: 0.9
   beta2: 0.999
   lr:
-    learning_rate: 0.0005
     name: Cosine
+    learning_rate: 0.0005
     warmup_epoch: 1
-  name: Adam
   regularizer:
-    factor: 3.0e-05
     name: L2
+    factor: 0.00003
+
+Architecture:
+  model_type: rec
+  algorithm: CRNN  # ИСПРАВЛЕНО: соответствует реальной модели
+  Transform:
+  Backbone:
+    name: ResNet  # ИСПРАВЛЕНО: соответствует реальной модели
+    layers: 34
+    # Дополнительные параметры для ResNet
+    dcn: True
+    out_indices: [0, 1, 2, 3]
+    pretrained: False
+  Neck:
+    name: SequenceEncoder  # ИСПРАВЛЕНО: соответствует реальной модели
+    encoder_type: rnn
+    hidden_size: 256
+  Head:
+    name: CTCHead  # ИСПРАВЛЕНО: соответствует реальной модели
+    fc_decay: 0.00001
+    # Убрал MultiHead и NRTR, так как в реальной модели только CTC
+
+Loss:
+  name: CTCLoss  # ИСПРАВЛЕНО: убрал MultiLoss
+
 PostProcess:
   name: CTCLabelDecode
+
+Metric:
+  name: RecMetric
+  main_indicator: acc
+
 Train:
   dataset:
+    name: SimpleDataSet  # ИСПРАВЛЕНО: вернул к SimpleDataSet
     data_dir: ./text/typed_text/az_config_train
-    ds_width: false
-    ext_op_transform_idx: 1
     label_file_list:
-    - ./text/typed_text/az_config_train/train_list.txt
-    name: MultiScaleDataSet
+      - ./text/typed_text/az_config_train/train_list.txt
     transforms:
-    - DecodeImage:
-        channel_first: false
-        img_mode: BGR
-    - RecAug: null
-    - MultiLabelEncode:
-        gtc_encode: NRTRLabelEncode
-    - KeepKeys:
-        keep_keys:
-        - image
-        - label_ctc
-        - label_gtc
-        - length
-        - valid_ratio
+      - DecodeImage:
+          img_mode: BGR
+          channel_first: false
+      - RecConAug:  # ИСПРАВЛЕНО: подходящая аугментация для CRNN
+          prob: 0.5
+          ext_data_num: 2
+        # Альтернативно можно использовать RecAug, но RecConAug лучше для CRNN
+      - CTCLabelEncode:  # ИСПРАВЛЕНО: только CTCLabelEncode
+      - RecResizeImg:
+          image_shape: [3, 48, 320]  # Стандартный размер для CRNN
+          resize_type: PIL  # Добавил для стабильности
+      - KeepKeys:
+          keep_keys:
+            - image
+            - label
+            - length
+            - valid_ratio
+  sampler:
+    name: DistributedBatchSampler  # ИСПРАВЛЕНО: стандартный для CRNN
+    shuffle: true
+    drop_last: true
   loader:
+    shuffle: true
     batch_size_per_card: 128
     drop_last: true
     num_workers: 16
-    shuffle: true
-  sampler:
-    divided_factor:
-    - 8
-    - 16
-    first_bs: 128
-    fix_bs: false
-    is_training: true
-    name: MultiScaleSampler
-    scales:
-    - - 320
-      - 32
-    - - 320
-      - 48
-    - - 320
-      - 64
+
+Eval:
+  dataset:
+    name: SimpleDataSet
+    data_dir: ./text/typed_text/az_config_train
+    label_file_list:
+      - ./text/typed_text/az_config_train/val_list.txt
+    transforms:
+      - DecodeImage:
+          img_mode: BGR
+          channel_first: false
+      - CTCLabelEncode:  # ИСПРАВЛЕНО: только CTCLabelEncode
+      - RecResizeImg:
+          image_shape: [3, 48, 320]
+          resize_type: PIL
+      - KeepKeys:
+          keep_keys:
+            - image
+            - label
+            - length
+            - valid_ratio
+  loader:
+    shuffle: false
+    drop_last: false
+    batch_size_per_card: 300
+    num_workers: 16

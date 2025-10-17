@@ -20,16 +20,14 @@ def main():
     parser.add_argument('image_path', type=str)
     args = parser.parse_args()
     image_path = args.image_path
-    result = PRec_old(image_path)
-
     # image_path = './text/typed_text/testWords.png'
-    # result = PRec_old(image_path)
-    # save_txt(result, filename='temp1.txt')
+    result = PRec_old(image_path)
     if result and len(result) > 0:
         page = result[0]
         texts = page.get('rec_texts', [])
         combined_text = ' '.join(texts)
     print("=" * 100, combined_text)
+
     result = PRec_new(image_path)
     # save_txt(result, filename='temp1.txt')
     if result and len(result) > 0:
