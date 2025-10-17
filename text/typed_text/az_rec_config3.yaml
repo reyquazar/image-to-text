@@ -53,11 +53,8 @@ Loss:
   name: MultiHeadLoss
   loss_config_list:
     - CTCLoss:
-        weight: 1.0
     - NRTRLoss:
-        weight: 0.0
-  ignore_index: 0
-  
+
 PostProcess:
   name: CTCLabelDecode
 
