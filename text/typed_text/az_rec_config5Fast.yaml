@@ -5,7 +5,7 @@ Global:
   print_batch_step: 10
   save_model_dir: ./output/test/
   save_epoch_step: 1
-  eval_batch_step: [0, 100]
+  eval_batch_step: [ 0, 100 ]
   cal_metric_during_train: true
   pretrained_model: null
   checkpoints: null
@@ -61,15 +61,15 @@ Train:
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [3, 48, 320]
+          image_shape: [ 3, 48, 320 ]
       - KeepKeys:
-          keep_keys: ['image', 'label', 'length']
-    loader:
-      batch_size_per_card: 32
-      shuffle: true
-      drop_last: true
-      num_workers: 4
-      use_shared_memory: false  # Измени на false для избежания ошибок
+          keep_keys: [ 'image', 'label', 'length' ]
+  loader:
+    batch_size_per_card: 32
+    shuffle: true
+    drop_last: true
+    num_workers: 4
+    use_shared_memory: false  # Измени на false для избежания ошибок
 
 Eval:
   dataset:
@@ -83,12 +83,12 @@ Eval:
           channel_first: false
       - CTCLabelEncode:
       - RecResizeImg:
-          image_shape: [3, 48, 320]
+          image_shape: [ 3, 48, 320 ]
       - KeepKeys:
-          keep_keys: ['image', 'label', 'length']
-    loader:
-      batch_size_per_card: 32
-      shuffle: false
-      drop_last: false
-      num_workers: 2
-      use_shared_memory: false
+          keep_keys: [ 'image', 'label', 'length' ]
+  loader:
+    batch_size_per_card: 32
+    shuffle: false
+    drop_last: false
+    num_workers: 2
+    use_shared_memory: false
