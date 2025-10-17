@@ -1,5 +1,0 @@
-train_0000000.jpg	qəzasının
-train_0000001.jpg	edilməsinə
-train_0000002.jpg	solisti
-train_0000003.jpg	Şərif
-train_0000004.jpg	redaktorudur
