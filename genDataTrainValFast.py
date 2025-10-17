@@ -72,7 +72,7 @@ def generate_ocr_dataset_from_file():
             filename = f"train_{i + 1:03d}_{j + 1:02d}.png"
             img_path = f'./text/typed_text/az_config_train/{filename}'
             img.save(img_path)
-            train_lines.append(f"images/{filename} {word}\n")
+            train_lines.append(f"{filename} {word}\n")
 
     print("Генерация VAL изображений...")
     # Val: 20 слов × 1 изображение = 20
@@ -92,7 +92,7 @@ def generate_ocr_dataset_from_file():
         filename = f"val_{i + 1:03d}.png"
         img_path = f'./text/typed_text/az_config_train/{filename}'
         img.save(img_path)
-        val_lines.append(f"images/{filename} {word}\n")
+        val_lines.append(f"{filename} {word}\n")
 
     # Сохраняем списки
     with open('./text/typed_text/az_config_train/train_list.txt', 'w', encoding='utf-8') as f:
