@@ -75,7 +75,7 @@ Architecture:
       nrtr: 0.0
 
 Loss:
-  name: MultiHeadLoss
+  name: CTCLoss
 
 Optimizer:
   name: Adam
