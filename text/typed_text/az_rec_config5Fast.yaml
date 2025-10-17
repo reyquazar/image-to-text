@@ -1,33 +1,43 @@
 Global:
+  model_name: PP-OCRv5_server_rec
   use_gpu: true
-  epoch_num: 400
+  epoch_num: 500  # Оставил твоё, но можно уменьшить до 100-200
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output/
-  save_epoch_step: 10
-  eval_batch_step: [0, 1000]
+  save_epoch_step: 20
+  eval_batch_step: [0, 250]
   cal_metric_during_train: true
-  pretrained_model: ./text/typed_text/az_config_train/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
+  pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
-  save_inference_dir: ./inference/
-  use_visualdl: false
   character_dict_path: ./text/typed_text/az_config_train/dict.txt
-  max_text_length: 25
+  max_text_length: 25  # УВЕЛИЧИЛ с 15!
+  use_space_char: false
   infer_mode: false
-  use_space_char: true
-  save_res_path: ./output/rec_predict.txt
+  save_res_path: ./output/aze_predicts.txt
+  use_visualdl: true
+
+Optimizer:
+  name: Adam  # СМЕНИЛ с AdamW
+  beta1: 0.9
+  beta2: 0.999
+  lr:
+    name: Cosine  # СМЕНИЛ планировщик
+    learning_rate: 0.0005
+    warmup_epoch: 1  # ДОБАВИЛ warmup
+  regularizer:
+    name: L2
+    factor: 0.00003  # ИЗМЕНИЛ коэффициент
 
 Architecture:
   model_type: rec
-  algorithm: SVTR
+  algorithm: SVTR_HGNet  # СМЕНИЛ алгоритм!
   Transform:
   Backbone:
-    name: PPLCNetV3
-    scale: 1
-    pretrained: false
-    use_conv: true
+    name: PPHGNetV2_B4  # СМЕНИЛ архитектуру!
+    text_rec: True
   Head:
-    name: MultiHead
+    name: MultiHead  # СМЕНИЛ на MultiHead!
     head_list:
       - CTCHead:
           Neck:
@@ -35,62 +45,22 @@ Architecture:
             dims: 120
             depth: 2
             hidden_dims: 120
-            use_guide: true
+            kernel_size: [1, 3]
+            use_guide: True
           Head:
             fc_decay: 0.00001
       - NRTRHead:
-          transform:
-            name: NRTREncoder
-            hidden_dims: 120
-            encoder_layer:
-              - SelfAttention:
-                  dims: 120
-                  num_heads: 8
-                  mlp_ratio: 1
-                  drop_rate: 0.0
-                  attn_drop_rate: 0.0
-                  drop_path_rate: 0.0
-                  qkv_bias: true
-            num_layers: 2
-          encoder:
-            name: TransformerEncoder
-            max_text_length: 25
-            embedding_dim: 128
-            num_heads: 8
-            num_layers: 2
-            feed_forward_dim: 512
-            dropout: 0.0
-            activation: relu
-          decoder:
-            name: TransformerDecoder
-            max_text_length: 25
-            embedding_dim: 128
-            num_heads: 8
-            num_layers: 2
-            feed_forward_dim: 512
-            dropout: 0.0
-            activation: relu
-    weight_list:
-      ctc: 1.0
-      nrtr: 0.0
+          nrtr_dim: 384
+          max_text_length: 25
 
 Loss:
-  name: CTCLoss
-
-Optimizer:
-  name: Adam
-  beta1: 0.9
-  beta2: 0.999
-  lr:
-    name: Cosine
-    learning_rate: 0.001
-    warmup_epoch: 2
-  regularizer:
-    name: L2
-    factor: 0.0005
+  name: MultiLoss  # СМЕНИЛ loss!
+  loss_config_list:
+    - CTCLoss:
+    - NRTRLoss:
 
 PostProcess:
-  name: CTCLabelDecode  # ИЗМЕНИЛОСЬ - используем CTCLabelDecode
+  name: CTCLabelDecode
 
 Metric:
   name: RecMetric
@@ -98,33 +68,38 @@ Metric:
 
 Train:
   dataset:
-    name: SimpleDataSet
+    name: MultiScaleDataSet  # СМЕНИЛ датасет!
+    ds_width: false
     data_dir: ./text/typed_text/az_config_train
+    ext_op_transform_idx: 1
     label_file_list:
       - ./text/typed_text/az_config_train/train_list.txt
     transforms:
       - DecodeImage:
           img_mode: BGR
           channel_first: false
-      - RecConAug:
-          prob: 0.5
-          image_shape: [48, 320, 3]
-          max_text_length: 25
-      - RecAug:
-          prob: 0.5
-      - CTCLabelEncode:  # ИЗМЕНИЛОСЬ - используем CTCLabelEncode
-          character_dict_path: ./text/typed_text/az_config_train/dict.txt
-          use_space_char: true
+      - RecAug:  # ДОБАВИЛ аугментацию!
+      - MultiLabelEncode:  # СМЕНИЛ кодирование!
+          gtc_encode: NRTRLabelEncode
       - KeepKeys:
           keep_keys:
-          - image
-          - label
-          - length
+            - image
+            - label_ctc
+            - label_gtc
+            - length
+            - valid_ratio
+  sampler:
+    name: MultiScaleSampler  # ДОБАВИЛ мультискейл семплер!
+    scales: [[320, 32], [320, 48], [320, 64]]
+    first_bs: 128
+    fix_bs: false
+    divided_factor: [8, 16]
+    is_training: True
   loader:
     shuffle: true
-    batch_size_per_card: 32  # УМЕНЬШИЛ для отладки
+    batch_size_per_card: 128  # УМЕНЬШИЛ с 256!
     drop_last: true
-    num_workers: 8  # УМЕНЬШИЛ для отладки
+    num_workers: 16
 
 Eval:
   dataset:
@@ -136,16 +111,19 @@ Eval:
       - DecodeImage:
           img_mode: BGR
           channel_first: false
-      - CTCLabelEncode:  # ИЗМЕНИЛОСЬ - используем CTCLabelEncode
-          character_dict_path: ./text/typed_text/az_config_train/dict.txt
-          use_space_char: true
+      - MultiLabelEncode:  # СМЕНИЛ кодирование!
+          gtc_encode: NRTRLabelEncode
+      - RecResizeImg:
+          image_shape: [3, 48, 320]
       - KeepKeys:
           keep_keys:
-          - image
-          - label
-          - length
+            - image
+            - label_ctc
+            - label_gtc
+            - length
+            - valid_ratio
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 32  # УМЕНЬШИЛ для отладки
-    num_workers: 8  # УМЕНЬШИЛ для отладки
+    batch_size_per_card: 32
+    num_workers: 8
