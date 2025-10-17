@@ -50,8 +50,14 @@ Architecture:
     # Убрал MultiHead и NRTR, так как в реальной модели только CTC
 
 Loss:
-  name: CTCLoss  # ИСПРАВЛЕНО: убрал MultiLoss
-
+  name: MultiHeadLoss
+  loss_config_list:
+    - CTCLoss:
+        weight: 1.0
+    - NRTRLoss:
+        weight: 0.0
+  ignore_index: 0
+  
 PostProcess:
   name: CTCLabelDecode
 
