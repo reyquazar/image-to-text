@@ -1,0 +1,10 @@
+test_0000000.jpg	edilməkdədir
+test_0000001.jpg	yaşayırlar
+test_0000002.jpg	İmperator
+test_0000003.jpg	fəlsəfənin
+test_0000004.jpg	Albaniya
+test_0000005.jpg	olunaraq
+test_0000006.jpg	münasibətilə
+test_0000007.jpg	səviyyəsinin
+test_0000008.jpg	şimala
+test_0000009.jpg	Bunlardan
