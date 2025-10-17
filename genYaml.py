@@ -1,7 +1,7 @@
 import os
 import subprocess
 
-base_path = "./text/typed_text/az_config_train"
+base_path = "../../../../image-to-text/text/typed_text/az_config_train"
 subprocess.run([
     "python", "generate_multi_language_configs.py",
     "-l", "az",
