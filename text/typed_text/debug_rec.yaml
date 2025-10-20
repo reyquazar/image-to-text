@@ -10,7 +10,7 @@ Global:
   eval_batch_step: [0, 200]
   cal_metric_during_train: true
   calc_epoch_interval: 1
-  pretrained_model:
+  pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
   save_inference_dir:
   use_visualdl: false
@@ -104,7 +104,7 @@ Train:
     is_training: True
   loader:
     shuffle: true
-    batch_size_per_card: 500
+    batch_size_per_card: 1000
     drop_last: true
     num_workers: 16
 Eval:
