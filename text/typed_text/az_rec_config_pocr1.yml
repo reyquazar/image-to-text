@@ -55,7 +55,7 @@ Metric:
 
 Train:
   dataset:
-    name: LMDBDataSet
+    name: SimpleDataSet
     data_dir: ./text/typed_text/az_config_train/
     label_file_list:
       - ./text/typed_text/az_config_train/train_list.txt
@@ -76,7 +76,7 @@ Train:
 
 Eval:
   dataset:
-    name: LMDBDataSet
+    name: SimpleDataSet
     data_dir: ./text/typed_text/az_config_train/
     label_file_list:
       - ./text/typed_text/az_config_train/val_list.txt
