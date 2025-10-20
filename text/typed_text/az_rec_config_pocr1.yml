@@ -1,4 +1,5 @@
 Global:
+  model_name: lol123
   use_gpu: True
   epoch_num: 72
   log_smooth_window: 20
