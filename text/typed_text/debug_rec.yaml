@@ -104,7 +104,7 @@ Train:
     is_training: True
   loader:
     shuffle: true
-    batch_size_per_card: *bs
+    batch_size_per_card: 256
     drop_last: true
     num_workers: 16
 Eval:
@@ -131,5 +131,5 @@ Eval:
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 128
-    num_workers: 4
+    batch_size_per_card: 256
+    num_workers: 8
