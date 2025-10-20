@@ -1,4 +1,5 @@
 Global:
+  model_name: PP-OCRv5_server_rec
   use_gpu: true
   epoch_num: 100
   log_smooth_window: 1
@@ -10,7 +11,7 @@ Global:
   cal_metric_during_train: true
   pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
   checkpoints:
-  character_dict_path: ./text/debug/dict.txt
+  character_dict_path: ./text/typed_text/az_config_train/dict.txt
   max_text_length: 10
   use_space_char: false
   infer_mode: false
@@ -59,9 +60,9 @@ Metric:
 Train:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/debug
+    data_dir: ./text/typed_text/az_config_train
     label_file_list:
-      - ./text/debug/train_list.txt
+      - ./text/typed_text/az_config_train/train_list.txt
     transforms:
       - DecodeImage:
           img_mode: BGR
@@ -81,9 +82,9 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/debug
+    data_dir: ./text/typed_text/az_config_train
     label_file_list:
-      - ./text/debug/val_list.txt
+      - ./text/typed_text/az_config_train/val_list.txt
     transforms:
       - DecodeImage:
           img_mode: BGR
