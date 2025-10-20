@@ -2,7 +2,7 @@ Global:
   model_name: PP-OCRv5_server_rec # To use static model for inference.
   debug: false
   use_gpu: true
-  epoch_num: 75
+  epoch_num: 5
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output
@@ -104,7 +104,7 @@ Train:
     is_training: True
   loader:
     shuffle: true
-    batch_size_per_card: 256
+    batch_size_per_card: 500
     drop_last: true
     num_workers: 16
 Eval:
@@ -132,4 +132,4 @@ Eval:
     shuffle: false
     drop_last: false
     batch_size_per_card: 256
-    num_workers: 8
+    num_workers: 16
