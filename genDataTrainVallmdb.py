@@ -1,98 +1,34 @@
 import cv2
 import numpy as np
-import pickle
 import random
 import os
-import lmdb
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance, ImageOps
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
 import argparse
+import lmdb
+import pickle
 
 
-def create_lmdb_dataset():
-    """Создает LMDB базу данных из сгенерированных изображений"""
+def create_lmdb_dataset(labels, output_path, image_dir):
+    """Создает LMDB датасет из меток и изображений"""
+    map_size = 1024 * 1024 * 1024 * 10  # 10GB
+    env = lmdb.open(output_path, map_size=map_size)
 
-    # Пути к файлам
-    data_dir = './text/typed_text/az_config_train'
-    train_list_file = os.path.join(data_dir, 'train_list.txt')
-    val_list_file = os.path.join(data_dir, 'val_list.txt')
+    with env.begin(write=True) as txn:
+        for i, label in enumerate(labels):
+            filename, word = label.split('\t')
+            img_path = os.path.join(image_dir, filename)
 
-    # Создаем LMDB для train
-    train_lmdb_path = os.path.join(data_dir, 'train_lmdb')
-    if os.path.exists(train_lmdb_path):
-        import shutil
-        shutil.rmtree(train_lmdb_path)
-    os.makedirs(train_lmdb_path, exist_ok=True)
-
-    # Создаем LMDB для val
-    val_lmdb_path = os.path.join(data_dir, 'val_lmdb')
-    if os.path.exists(val_lmdb_path):
-        import shutil
-        shutil.rmtree(val_lmdb_path)
-    os.makedirs(val_lmdb_path, exist_ok=True)
-
-    print("Создание LMDB базы данных...")
-
-    # Обрабатываем train данные
-    env_train = lmdb.open(train_lmdb_path, map_size=1073741824)  # 1GB вместо 1TB
-    txn_train = env_train.begin(write=True)
-
-    with open(train_list_file, 'r', encoding='utf-8') as f:
-        train_lines = f.readlines()
-
-    train_count = 0
-    for line in train_lines:
-        parts = line.strip().split(' ', 1)
-        if len(parts) < 2:
-            continue
-
-        img_name, label = parts
-        img_path = os.path.join(data_dir, img_name)
-
-        if os.path.exists(img_path):
+            # Читаем изображение
             with open(img_path, 'rb') as f:
-                img_bin = f.read()
+                image_data = f.read()
 
             # Сохраняем в LMDB
-            txn_train.put(img_name.encode(), pickle.dumps((img_bin, label)))
-            train_count += 1
+            key = f"{i:08d}".encode()
+            value = pickle.dumps({'image': image_data, 'label': word})
+            txn.put(key, value)
 
-            if train_count % 100 == 0:
-                txn_train.commit()
-                txn_train = env_train.begin(write=True)
-
-    txn_train.commit()
-    env_train.close()
-
-    # Обрабатываем val данные
-    env_val = lmdb.open(val_lmdb_path, map_size=268435456)  # 256MB вместо 512MB
-    txn_val = env_val.begin(write=True)
-
-    with open(val_list_file, 'r', encoding='utf-8') as f:
-        val_lines = f.readlines()
-
-    val_count = 0
-    for line in val_lines:
-        parts = line.strip().split(' ', 1)
-        if len(parts) < 2:
-            continue
-
-        img_name, label = parts
-        img_path = os.path.join(data_dir, img_name)
-
-        if os.path.exists(img_path):
-            with open(img_path, 'rb') as f:
-                img_bin = f.read()
-
-            # Сохраняем в LMDB
-            txn_val.put(img_name.encode(), pickle.dumps((img_bin, label)))
-            val_count += 1
-
-    txn_val.commit()
-    env_val.close()
-
-    print(f"LMDB создана:")
-    print(f"- Train: {train_count} изображений")
-    print(f"- Val: {val_count} изображений")
+    env.close()
+    print(f"✅ LMDB dataset created: {output_path}")
 
 
 def load_words_from_dataset(dataset_path):
@@ -201,6 +137,7 @@ def generate_synthetic_data():
     parser.add_argument('train_number', type=int, help='Number of training images')
     parser.add_argument('test_number', type=int, help='Number of test images')
     parser.add_argument('--dataset', type=str, default='./az_words.txt', help='Path to dataset file')
+    parser.add_argument('--format', type=str, default='both', choices=['txt', 'lmdb', 'both'], help='Output format')
     args = parser.parse_args()
 
     # Загружаем слова из датасета
@@ -350,6 +287,7 @@ def generate_synthetic_data():
     print("🧪 Generating test data...")
     labels_test = generate_images(test_words, args.test_number, "test")
 
+    # Сохраняем в текстовые файлы (опционально)
     with open(os.path.join(output_dir, "train_list.txt"), 'w', encoding='utf-8') as f:
         for label in labels_train:
             f.write(label + '\n')
@@ -357,6 +295,11 @@ def generate_synthetic_data():
     with open(os.path.join(output_dir, "val_list.txt"), 'w', encoding='utf-8') as f:
         for label in labels_test:
             f.write(label + '\n')
+
+    # Создаем LMDB датасеты
+    print("🗄️ Creating LMDB datasets...")
+    create_lmdb_dataset(labels_train, os.path.join(output_dir, "train.lmdb"), output_dir)
+    create_lmdb_dataset(labels_test, os.path.join(output_dir, "val.lmdb"), output_dir)
 
     unique_train_words = len(set([label.split('\t')[1] for label in labels_train]))
     unique_test_words = len(set([label.split('\t')[1] for label in labels_test]))
@@ -369,4 +312,3 @@ def generate_synthetic_data():
 
 
 generate_synthetic_data()
-create_lmdb_dataset
