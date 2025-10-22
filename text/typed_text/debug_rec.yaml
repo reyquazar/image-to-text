@@ -88,7 +88,7 @@ Train:
           keep_keys: [ 'image', 'label_ctc', 'label_gtc', 'length', 'valid_ratio' ]
   loader:
     shuffle: true
-    batch_size_per_card: 512
+    batch_size_per_card: 256
     drop_last: true
     num_workers: 8
     use_shared_memory: false
