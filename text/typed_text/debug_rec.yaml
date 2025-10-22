@@ -44,7 +44,7 @@ Architecture:
     name: PPHGNetV2_B4
     text_rec: True
   Head:
-    name: CTCHead
+    name: MultiHead
     head_list:
       - CTCHead:
           Neck:
@@ -56,11 +56,15 @@ Architecture:
             use_guide: True
           Head:
             fc_decay: 0.00001
+      - NRTRHead:
+          nrtr_dim: 384
+          max_text_length: *max_text_length
 
 Loss:
-  name: CTCLoss
+  name: MultiLoss
   loss_config_list:
     - CTCLoss:
+    - NRTRLoss:
 
 PostProcess:
   name: CTCLabelDecode
