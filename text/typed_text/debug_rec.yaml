@@ -1,5 +1,5 @@
 Global:
-  model_name: PP-OCRv5_server_rec # To use static model for inference.
+  model_name: PP-OCRv5_server_rec
   debug: false
   use_gpu: true
   epoch_num: 5
@@ -44,7 +44,7 @@ Architecture:
     name: PPHGNetV2_B4
     text_rec: True
   Head:
-    name: MultiHead
+    name: CTCHead
     head_list:
       - CTCHead:
           Neck:
@@ -56,15 +56,11 @@ Architecture:
             use_guide: True
           Head:
             fc_decay: 0.00001
-      - NRTRHead:
-          nrtr_dim: 384
-          max_text_length: *max_text_length
 
 Loss:
-  name: MultiLoss
+  name: CTCLoss
   loss_config_list:
     - CTCLoss:
-    - NRTRLoss:
 
 PostProcess:
   name: CTCLabelDecode
@@ -75,7 +71,7 @@ Metric:
 
 Train:
   dataset:
-    name: MultiScaleDataSet
+    name: SimpleDataSet
     ds_width: false
     data_dir: ./text/typed_text/az_config_train
     ext_op_transform_idx: 1
@@ -96,7 +92,7 @@ Train:
         - length
         - valid_ratio
   sampler:
-    name: MultiScaleSampler
+    name: SimpleDataSet
     scales: [[320, 32], [320, 48], [320, 64]]
     first_bs: &bs 128
     fix_bs: false
@@ -106,7 +102,7 @@ Train:
     shuffle: true
     batch_size_per_card: 1000
     drop_last: true
-    num_workers: 16
+    num_workers: 12
 Eval:
   dataset:
     name: SimpleDataSet
@@ -132,4 +128,4 @@ Eval:
     shuffle: false
     drop_last: false
     batch_size_per_card: 256
-    num_workers: 16
+    num_workers: 12

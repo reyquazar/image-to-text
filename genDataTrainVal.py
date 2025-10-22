@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import random
 import os
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance, ImageOps
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
 import argparse
 
 
