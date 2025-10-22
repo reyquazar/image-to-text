@@ -298,8 +298,8 @@ def generate_synthetic_data():
 
     # Создаем LMDB датасеты
     print("🗄️ Creating LMDB datasets...")
-    create_lmdb_dataset(labels_train, os.path.join(output_dir, "train.lmdb"), output_dir)
-    create_lmdb_dataset(labels_test, os.path.join(output_dir, "val.lmdb"), output_dir)
+    create_lmdb_dataset(labels_train, os.path.join(output_dir, "train_lmdb"), output_dir)
+    create_lmdb_dataset(labels_test, os.path.join(output_dir, "val_lmdb"), output_dir)
 
     unique_train_words = len(set([label.split('\t')[1] for label in labels_train]))
     unique_test_words = len(set([label.split('\t')[1] for label in labels_test]))

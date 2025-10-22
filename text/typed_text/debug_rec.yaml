@@ -76,7 +76,7 @@ Metric:
 Train:
   dataset:
     name: LMDBDataSet
-    data_dir: ./text/typed_text/az_config_train/train.lmdb
+    data_dir: ./text/typed_text/az_config_train/train_lmdb
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -107,7 +107,7 @@ Train:
 Eval:
   dataset:
     name: LMDBDataSet
-    data_dir: ./text/typed_text/az_config_train/val.lmdb
+    data_dir: ./text/typed_text/az_config_train/val_lmdb
     transforms:
     - DecodeImage:
         img_mode: BGR
