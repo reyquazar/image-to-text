@@ -75,12 +75,8 @@ Metric:
 
 Train:
   dataset:
-    name: MultiScaleDataSet
-    ds_width: false
-    data_dir: ./text/typed_text/az_config_train
-    ext_op_transform_idx: 1
-    label_file_list:
-      - ./text/typed_text/az_config_train/train_list.txt
+    name: LMDBDataSet
+    data_dir: ./text/typed_text/az_config_train/train.lmdb
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -107,12 +103,11 @@ Train:
     batch_size_per_card: 1000
     drop_last: true
     num_workers: 12
+
 Eval:
   dataset:
-    name: SimpleDataSet
-    data_dir: ./text/typed_text/az_config_train
-    label_file_list:
-      - ./text/typed_text/az_config_train/val_list.txt
+    name: LMDBDataSet
+    data_dir: ./text/typed_text/az_config_train/val.lmdb
     transforms:
     - DecodeImage:
         img_mode: BGR
