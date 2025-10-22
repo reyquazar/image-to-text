@@ -134,17 +134,17 @@ def main():
     base_dir = "./text/typed_text/az_config_train"
 
     # Проверяем train.lmdb
-    train_lmdb_path = os.path.join(base_dir, "train.lmdb")
+    train_lmdb_path = os.path.join(base_dir, "train_lmdb")
     lmdb_train_valid = verify_lmdb_dataset(train_lmdb_path)
 
     # Проверяем val.lmdb
-    val_lmdb_path = os.path.join(base_dir, "val.lmdb")
+    val_lmdb_path = os.path.join(base_dir, "val_lmdb")
     lmdb_val_valid = verify_lmdb_dataset(val_lmdb_path)
 
     print("=" * 40)
     print("🎯 ИТОГИ ПРОВЕРКИ:")
-    print(f"   train.lmdb: {'✅ VALID' if lmdb_train_valid else '❌ INVALID'}")
-    print(f"   val.lmdb: {'✅ VALID' if lmdb_val_valid else '❌ INVALID'}")
+    print(f"   train_lmdb: {'✅ VALID' if lmdb_train_valid else '❌ INVALID'}")
+    print(f"   val_lmdb: {'✅ VALID' if lmdb_val_valid else '❌ INVALID'}")
 
     if lmdb_train_valid and lmdb_val_valid:
         print("🎉 ВСЕ LMDB ДАТАСЕТЫ ВАЛИДНЫ!")
