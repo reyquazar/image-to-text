@@ -1,5 +1,5 @@
 Global:
-  model_name: PP-OCRv5_server_rec
+  model_name: PP-OCRv5_server_rec 
   debug: false
   use_gpu: true
   epoch_num: 5
@@ -106,10 +106,10 @@ Train:
     shuffle: true
     batch_size_per_card: 1000
     drop_last: true
-    num_workers: 12
+    num_workers: 16
 Eval:
   dataset:
-    name: MultiScaleDataSet
+    name: SimpleDataSet
     data_dir: ./text/typed_text/az_config_train
     label_file_list:
       - ./text/typed_text/az_config_train/val_list.txt
@@ -132,4 +132,4 @@ Eval:
     shuffle: false
     drop_last: false
     batch_size_per_card: 256
-    num_workers: 12
+    num_workers: 16
