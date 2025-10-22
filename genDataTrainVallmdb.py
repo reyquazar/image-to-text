@@ -9,27 +9,32 @@ import pickle
 
 
 def create_lmdb_dataset(labels, output_path, image_dir):
-    """Создает LMDB датасет из меток и изображений"""
+    """Создает LMDB датасет в формате PaddleOCR"""
     map_size = 1024 * 1024 * 1024 * 10  # 10GB
     env = lmdb.open(output_path, map_size=map_size)
 
     with env.begin(write=True) as txn:
+        # Сохраняем общее количество samples
+        txn.put('num-samples'.encode(), str(len(labels)).encode())
+
         for i, label in enumerate(labels):
-            filename, word = label.split('\t')
+            filename, word = label.strip().split('\t')
             img_path = os.path.join(image_dir, filename)
 
-            # Читаем изображение
+            # Читаем изображение как бинарные данные
             with open(img_path, 'rb') as f:
                 image_data = f.read()
 
-            # Сохраняем в LMDB
-            key = f"{i:08d}".encode()
-            value = pickle.dumps({'image': image_data, 'label': word})
-            txn.put(key, value)
+            # Сохраняем в формате PaddleOCR
+            # Ключи должны быть в формате: image-000000001, label-000000001
+            image_key = f"image-{i + 1:09d}".encode()
+            label_key = f"label-{i + 1:09d}".encode()
+
+            txn.put(image_key, image_data)
+            txn.put(label_key, word.encode('utf-8'))
 
     env.close()
-    print(f"✅ LMDB dataset created: {output_path}")
-
+    print(f"✅ LMDB dataset created: {output_path}") 
 
 def load_words_from_dataset(dataset_path):
     """Загружает слова из датасета"""
