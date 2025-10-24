@@ -15,7 +15,7 @@ def PRec_old(image):
 
 def PRec_new(image):
     ocr = PaddleOCR(
-        text_recognition_model_name="./output/inference/",
+        text_recognition_model_dir="./output/inference/",
         use_doc_orientation_classify=False,
         use_textline_orientation=False,
     )
