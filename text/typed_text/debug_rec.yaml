@@ -1,5 +1,5 @@
 Global:
-  model_name: PP-OCRv5_server_rec 
+  model_name: PP-OCRv5_server_rec
   debug: false
   use_gpu: true
   epoch_num: 5
