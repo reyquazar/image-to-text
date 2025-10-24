@@ -4,13 +4,21 @@ from paddleocr import *
 
 
 def PRec_old(image):
-    ocr = PaddleOCR(text_recognition_model_name="PP-OCRv5_server_rec")
+    ocr = PaddleOCR(
+        text_recognition_model_name="PP-OCRv5_server_rec",
+        use_doc_orientation_classify=False,
+        use_textline_orientation=False,
+    )
     result = ocr.predict(image)
     return result
 
 
 def PRec_new(image):
-    ocr = PaddleOCR(text_recognition_model_dir="./output/inference/")
+    ocr = PaddleOCR(
+        text_recognition_model_name="./output/inference/",
+        use_doc_orientation_classify=False,
+        use_textline_orientation=False,
+    )
     result = ocr.predict(image)
     return result
 

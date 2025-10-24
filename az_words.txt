@@ -87,7 +87,6 @@ rayonunun 1643
 həmin 1638
 onların 1577
 heç 1575
-s 1562
 digər 1561
 qəbul 1549
 qarşı 1547
@@ -8151,7 +8150,6 @@ Həvarilərin 26
 Həqiqi 26
 Hacıqabul 26
 Gürcüstana 26
-GxyP 26
 Frans 26
 Ermənilərin 26
 Elşad 26

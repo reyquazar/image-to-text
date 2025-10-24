@@ -11,13 +11,17 @@ def Pstructure(img):
 def POCR(image):
     from paddleocr import PaddleOCR
 
-    ocr = PaddleOCR(text_recognition_model_name="PP-OCRv5_server_rec", use_textline_orientation=False)
+    ocr = PaddleOCR(text_recognition_model_name="PP-OCRv5_server_rec")
     result = ocr.predict(image)
     return result
 
 
 def PRec(image):
-    ocr = PaddleOCR(text_recognition_model_name='PP-OCRv5_server_rec', use_textline_orientation=False)
+    ocr = PaddleOCR(
+        text_recognition_model_name="PP-OCRv5_server_rec",
+        use_doc_orientation_classify=False,
+        use_textline_orientation=False,
+    )
     result = ocr.predict(image)
     return result
 
@@ -29,7 +33,7 @@ def PDet(image):
 
 
 def main():
-    image_path = 'text/typed_text/az_config_train/img.png'
+    image_path = './img.png'
     # image_path = 'img.png'
     result = ""
     # result = Pstructure(image)

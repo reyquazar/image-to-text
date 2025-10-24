@@ -7,7 +7,7 @@ import argparse
 
 
 def load_words_from_dataset(dataset_path):
-    """Загружает слова из датасета"""
+    """Loads words from dataset file - reads text file, extracts words, filters by length"""
     words = []
     try:
         with open(dataset_path, 'r', encoding='utf-8') as f:
@@ -23,7 +23,10 @@ def load_words_from_dataset(dataset_path):
 
 
 def add_document_noise(img_array):
-    """Добавляет шумы, характерные для документов"""
+    """Adds document-like noise: 
+    - Random spots (ink splatters, dust particles)
+    - Random lines (scratches, pen marks) 
+    - Shadows (uneven lighting during scanning)"""
     h, w = img_array.shape[:2]
 
     if random.random() < 0.2:
@@ -59,20 +62,23 @@ def add_document_noise(img_array):
 
 
 def apply_document_effects(img):
-    """Применяет эффекты, характерные для отсканированных документов"""
-
+    """Applies document scanning effects:
+    - Blur effects (motion blur, defocus blur, Gaussian blur)
+    - JPEG/PNG compression artifacts
+    - Skew distortion (misaligned scanning)"""
     if random.random() < 0.3:
         blur_type = random.choice(['motion', 'gaussian', 'defocus'])
         if blur_type == 'motion':
+            pass
             # Motion blur (размытие в движении) - ИСПРАВЛЕННАЯ ВЕРСИЯ
-            size = random.choice([3, 5, 7])  # Только нечетные размеры
-            kernel_motion_blur = np.zeros((size, size))
-            kernel_motion_blur[int((size - 1) / 2), :] = np.ones(size)
-            kernel_motion_blur = kernel_motion_blur / size
-
-            img_array = np.array(img)
-            img_array = cv2.filter2D(img_array, -1, kernel_motion_blur)
-            img = Image.fromarray(img_array)
+            # size = random.choice([3, 5, 7])  # Только нечетные размеры
+            # kernel_motion_blur = np.zeros((size, size))
+            # kernel_motion_blur[int((size - 1) / 2), :] = np.ones(size)
+            # kernel_motion_blur = kernel_motion_blur / size
+            #
+            # img_array = np.array(img)
+            # img_array = cv2.filter2D(img_array, -1, kernel_motion_blur)
+            # img = Image.fromarray(img_array)
 
         elif blur_type == 'defocus':
             img = img.filter(ImageFilter.GaussianBlur(random.uniform(0.3, 0.8)))
@@ -85,10 +91,12 @@ def apply_document_effects(img):
             quality = random.randint(30, 85)
             from io import BytesIO
             output = BytesIO()
-            img.save(output, format='JPEG', quality=quality, optimize=True)
+            img.save(output, format='PNG', quality=quality, optimize=True)
             img = Image.open(output)
+            img = img.copy()
+            output.close()
         except Exception as e:
-            print(f"⚠️ JPEG compression error: {e}")
+            print(f"⚠️ PNG compression error: {e}")
 
     if random.random() < 0.1:
         try:
@@ -105,34 +113,30 @@ def apply_document_effects(img):
 
 
 def generate_synthetic_data():
+    """Main function - generates synthetic text images with document-like appearance for training/validation"""
     output_dir = "./text/typed_text/az_config_train"
     os.makedirs(output_dir, exist_ok=True)
 
     parser = argparse.ArgumentParser()
     parser.add_argument('train_number', type=int, help='Number of training images')
-    parser.add_argument('test_number', type=int, help='Number of test images')
+    parser.add_argument('val_number', type=int, help='Number of val images')
     parser.add_argument('--dataset', type=str, default='./az_words.txt', help='Path to dataset file')
     args = parser.parse_args()
 
-    # Загружаем слова из датасета
     azerbaijani_words = load_words_from_dataset(args.dataset)
-    if not azerbaijani_words:
-        print("❌ Using fallback word list")
-        azerbaijani_words = ["alma", "kitab", "ev", "şəhər", "adam"]
 
     fonts_dir = "./text/typed_text/az_config_train/fonts/3"
 
     print(f"🔍 Find fonts: {fonts_dir}")
     print(f"📊 Total unique words: {len(azerbaijani_words)}")
 
-    # Разделяем слова на тренировочные и тестовые
     random.shuffle(azerbaijani_words)
     split_idx = int(0.8 * len(azerbaijani_words))
 
     train_words = azerbaijani_words[:split_idx]
-    test_words = azerbaijani_words[split_idx:]
+    val_words = azerbaijani_words[split_idx:]
 
-    print(f"📊 Words split: Train - {len(train_words)}, Test - {len(test_words)}")
+    print(f"📊 Words split: Train - {len(train_words)}, val - {len(val_words)}")
 
     available_fonts = []
     if os.path.exists(fonts_dir):
@@ -140,7 +144,6 @@ def generate_synthetic_data():
             if file.lower().endswith('.ttf'):
                 font_path = os.path.join(fonts_dir, file)
                 try:
-                    test_font = ImageFont.truetype(font_path, 20)
                     available_fonts.append(font_path)
                     print(f"✅ Font loaded: {file}")
                 except Exception as e:
@@ -163,13 +166,20 @@ def generate_synthetic_data():
     ]
 
     def generate_images(word_list, count, prefix):
-        """Генерирует изображения для заданного списка слов"""
+        """Generates images for given word list with augmentations:
+        - Font variations (different typefaces and sizes)
+        - Background colors (various document paper colors)
+        - Text colors (different ink intensities)
+        - Geometric transformations (rotation, skew)
+        - Image quality degradations (blur, contrast, brightness changes)
+        - Noise addition (Gaussian noise, document artifacts)
+        - Resizing to target dimensions"""
         labels = []
 
         for i in range(count):
             word = random.choice(word_list)
 
-            font_size = random.randint(18, 28)
+            font_size = random.randint(18, 32)
             bg_color = random.choice(document_backgrounds)
 
             text_color_variants = [
@@ -180,9 +190,9 @@ def generate_synthetic_data():
                 (15, 15, 15),
             ]
             text_color = random.choice(text_color_variants)
-
-            rotation = random.randint(-2, 2)
-            blur_radius = random.uniform(0, 0.2)
+            # поворот, размытие, контраст, яркость
+            rotation = random.randint(-5, 5)
+            blur_radius = random.uniform(0, 0.1)
             contrast = random.uniform(0.9, 1.1)
             brightness = random.uniform(0.95, 1.05)
 
@@ -191,8 +201,11 @@ def generate_synthetic_data():
                 font = ImageFont.truetype(font_path, font_size)
 
                 bbox = font.getbbox(word)
-                text_width = bbox[2] - bbox[0] + 60
-                text_height = bbox[3] - bbox[1] + 60
+                # text_width = bbox[2] - bbox[0] + 60
+                # text_height = bbox[3] - bbox[1] + 60
+
+                text_width = 320
+                text_height = 48
 
                 img = Image.new('RGB', (text_width, text_height), color=bg_color)
                 draw = ImageDraw.Draw(img)
@@ -241,7 +254,7 @@ def generate_synthetic_data():
                 if random.random() < 0.15:
                     img_resized = cv2.GaussianBlur(img_resized, (3, 3), 0)
 
-                filename = f"{prefix}_{i:07d}.jpg"
+                filename = f"{prefix}_{i:07d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
                 labels.append(f"{filename}\t{word}")
@@ -258,25 +271,25 @@ def generate_synthetic_data():
     print("🚀 Generating training data...")
     labels_train = generate_images(train_words, args.train_number, "train")
 
-    print("🧪 Generating test data...")
-    labels_test = generate_images(test_words, args.test_number, "test")
+    print("🧪 Generating val data...")
+    labels_val = generate_images(val_words, args.val_number, "val")
 
     with open(os.path.join(output_dir, "train_list.txt"), 'w', encoding='utf-8') as f:
         for label in labels_train:
             f.write(label + '\n')
 
     with open(os.path.join(output_dir, "val_list.txt"), 'w', encoding='utf-8') as f:
-        for label in labels_test:
+        for label in labels_val:
             f.write(label + '\n')
 
     unique_train_words = len(set([label.split('\t')[1] for label in labels_train]))
-    unique_test_words = len(set([label.split('\t')[1] for label in labels_test]))
+    unique_val_words = len(set([label.split('\t')[1] for label in labels_val]))
 
     print(f"\n🎉 Generation completed!")
     print(f"📊 Training: {len(labels_train)} images, {unique_train_words} unique words")
-    print(f"📊 Val: {len(labels_test)} images, {unique_test_words} unique words")
+    print(f"📊 Val: {len(labels_val)} images, {unique_val_words} unique words")
     print(
-        f"📊 Coverage: {unique_train_words / len(train_words) * 100:.1f}% train words, {unique_test_words / len(test_words) * 100:.1f}% test words")
+        f"📊 Coverage: {unique_train_words / len(train_words) * 100:.1f}% train words, {unique_val_words / len(val_words) * 100:.1f}% val words")
 
 
 generate_synthetic_data()
