@@ -12,7 +12,9 @@ def load_words_from_dataset(dataset_path):
     try:
         with open(dataset_path, 'r', encoding='utf-8') as f:
             for line in f:
-                words.append(line)
+                word = line.strip().split()[0] if line.strip() else None
+                if word and len(word) >= 2:
+                    words.append(word)
         print(f"✅ Loaded {len(words)} words from dataset")
         return words
     except Exception as e:
@@ -116,6 +118,7 @@ def generate_synthetic_data():
     os.makedirs(output_dir, exist_ok=True)
 
     dataset_path = './train_cleaned.txt'
+
     parser = argparse.ArgumentParser()
     parser.add_argument('train_number', type=int, help='Number of training images')
     parser.add_argument('val_number', type=int, help='Number of val images')
