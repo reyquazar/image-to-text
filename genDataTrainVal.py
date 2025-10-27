@@ -127,7 +127,7 @@ def generate_synthetic_data():
 
     azerbaijani_words = load_words_from_dataset(args.dataset)
 
-    fonts_dir = "./text/typed_text/az_config_train/fonts/3"
+    fonts_dir = "./text/typed_text/fonts/3"
 
     print(f"🔍 Find fonts: {fonts_dir}")
     print(f"📊 Total unique words: {len(azerbaijani_words)}")
@@ -256,12 +256,12 @@ def generate_synthetic_data():
                 if random.random() < 0.15:
                     img_resized = cv2.GaussianBlur(img_resized, (3, 3), 0)
 
-                filename = f"{prefix}_{i:07d}.png"
+                filename = f"{prefix}_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
                 labels.append(f"{filename}\t{word}")
 
-                if (i + 1) % 500 == 0:
+                if (i + 1) % 1000 == 0:
                     print(f"✅ {prefix}: {i + 1}/{count}")
 
             except Exception as e:
