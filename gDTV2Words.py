@@ -279,15 +279,6 @@ def generate_synthetic_data():
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                # Final check - ensure image is not empty
-                if np.mean(img_resized) > 240:  # Almost white image
-                    print(f"⚠️ Image too light, skipping")
-                    continue
-
-                if np.mean(img_resized) < 10:  # Almost black image
-                    print(f"⚠️ Image too dark, skipping")
-                    continue
-
                 filename = f"{prefix}_single_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
