@@ -23,10 +23,7 @@ def load_words_from_dataset(dataset_path):
 
 
 def add_document_noise(img_array):
-    """Adds document-like noise:
-    - Random spots (ink splatters, dust particles)
-    - Random lines (scratches, pen marks)
-    - Shadows (uneven lighting during scanning)"""
+    """Adds document-like noise"""
     h, w = img_array.shape[:2]
 
     if random.random() < 0.2:
@@ -62,18 +59,12 @@ def add_document_noise(img_array):
 
 
 def apply_document_effects(img):
-    """Applies document scanning effects:
-    - Blur effects (motion blur, defocus blur, Gaussian blur)
-    - JPEG/PNG compression artifacts
-    - Skew distortion (misaligned scanning)"""
+    """Applies document scanning effects"""
     if random.random() < 0.3:
-        blur_type = random.choice(['motion', 'gaussian', 'defocus'])
-        if blur_type == 'motion':
-            pass
-        elif blur_type == 'defocus':
+        blur_type = random.choice(['gaussian', 'defocus'])
+        if blur_type == 'defocus':
             img = img.filter(ImageFilter.GaussianBlur(random.uniform(0.3, 0.8)))
         else:
-            # Gaussian blur
             img = img.filter(ImageFilter.GaussianBlur(random.uniform(0.2, 0.5)))
 
     if random.random() < 0.25:
@@ -102,85 +93,38 @@ def apply_document_effects(img):
     return img
 
 
-def apply_advanced_augmentations(img_array):
-    """Applies advanced image augmentations:
-    - Elastic distortions
-    - Perspective transformations
-    - Random erasing
-    - Color jittering
-    - Noise variations"""
+def apply_safe_augmentations(img_array):
+    """Applies safe augmentations that won't destroy the image"""
     h, w = img_array.shape[:2]
 
-    # Elastic distortions
-    if random.random() < 0.1:
-        try:
-            alpha = random.randint(20, 40)
-            sigma = random.randint(4, 6)
-            dx = np.random.uniform(-1, 1, (h, w)) * alpha
-            dy = np.random.uniform(-1, 1, (h, w)) * alpha
-
-            x, y = np.meshgrid(np.arange(w), np.arange(h))
-            indices = np.reshape(y + dy, (-1, 1)), np.reshape(x + dx, (-1, 1))
-
-            img_array = cv2.remap(img_array, indices[1].astype(np.float32),
-                                  indices[0].astype(np.float32),
-                                  cv2.INTER_LINEAR, borderMode=cv2.BORDER_REFLECT)
-        except Exception as e:
-            print(f"⚠️ Elastic distortion error: {e}")
-
-    # Perspective transformation
-    if random.random() < 0.08:
-        try:
-            pts1 = np.float32([[0, 0], [w, 0], [0, h], [w, h]])
-            max_offset = w * 0.05
-            pts2 = np.float32([
-                [random.uniform(-max_offset, max_offset), random.uniform(-max_offset, max_offset)],
-                [w - random.uniform(-max_offset, max_offset), random.uniform(-max_offset, max_offset)],
-                [random.uniform(-max_offset, max_offset), h - random.uniform(-max_offset, max_offset)],
-                [w - random.uniform(-max_offset, max_offset), h - random.uniform(-max_offset, max_offset)]
-            ])
-            matrix = cv2.getPerspectiveTransform(pts1, pts2)
-            img_array = cv2.warpPerspective(img_array, matrix, (w, h), borderMode=cv2.BORDER_REPLICATE)
-        except Exception as e:
-            print(f"⚠️ Perspective transformation error: {e}")
-
-    # Random erasing (cutout)
-    if random.random() < 0.1:
-        try:
-            erase_h = random.randint(5, 15)
-            erase_w = random.randint(5, 30)
-            erase_x = random.randint(0, w - erase_w)
-            erase_y = random.randint(0, h - erase_h)
-            img_array[erase_y:erase_y + erase_h, erase_x:erase_x + erase_w] = random.randint(200, 255)
-        except Exception as e:
-            print(f"⚠️ Random erasing error: {e}")
-
-    # Color variations
+    # Light Gaussian noise
     if random.random() < 0.3:
+        noise = np.random.normal(0, random.randint(1, 3), img_array.shape).astype('uint8')
+        img_array = cv2.add(img_array, noise)
+
+    # Light blur
+    if random.random() < 0.2:
+        img_array = cv2.GaussianBlur(img_array, (3, 3), 0)
+
+    # Color variations (safer version)
+    if random.random() < 0.2:
         try:
-            # Convert to HSV for color manipulation
-            hsv = cv2.cvtColor(img_array, cv2.COLOR_RGB2HSV)
-            hsv = hsv.astype(np.float32)
+            # Small brightness adjustment
+            brightness = random.uniform(0.9, 1.1)
+            img_array = np.clip(img_array.astype(np.float32) * brightness, 0, 255).astype(np.uint8)
 
-            # Hue shift
-            hsv[:, :, 0] = (hsv[:, :, 0] + random.uniform(-5, 5)) % 180
-
-            # Saturation adjustment
-            hsv[:, :, 1] = np.clip(hsv[:, :, 1] * random.uniform(0.8, 1.2), 0, 255)
-
-            # Value adjustment
-            hsv[:, :, 2] = np.clip(hsv[:, :, 2] * random.uniform(0.9, 1.1), 0, 255)
-
-            hsv = hsv.astype(np.uint8)
-            img_array = cv2.cvtColor(hsv, cv2.COLOR_HSV2RGB)
+            # Small contrast adjustment
+            contrast = random.uniform(0.95, 1.05)
+            mean = np.mean(img_array)
+            img_array = np.clip((img_array.astype(np.float32) - mean) * contrast + mean, 0, 255).astype(np.uint8)
         except Exception as e:
-            print(f"⚠️ Color variation error: {e}")
+            print(f"⚠️ Color adjustment error: {e}")
 
     return img_array
 
 
 def generate_synthetic_data():
-    """Main function - generates synthetic text images with document-like appearance for training/validation"""
+    """Main function - generates synthetic text images with document-like appearance"""
     output_dir = "./text/typed_text/az_config_train"
     os.makedirs(output_dir, exist_ok=True)
 
@@ -227,68 +171,75 @@ def generate_synthetic_data():
 
     print(f"🎯 Used {len(available_fonts)} fonts")
 
-    # Цвета фона, характерные для документов
+    # Document backgrounds
     document_backgrounds = [
         'white', '#f8f8f8', '#f0f0f0', '#f5f5f5', '#fafafa',
         '#fffaf0', '#fdf5e6', '#fff8dc',
         '#f0fff0', '#f5fffa', '#f0f8ff'
     ]
 
-    def generate_single_word_image(word, font, font_size, bg_color, text_color, text_width, text_height):
-        """Generates image with single word"""
-        img = Image.new('RGB', (text_width, text_height), color=bg_color)
-        draw = ImageDraw.Draw(img)
+    def create_text_image(word, is_double_word=False):
+        """Creates basic text image with proper text rendering"""
+        font_size = random.randint(20, 28) if not is_double_word else random.randint(18, 24)
+        bg_color = random.choice(document_backgrounds)
 
-        if random.random() < 0.05:
-            for y in range(img.height):
-                shade = 245 + int(10 * (y / img.height))
-                for x in range(img.width):
-                    img.putpixel((x, y), (shade, shade, shade))
+        text_color_variants = [
+            (0, 0, 0), (20, 20, 20), (30, 30, 30),
+            (10, 10, 10), (15, 15, 15)
+        ]
+        text_color = random.choice(text_color_variants)
 
-        bbox = font.getbbox(word)
-        x_offset = (img.width - (bbox[2] - bbox[0])) // 2
-        y_offset = (img.height - (bbox[3] - bbox[1])) // 2
-        draw.text((x_offset, y_offset), word, font=font, fill=text_color)
+        try:
+            font_path = random.choice(available_fonts)
+            font = ImageFont.truetype(font_path, font_size)
 
-        return img, word
+            text_width = 320
+            text_height = 48
 
-    def generate_double_word_image(word1, word2, font, font_size, bg_color, text_color, text_width, text_height):
-        """Generates image with two words"""
-        img = Image.new('RGB', (text_width, text_height), color=bg_color)
-        draw = ImageDraw.Draw(img)
+            img = Image.new('RGB', (text_width, text_height), color=bg_color)
+            draw = ImageDraw.Draw(img)
 
-        # Gradient background (occasionally)
-        if random.random() < 0.05:
-            for y in range(img.height):
-                shade = 245 + int(10 * (y / img.height))
-                for x in range(img.width):
-                    img.putpixel((x, y), (shade, shade, shade))
+            # Simple gradient background (occasionally)
+            if random.random() < 0.05:
+                for y in range(img.height):
+                    shade = 245 + int(10 * (y / img.height))
+                    for x in range(img.width):
+                        img.putpixel((x, y), (shade, shade, shade))
 
-        # Combine words with random separator
-        separators = [' ', '  ', '   ', '    ', ' - ', ' • ', ' | ']
-        separator = random.choice(separators)
-        combined_text = word1 + separator + word2
+            bbox = font.getbbox(word)
+            text_actual_width = bbox[2] - bbox[0]
+            text_actual_height = bbox[3] - bbox[1]
 
-        bbox = font.getbbox(combined_text)
+            # Ensure text fits
+            if text_actual_width > text_width - 20:
+                # Text too long, reduce font size
+                reduction_factor = (text_width - 40) / text_actual_width
+                font_size = max(14, int(font_size * reduction_factor))
+                font = ImageFont.truetype(font_path, font_size)
+                bbox = font.getbbox(word)
+                text_actual_width = bbox[2] - bbox[0]
+                text_actual_height = bbox[3] - bbox[1]
 
-        # If text is too long, reduce font size
-        max_width = text_width - 40
-        if bbox[2] - bbox[0] > max_width:
-            font_size = max(12, int(font_size * 0.8))
-            font = ImageFont.truetype(font.path, font_size)
-            bbox = font.getbbox(combined_text)
+            x_offset = (text_width - text_actual_width) // 2
+            y_offset = (text_height - text_actual_height) // 2
 
-        x_offset = (img.width - (bbox[2] - bbox[0])) // 2
-        y_offset = (img.height - (bbox[3] - bbox[1])) // 2
-        draw.text((x_offset, y_offset), combined_text, font=font, fill=text_color)
+            # Ensure offsets are positive
+            x_offset = max(10, x_offset)
+            y_offset = max(5, y_offset)
 
-        return img, combined_text
+            draw.text((x_offset, y_offset), word, font=font, fill=text_color)
+
+            return img, word
+
+        except Exception as e:
+            print(f"❌ Error creating text image for '{word}': {e}")
+            return None, None
 
     def generate_images(word_list, count, prefix):
-        """Generates images for given word list with augmentations"""
+        """Generates images for given word list"""
         labels = []
-        single_word_count = int(count * 0.7)  # 70% single words
-        double_word_count = count - single_word_count  # 30% double words
+        single_word_count = int(count * 0.7)
+        double_word_count = count - single_word_count
 
         print(f"📝 Generating {single_word_count} single-word and {double_word_count} double-word images for {prefix}")
 
@@ -296,72 +247,46 @@ def generate_synthetic_data():
         for i in range(single_word_count):
             word = random.choice(word_list)
 
-            font_size = random.randint(18, 32)
-            bg_color = random.choice(document_backgrounds)
-
-            text_color_variants = [
-                (0, 0, 0),
-                (20, 20, 20),
-                (30, 30, 30),
-                (10, 10, 10),
-                (15, 15, 15),
-            ]
-            text_color = random.choice(text_color_variants)
-
-            # Augmentation parameters
-            rotation = random.randint(-5, 5)
-            blur_radius = random.uniform(0, 0.1)
-            contrast = random.uniform(0.9, 1.1)
-            brightness = random.uniform(0.95, 1.05)
-
             try:
-                font_path = random.choice(available_fonts)
-                font = ImageFont.truetype(font_path, font_size)
+                img, final_text = create_text_image(word, is_double_word=False)
+                if img is None:
+                    continue
 
-                text_width = 320
-                text_height = 48
+                # Basic augmentations
+                rotation = random.randint(-3, 3)
+                if rotation != 0:
+                    img = img.rotate(rotation, expand=True, fillcolor=random.choice(document_backgrounds))
 
-                img, final_text = generate_single_word_image(word, font, font_size, bg_color, text_color, text_width,
-                                                             text_height)
-
-                # Apply augmentations
+                # Apply document effects
                 try:
                     img = apply_document_effects(img)
                 except Exception as e:
-                    print(f"⚠️ Document effects skipped for '{word}': {e}")
+                    print(f"⚠️ Document effects skipped: {e}")
 
-                if rotation != 0:
-                    img = img.rotate(rotation, expand=True, fillcolor=bg_color)
-
-                if blur_radius > 0.03:
-                    img = img.filter(ImageFilter.GaussianBlur(blur_radius))
-
-                enhancer = ImageEnhance.Contrast(img)
-                img = enhancer.enhance(contrast)
-
-                enhancer = ImageEnhance.Brightness(img)
-                img = enhancer.enhance(brightness)
-
+                # Convert to array for OpenCV operations
                 img_array = np.array(img)
 
-                # Apply advanced augmentations
-                if random.random() < 0.4:
-                    img_array = apply_advanced_augmentations(img_array)
+                # Safe augmentations
+                img_array = apply_safe_augmentations(img_array)
 
+                # Add document noise
                 try:
                     img_array = add_document_noise(img_array)
                 except Exception as e:
-                    print(f"⚠️ Document noise skipped for '{word}': {e}")
+                    print(f"⚠️ Document noise skipped: {e}")
 
-                if random.random() < 0.2:
-                    noise = np.random.normal(0, random.randint(1, 4), img_array.shape).astype('uint8')
-                    img_array = cv2.add(img_array, noise)
-
+                # Resize to final dimensions
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                if random.random() < 0.15:
-                    img_resized = cv2.GaussianBlur(img_resized, (3, 3), 0)
+                # Final check - ensure image is not empty
+                if np.mean(img_resized) > 240:  # Almost white image
+                    print(f"⚠️ Image too light, skipping")
+                    continue
+
+                if np.mean(img_resized) < 10:  # Almost black image
+                    print(f"⚠️ Image too dark, skipping")
+                    continue
 
                 filename = f"{prefix}_single_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
@@ -384,72 +309,52 @@ def generate_synthetic_data():
             while word2 == word1:
                 word2 = random.choice(word_list)
 
-            font_size = random.randint(16, 28)  # Slightly smaller for double words
-            bg_color = random.choice(document_backgrounds)
-
-            text_color_variants = [
-                (0, 0, 0),
-                (20, 20, 20),
-                (30, 30, 30),
-                (10, 10, 10),
-                (15, 15, 15),
-            ]
-            text_color = random.choice(text_color_variants)
-
-            # Augmentation parameters
-            rotation = random.randint(-3, 3)  # Less rotation for double words
-            blur_radius = random.uniform(0, 0.08)
-            contrast = random.uniform(0.9, 1.1)
-            brightness = random.uniform(0.95, 1.05)
+            # Combine words with separator
+            separators = [' ', '  ', '   ', ' - ']
+            separator = random.choice(separators)
+            combined_text = word1 + separator + word2
 
             try:
-                font_path = random.choice(available_fonts)
-                font = ImageFont.truetype(font_path, font_size)
+                img, final_text = create_text_image(combined_text, is_double_word=True)
+                if img is None:
+                    continue
 
-                text_width = 320
-                text_height = 48
+                # Less rotation for double words
+                rotation = random.randint(-2, 2)
+                if rotation != 0:
+                    img = img.rotate(rotation, expand=True, fillcolor=random.choice(document_backgrounds))
 
-                img, final_text = generate_double_word_image(word1, word2, font, font_size, bg_color, text_color,
-                                                             text_width, text_height)
-
-                # Apply augmentations
+                # Apply document effects
                 try:
                     img = apply_document_effects(img)
                 except Exception as e:
-                    print(f"⚠️ Document effects skipped for double words '{final_text}': {e}")
+                    print(f"⚠️ Document effects skipped: {e}")
 
-                if rotation != 0:
-                    img = img.rotate(rotation, expand=True, fillcolor=bg_color)
-
-                if blur_radius > 0.03:
-                    img = img.filter(ImageFilter.GaussianBlur(blur_radius))
-
-                enhancer = ImageEnhance.Contrast(img)
-                img = enhancer.enhance(contrast)
-
-                enhancer = ImageEnhance.Brightness(img)
-                img = enhancer.enhance(brightness)
-
+                # Convert to array for OpenCV operations
                 img_array = np.array(img)
 
-                # Apply advanced augmentations (less frequently for double words)
-                if random.random() < 0.3:
-                    img_array = apply_advanced_augmentations(img_array)
+                # Safe augmentations (less frequently for double words)
+                if random.random() < 0.5:
+                    img_array = apply_safe_augmentations(img_array)
 
+                # Add document noise
                 try:
                     img_array = add_document_noise(img_array)
                 except Exception as e:
-                    print(f"⚠️ Document noise skipped for double words '{final_text}': {e}")
+                    print(f"⚠️ Document noise skipped: {e}")
 
-                if random.random() < 0.15:
-                    noise = np.random.normal(0, random.randint(1, 3), img_array.shape).astype('uint8')
-                    img_array = cv2.add(img_array, noise)
-
+                # Resize to final dimensions
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                if random.random() < 0.1:
-                    img_resized = cv2.GaussianBlur(img_resized, (3, 3), 0)
+                # Final check - ensure image is not empty
+                if np.mean(img_resized) > 240:  # Almost white image
+                    print(f"⚠️ Image too light, skipping")
+                    continue
+
+                if np.mean(img_resized) < 10:  # Almost black image
+                    print(f"⚠️ Image too dark, skipping")
+                    continue
 
                 filename = f"{prefix}_double_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
@@ -485,13 +390,6 @@ def generate_synthetic_data():
     print(f"\n🎉 Generation completed!")
     print(f"📊 Training: {len(labels_train)} images, {unique_train_words} unique texts")
     print(f"📊 Val: {len(labels_val)} images, {unique_val_words} unique texts")
-
-    # Calculate coverage statistics
-    total_train_texts = len(train_words) + len(train_words) * 0.3  # words + potential combinations
-    total_val_texts = len(val_words) + len(val_words) * 0.3
-
-    print(
-        f"📊 Coverage: {unique_train_words / total_train_texts * 100:.1f}% train coverage, {unique_val_words / total_val_texts * 100:.1f}% val coverage")
 
 
 generate_synthetic_data()
