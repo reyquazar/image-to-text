@@ -67,7 +67,9 @@ Loss:
   name: MultiLoss
   loss_config_list:
     - CTCLoss:
+        weight: 1.0
     - NRTRLoss:
+        weight: 1.5 
 
 PostProcess:
   name: CTCLabelDecode
