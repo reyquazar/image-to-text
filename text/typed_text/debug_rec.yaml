@@ -7,7 +7,7 @@ Global:
   print_batch_step: 10
   save_model_dir: ./output
   save_epoch_step: 1
-  eval_batch_step: [0, 150]
+  eval_batch_step: [0, 50]
   cal_metric_during_train: true
   calc_epoch_interval: 1
   pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
@@ -21,6 +21,9 @@ Global:
   distributed: true
   save_res_path: ./output/rec/predicts_ppocrv5.txt
   d2s_train_image_shape: [3, 48, 320]
+  early_stop:
+    patience: 5
+    min_delta: 0.001
 
 
 Optimizer:
@@ -29,8 +32,8 @@ Optimizer:
   beta2: 0.999
   lr:
     name: Cosine
-    learning_rate: 0.00005
-    warmup_epoch: 1
+    learning_rate: 0.00001
+    warmup_epoch: 2
   regularizer:
     name: L2
     factor: 3.0e-05
