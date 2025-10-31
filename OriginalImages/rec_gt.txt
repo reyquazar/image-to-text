@@ -870,3 +870,33 @@ crop_img/test8_crop_76.jpg	года
 crop_img/test8_crop_77.jpg	Гознак,
 crop_img/test8_crop_78.jpg	МПФ,
 crop_img/test8_crop_79.jpg	Москва
+crop_img/test9_crop_0.jpg	SiKAYATiN MAZMUNU
+crop_img/test9_crop_1.jpg	Si fOxdtatt es ya
+crop_img/test9_crop_2.jpg	teeiyGN-Skyt
+crop_img/test9_crop_3.jpg	Tarix:
+crop_img/test9_crop_4.jpg	Soyad
+crop_img/test9_crop_5.jpg	Ata adi
+crop_img/test9_crop_6.jpg	Ad
+crop_img/test9_crop_7.jpg	lieusif
+crop_img/test9_crop_8.jpg	Nru Wayle
+crop_img/test9_crop_9.jpg	yaoul
+crop_img/test9_crop_10.jpg	Telefon nomrsi:
+crop_img/test9_crop_11.jpg	Qeydiyyat ünvan:
+crop_img/test9_crop_12.jpg	O5S-8SS-43-77
+crop_img/test9_crop_13.jpg	E.viutoffrye
+crop_img/test9_crop_14.jpg	Elektronpost invan: Ynesculayeguailcaf Sabivil .uu
+crop_img/test9_crop_15.jpg	wug eg
+crop_img/test9_crop_16.jpg	MARKAZ TARAFINDAN DOLDURULAN BOLM
+crop_img/test9_crop_17.jpg	Müraciatin aid oldugu orqan va ya xidmat:
+crop_img/test9_crop_18.jpg	Arasdirmani aparan masul saxsin adi,s.oyadi va vazifasi:
+crop_img/test9_crop_19.jpg	Gorülmus tadbir:
+crop_img/test9_crop_20.jpg	sikayat (asasl va ya asassiz):
+crop_img/test9_crop_21.jpg	Arasdirmanin naticasi:
+crop_img/test9_crop_22.jpg	Azarbaycan Respublikasimn Prezidenti
+crop_img/test9_crop_23.jpg	yaninda
+crop_img/test9_crop_24.jpg	Vetandaslara Xidmet vo Sosiet--
+crop_img/test9_crop_25.jpg	Innovaslyalar Uzre Dovlet Agentliyi
+crop_img/test9_crop_26.jpg	4sayr Baki"ASAN xidmat"Merkezi
+crop_img/test9_crop_27.jpg	Daxil lyma e f030OLO0059
+crop_img/test9_crop_28.jpg	ftotal201£1
+crop_img/test9_crop_29.jpg	Qeydiyyat nömrasi:98
