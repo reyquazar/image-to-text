@@ -239,7 +239,7 @@ def generate_synthetic_data():
     def generate_images(word_list, count, prefix):
         """Generates images for given word list"""
         labels = []
-        single_word_count = int(count * 0.7)
+        single_word_count = int(count * 1)
         double_word_count = count - single_word_count
 
         print(f"📝 Generating {single_word_count} single-word and {double_word_count} double-word images for {prefix}")
