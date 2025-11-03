@@ -37,6 +37,8 @@ def main():
     print("=" * 100)
     print("PaddleModel")
     print(combined_text)
+    print("=" * 100)
+
 
     result = PRec_new(image_path)
     # save_txt(result, filename='temp1.txt')
@@ -47,6 +49,7 @@ def main():
     print("=" * 100)
     print("MyModel")
     print(combined_text)
+    print("=" * 100)
 
 
 if __name__ == "__main__":
