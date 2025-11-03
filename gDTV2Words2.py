@@ -193,7 +193,6 @@ def generate_synthetic_data():
         try:
             font_path = random.choice(available_fonts)
             font = ImageFont.truetype(font_path, font_size)
-            font_name = os.path.splitext(os.path.basename(font_path))[0]
 
             text_width = 320
             text_height = 48
@@ -231,7 +230,7 @@ def generate_synthetic_data():
 
             draw.text((x_offset, y_offset), word, font=font, fill=text_color)
 
-            return img, word, font_name
+            return img, word
 
         except Exception as e:
             print(f"❌ Error creating text image for '{word}': {e}")
@@ -250,7 +249,7 @@ def generate_synthetic_data():
             word = random.choice(word_list)
 
             try:
-                img, final_text, font_name = create_text_image(word, is_double_word=False)
+                img, final_text = create_text_image(word, is_double_word=False)
                 if img is None:
                     continue
 
@@ -281,7 +280,7 @@ def generate_synthetic_data():
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                filename = f"{font_name}_{prefix}_{i:09d}.png"
+                filename = f"{prefix}_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
                 labels.append(f"{filename}\t{final_text}")
@@ -308,7 +307,7 @@ def generate_synthetic_data():
             combined_text = word1 + separator + word2
 
             try:
-                img, final_text, font_name = create_text_image(combined_text, is_double_word=True)
+                img, final_text = create_text_image(combined_text, is_double_word=True)
                 if img is None:
                     continue
 
@@ -340,7 +339,7 @@ def generate_synthetic_data():
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                filename = f"{font_name}_{prefix}_{i:09d}.png"
+                filename = f"{prefix}_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
                 labels.append(f"{filename}\t{final_text}")
