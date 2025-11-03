@@ -249,7 +249,7 @@ def generate_synthetic_data():
             word = random.choice(word_list)
 
             try:
-                img, final_text, font_name  = create_text_image(word, is_double_word=False)
+                img, final_text, font_name = create_text_image(word, is_double_word=False)
                 if img is None:
                     continue
 
@@ -280,7 +280,7 @@ def generate_synthetic_data():
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                filename = f"{prefix}_{font_name}_{i:09d}.png"
+                filename = f"{font_name}_{prefix}_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
                 labels.append(f"{filename}\t{final_text}")
@@ -307,7 +307,8 @@ def generate_synthetic_data():
             combined_text = word1 + separator + word2
 
             try:
-                img, final_text = create_text_image(combined_text, is_double_word=True)
+                img, final_text, font_name\
+                    = create_text_image(combined_text, is_double_word=True)
                 if img is None:
                     continue
 
