@@ -6,27 +6,28 @@ def process_and_display_result(result, model_name):
     print("=" * 100)
     print(model_name)
 
-    if result and len(result) > 0:
+    if result:
         # Группируем текст по строкам на основе координат Y
         lines = {}
 
-        for line in result[0]:
-            text = line.get('rec_text', [''])[0]
-            bbox = line.get('det_box', [])
+        for line in result:
+            # Формат результата: [[[x1,y1], [x2,y2], [x3,y3], [x4,y4]], (text, confidence)]
+            bbox = line[0]  # координаты bounding box
+            text = line[1][0]  # распознанный текст
+            confidence = line[1][1]  # уверенность
 
-            if bbox:
-                # Вычисляем среднюю Y-координату для группировки по строкам
-                y_center = sum(point[1] for point in bbox) / len(bbox)
+            # Вычисляем среднюю Y-координату для группировки по строкам
+            y_center = sum(point[1] for point in bbox) / len(bbox)
 
-                # Округляем для группировки (можно настроить чувствительность)
-                line_key = round(y_center / 10) * 10
+            # Округляем для группировки (можно настроить чувствительность)
+            line_key = round(y_center / 10) * 10
 
-                if line_key not in lines:
-                    lines[line_key] = []
+            if line_key not in lines:
+                lines[line_key] = []
 
-                # Сохраняем текст и X-координату для сортировки слева направо
-                x_center = sum(point[0] for point in bbox) / len(bbox)
-                lines[line_key].append((x_center, text))
+            # Сохраняем текст и X-координату для сортировки слева направо
+            x_center = sum(point[0] for point in bbox) / len(bbox)
+            lines[line_key].append((x_center, text))
 
         # Сортируем строки по Y (сверху вниз) и слова в строке по X (слева направо)
         for y_key in sorted(lines.keys()):
@@ -43,7 +44,7 @@ def PRec_old(image):
         use_doc_orientation_classify=False,
         use_textline_orientation=False,
     )
-    result = ocr.predict(image)
+    result = ocr.ocr(image, cls=False)
     return result
 
 
@@ -53,7 +54,7 @@ def PRec_new1(image):
         use_doc_orientation_classify=False,
         use_textline_orientation=False,
     )
-    result = ocr.predict(image)
+    result = ocr.ocr(image, cls=False)
     return result
 
 
@@ -63,7 +64,7 @@ def PRec_new2(image):
         use_doc_orientation_classify=False,
         use_textline_orientation=False,
     )
-    result = ocr.predict(image)
+    result = ocr.ocr(image, cls=False)
     return result
 
 
@@ -73,7 +74,7 @@ def PRec_latest(image):
         use_doc_orientation_classify=False,
         use_textline_orientation=False,
     )
-    result = ocr.predict(image)
+    result = ocr.ocr(image, cls=False)
     return result
 
 
@@ -84,6 +85,8 @@ def main():
     image_path = args.image_path
 
     # Обработка разными моделями
+    print("Загрузка моделей...")
+
     result_old = PRec_old(image_path)
     process_and_display_result(result_old, "PaddleModel")
 
