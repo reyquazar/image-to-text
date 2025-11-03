@@ -44,7 +44,7 @@ def PRec_old(image):
         use_doc_orientation_classify=False,
         use_textline_orientation=False,
     )
-    result = ocr.ocr(image, cls=False)
+    result = ocr.predict(image)
     return result
 
 
@@ -54,7 +54,7 @@ def PRec_new1(image):
         use_doc_orientation_classify=False,
         use_textline_orientation=False,
     )
-    result = ocr.ocr(image, cls=False)
+    result = ocr.predict(image)
     return result
 
 
@@ -64,7 +64,7 @@ def PRec_new2(image):
         use_doc_orientation_classify=False,
         use_textline_orientation=False,
     )
-    result = ocr.ocr(image, cls=False)
+    result = ocr.predict(image,)
     return result
 
 
@@ -74,7 +74,7 @@ def PRec_latest(image):
         use_doc_orientation_classify=False,
         use_textline_orientation=False,
     )
-    result = ocr.ocr(image, cls=False)
+    result = ocr.predict(image)
     return result
 
 
