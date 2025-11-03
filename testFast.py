@@ -39,7 +39,6 @@ def main():
     print(combined_text)
     print("=" * 100)
 
-
     result = PRec_new(image_path)
     # save_txt(result, filename='temp1.txt')
     if result and len(result) > 0:

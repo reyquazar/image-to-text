@@ -180,12 +180,13 @@ def generate_synthetic_data():
 
     def create_text_image(word, is_double_word=False):
         """Creates basic text image with proper text rendering"""
-        font_size = random.randint(20, 28) if not is_double_word else random.randint(18, 24)
+        font_size = random.randint(10, 32) if not is_double_word else random.randint(18, 24)
         bg_color = random.choice(document_backgrounds)
 
         text_color_variants = [
-            (0, 0, 0), (20, 20, 20), (30, 30, 30),
-            (10, 10, 10), (15, 15, 15)
+            (0, 0, 0), (10, 10, 10), (20, 20, 20), (30, 30, 30),
+            (40, 40, 40), (15, 15, 15), (25, 25, 25),
+            (5, 5, 5), (35, 35, 35)  # Добавляем больше вариантов
         ]
         text_color = random.choice(text_color_variants)
 
@@ -307,8 +308,7 @@ def generate_synthetic_data():
             combined_text = word1 + separator + word2
 
             try:
-                img, final_text, font_name\
-                    = create_text_image(combined_text, is_double_word=True)
+                img, final_text, font_name = create_text_image(combined_text, is_double_word=True)
                 if img is None:
                     continue
 
@@ -340,7 +340,7 @@ def generate_synthetic_data():
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                filename = f"{prefix}_{i:09d}.png"
+                filename = f"{font_name}_{prefix}_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
                 labels.append(f"{filename}\t{final_text}")
