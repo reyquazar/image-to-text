@@ -34,7 +34,9 @@ def main():
         page = result[0]
         texts = page.get('rec_texts', [])
         combined_text = ' '.join(texts)
-    print("=" * 100, combined_text)
+    print("=" * 100)
+    print("PaddleModel")
+    print(combined_text)
 
     result = PRec_new(image_path)
     # save_txt(result, filename='temp1.txt')
@@ -42,7 +44,9 @@ def main():
         page = result[0]
         texts = page.get('rec_texts', [])
         combined_text = ' '.join(texts)
-    print("=" * 100, combined_text)
+    print("=" * 100)
+    print("MyModel")
+    print(combined_text)
 
 
 if __name__ == "__main__":
