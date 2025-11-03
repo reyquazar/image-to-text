@@ -13,7 +13,27 @@ def PRec_old(image):
     return result
 
 
-def PRec_new(image):
+def PRec_new1(image):
+    ocr = PaddleOCR(
+        text_recognition_model_dir="./Foutput1/inference/",
+        use_doc_orientation_classify=False,
+        use_textline_orientation=False,
+    )
+    result = ocr.predict(image)
+    return result
+
+
+def PRec_new2(image):
+    ocr = PaddleOCR(
+        text_recognition_model_dir="./Foutput2/inference/",
+        use_doc_orientation_classify=False,
+        use_textline_orientation=False,
+    )
+    result = ocr.predict(image)
+    return result
+
+
+def PRec_latest(image):
     ocr = PaddleOCR(
         text_recognition_model_dir="./output/inference/",
         use_doc_orientation_classify=False,
@@ -39,14 +59,35 @@ def main():
     print(combined_text)
     print("=" * 100)
 
-    result = PRec_new(image_path)
+    result = PRec_new1(image_path)
     # save_txt(result, filename='temp1.txt')
     if result and len(result) > 0:
         page = result[0]
         texts = page.get('rec_texts', [])
         combined_text = ' '.join(texts)
     print("=" * 100)
-    print("MyModel")
+    print("MyModel1")
+    print(combined_text)
+    print("=" * 100)
+
+    result = PRec_latest(image_path)
+    # save_txt(result, filename='temp1.txt')
+    if result and len(result) > 0:
+        page = result[0]
+        texts = page.get('rec_texts', [])
+        combined_text = ' '.join(texts)
+    print("=" * 100)
+    print("MyModel2")
+    print(combined_text)
+    print("=" * 100)
+    result = PRec_new2(image_path)
+    # save_txt(result, filename='temp1.txt')
+    if result and len(result) > 0:
+        page = result[0]
+        texts = page.get('rec_texts', [])
+        combined_text = ' '.join(texts)
+    print("=" * 100)
+    print("LatestModel")
     print(combined_text)
     print("=" * 100)
 
