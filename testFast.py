@@ -43,6 +43,14 @@ def PRec_latest(image):
     return result
 
 
+def printRec(text, combined_text):
+    print("=" * 100)
+    print(text)
+    print("=" * 100)
+    print(combined_text)
+    print("=" * 100)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('image_path', type=str)
@@ -54,10 +62,7 @@ def main():
         page = result[0]
         texts = page.get('rec_texts', [])
         combined_text = ' '.join(texts)
-    print("=" * 100)
-    print("PaddleModel")
-    print(combined_text)
-    print("=" * 100)
+    printRec("PaddleModel", combined_text)
 
     result = PRec_new1(image_path)
     # save_txt(result, filename='temp1.txt')
@@ -65,31 +70,25 @@ def main():
         page = result[0]
         texts = page.get('rec_texts', [])
         combined_text = ' '.join(texts)
-    print("=" * 100)
-    print("MyModel1")
-    print(combined_text)
-    print("=" * 100)
+    printRec("MyModel1", combined_text)
 
-    result = PRec_latest(image_path)
-    # save_txt(result, filename='temp1.txt')
-    if result and len(result) > 0:
-        page = result[0]
-        texts = page.get('rec_texts', [])
-        combined_text = ' '.join(texts)
-    print("=" * 100)
-    print("MyModel2")
-    print(combined_text)
-    print("=" * 100)
     result = PRec_new2(image_path)
     # save_txt(result, filename='temp1.txt')
     if result and len(result) > 0:
         page = result[0]
         texts = page.get('rec_texts', [])
         combined_text = ' '.join(texts)
-    print("=" * 100)
-    print("LatestModel")
+    printRec("MyModel2", combined_text)
+
     print(combined_text)
     print("=" * 100)
+    result = PRec_latest(image_path)
+    # save_txt(result, filename='temp1.txt')
+    if result and len(result) > 0:
+        page = result[0]
+        texts = page.get('rec_texts', [])
+        combined_text = ' '.join(texts)
+    printRec("LatestModel", combined_text)
 
 
 if __name__ == "__main__":
