@@ -49,7 +49,7 @@ def main():
     printL("Foutput1", image_path)  # synt data with gDTV2Words.py
     printL("Foutput2", image_path)  # synt data with gDTV2Words.py
     printL("Foutput3", image_path)  # synt data with gDTV2Words2.py
-    PRec(image_path)  # latest
+    printL("output", image_path)  # synt data with gDTV2Words2.py
 
 
 if __name__ == "__main__":
