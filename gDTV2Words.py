@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import random
 import os
-from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import argparse
 
 
@@ -238,7 +238,7 @@ def generate_synthetic_data():
     def generate_images(word_list, count, prefix):
         """Generates images for given word list"""
         labels = []
-        single_word_count = int(count * 0.7)
+        single_word_count = int(count * 0.6)
         double_word_count = count - single_word_count
 
         print(f"📝 Generating {single_word_count} single-word and {double_word_count} double-word images for {prefix}")
@@ -279,7 +279,7 @@ def generate_synthetic_data():
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                filename = f"{prefix}_{i:09d}.png"
+                filename = f"{prefix}_single_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
                 labels.append(f"{filename}\t{final_text}")
@@ -338,7 +338,7 @@ def generate_synthetic_data():
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                filename = f"{prefix}_{i:09d}.png"
+                filename = f"{prefix}_double_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
                 labels.append(f"{filename}\t{final_text}")

@@ -45,10 +45,10 @@ def main():
     image_path = args.image_path
     # image_path = './text/typed_text/testWords.png'
 
-    PRec(image_path)
-    printL("Foutput1", image_path)
-    printL("Foutput2", image_path)
-    printL("output", image_path)
+    PRec(image_path)  # default paddle model
+    printL("Foutput1", image_path)  # synt data with gDTV2Words.py
+    printL("Foutput2", image_path)  # synt data with gDTV2Words.py
+    printL("Foutput3", image_path)  # synt data with gDTV2Words2.py
 
 
 if __name__ == "__main__":
