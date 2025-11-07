@@ -16,9 +16,7 @@ text/PP-OCRv5_mobile_rec_pretrained.pdparams
 PP-OCRv5_server_rec_pretrained.pdparams
 ./checkpretrain.py
 
-Foutput1
-Foutput2
-Foutput3
+
 output1
 output2
 output3
