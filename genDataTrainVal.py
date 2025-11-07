@@ -117,7 +117,7 @@ def generate_synthetic_data():
     output_dir = "./text/typed_text/az_config_train"
     os.makedirs(output_dir, exist_ok=True)
 
-    dataset_path = './train_cleaned.txt'
+    dataset_path = './train_cleaned_ocr_perfect.txt'
 
     parser = argparse.ArgumentParser()
     parser.add_argument('train_number', type=int, help='Number of training images')

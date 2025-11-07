@@ -170,7 +170,7 @@ def generate_words_per_font():
     output_dir = "./text/typed_text/az_config_train"
     os.makedirs(output_dir, exist_ok=True)
 
-    dataset_path = './train_cleaned.txt'
+    dataset_path = './train_cleaned_ocr_perfect.txt'
 
     parser = argparse.ArgumentParser(description='Generate N random words for each font')
     parser.add_argument('words_per_font', type=int, help='Number of words to generate per font')
