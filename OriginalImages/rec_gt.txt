@@ -1032,140 +1032,138 @@ crop_img/test11_crop_59.jpg	edildiyi
 crop_img/test11_crop_60.jpg	edilmişdir
 crop_img/test11_crop_61.jpg	üçün
 crop_img/test11_crop_62.jpg	nəzərdə
-crop_img/test13_crop_0.jpg	UVTaKLiFiN MazMUNU
-crop_img/test13_crop_1.jpg	16.04.2021
-crop_img/test13_crop_2.jpg	rayonunun.
+crop_img/test13_crop_0.jpg	TƏKLİFİN MƏZMUNU
+crop_img/test13_crop_1.jpg	16.07.2021
+crop_img/test13_crop_2.jpg	rayonunun
 crop_img/test13_crop_3.jpg	yeni ASAN
 crop_img/test13_crop_4.jpg	acılsa
 crop_img/test13_crop_5.jpg	xidmət mərkəzi
 crop_img/test13_crop_6.jpg	əhalinin
 crop_img/test13_crop_7.jpg	və
 crop_img/test13_crop_8.jpg	olaraq
-crop_img/test13_crop_9.jpg	Hōrmatla,
+crop_img/test13_crop_9.jpg	H!rm#tl#,
 crop_img/test13_crop_10.jpg	shamn6H
 crop_img/test13_crop_11.jpg	Ad
 crop_img/test13_crop_12.jpg	Soyad
-crop_img/test13_crop_13.jpg	Ata adi
+crop_img/test13_crop_13.jpg	Ata ad`
 crop_img/test13_crop_14.jpg	Telefon nömrasi:
-crop_img/test13_crop_15.jpg	Elektron pogt ünvani:
-crop_img/test13_crop_16.jpg	126iman notalsT
-crop_img/test13_crop_17.jpg	106n0 1o90e
-crop_img/test13_crop_18.jpg	Müraciatin qeyd olunma tarixi:
-crop_img/test13_crop_19.jpg	sminulo byepanabsoM
-crop_img/test13_crop_20.jpg	Qeydiyyat nomrasi:
-crop_img/test13_crop_21.jpg	2pmon1swbys0
-crop_img/test13_crop_22.jpg	120
-crop_img/test13_crop_23.jpg	Təklif
-crop_img/test13_crop_24.jpg	edirəm
-crop_img/test13_crop_25.jpg	ki
-crop_img/test13_crop_26.jpg	nəzərə
-crop_img/test12_crop_0.jpg	0
-crop_img/test12_crop_1.jpg	ŞİKAYƏTİN MƏZMUNU
-crop_img/test12_crop_2.jpg	Tarix: 11.07.2017 il
-crop_img/test12_crop_3.jpg	Ad
-crop_img/test12_crop_4.jpg	Soyad
-crop_img/test12_crop_5.jpg	Məhi oglu
-crop_img/test12_crop_6.jpg	Koumos Cingiz
-crop_img/test12_crop_7.jpg	Telefon nömrəsi
-crop_img/test12_crop_8.jpg	050 336 30 04
-crop_img/test12_crop_9.jpg	Elektron poçt ünvani:
-crop_img/test12_crop_10.jpg	MƏRKƏZ TƏRƏFINDƏN DOLDURULAN BÖLMƏ
-crop_img/test12_crop_11.jpg	Şikayət (əsaslı və ya əsassız): 
-crop_img/test12_crop_12.jpg	Görülmüs tədbir:
-crop_img/test12_crop_13.jpg	Arasdirmanin naticasi:
-crop_img/test12_crop_14.jpg	Qeydiyyat nomrasi:10
-crop_img/test12_crop_15.jpg	rayonundan
-crop_img/test12_crop_16.jpg	oğlu
-crop_img/test12_crop_17.jpg	şəxsiyyət
-crop_img/test12_crop_18.jpg	olmag
-crop_img/test12_crop_19.jpg	üçün
-crop_img/test12_crop_20.jpg	3 saylı
-crop_img/test12_crop_21.jpg	ASAN xidmətə
-crop_img/test12_crop_22.jpg	vəsigəsi
-crop_img/test12_crop_23.jpg	vəsigələri
-crop_img/test12_crop_24.jpg	ikinci
-crop_img/test12_crop_25.jpg	dəfə
-crop_img/test12_crop_26.jpg	şəkilli
-crop_img/test12_crop_27.jpg	üçün
-crop_img/test12_crop_28.jpg	rayon
-crop_img/test12_crop_29.jpg	şəxsiyyət
-crop_img/test12_crop_30.jpg	vəsiqəsi
-crop_img/test12_crop_31.jpg	alanda
-crop_img/test12_crop_32.jpg	küçəsi
-crop_img/test12_crop_33.jpg	ev
-crop_img/test12_crop_34.jpg	yazılmiş
-crop_img/test12_crop_35.jpg	Buna
-crop_img/test12_crop_36.jpg	görə
-crop_img/test12_crop_37.jpg	yenidən
-crop_img/test12_crop_38.jpg	muraciət
-crop_img/test12_crop_39.jpg	edib
-crop_img/test12_crop_40.jpg	etdim
-crop_img/test12_crop_41.jpg	Buna
-crop_img/test12_crop_42.jpg	baxmayaraq
-crop_img/test12_crop_43.jpg	qaydasında
-crop_img/test12_crop_44.jpg	üçün
-crop_img/test12_crop_45.jpg	yəni
-crop_img/test12_crop_46.jpg	mənim
-crop_img/test12_crop_47.jpg	yaşayış
-crop_img/test12_crop_48.jpg	qeyd
-crop_img/test12_crop_49.jpg	olunsun.
-crop_img/test12_crop_50.jpg	Xahiş
-crop_img/test12_crop_51.jpg	edirəm
-crop_img/test12_crop_52.jpg	qızım
-crop_img/test12_crop_53.jpg	Pərvanə
-crop_img/test12_crop_54.jpg	oğlunun
-crop_img/test12_crop_55.jpg	şəxsiyət
-crop_img/test12_crop_56.jpg	yenidən
-crop_img/test12_crop_57.jpg	yeri
-crop_img/test12_crop_58.jpg	kəndi
-crop_img/test12_crop_59.jpg	1992 Ə ci il
-crop_img/test12_crop_60.jpg	TEMPORARY
-crop_img/test12_crop_61.jpg	Qeydiyyat :ünvanı
-crop_img/test12_crop_62.jpg	rayon
-crop_img/test12_crop_63.jpg	Vətəndaş
-crop_img/test12_crop_64.jpg	deyil,
-crop_img/test12_crop_65.jpg	rayonu
-crop_img/test12_crop_66.jpg	qeyd
-crop_img/test12_crop_67.jpg	görə
-crop_img/test12_crop_68.jpg	şəxsiyyət
-crop_img/test12_crop_69.jpg	vəsiqəsi
-crop_img/test12_crop_70.jpg	Kərimov
-crop_img/test12_crop_71.jpg	edilən
+crop_img/test13_crop_15.jpg	Elektro%n pot ünvan`:
+crop_img/test13_crop_16.jpg	Qeydiyyat n!mr#si:
+crop_img/test13_crop_17.jpg	120
+crop_img/test13_crop_18.jpg	Təklif
+crop_img/test13_crop_19.jpg	edirəm
+crop_img/test13_crop_20.jpg	ki
+crop_img/test13_crop_21.jpg	nəzərə
+crop_img/test13_crop_22.jpg	Yasamal
+crop_img/test13_crop_23.jpg	%ox
+crop_img/test13_crop_24.jpg	muraci#tl#rin
+crop_img/test13_crop_25.jpg	olunma tarixi:
+crop_img/test13_crop_26.jpg	Müraci#tin qeyd
+crop_img/test12_crop_0.jpg	ŞİKAYƏTİN MƏZMUNU
+crop_img/test12_crop_1.jpg	Tarix: 11.07.2017 il
+crop_img/test12_crop_2.jpg	Ad
+crop_img/test12_crop_3.jpg	Soyad
+crop_img/test12_crop_4.jpg	Məhi oglu
+crop_img/test12_crop_5.jpg	Koumos Cingiz
+crop_img/test12_crop_6.jpg	Telefon nömrəsi
+crop_img/test12_crop_7.jpg	050 336 30 04
+crop_img/test12_crop_8.jpg	Elektron poçt ünvani:
+crop_img/test12_crop_9.jpg	MƏRKƏZ TƏRƏFINDƏN DOLDURULAN BÖLMƏ
+crop_img/test12_crop_10.jpg	Şikayət (əsaslı və ya əsassız): 
+crop_img/test12_crop_11.jpg	Görülmüs tədbir:
+crop_img/test12_crop_12.jpg	Arasdirmanin naticasi:
+crop_img/test12_crop_13.jpg	Qeydiyyat nomrasi:10
+crop_img/test12_crop_14.jpg	rayonundan
+crop_img/test12_crop_15.jpg	oğlu
+crop_img/test12_crop_16.jpg	şəxsiyyət
+crop_img/test12_crop_17.jpg	olmag
+crop_img/test12_crop_18.jpg	üçün
+crop_img/test12_crop_19.jpg	3 saylı
+crop_img/test12_crop_20.jpg	ASAN xidmətə
+crop_img/test12_crop_21.jpg	vəsigəsi
+crop_img/test12_crop_22.jpg	vəsigələri
+crop_img/test12_crop_23.jpg	ikinci
+crop_img/test12_crop_24.jpg	dəfə
+crop_img/test12_crop_25.jpg	şəkilli
+crop_img/test12_crop_26.jpg	üçün
+crop_img/test12_crop_27.jpg	rayon
+crop_img/test12_crop_28.jpg	şəxsiyyət
+crop_img/test12_crop_29.jpg	vəsiqəsi
+crop_img/test12_crop_30.jpg	alanda
+crop_img/test12_crop_31.jpg	küçəsi
+crop_img/test12_crop_32.jpg	ev
+crop_img/test12_crop_33.jpg	yazılmiş
+crop_img/test12_crop_34.jpg	Buna
+crop_img/test12_crop_35.jpg	görə
+crop_img/test12_crop_36.jpg	yenidən
+crop_img/test12_crop_37.jpg	muraciət
+crop_img/test12_crop_38.jpg	edib
+crop_img/test12_crop_39.jpg	etdim
+crop_img/test12_crop_40.jpg	Buna
+crop_img/test12_crop_41.jpg	baxmayaraq
+crop_img/test12_crop_42.jpg	qaydasında
+crop_img/test12_crop_43.jpg	üçün
+crop_img/test12_crop_44.jpg	yəni
+crop_img/test12_crop_45.jpg	mənim
+crop_img/test12_crop_46.jpg	yaşayış
+crop_img/test12_crop_47.jpg	qeyd
+crop_img/test12_crop_48.jpg	olunsun.
+crop_img/test12_crop_49.jpg	Xahiş
+crop_img/test12_crop_50.jpg	edirəm
+crop_img/test12_crop_51.jpg	qızım
+crop_img/test12_crop_52.jpg	Pərvanə
+crop_img/test12_crop_53.jpg	oğlunun
+crop_img/test12_crop_54.jpg	şəxsiyət
+crop_img/test12_crop_55.jpg	yenidən
+crop_img/test12_crop_56.jpg	yeri
+crop_img/test12_crop_57.jpg	kəndi
+crop_img/test12_crop_58.jpg	1992 - ci il
+crop_img/test12_crop_59.jpg	TEMPORARY
+crop_img/test12_crop_60.jpg	Qeydiyyat :ünvanı
+crop_img/test12_crop_61.jpg	rayon
+crop_img/test12_crop_62.jpg	Vətəndaş
+crop_img/test12_crop_63.jpg	deyil,
+crop_img/test12_crop_64.jpg	rayonu
+crop_img/test12_crop_65.jpg	qeyd
+crop_img/test12_crop_66.jpg	görə
+crop_img/test12_crop_67.jpg	şəxsiyyət
+crop_img/test12_crop_68.jpg	vəsiqəsi
+crop_img/test12_crop_69.jpg	Kərimov
+crop_img/test12_crop_70.jpg	edilən
 crop_img/test15_crop_0.jpg	asan
-crop_img/test15_crop_1.jpg	xidmat
-crop_img/test15_crop_2.jpg	TaKLiFiN
-crop_img/test15_crop_3.jpg	MAZMUNU
-crop_img/test15_crop_4.jpg	matla,
-crop_img/test15_crop_5.jpg	Ad
-crop_img/test15_crop_6.jpg	Soyad
-crop_img/test15_crop_7.jpg	Ata adi
-crop_img/test15_crop_8.jpg	b2aluo2e
-crop_img/test15_crop_9.jpg	Baric
-crop_img/test15_crop_10.jpg	hawogle.
-crop_img/test15_crop_11.jpg	etron pogt unvani:
-crop_img/test15_crop_12.jpg	Telefon nömrasi:
-crop_img/test15_crop_13.jpg	iraciatin qeyd olunma tarixi:
-crop_img/test15_crop_14.jpg	08.02.23,047Ə223Ə53.53.
-crop_img/test15_crop_15.jpg	EaL2su6n1syybys0
-crop_img/test15_crop_16.jpg	Qeydiyyat nömrasi: f 62
-crop_img/test15_crop_17.jpg	Quliyeva
-crop_img/test15_crop_18.jpg	böyuk
-crop_img/test15_crop_19.jpg	edirik
-crop_img/test15_crop_20.jpg	cox
-crop_img/test15_crop_21.jpg	göre
-crop_img/test15_crop_22.jpg	təşəkkür
+crop_img/test15_crop_1.jpg	xidm#t
+crop_img/test15_crop_2.jpg	Hörm#tl#,
+crop_img/test15_crop_3.jpg	Ad
+crop_img/test15_crop_4.jpg	Soyad
+crop_img/test15_crop_5.jpg	Ata ad`
+crop_img/test15_crop_6.jpg	Bakir
+crop_img/test15_crop_7.jpg	Elektron po%t ~nvan`:
+crop_img/test15_crop_8.jpg	Telefon nömr#si:
+crop_img/test15_crop_9.jpg	08.02.23.077-223-53-53
+crop_img/test15_crop_10.jpg	Qeydiyyat nömr#si:  162
+crop_img/test15_crop_11.jpg	Quliyeva
+crop_img/test15_crop_12.jpg	böyuk
+crop_img/test15_crop_13.jpg	edirik
+crop_img/test15_crop_14.jpg	%ox
+crop_img/test15_crop_15.jpg	gör#.
+crop_img/test15_crop_16.jpg	təşəkkür
+crop_img/test15_crop_17.jpg	TƏKLİFİN MƏZMUNU
+crop_img/test15_crop_18.jpg	xidm#t
+crop_img/test15_crop_19.jpg	olunma tarixi:
+crop_img/test15_crop_20.jpg	Müraci#tin qeyd
 crop_img/test14_crop_0.jpg	asan
 crop_img/test14_crop_1.jpg	xidmat
-crop_img/test14_crop_2.jpg	TaKLIFiN MAZMUNU
-crop_img/test14_crop_3.jpg	Hörmatla,
-crop_img/test14_crop_4.jpg	61610H
-crop_img/test14_crop_5.jpg	Ad
-crop_img/test14_crop_6.jpg	Soyad
-crop_img/test14_crop_7.jpg	Ata adi
-crop_img/test14_crop_8.jpg	Elektron pogt ünvani:
-crop_img/test14_crop_9.jpg	Jhemonon notele
-crop_img/test14_crop_10.jpg	Müraciatin qeyd olunma tarixi:
-crop_img/test14_crop_11.jpg	Qeydiyyat nomrasi: 156
-crop_img/test14_crop_12.jpg	aoraon tsvavaD
-crop_img/test14_crop_13.jpg	Surxay
-crop_img/test14_crop_14.jpg	oglu
+crop_img/test14_crop_2.jpg	TƏKLİFİN MƏZMUNU
+crop_img/test14_crop_3.jpg	Hörm#tl#,
+crop_img/test14_crop_4.jpg	Ad
+crop_img/test14_crop_5.jpg	Soyad
+crop_img/test14_crop_6.jpg	Ata ad`
+crop_img/test14_crop_7.jpg	Elektron po%t ünvan`:
+crop_img/test14_crop_8.jpg	Müraci#tin qeyd olunma tarixi:
+crop_img/test14_crop_9.jpg	Qeydiyyat n!mr#si: 156
+crop_img/test14_crop_10.jpg	Surxay
+crop_img/test14_crop_11.jpg	o@lu
+crop_img/test14_crop_12.jpg	#m#kda$`
+crop_img/test14_crop_13.jpg	Emin
+crop_img/test14_crop_14.jpg	H~seynova
+crop_img/test14_crop_15.jpg	Telefon n!mr#si:

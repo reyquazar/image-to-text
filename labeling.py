@@ -28,3 +28,4 @@ def replace_symbols_in_file(filename):
 
 # Использование
 replace_symbols_in_file('./text/typed_text/az_config_train/Label.txt')
+replace_symbols_in_file('./text/typed_text/az_config_train/')

@@ -1,101 +1,41 @@
-import os
-import subprocess
-
-
-def run_training():
+def remove_true_anomalies(input_file, output_file):
     """
-    Скрипт для запуска fine-tuning PaddleOCR
+    Удаляет только действительно проблемные слова
     """
-    # Пути к файлам (ваши правильные пути)
-    config_path = "./text/typed_text/az_ru_rec_config.yaml"
-
-    # Базовая команда
-    command = f"python ../PaddleOCR/tools/train.py -c {config_path}"
-
-    print("Запуск fine-tuning PaddleOCR")
-    print("=" * 50)
-    print(f"Конфиг: {config_path}")
-    print(f"Команда: {command}")
-    print("=" * 50)
-
-    # Проверка существования конфига
-    if not os.path.exists(config_path):
-        print(f"- ОШИБКА: Конфиг не найден: {config_path}")
-        print("Проверьте путь к az_ru_rec_config.yaml")
-        return False
-
-    # Запуск обучения
-    try:
-        print("Запускаю обучение...")
-        print("Логи будут выводиться ниже:")
-        print("-" * 50)
-
-        # Запускаем процесс с выводом в реальном времени
-        process = subprocess.Popen(
-            command,
-            shell=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            universal_newlines=True,
-            bufsize=1
-        )
-
-        # Выводим логи в реальном времени
-        for line in process.stdout:
-            print(line, end='')
-
-        # Ждем завершения
-        process.wait()
-
-        if process.returncode == 0:
-            print("+ Обучение успешно завершено!")
-            return True
-        else:
-            print(f"- Ошибка при обучении (код: {process.returncode})")
-            return False
-
-    except Exception as e:
-        print(f"- Ошибка при запуске: {e}")
-        return False
-
-
-def check_environment():
-    """x
-    Проверка окружения
-    """
-    print("🔍 Проверка окружения...")
-
-    # Проверяем основные файлы (ВАШИ ПРАВИЛЬНЫЕ ПУТИ)
-    required_files = [
-        "./text/typed_text/az_ru_rec_config.yaml",
-        "./text/typed_text/python/train_list.txt",
-        "./text/typed_text/python/val_list.txt",
-        "./text/typed_text/python/dict.txt"
+    true_anomalies = [
+        # Английские слова
+        'All', 'Ann', 'Antenn', 'Azercell', 'Bakcell', 'Bill', 'Bonn', 'Buffett',
+        'Bull', 'Constrktion', 'Crystal', 'Crystall', 'Martyrs', 'Oncorhynchus',
+        'Psychiatry', 'Qualcomm', 'Shell', 'Zenqstşmid', 'kontrproduktivdir',
+        # Технические термины
+        'call', 'doll', 'off', 'pdf', 'playoff', 'xbox',
+        # Слишком короткие иностранные
+        'dj', 'ex', 'fm', 'jo', 'max', 'tv', 'ufo'
     ]
 
-    for file_path in required_files:
-        if os.path.exists(file_path):
-            print(f"+ {file_path}")
-        else:
-            print(f"- {file_path} - НЕ НАЙДЕН!")
+    removed_count = 0
+    processed_words = []
 
-    print("-" * 50)
+    with open(input_file, 'r', encoding='utf-8') as infile:
+        for line in infile:
+            word = line.strip()
+
+            if word and word not in true_anomalies:
+                processed_words.append(word)
+            else:
+                removed_count += 1
+
+    with open(output_file, 'w', encoding='utf-8') as outfile:
+        for word in processed_words:
+            outfile.write(word + '\n')
+
+    return removed_count, len(processed_words)
 
 
-if __name__ == "__main__":
-    print("PaddleOCR Fine-tuning Script")
-    print("Сначала проверим окружение...")
+# Запуск
+input_file = "train_cleaned_ocr_final.txt"
+output_file = "train_cleaned_ocr_perfect.txt"
 
-    # Проверка окружения
-    check_environment()
-
-    # Спросим пользователя
-    response = input("Запустить обучение? (y/n): ")
-    if response.lower() in ['y', 'yes', 'д', 'да']:
-        success = run_training()
-        if success:
-            print("Обучение завершено успешно!")
-        else:
-            print("Обучение завершилось с ошибками")
-    else:
-        print("Обучение отменено")
+removed, kept = remove_true_anomalies(input_file, output_file)
+print(f"✅ Удалено {removed} действительно проблемных слов")
+print(f"📊 Сохранено {kept} чистых азербайджанских слов")

@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import random
 import os
-from PIL import Image, ImageDraw, ImageFont, ImageFilter
+from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageEnhance
 import argparse
 
 
@@ -23,8 +23,9 @@ def load_words_from_dataset(dataset_path):
 
 
 def add_document_noise(img_array):
-    """Adds document-like noise"""
+    """Adds document-like noise and returns noise type"""
     h, w = img_array.shape[:2]
+    noise_types = []
 
     if random.random() < 0.2:
         num_spots = random.randint(1, 5)
@@ -33,6 +34,7 @@ def add_document_noise(img_array):
             radius = random.randint(2, 10)
             intensity = random.randint(5, 20)
             cv2.circle(img_array, (x, y), radius, (intensity, intensity, intensity), -1)
+        noise_types.append(f"S{num_spots}")
 
     if random.random() < 0.15:
         num_lines = random.randint(1, 3)
@@ -42,6 +44,7 @@ def add_document_noise(img_array):
             thickness = random.randint(1, 2)
             intensity = random.randint(10, 30)
             cv2.line(img_array, (x1, y1), (x2, y2), (intensity, intensity, intensity), thickness)
+        noise_types.append(f"L{num_lines}")
 
     if random.random() < 0.1:
         shadow_intensity = random.randint(5, 15)
@@ -54,18 +57,25 @@ def add_document_noise(img_array):
             img_array[:, :w // 8] = np.clip(img_array[:, :w // 8] - shadow_intensity, 0, 255)
         else:
             img_array[:, 7 * w // 8:] = np.clip(img_array[:, 7 * w // 8:] - shadow_intensity, 0, 255)
+        noise_types.append(f"Sh{direction[0]}{shadow_intensity}")
 
-    return img_array
+    return img_array, "_".join(noise_types) if noise_types else "N0"
 
 
 def apply_document_effects(img):
-    """Applies document scanning effects"""
+    """Applies document scanning effects and returns effect types"""
+    effects = []
+
     if random.random() < 0.3:
         blur_type = random.choice(['gaussian', 'defocus'])
         if blur_type == 'defocus':
-            img = img.filter(ImageFilter.GaussianBlur(random.uniform(0.3, 0.8)))
+            blur_radius = random.uniform(0.3, 0.8)
+            img = img.filter(ImageFilter.GaussianBlur(blur_radius))
+            effects.append(f"BD{blur_radius:.1f}")
         else:
-            img = img.filter(ImageFilter.GaussianBlur(random.uniform(0.2, 0.5)))
+            blur_radius = random.uniform(0.2, 0.5)
+            img = img.filter(ImageFilter.GaussianBlur(blur_radius))
+            effects.append(f"BG{blur_radius:.1f}")
 
     if random.random() < 0.25:
         try:
@@ -76,6 +86,7 @@ def apply_document_effects(img):
             img = Image.open(output)
             img = img.copy()
             output.close()
+            effects.append(f"CQ{quality}")
         except Exception as e:
             print(f"⚠️ PNG compression error: {e}")
 
@@ -87,24 +98,29 @@ def apply_document_effects(img):
             new_width = width + int(xshift)
             img = img.transform((new_width, height), Image.AFFINE,
                                 (1, skew, -xshift if skew > 0 else 0, 0, 1, 0))
+            effects.append(f"SK{skew:.2f}")
         except Exception as e:
             print(f"⚠️ Skew error: {e}")
 
-    return img
+    return img, "_".join(effects) if effects else "E0"
 
 
 def apply_safe_augmentations(img_array):
-    """Applies safe augmentations that won't destroy the image"""
+    """Applies safe augmentations that won't destroy the image and returns augmentation types"""
     h, w = img_array.shape[:2]
+    aug_types = []
 
     # Light Gaussian noise
     if random.random() < 0.3:
-        noise = np.random.normal(0, random.randint(1, 3), img_array.shape).astype('uint8')
+        noise_std = random.randint(1, 3)
+        noise = np.random.normal(0, noise_std, img_array.shape).astype('uint8')
         img_array = cv2.add(img_array, noise)
+        aug_types.append(f"GN{noise_std}")
 
     # Light blur
     if random.random() < 0.2:
         img_array = cv2.GaussianBlur(img_array, (3, 3), 0)
+        aug_types.append("BL")
 
     # Color variations (safer version)
     if random.random() < 0.2:
@@ -112,15 +128,17 @@ def apply_safe_augmentations(img_array):
             # Small brightness adjustment
             brightness = random.uniform(0.9, 1.1)
             img_array = np.clip(img_array.astype(np.float32) * brightness, 0, 255).astype(np.uint8)
+            aug_types.append(f"BR{brightness:.2f}")
 
             # Small contrast adjustment
             contrast = random.uniform(0.95, 1.05)
             mean = np.mean(img_array)
             img_array = np.clip((img_array.astype(np.float32) - mean) * contrast + mean, 0, 255).astype(np.uint8)
+            aug_types.append(f"CO{contrast:.2f}")
         except Exception as e:
             print(f"⚠️ Color adjustment error: {e}")
 
-    return img_array
+    return img_array, "_".join(aug_types) if aug_types else "A0"
 
 
 def generate_synthetic_data():
@@ -186,7 +204,7 @@ def generate_synthetic_data():
         text_color_variants = [
             (0, 0, 0), (10, 10, 10), (20, 20, 20), (30, 30, 30),
             (40, 40, 40), (15, 15, 15), (25, 25, 25),
-            (5, 5, 5), (35, 35, 35)  # Добавляем больше вариантов
+            (5, 5, 5), (35, 35, 35)
         ]
         text_color = random.choice(text_color_variants)
 
@@ -201,11 +219,13 @@ def generate_synthetic_data():
             draw = ImageDraw.Draw(img)
 
             # Simple gradient background (occasionally)
+            gradient_applied = False
             if random.random() < 0.05:
                 for y in range(img.height):
                     shade = 245 + int(10 * (y / img.height))
                     for x in range(img.width):
                         img.putpixel((x, y), (shade, shade, shade))
+                gradient_applied = True
 
             bbox = font.getbbox(word)
             text_actual_width = bbox[2] - bbox[0]
@@ -230,11 +250,18 @@ def generate_synthetic_data():
 
             draw.text((x_offset, y_offset), word, font=font, fill=text_color)
 
-            return img, word
+            # Create augmentation info for basic properties
+            base_aug = f"FS{font_size}_TC{text_color[0]}"
+            if gradient_applied:
+                base_aug += "_GR"
+            if is_double_word:
+                base_aug += "_DW"
+
+            return img, word, base_aug
 
         except Exception as e:
             print(f"❌ Error creating text image for '{word}': {e}")
-            return None, None
+            return None, None, None
 
     def generate_images(word_list, count, prefix):
         """Generates images for given word list"""
@@ -249,37 +276,51 @@ def generate_synthetic_data():
             word = random.choice(word_list)
 
             try:
-                img, final_text = create_text_image(word, is_double_word=False)
+                img, final_text, base_aug = create_text_image(word, is_double_word=False)
                 if img is None:
                     continue
 
+                # Collect all augmentation codes
+                aug_codes = [base_aug]
+
+                # Rotation
                 rotation = random.randint(-10, 10)
                 if rotation != 0:
                     img = img.rotate(rotation, expand=True, fillcolor=random.choice(document_backgrounds))
+                    aug_codes.append(f"R{rotation:+d}")
 
                 # Apply document effects
                 try:
-                    img = apply_document_effects(img)
+                    img, effect_code = apply_document_effects(img)
+                    aug_codes.append(effect_code)
                 except Exception as e:
                     print(f"⚠️ Document effects skipped: {e}")
+                    aug_codes.append("E0")
 
                 # Convert to array for OpenCV operations
                 img_array = np.array(img)
 
                 # Safe augmentations
-                img_array = apply_safe_augmentations(img_array)
+                img_array, aug_code = apply_safe_augmentations(img_array)
+                aug_codes.append(aug_code)
 
                 # Add document noise
                 try:
-                    img_array = add_document_noise(img_array)
+                    img_array, noise_code = add_document_noise(img_array)
+                    aug_codes.append(noise_code)
                 except Exception as e:
                     print(f"⚠️ Document noise skipped: {e}")
+                    aug_codes.append("N0")
+
+                # Combine all augmentation codes
+                aug_string = "_".join(aug_codes)
 
                 # Resize to final dimensions
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                filename = f"{prefix}_single_{i:09d}.png"
+                # Create filename with augmentation info
+                filename = f"{prefix}_single_{aug_string}_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
                 labels.append(f"{filename}\t{final_text}")
@@ -306,39 +347,54 @@ def generate_synthetic_data():
             combined_text = word1 + separator + word2
 
             try:
-                img, final_text = create_text_image(combined_text, is_double_word=True)
+                img, final_text, base_aug = create_text_image(combined_text, is_double_word=True)
                 if img is None:
                     continue
+
+                # Collect all augmentation codes
+                aug_codes = [base_aug]
 
                 # Less rotation for double words
                 rotation = random.randint(-2, 2)
                 if rotation != 0:
                     img = img.rotate(rotation, expand=True, fillcolor=random.choice(document_backgrounds))
+                    aug_codes.append(f"R{rotation:+d}")
 
                 # Apply document effects
                 try:
-                    img = apply_document_effects(img)
+                    img, effect_code = apply_document_effects(img)
+                    aug_codes.append(effect_code)
                 except Exception as e:
                     print(f"⚠️ Document effects skipped: {e}")
+                    aug_codes.append("E0")
 
                 # Convert to array for OpenCV operations
                 img_array = np.array(img)
 
                 # Safe augmentations (less frequently for double words)
                 if random.random() < 0.5:
-                    img_array = apply_safe_augmentations(img_array)
+                    img_array, aug_code = apply_safe_augmentations(img_array)
+                    aug_codes.append(aug_code)
+                else:
+                    aug_codes.append("A0")
 
                 # Add document noise
                 try:
-                    img_array = add_document_noise(img_array)
+                    img_array, noise_code = add_document_noise(img_array)
+                    aug_codes.append(noise_code)
                 except Exception as e:
                     print(f"⚠️ Document noise skipped: {e}")
+                    aug_codes.append("N0")
+
+                # Combine all augmentation codes
+                aug_string = "_".join(aug_codes)
 
                 # Resize to final dimensions
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                filename = f"{prefix}_double_{i:09d}.png"
+                # Create filename with augmentation info
+                filename = f"{prefix}_double_{aug_string}_{i:09d}.png"
                 cv2.imwrite(os.path.join(output_dir, filename), img_resized)
 
                 labels.append(f"{filename}\t{final_text}")
