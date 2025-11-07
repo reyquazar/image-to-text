@@ -31,11 +31,11 @@ def printL(model, image):
         page = result[0]
         texts = page.get('rec_texts', [])
         combined_text = ' '.join(texts)
-    print("=" * 100)
+    print("=" * 150)
     print(model)
-    print("=" * 100)
+    print("=" * 150)
     print(combined_text)
-    print("=" * 100)
+    print("=" * 150)
 
 
 def main():
@@ -45,11 +45,11 @@ def main():
     image_path = args.image_path
     # image_path = './text/typed_text/testWords.png'
 
-    # PRec(image_path)  # default paddle model
-    # printL("output1", image_path)  # synt data with gDTV2Words.py
-    # printL("output2", image_path)  # synt data with gDTV2Words.py
-    # printL("output3", image_path)  # synt data with gDTV2Words2.py
-    # printL("output4", image_path)  # synt data with gDTV2Words2.py
+    PRec(image_path)  # default paddle model
+    printL("output1", image_path)  # synt data with gDTV2Words.py
+    printL("output2", image_path)  # synt data with gDTV2Words.py
+    printL("output4", image_path)  # synt data with gDTV2Words2.py
+    printL("output3", image_path)  # synt data with gDTV2Words2.py
     printL("output", image_path)  # synt data with gDTV2Words2.py
 
 
