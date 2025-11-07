@@ -19,3 +19,6 @@ PP-OCRv5_server_rec_pretrained.pdparams
 Foutput1
 Foutput2
 Foutput3
+
+text/typed_text/az_config_train
+
