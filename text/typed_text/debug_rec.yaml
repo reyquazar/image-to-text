@@ -11,7 +11,7 @@ Global:
   cal_metric_during_train: true
   calc_epoch_interval: 1
   pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
-  checkpoints: ./output/latest
+  checkpoints: 
   save_inference_dir:
   use_visualdl: true
   character_dict_path: ./text/typed_text/dict.txt
