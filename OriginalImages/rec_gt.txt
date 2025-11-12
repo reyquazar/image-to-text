@@ -315,6 +315,16 @@ crop_img/test2_crop_36.jpg	tarix
 crop_img/test2_crop_37.jpg	qeyd
 crop_img/test2_crop_38.jpg	edilmişdir
 crop_img/test2_crop_39.jpg	oğlu
+crop_img/test2_crop_40.jpg	Azərbaycan
+crop_img/test2_crop_41.jpg	dekabr
+crop_img/test2_crop_42.jpg	rayon
+crop_img/test2_crop_43.jpg	Azərb.
+crop_img/test2_crop_44.jpg	Respub.
+crop_img/test2_crop_45.jpg	icra
+crop_img/test2_crop_46.jpg	İHB
+crop_img/test2_crop_47.jpg	dərq
+crop_img/test2_crop_48.jpg	Boş
+crop_img/test2_crop_49.jpg	Yol
 crop_img/test3_crop_0.jpg	(Birinci nüsxə)
 crop_img/test3_crop_1.jpg	Kişi
 crop_img/test3_crop_2.jpg	Qadın
@@ -367,14 +377,14 @@ crop_img/test3_crop_48.jpg	boşanmiş
 crop_img/test3_crop_49.jpg	natamam
 crop_img/test3_crop_50.jpg	təhsil
 crop_img/test3_crop_51.jpg	ibtidai
-crop_img/test3_crop_52.jpg	texnikiƏpeşə
+crop_img/test3_crop_52.jpg	texniki-peşə
 crop_img/test3_crop_53.jpg	əsas
 crop_img/test3_crop_54.jpg	orta
 crop_img/test3_crop_55.jpg	ixtisas
 crop_img/test3_crop_56.jpg	ali
 crop_img/test3_crop_57.jpg	ixtisas
 crop_img/test3_crop_58.jpg	ibtidai
-crop_img/test3_crop_59.jpg	texnikiƏpeşə
+crop_img/test3_crop_59.jpg	texniki-peşə
 crop_img/test3_crop_60.jpg	ixtisas
 crop_img/test3_crop_61.jpg	orta
 crop_img/test3_crop_62.jpg	ali
@@ -463,6 +473,13 @@ crop_img/test3_crop_144.jpg	Quliyeva
 crop_img/test3_crop_145.jpg	Bakı
 crop_img/test3_crop_146.jpg	Zakir
 crop_img/test3_crop_147.jpg	Telman
+crop_img/test3_crop_148.jpg	Sükürov
+crop_img/test3_crop_149.jpg	Sükürov
+crop_img/test3_crop_150.jpg	Sükürova
+crop_img/test3_crop_151.jpg	yanvar
+crop_img/test3_crop_152.jpg	1987
+crop_img/test3_crop_153.jpg	Azərbaycan
+crop_img/test3_crop_154.jpg	şusa
 crop_img/test4_crop_0.jpg	ŞƏHADƏTNAMƏ
 crop_img/test4_crop_1.jpg	VALİDEYNLӘRİ
 crop_img/test4_crop_2.jpg	Vətəndaş
@@ -518,7 +535,7 @@ crop_img/test4_crop_51.jpg	Verildiyi
 crop_img/test4_crop_52.jpg	tarix
 crop_img/test4_crop_53.jpg	Göyçay
 crop_img/test4_crop_54.jpg	Göyçay
-crop_img/test4_crop_55.jpg	Azəerbayçan
+crop_img/test4_crop_55.jpg	Azərbayçan
 crop_img/test4_crop_56.jpg	yanvar
 crop_img/test4_crop_57.jpg	qızı
 crop_img/test5_crop_0.jpg	1
@@ -809,6 +826,7 @@ crop_img/test7_crop_16.jpg	Nazaratçinin
 crop_img/test7_crop_17.jpg	Tarix
 crop_img/test7_crop_18.jpg	Əlavə
 crop_img/test7_crop_19.jpg	etibarnamə
+crop_img/test7_crop_20.jpg	Vüsal
 crop_img/test8_crop_0.jpg	Operatorun
 crop_img/test8_crop_1.jpg	imza
 crop_img/test8_crop_2.jpg	Tarix:
@@ -947,6 +965,9 @@ crop_img/test9_crop_53.jpg	xahiş
 crop_img/test9_crop_54.jpg	olsunlar
 crop_img/test9_crop_55.jpg	diqqətli
 crop_img/test9_crop_56.jpg	Sabunçu
+crop_img/test9_crop_57.jpg	055-855-83-77
+crop_img/test9_crop_58.jpg	Yaqub
+crop_img/test9_crop_59.jpg	MirYusif
 crop_img/test10_crop_0.jpg	asan
 crop_img/test10_crop_1.jpg	xidmət
 crop_img/test10_crop_2.jpg	TƏKLİFİN MƏZMUNU
@@ -958,7 +979,7 @@ crop_img/test10_crop_7.jpg	Elşən
 crop_img/test10_crop_8.jpg	Elektron poçt ünvani:
 crop_img/test10_crop_9.jpg	Müraciatin qeyd olunma tarixi:
 crop_img/test10_crop_10.jpg	Qeydiyyat nömrəsi:
-crop_img/test10_crop_11.jpg	çox Ə çox
+crop_img/test10_crop_11.jpg	çox - çox
 crop_img/test10_crop_12.jpg	Telefon nömrəsi:
 crop_img/test10_crop_13.jpg	xoşbəxt
 crop_img/test10_crop_14.jpg	olar
@@ -1032,31 +1053,33 @@ crop_img/test11_crop_59.jpg	edildiyi
 crop_img/test11_crop_60.jpg	edilmişdir
 crop_img/test11_crop_61.jpg	üçün
 crop_img/test11_crop_62.jpg	nəzərdə
+crop_img/test11_crop_63.jpg	izah
 crop_img/test13_crop_0.jpg	TƏKLİFİN MƏZMUNU
 crop_img/test13_crop_1.jpg	16.07.2021
-crop_img/test13_crop_2.jpg	yeni ASAN
-crop_img/test13_crop_3.jpg	acılsa
-crop_img/test13_crop_4.jpg	xidmət mərkəzi
-crop_img/test13_crop_5.jpg	əhalinin
-crop_img/test13_crop_6.jpg	və
-crop_img/test13_crop_7.jpg	olaraq
-crop_img/test13_crop_8.jpg	H!rm#tl#,
-crop_img/test13_crop_9.jpg	Ad
-crop_img/test13_crop_10.jpg	Soyad
-crop_img/test13_crop_11.jpg	Ata ad`
-crop_img/test13_crop_12.jpg	Telefon nömr#si:
-crop_img/test13_crop_13.jpg	Elektron po%t ünvan`:
-crop_img/test13_crop_14.jpg	Qeydiyyat n!mr#si:
-crop_img/test13_crop_15.jpg	120
-crop_img/test13_crop_16.jpg	Təklif
-crop_img/test13_crop_17.jpg	edirəm
-crop_img/test13_crop_18.jpg	ki
-crop_img/test13_crop_19.jpg	nəzərə
-crop_img/test13_crop_20.jpg	Yasamal
-crop_img/test13_crop_21.jpg	%ox
-crop_img/test13_crop_22.jpg	m~raci#tl#rin
-crop_img/test13_crop_23.jpg	olunma tarixi:
-crop_img/test13_crop_24.jpg	Müraci#tin qeyd
+crop_img/test13_crop_2.jpg	rayonunun
+crop_img/test13_crop_3.jpg	yeni ASAN
+crop_img/test13_crop_4.jpg	acılsa
+crop_img/test13_crop_5.jpg	xidmət mərkəzi
+crop_img/test13_crop_6.jpg	əhalinin
+crop_img/test13_crop_7.jpg	və
+crop_img/test13_crop_8.jpg	olaraq
+crop_img/test13_crop_9.jpg	Hörmətlə,
+crop_img/test13_crop_10.jpg	Ad
+crop_img/test13_crop_11.jpg	Soyad
+crop_img/test13_crop_12.jpg	Ata adı
+crop_img/test13_crop_13.jpg	Telefon nömrasi:
+crop_img/test13_crop_14.jpg	Elektron poçt ünvanı:
+crop_img/test13_crop_15.jpg	Qeydiyyat nömrəsi:
+crop_img/test13_crop_16.jpg	120
+crop_img/test13_crop_17.jpg	Təklif
+crop_img/test13_crop_18.jpg	edirəm
+crop_img/test13_crop_19.jpg	ki
+crop_img/test13_crop_20.jpg	nəzərə
+crop_img/test13_crop_21.jpg	Yasamal
+crop_img/test13_crop_22.jpg	%ox
+crop_img/test13_crop_23.jpg	muraci#tl#rin
+crop_img/test13_crop_24.jpg	olunma tarixi:
+crop_img/test13_crop_25.jpg	Müraci#tin qeyd
 crop_img/test12_crop_0.jpg	ŞİKAYƏTİN MƏZMUNU
 crop_img/test12_crop_1.jpg	Tarix: 11.07.2017 il
 crop_img/test12_crop_2.jpg	Ad
@@ -1129,39 +1152,119 @@ crop_img/test12_crop_68.jpg	vəsiqəsi
 crop_img/test12_crop_69.jpg	Kərimov
 crop_img/test12_crop_70.jpg	edilən
 crop_img/test15_crop_0.jpg	asan
-crop_img/test15_crop_1.jpg	xidm#t
-crop_img/test15_crop_2.jpg	Hörm#tl#,
+crop_img/test15_crop_1.jpg	xidmət
+crop_img/test15_crop_2.jpg	Hörmətlə,
 crop_img/test15_crop_3.jpg	Ad
 crop_img/test15_crop_4.jpg	Soyad
-crop_img/test15_crop_5.jpg	Ata ad`
+crop_img/test15_crop_5.jpg	Ata adı
 crop_img/test15_crop_6.jpg	Bakir
-crop_img/test15_crop_7.jpg	Elektron po%t ~nvan`:
-crop_img/test15_crop_8.jpg	Telefon nömr#si:
+crop_img/test15_crop_7.jpg	Elektron poçt ünvanı:
+crop_img/test15_crop_8.jpg	Telefon nömrəsi:
 crop_img/test15_crop_9.jpg	08.02.23.077-223-53-53
-crop_img/test15_crop_10.jpg	Qeydiyyat nömr#si:  162
+crop_img/test15_crop_10.jpg	Qeydiyyat nömrəsi:  162
 crop_img/test15_crop_11.jpg	Quliyeva
 crop_img/test15_crop_12.jpg	böyuk
 crop_img/test15_crop_13.jpg	edirik
-crop_img/test15_crop_14.jpg	%ox
-crop_img/test15_crop_15.jpg	gör#.
+crop_img/test15_crop_14.jpg	çox
+crop_img/test15_crop_15.jpg	görə.
 crop_img/test15_crop_16.jpg	təşəkkür
 crop_img/test15_crop_17.jpg	TƏKLİFİN MƏZMUNU
-crop_img/test15_crop_18.jpg	xidm#t
+crop_img/test15_crop_18.jpg	xidmət
 crop_img/test15_crop_19.jpg	olunma tarixi:
-crop_img/test15_crop_20.jpg	Müraci#tin qeyd
+crop_img/test15_crop_20.jpg	Müraciətin qeyd
 crop_img/test14_crop_0.jpg	asan
-crop_img/test14_crop_1.jpg	xidmat
+crop_img/test14_crop_1.jpg	xidmət
 crop_img/test14_crop_2.jpg	TƏKLİFİN MƏZMUNU
-crop_img/test14_crop_3.jpg	Hörm#tl#,
+crop_img/test14_crop_3.jpg	Hörmətlə,
 crop_img/test14_crop_4.jpg	Ad
 crop_img/test14_crop_5.jpg	Soyad
-crop_img/test14_crop_6.jpg	Ata ad`
-crop_img/test14_crop_7.jpg	Elektron po%t ünvan`:
-crop_img/test14_crop_8.jpg	Müraci#tin qeyd olunma tarixi:
-crop_img/test14_crop_9.jpg	Qeydiyyat n!mr#si: 156
+crop_img/test14_crop_6.jpg	Ata adı
+crop_img/test14_crop_7.jpg	Elektron poçt ünvanı:
+crop_img/test14_crop_8.jpg	Müraciətin qeyd olunma tarixi:
+crop_img/test14_crop_9.jpg	Qeydiyyat nömrəsi: 156
 crop_img/test14_crop_10.jpg	Surxay
-crop_img/test14_crop_11.jpg	o@lu
-crop_img/test14_crop_12.jpg	#m#kda$`
+crop_img/test14_crop_11.jpg	oğlu
+crop_img/test14_crop_12.jpg	əməkdaşı
 crop_img/test14_crop_13.jpg	Emin
-crop_img/test14_crop_14.jpg	H~seynova
-crop_img/test14_crop_15.jpg	Telefon n!mr#si:
+crop_img/test14_crop_14.jpg	Hüseynova
+crop_img/test14_crop_15.jpg	Telefon nömrasi:
+crop_img/test14_crop_16.jpg	öz
+crop_img/test14_crop_17.jpg	bildirirən
+crop_img/test16_crop_0.jpg	asan
+crop_img/test16_crop_1.jpg	xidmət
+crop_img/test16_crop_2.jpg	TƏKLİFİN MƏZMUNU
+crop_img/test16_crop_3.jpg	Hörmətlə,
+crop_img/test16_crop_4.jpg	Ad
+crop_img/test16_crop_5.jpg	Soyad
+crop_img/test16_crop_6.jpg	Ata adı
+crop_img/test16_crop_7.jpg	Süleymanov
+crop_img/test16_crop_8.jpg	İbrahim
+crop_img/test16_crop_9.jpg	Elektron poçt ünvanı:
+crop_img/test16_crop_10.jpg	Telefon nömrəsi:
+crop_img/test16_crop_11.jpg	Müraciətin qeyd olunma tarixi:
+crop_img/test16_crop_12.jpg	Qeydiyyat nömrəsi:  137
+crop_img/test16_crop_13.jpg	Mən
+crop_img/test16_crop_14.jpg	Süleymanov
+crop_img/test16_crop_15.jpg	Könül
+crop_img/test16_crop_16.jpg	qaldım
+crop_img/test16_crop_17.jpg	Səbinə
+crop_img/test16_crop_18.jpg	Xanımın
+crop_img/test16_crop_19.jpg	İşilə
+crop_img/test16_crop_20.jpg	İşilə
+crop_img/test16_crop_21.jpg	Razı
+crop_img/test16_crop_22.jpg	Razı
+crop_img/test16_crop_23.jpg	qaldım
+crop_img/test16_crop_24.jpg	27 07 2022
+crop_img/test16_crop_25.jpg	050 399 16 06
+crop_img/test17_crop_0.jpg	asan
+crop_img/test17_crop_1.jpg	xidmət
+crop_img/test17_crop_2.jpg	TƏKLİFİN MƏZMUNU
+crop_img/test17_crop_3.jpg	Hörmətlə,
+crop_img/test17_crop_4.jpg	Ad
+crop_img/test17_crop_5.jpg	Soyad
+crop_img/test17_crop_6.jpg	Ata adı
+crop_img/test17_crop_7.jpg	Kamran
+crop_img/test17_crop_8.jpg	Piriyev
+crop_img/test17_crop_9.jpg	Telefon nömrəsi:
+crop_img/test17_crop_10.jpg	Elektron poçt ünvanı: piriyevpiriyev1988
+crop_img/test17_crop_11.jpg	055 809 0755
+crop_img/test17_crop_12.jpg	Müraciətin qeyd olunma tarixi:
+crop_img/test17_crop_13.jpg	Qeydiyyat nömrəsi: 
+crop_img/test17_crop_14.jpg	Mən
+crop_img/test17_crop_15.jpg	Kamran
+crop_img/test17_crop_16.jpg	ASAN
+crop_img/test17_crop_17.jpg	xidmətın
+crop_img/test17_crop_18.jpg	Tərçümə
+crop_img/test17_crop_19.jpg	xidmətindən
+crop_img/test17_crop_20.jpg	yararlandım.
+crop_img/test17_crop_21.jpg	Xidmətin
+crop_img/test17_crop_22.jpg	xüsusi
+crop_img/test17_crop_23.jpg	ilə
+crop_img/test17_crop_24.jpg	Əliyeva
+crop_img/test17_crop_25.jpg	sənədləşmə
+crop_img/test17_crop_26.jpg	işi
+crop_img/test17_crop_27.jpg	ilə
+crop_img/test17_crop_28.jpg	bağlı
+crop_img/test17_crop_29.jpg	dəyərli
+crop_img/test17_crop_30.jpg	məsləhətlər
+crop_img/test17_crop_31.jpg	verdi
+crop_img/test17_crop_32.jpg	və
+crop_img/test17_crop_33.jpg	bu
+crop_img/test17_crop_34.jpg	(mənim)
+crop_img/test17_crop_35.jpg	məni
+crop_img/test17_crop_36.jpg	həm
+crop_img/test17_crop_37.jpg	maliyyə
+crop_img/test17_crop_38.jpg	həm
+crop_img/test17_crop_39.jpg	də
+crop_img/test17_crop_40.jpg	zaman
+crop_img/test17_crop_41.jpg	bax
+crop_img/test17_crop_42.jpg	imdan
+crop_img/test17_crop_43.jpg	irəli
+crop_img/test17_crop_44.jpg	saldı
+crop_img/test17_crop_45.jpg	Maaşı
+crop_img/test17_crop_46.jpg	artırılsın
+crop_img/test17_crop_47.jpg	və
+crop_img/test17_crop_48.jpg	vəzifəsi
+crop_img/test17_crop_49.jpg	qaldırılsın
+crop_img/test17_crop_50.jpg	Təşəkkülər
+crop_img/test17_crop_51.jpg	04 06. 2021

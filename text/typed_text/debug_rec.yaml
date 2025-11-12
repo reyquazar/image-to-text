@@ -82,10 +82,10 @@ Train:
   dataset:
     name: MultiScaleDataSet
     ds_width: false
-    data_dir: ./text/typed_text/az_config_train
+    data_dir: ./text/typed_text/az_config_train/augmented_data/train
     ext_op_transform_idx: 1
     label_file_list:
-      - ./text/typed_text/az_config_train/train_list.txt
+      - ./text/typed_text/az_config_train/augmented_data/train_list.txt
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -115,9 +115,9 @@ Train:
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/az_config_train
+    data_dir: ./text/typed_text/az_config_train/augmented_data/val
     label_file_list:
-      - ./text/typed_text/az_config_train/val_list.txt
+      - ./text/typed_text/az_config_train/augmented_data/val_list.txt
     transforms:
     - DecodeImage:
         img_mode: BGR
