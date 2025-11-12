@@ -1,0 +1,644 @@
+test2_crop_0.jpg	AZƏRBAYCAN
+test2_crop_1.jpg	Vәtəndaş
+test2_crop_2.jpg	03
+test2_crop_3.jpg	günündə
+test2_crop_4.jpg	14
+test2_crop_5.jpg	ilə
+test2_crop_6.jpg	Öldüyü
+test2_crop_7.jpg	rayon
+test2_crop_8.jpg	vilayət (ölkə)
+test2_crop_9.jpg	respublika
+test2_crop_10.jpg	Verildiyi
+test2_crop_11.jpg	orqanının
+test2_crop_12.jpg	şəxsi
+test2_crop_13.jpg	ÖLÜM
+test2_crop_14.jpg	HAQQINDA
+test2_crop_15.jpg	ŞƏHADƏTNAMƏ
+test2_crop_16.jpg	RESPUBLİKASI
+test2_crop_17.jpg	ildə
+test2_crop_18.jpg	ölmüşdür.
+test2_crop_19.jpg	Bu
+test2_crop_20.jpg	barədə
+test2_crop_21.jpg	ölüm
+test2_crop_22.jpg	haqqında
+test2_crop_23.jpg	akt
+test2_crop_24.jpg	qeydləri
+test2_crop_25.jpg	kitabında
+test2_crop_26.jpg	ilin
+test2_crop_27.jpg	ayının
+test2_crop_28.jpg	Ölümün
+test2_crop_29.jpg	səbəbi
+test2_crop_30.jpg	yer:
+test2_crop_31.jpg	şəhər,
+test2_crop_32.jpg	kənd
+test2_crop_33.jpg	Qeyd
+test2_crop_34.jpg	edilən
+test2_crop_35.jpg	yer
+test2_crop_36.jpg	tarix
+test2_crop_37.jpg	qeyd
+test2_crop_38.jpg	edilmişdir
+test2_crop_39.jpg	oğlu
+test2_crop_40.jpg	Azərbaycan
+test2_crop_41.jpg	dekabr
+test2_crop_42.jpg	rayon
+test2_crop_43.jpg	Azərb.
+test2_crop_44.jpg	Respub.
+test2_crop_45.jpg	icra
+test2_crop_46.jpg	İHB
+test2_crop_47.jpg	dərq
+test2_crop_48.jpg	Boş
+test2_crop_49.jpg	Yol
+test3_crop_0.jpg	(Birinci nüsxə)
+test3_crop_1.jpg	Kişi
+test3_crop_2.jpg	Qadın
+test3_crop_3.jpg	evlənəndən sonra
+test3_crop_4.jpg	Adı
+test3_crop_5.jpg	Atasının adı
+test3_crop_6.jpg	Doğulduğu tarix
+test3_crop_7.jpg	Doğulduğu yer
+test3_crop_8.jpg	Milliyyəti
+test3_crop_9.jpg	İş yeri (vəzifasi)
+test3_crop_10.jpg	orta
+test3_crop_11.jpg	orta
+test3_crop_12.jpg	natamam təhsil
+test3_crop_13.jpg	evlənməmiş,
+test3_crop_14.jpg	məlumat
+test3_crop_15.jpg	küçə,
+test3_crop_16.jpg	ildən yaşayır
+test3_crop_17.jpg	sənədlər
+test3_crop_18.jpg	Evlənənlərin imzalari
+test3_crop_19.jpg	Evlənənədak soyadları:
+test3_crop_20.jpg	seriyası
+test3_crop_21.jpg	Kargüzar
+test3_crop_22.jpg	respublika (ölkə)
+test3_crop_23.jpg	respublika (ölkə)
+test3_crop_24.jpg	respublika (ölkə)
+test3_crop_25.jpg	respublika (ölkə)
+test3_crop_26.jpg	ildən
+test3_crop_27.jpg	16.
+test3_crop_28.jpg	15.
+test3_crop_29.jpg	14.
+test3_crop_30.jpg	13.
+test3_crop_31.jpg	12.
+test3_crop_32.jpg	11.
+test3_crop_33.jpg	10.
+test3_crop_34.jpg	9.
+test3_crop_35.jpg	8.
+test3_crop_36.jpg	6.
+test3_crop_37.jpg	7.
+test3_crop_38.jpg	5.
+test3_crop_39.jpg	4.
+test3_crop_40.jpg	3.
+test3_crop_41.jpg	2.
+test3_crop_42.jpg	1.
+test3_crop_43.jpg	Yaşı
+test3_crop_44.jpg	VVADQ
+test3_crop_45.jpg	orqanının
+test3_crop_46.jpg	ştampı
+test3_crop_47.jpg	dul,
+test3_crop_48.jpg	boşanmiş
+test3_crop_49.jpg	natamam
+test3_crop_50.jpg	təhsil
+test3_crop_51.jpg	ibtidai
+test3_crop_52.jpg	texniki-peşə
+test3_crop_53.jpg	əsas
+test3_crop_54.jpg	orta
+test3_crop_55.jpg	ixtisas
+test3_crop_56.jpg	ali
+test3_crop_57.jpg	ixtisas
+test3_crop_58.jpg	ibtidai
+test3_crop_59.jpg	texniki-peşə
+test3_crop_60.jpg	ixtisas
+test3_crop_61.jpg	orta
+test3_crop_62.jpg	ali
+test3_crop_63.jpg	ixtisas
+test3_crop_64.jpg	əsas
+test3_crop_65.jpg	yaşayır
+test3_crop_66.jpg	bina,
+test3_crop_67.jpg	küçə,
+test3_crop_68.jpg	bina,
+test3_crop_69.jpg	mənzil
+test3_crop_70.jpg	BAKI
+test3_crop_71.jpg	ŞƏHƏRİ
+test3_crop_72.jpg	BİNƏQƏDİ
+test3_crop_73.jpg	RAYON
+test3_crop_74.jpg	QEYDİYYAT
+test3_crop_75.jpg	ŞÖBƏSİ
+test3_crop_76.jpg	Soyadi:
+test3_crop_77.jpg	evlənənədək
+test3_crop_78.jpg	Təhsili
+test3_crop_79.jpg	(xətt cəkmək)
+test3_crop_80.jpg	yaşi
+test3_crop_81.jpg	tamam
+test3_crop_82.jpg	olmuşdur
+test3_crop_83.jpg	rayon (şəhar),
+test3_crop_84.jpg	gəsəbə,
+test3_crop_85.jpg	kənd
+test3_crop_86.jpg	yaşı
+test3_crop_87.jpg	tamam
+test3_crop_88.jpg	olmuşdur
+test3_crop_89.jpg	kənd
+test3_crop_90.jpg	gəsəbə,
+test3_crop_91.jpg	rayon (şəhar),
+test3_crop_92.jpg	NİKAH
+test3_crop_93.jpg	HAQQINDA
+test3_crop_94.jpg	AKTIN
+test3_crop_95.jpg	QEYDİ
+test3_crop_96.jpg	Evlənənlər
+test3_crop_97.jpg	haqqında
+test3_crop_98.jpg	məlumat
+test3_crop_99.jpg	Ailə vəziyyati
+test3_crop_100.jpg	(xətt cəkmək)
+test3_crop_101.jpg	evlənməmiş,
+test3_crop_102.jpg	dul,
+test3_crop_103.jpg	boşanmiş
+test3_crop_104.jpg	Ümumi
+test3_crop_105.jpg	uşaqlar
+test3_crop_106.jpg	haqqında
+test3_crop_107.jpg	soyadı,
+test3_crop_108.jpg	adı,
+test3_crop_109.jpg	doğulduğu tarix
+test3_crop_110.jpg	soyadı,
+test3_crop_111.jpg	adı,
+test3_crop_112.jpg	doğulduğu tarix
+test3_crop_113.jpg	rayon (şəhar),
+test3_crop_114.jpg	gəsəbə,
+test3_crop_115.jpg	kənd
+test3_crop_116.jpg	kənd
+test3_crop_117.jpg	gəsəbə,
+test3_crop_118.jpg	rayon (şəhar),
+test3_crop_119.jpg	Daimi
+test3_crop_120.jpg	yaşadiği
+test3_crop_121.jpg	yer
+test3_crop_122.jpg	Şaxşiyyəti
+test3_crop_123.jpg	təsdiq
+test3_crop_124.jpg	edən
+test3_crop_125.jpg	Şahidlərin
+test3_crop_126.jpg	soyadı,
+test3_crop_127.jpg	adı,
+test3_crop_128.jpg	atasının adı
+test3_crop_129.jpg	və
+test3_crop_130.jpg	imzaları
+test3_crop_131.jpg	Şəhadətnamə
+test3_crop_132.jpg	verilmişdir
+test3_crop_133.jpg	Qeydlər
+test3_crop_134.jpg	üçün
+test3_crop_135.jpg	sobasinin
+test3_crop_136.jpg	müdiri
+test3_crop_137.jpg	il
+test3_crop_138.jpg	işləmir
+test3_crop_139.jpg	işləmir
+test3_crop_140.jpg	Natavan
+test3_crop_141.jpg	Nadir
+test3_crop_142.jpg	Zakir
+test3_crop_143.jpg	Samir
+test3_crop_144.jpg	Quliyeva
+test3_crop_145.jpg	Bakı
+test3_crop_146.jpg	Zakir
+test3_crop_147.jpg	Telman
+test3_crop_148.jpg	Sükürov
+test3_crop_149.jpg	Sükürov
+test3_crop_150.jpg	Sükürova
+test3_crop_151.jpg	yanvar
+test3_crop_152.jpg	1987
+test3_crop_153.jpg	Azərbaycan
+test3_crop_154.jpg	şusa
+test4_crop_0.jpg	ŞƏHADƏTNAMƏ
+test4_crop_1.jpg	VALİDEYNLӘRİ
+test4_crop_2.jpg	Vətəndaş
+test4_crop_3.jpg	Atası
+test4_crop_4.jpg	adı,
+test4_crop_5.jpg	milliyəti
+test4_crop_6.jpg	gün,
+test4_crop_7.jpg	Anası
+test4_crop_8.jpg	doğulmuşdur
+test4_crop_9.jpg	soyadı
+test4_crop_10.jpg	milliyəti
+test4_crop_11.jpg	rayon
+test4_crop_12.jpg	respublika (ölkə) 
+test4_crop_13.jpg	soyadı
+test4_crop_14.jpg	Qeyd
+test4_crop_15.jpg	Vətəndaşlıq
+test4_crop_16.jpg	aktlarinin
+test4_crop_17.jpg	şöbəsinin
+test4_crop_18.jpg	soyadı
+test4_crop_19.jpg	Doğulduğu yer:
+test4_crop_20.jpg	şəhər,
+test4_crop_21.jpg	kənd,
+test4_crop_22.jpg	qəsəbə
+test4_crop_23.jpg	atasının adı
+test4_crop_24.jpg	 ay,
+test4_crop_25.jpg	il
+test4_crop_26.jpg	bu
+test4_crop_27.jpg	barədə
+test4_crop_28.jpg	doğum
+test4_crop_29.jpg	haqqında
+test4_crop_30.jpg	akt
+test4_crop_31.jpg	qeydləri
+test4_crop_32.jpg	kitabında
+test4_crop_33.jpg	ilin
+test4_crop_34.jpg	ayının
+test4_crop_35.jpg	ğünündə
+test4_crop_36.jpg	ilə
+test4_crop_37.jpg	qeyd
+test4_crop_38.jpg	edilmişdir.
+test4_crop_39.jpg	DOĞUM
+test4_crop_40.jpg	HAQQINDA
+test4_crop_41.jpg	adı,
+test4_crop_42.jpg	atasının adı
+test4_crop_43.jpg	adı,
+test4_crop_44.jpg	atasının adı
+test4_crop_45.jpg	edilən
+test4_crop_46.jpg	yer
+test4_crop_47.jpg	vəziyəti
+test4_crop_48.jpg	dövlət
+test4_crop_49.jpg	qeydiyati
+test4_crop_50.jpg	müdiri
+test4_crop_51.jpg	Verildiyi
+test4_crop_52.jpg	tarix
+test4_crop_53.jpg	Göyçay
+test4_crop_54.jpg	Göyçay
+test4_crop_55.jpg	Azərbayçan
+test4_crop_56.jpg	yanvar
+test4_crop_57.jpg	qızı
+test7_crop_0.jpg	VHTS
+test7_crop_1.jpg	Qeyd
+test7_crop_2.jpg	Blank nömrəsi: 702759
+test7_crop_3.jpg	adı
+test7_crop_4.jpg	vә
+test7_crop_5.jpg	soyadı
+test7_crop_6.jpg	imza
+test7_crop_7.jpg	Bilet
+test7_crop_8.jpg	adı
+test7_crop_9.jpg	vә
+test7_crop_10.jpg	soyadı
+test7_crop_11.jpg	imtinanın
+test7_crop_12.jpg	sababi
+test7_crop_13.jpg	adı
+test7_crop_14.jpg	vә
+test7_crop_15.jpg	soyadı
+test7_crop_16.jpg	Nazaratçinin
+test7_crop_17.jpg	Tarix
+test7_crop_18.jpg	Əlavə
+test7_crop_19.jpg	etibarnamə
+test7_crop_20.jpg	Vüsal
+test9_crop_0.jpg	ŞİKAYƏTİN MƏZMUNU
+test9_crop_1.jpg	Tarix:
+test9_crop_2.jpg	Soyad
+test9_crop_3.jpg	Ata adı
+test9_crop_4.jpg	Ad
+test9_crop_5.jpg	Telefon nomrəsi:
+test9_crop_6.jpg	Qeydiyyat ünvanı:
+test9_crop_7.jpg	Görülmış tədbir:
+test9_crop_8.jpg	Araşdırmanın nəticəsi:
+test9_crop_9.jpg	Azərbayçan Respublikasının Prezidenti
+test9_crop_10.jpg	yanında
+test9_crop_11.jpg	Vətandşlara Xidmət və Sosizi
+test9_crop_12.jpg	Innovasiyalar üzrə Dövlət Agentliyi
+test9_crop_13.jpg	4 salı Bakı "ASAN xidmət" Mərkəzi
+test9_crop_14.jpg	Qeydiyyat nömrasi:98
+test9_crop_15.jpg	Məlumat
+test9_crop_16.jpg	üçün
+test9_crop_17.jpg	bu
+test9_crop_18.jpg	şikayət
+test9_crop_19.jpg	Sizin
+test9_crop_20.jpg	ilə
+test9_crop_21.jpg	əlaqə
+test9_crop_22.jpg	onlayn
+test9_crop_23.jpg	edirəm
+test9_crop_24.jpg	Elektron poçt ünvanı:
+test9_crop_25.jpg	yanlış
+test9_crop_26.jpg	xidmət
+test9_crop_27.jpg	MƏRKƏZ
+test9_crop_28.jpg	TƏRƏFINDƏN
+test9_crop_29.jpg	DOLDURULAN
+test9_crop_30.jpg	BÖLMƏ
+test9_crop_31.jpg	Müraciətin
+test9_crop_32.jpg	aid
+test9_crop_33.jpg	olduğu
+test9_crop_34.jpg	orqan
+test9_crop_35.jpg	və
+test9_crop_36.jpg	ya
+test9_crop_37.jpg	xidmət:
+test9_crop_38.jpg	Araşdırmanı
+test9_crop_39.jpg	aparan
+test9_crop_40.jpg	məsul
+test9_crop_41.jpg	şəxsin
+test9_crop_42.jpg	adı, soyadı
+test9_crop_43.jpg	və
+test9_crop_44.jpg	vəzifəsi
+test9_crop_45.jpg	Şikayəet
+test9_crop_46.jpg	(əsaslı
+test9_crop_47.jpg	və
+test9_crop_48.jpg	ya
+test9_crop_49.jpg	əsassız):
+test9_crop_50.jpg	mərkəzi
+test9_crop_51.jpg	verildiyi
+test9_crop_52.jpg	edirəm
+test9_crop_53.jpg	xahiş
+test9_crop_54.jpg	olsunlar
+test9_crop_55.jpg	diqqətli
+test9_crop_56.jpg	Sabunçu
+test9_crop_57.jpg	055-855-83-77
+test9_crop_58.jpg	Yaqub
+test9_crop_59.jpg	MirYusif
+test10_crop_0.jpg	asan
+test10_crop_1.jpg	xidmət
+test10_crop_2.jpg	TƏKLİFİN MƏZMUNU
+test10_crop_3.jpg	Hörmətlə,
+test10_crop_4.jpg	Ad
+test10_crop_5.jpg	Soyad
+test10_crop_6.jpg	Ata adı
+test10_crop_7.jpg	Elşən
+test10_crop_8.jpg	Elektron poçt ünvani:
+test10_crop_9.jpg	Müraciatin qeyd olunma tarixi:
+test10_crop_10.jpg	Qeydiyyat nömrəsi:
+test10_crop_11.jpg	çox - çox
+test10_crop_12.jpg	Telefon nömrəsi:
+test10_crop_13.jpg	xoşbəxt
+test10_crop_14.jpg	olar
+test10_crop_15.jpg	Hər
+test10_crop_16.jpg	olsa
+test10_crop_17.jpg	Hər 
+test10_crop_18.jpg	bir
+test10_crop_19.jpg	personal
+test10_crop_20.jpg	əsasən
+test10_crop_21.jpg	birinizə
+test11_crop_0.jpg	7
+test11_crop_1.jpg	ŞİKAYƏTİN MƏZMUNU
+test11_crop_2.jpg	Tarix:
+test11_crop_3.jpg	Ad
+test11_crop_4.jpg	Soyad
+test11_crop_5.jpg	Ata adi
+test11_crop_6.jpg	Telefon nömrəsi:
+test11_crop_7.jpg	Qeydiyyat :ünvanı
+test11_crop_8.jpg	Elektron poçt ünvanı:
+test11_crop_9.jpg	29.05.2017.
+test11_crop_10.jpg	Görülmüş tədbir:
+test11_crop_11.jpg	Araşdırmanın nəticəsi:
+test11_crop_12.jpg	Qeydiyyat nömrasi:
+test11_crop_13.jpg	Salam
+test11_crop_14.jpg	bu
+test11_crop_15.jpg	böyuk
+test11_crop_16.jpg	WIFI
+test11_crop_17.jpg	sistemi
+test11_crop_18.jpg	Gözləyen
+test11_crop_19.jpg	belə
+test11_crop_20.jpg	Mən
+test11_crop_21.jpg	hesab
+test11_crop_22.jpg	edirəm
+test11_crop_23.jpg	Elşad
+test11_crop_24.jpg	Xəzər
+test11_crop_25.jpg	ASAN xidmət
+test11_crop_26.jpg	Gəncə
+test11_crop_27.jpg	regional
+test11_crop_28.jpg	Müraciətin
+test11_crop_29.jpg	aid
+test11_crop_30.jpg	olduğu
+test11_crop_31.jpg	orqan
+test11_crop_32.jpg	və
+test11_crop_33.jpg	ya
+test11_crop_34.jpg	xidmət:
+test11_crop_35.jpg	MƏRKƏZ
+test11_crop_36.jpg	TƏRƏFINDƏN
+test11_crop_37.jpg	DOLDURULAN
+test11_crop_38.jpg	BÖOLMƏ
+test11_crop_39.jpg	Araşdırmani
+test11_crop_40.jpg	aparan
+test11_crop_41.jpg	məsul
+test11_crop_42.jpg	şəxsin
+test11_crop_43.jpg	adı, soyadı
+test11_crop_44.jpg	və
+test11_crop_45.jpg	vəzifəsi:
+test11_crop_46.jpg	Vətəndaşa
+test11_crop_47.jpg	internet
+test11_crop_48.jpg	şəbəkəsinin
+test11_crop_49.jpg	şikayət
+test11_crop_50.jpg	(əsaslı
+test11_crop_51.jpg	və
+test11_crop_52.jpg	ya
+test11_crop_53.jpg	əsassız):
+test11_crop_54.jpg	böyük
+test11_crop_55.jpg	Təşkili
+test11_crop_56.jpg	üçün
+test11_crop_57.jpg	Əsassız
+test11_crop_58.jpg	istifadə
+test11_crop_59.jpg	edildiyi
+test11_crop_60.jpg	edilmişdir
+test11_crop_61.jpg	üçün
+test11_crop_62.jpg	nəzərdə
+test11_crop_63.jpg	izah
+test13_crop_0.jpg	TƏKLİFİN MƏZMUNU
+test13_crop_1.jpg	16.07.2021
+test13_crop_2.jpg	rayonunun
+test13_crop_3.jpg	yeni ASAN
+test13_crop_4.jpg	acılsa
+test13_crop_5.jpg	xidmət mərkəzi
+test13_crop_6.jpg	əhalinin
+test13_crop_7.jpg	və
+test13_crop_8.jpg	olaraq
+test13_crop_9.jpg	Hörmətlə,
+test13_crop_10.jpg	Ad
+test13_crop_11.jpg	Soyad
+test13_crop_12.jpg	Ata adı
+test13_crop_13.jpg	Telefon nömrasi:
+test13_crop_14.jpg	Elektron poçt ünvanı:
+test13_crop_15.jpg	Qeydiyyat nömrəsi:
+test13_crop_16.jpg	120
+test13_crop_17.jpg	Təklif
+test13_crop_18.jpg	edirəm
+test13_crop_19.jpg	ki
+test13_crop_20.jpg	nəzərə
+test13_crop_21.jpg	Yasamal
+test13_crop_22.jpg	%ox
+test13_crop_23.jpg	muraci#tl#rin
+test13_crop_24.jpg	olunma tarixi:
+test13_crop_25.jpg	Müraci#tin qeyd
+test12_crop_0.jpg	ŞİKAYƏTİN MƏZMUNU
+test12_crop_1.jpg	Tarix: 11.07.2017 il
+test12_crop_2.jpg	Ad
+test12_crop_3.jpg	Soyad
+test12_crop_4.jpg	Məhi oglu
+test12_crop_5.jpg	Koumos Cingiz
+test12_crop_6.jpg	Telefon nömrəsi
+test12_crop_7.jpg	050 336 30 04
+test12_crop_8.jpg	Elektron poçt ünvani:
+test12_crop_9.jpg	MƏRKƏZ TƏRƏFINDƏN DOLDURULAN BÖLMƏ
+test12_crop_10.jpg	Şikayət (əsaslı və ya əsassız): 
+test12_crop_11.jpg	Görülmüs tədbir:
+test12_crop_12.jpg	Arasdirmanin naticasi:
+test12_crop_13.jpg	Qeydiyyat nomrasi:10
+test12_crop_14.jpg	rayonundan
+test12_crop_15.jpg	oğlu
+test12_crop_16.jpg	şəxsiyyət
+test12_crop_17.jpg	olmag
+test12_crop_18.jpg	üçün
+test12_crop_19.jpg	3 saylı
+test12_crop_20.jpg	ASAN xidmətə
+test12_crop_21.jpg	vəsigəsi
+test12_crop_22.jpg	vəsigələri
+test12_crop_23.jpg	ikinci
+test12_crop_24.jpg	dəfə
+test12_crop_25.jpg	şəkilli
+test12_crop_26.jpg	üçün
+test12_crop_27.jpg	rayon
+test12_crop_28.jpg	şəxsiyyət
+test12_crop_29.jpg	vəsiqəsi
+test12_crop_30.jpg	alanda
+test12_crop_31.jpg	küçəsi
+test12_crop_32.jpg	ev
+test12_crop_33.jpg	yazılmiş
+test12_crop_34.jpg	Buna
+test12_crop_35.jpg	görə
+test12_crop_36.jpg	yenidən
+test12_crop_37.jpg	muraciət
+test12_crop_38.jpg	edib
+test12_crop_39.jpg	etdim
+test12_crop_40.jpg	Buna
+test12_crop_41.jpg	baxmayaraq
+test12_crop_42.jpg	qaydasında
+test12_crop_43.jpg	üçün
+test12_crop_44.jpg	yəni
+test12_crop_45.jpg	mənim
+test12_crop_46.jpg	yaşayış
+test12_crop_47.jpg	qeyd
+test12_crop_48.jpg	olunsun.
+test12_crop_49.jpg	Xahiş
+test12_crop_50.jpg	edirəm
+test12_crop_51.jpg	qızım
+test12_crop_52.jpg	Pərvanə
+test12_crop_53.jpg	oğlunun
+test12_crop_54.jpg	şəxsiyət
+test12_crop_55.jpg	yenidən
+test12_crop_56.jpg	yeri
+test12_crop_57.jpg	kəndi
+test12_crop_58.jpg	1992 - ci il
+test12_crop_59.jpg	TEMPORARY
+test12_crop_60.jpg	Qeydiyyat :ünvanı
+test12_crop_61.jpg	rayon
+test12_crop_62.jpg	Vətəndaş
+test12_crop_63.jpg	deyil,
+test12_crop_64.jpg	rayonu
+test12_crop_65.jpg	qeyd
+test12_crop_66.jpg	görə
+test12_crop_67.jpg	şəxsiyyət
+test12_crop_68.jpg	vəsiqəsi
+test12_crop_69.jpg	Kərimov
+test12_crop_70.jpg	edilən
+test15_crop_0.jpg	asan
+test15_crop_1.jpg	xidmət
+test15_crop_2.jpg	Hörmətlə,
+test15_crop_3.jpg	Ad
+test15_crop_4.jpg	Soyad
+test15_crop_5.jpg	Ata adı
+test15_crop_6.jpg	Bakir
+test15_crop_7.jpg	Elektron poçt ünvanı:
+test15_crop_8.jpg	Telefon nömrəsi:
+test15_crop_9.jpg	08.02.23.077-223-53-53
+test15_crop_10.jpg	Qeydiyyat nömrəsi:  162
+test15_crop_11.jpg	Quliyeva
+test15_crop_12.jpg	böyuk
+test15_crop_13.jpg	edirik
+test15_crop_14.jpg	çox
+test15_crop_15.jpg	görə.
+test15_crop_16.jpg	təşəkkür
+test15_crop_17.jpg	TƏKLİFİN MƏZMUNU
+test15_crop_18.jpg	xidmət
+test15_crop_19.jpg	olunma tarixi:
+test15_crop_20.jpg	Müraciətin qeyd
+test14_crop_0.jpg	asan
+test14_crop_1.jpg	xidmət
+test14_crop_2.jpg	TƏKLİFİN MƏZMUNU
+test14_crop_3.jpg	Hörmətlə,
+test14_crop_4.jpg	Ad
+test14_crop_5.jpg	Soyad
+test14_crop_6.jpg	Ata adı
+test14_crop_7.jpg	Elektron poçt ünvanı:
+test14_crop_8.jpg	Müraciətin qeyd olunma tarixi:
+test14_crop_9.jpg	Qeydiyyat nömrəsi: 156
+test14_crop_10.jpg	Surxay
+test14_crop_11.jpg	oğlu
+test14_crop_12.jpg	əməkdaşı
+test14_crop_13.jpg	Emin
+test14_crop_14.jpg	Hüseynova
+test14_crop_15.jpg	Telefon nömrasi:
+test14_crop_16.jpg	öz
+test14_crop_17.jpg	bildirirən
+test16_crop_0.jpg	asan
+test16_crop_1.jpg	xidmət
+test16_crop_2.jpg	TƏKLİFİN MƏZMUNU
+test16_crop_3.jpg	Hörmətlə,
+test16_crop_4.jpg	Ad
+test16_crop_5.jpg	Soyad
+test16_crop_6.jpg	Ata adı
+test16_crop_7.jpg	Süleymanov
+test16_crop_8.jpg	İbrahim
+test16_crop_9.jpg	Elektron poçt ünvanı:
+test16_crop_10.jpg	Telefon nömrəsi:
+test16_crop_11.jpg	Müraciətin qeyd olunma tarixi:
+test16_crop_12.jpg	Qeydiyyat nömrəsi:  137
+test16_crop_13.jpg	Mən
+test16_crop_14.jpg	Süleymanov
+test16_crop_15.jpg	Könül
+test16_crop_16.jpg	qaldım
+test16_crop_17.jpg	Səbinə
+test16_crop_18.jpg	Xanımın
+test16_crop_19.jpg	İşilə
+test16_crop_20.jpg	İşilə
+test16_crop_21.jpg	Razı
+test16_crop_22.jpg	Razı
+test16_crop_23.jpg	qaldım
+test16_crop_24.jpg	27 07 2022
+test16_crop_25.jpg	050 399 16 06
+test17_crop_0.jpg	asan
+test17_crop_1.jpg	xidmət
+test17_crop_2.jpg	TƏKLİFİN MƏZMUNU
+test17_crop_3.jpg	Hörmətlə,
+test17_crop_4.jpg	Ad
+test17_crop_5.jpg	Soyad
+test17_crop_6.jpg	Ata adı
+test17_crop_7.jpg	Kamran
+test17_crop_8.jpg	Piriyev
+test17_crop_9.jpg	Telefon nömrəsi:
+test17_crop_10.jpg	Elektron poçt ünvanı: piriyevpiriyev1988
+test17_crop_11.jpg	055 809 0755
+test17_crop_12.jpg	Müraciətin qeyd olunma tarixi:
+test17_crop_13.jpg	Qeydiyyat nömrəsi: 
+test17_crop_14.jpg	Mən
+test17_crop_15.jpg	Kamran
+test17_crop_16.jpg	ASAN
+test17_crop_17.jpg	xidmətın
+test17_crop_18.jpg	Tərçümə
+test17_crop_19.jpg	xidmətindən
+test17_crop_20.jpg	yararlandım.
+test17_crop_21.jpg	Xidmətin
+test17_crop_22.jpg	xüsusi
+test17_crop_23.jpg	ilə
+test17_crop_24.jpg	Əliyeva
+test17_crop_25.jpg	sənədləşmə
+test17_crop_26.jpg	işi
+test17_crop_27.jpg	ilə
+test17_crop_28.jpg	bağlı
+test17_crop_29.jpg	dəyərli
+test17_crop_30.jpg	məsləhətlər
+test17_crop_31.jpg	verdi
+test17_crop_32.jpg	və
+test17_crop_33.jpg	bu
+test17_crop_34.jpg	(mənim)
+test17_crop_35.jpg	məni
+test17_crop_36.jpg	həm
+test17_crop_37.jpg	maliyyə
+test17_crop_38.jpg	həm
+test17_crop_39.jpg	də
+test17_crop_40.jpg	zaman
+test17_crop_41.jpg	bax
+test17_crop_42.jpg	imdan
+test17_crop_43.jpg	irəli
+test17_crop_44.jpg	saldı
+test17_crop_45.jpg	Maaşı
+test17_crop_46.jpg	artırılsın
+test17_crop_47.jpg	və
+test17_crop_48.jpg	vəzifəsi
+test17_crop_49.jpg	qaldırılsın
+test17_crop_50.jpg	Təşəkkülər
+test17_crop_51.jpg	04 06. 2021
