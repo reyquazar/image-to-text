@@ -642,3 +642,160 @@ test17_crop_48.jpg	vəzifəsi
 test17_crop_49.jpg	qaldırılsın
 test17_crop_50.jpg	Təşəkkülər
 test17_crop_51.jpg	04 06. 2021
+test18_crop_0.jpg	xidmət
+test18_crop_1.jpg	asan
+test18_crop_2.jpg	ŞİKAYƏTİN MƏZMUNU
+test18_crop_3.jpg	Ərizə
+test18_crop_4.jpg	Tarix:
+test18_crop_5.jpg	13.09.2018
+test18_crop_6.jpg	:050-666-77-22
+test18_crop_7.jpg	Telefon nömrəsi:
+test18_crop_8.jpg	Qeydiyyat ünvanı:
+test18_crop_9.jpg	Elektron poçt ünvanı:
+test18_crop_10.jpg	MƏRKƏZ TƏRƏFİNDƏN DOLDURULAN BÖLMƏ
+test18_crop_11.jpg	Qeydiyyat nömrəsi: 32
+test18_crop_12.jpg	Mən
+test18_crop_13.jpg	səlimov
+test18_crop_14.jpg	Nurlan
+test18_crop_15.jpg	Ramana
+test18_crop_16.jpg	evimə
+test18_crop_17.jpg	həyət
+test18_crop_18.jpg	işiq
+test18_crop_19.jpg	çəkdirmək
+test18_crop_20.jpg	istəyirəm
+test18_crop_21.jpg	Asan
+test18_crop_22.jpg	xidmətə
+test18_crop_23.jpg	şəbəkə
+test18_crop_24.jpg	yoxdu
+test18_crop_25.jpg	ama
+test18_crop_26.jpg	evinin
+test18_crop_27.jpg	sənin
+test18_crop_28.jpg	mənin
+test18_crop_29.jpg	orxa
+test18_crop_30.jpg	və
+test18_crop_31.jpg	qabaq
+test18_crop_32.jpg	tərəfimdə
+test18_crop_33.jpg	tərəfimdə
+test18_crop_34.jpg	xətdi
+test18_crop_35.jpg	keçir
+test18_crop_36.jpg	birinci
+test18_crop_37.jpg	evdə
+test18_crop_38.jpg	elekrtirik
+test18_crop_39.jpg	necə
+test18_crop_40.jpg	olurki
+test18_crop_41.jpg	mənimdi
+test18_crop_42.jpg	və
+test18_crop_43.jpg	qabaq
+test18_crop_44.jpg	orxa
+test18_crop_45.jpg	xət
+test18_crop_46.jpg	mənd
+test18_crop_47.jpg	edirəm
+test18_crop_48.jpg	olmur
+test18_crop_49.jpg	şəbəkə
+test18_crop_50.jpg	xayiş
+test18_crop_51.jpg	mənə
+test18_crop_52.jpg	şəbəkə
+test18_crop_53.jpg	çatana
+test18_crop_54.jpg	kimi
+test18_crop_55.jpg	qaranliqda
+test18_crop_56.jpg	Nurlan
+test18_crop_57.jpg	Ad
+test18_crop_58.jpg	Soyad
+test18_crop_59.jpg	Raqib
+test18_crop_60.jpg	Ata adı
+test18_crop_61.jpg	Araşdırmanın nəticəsi:
+test18_crop_62.jpg	Görülmüş tədbir:
+test18_crop_63.jpg	Müraciətin aid
+test18_crop_64.jpg	olduğu orqan
+test18_crop_65.jpg	və ya xidmət:
+test18_crop_66.jpg	Araşdırmanı aparan
+test18_crop_67.jpg	məsul şəxsin
+test18_crop_68.jpg	adım soyadı və vəzifəsi:
+test18_crop_69.jpg	Şikayət
+test18_crop_70.jpg	(əsaslı, əsassız
+test18_crop_71.jpg	və ya anonim):
+test18_crop_72.jpg	Vətəndaşın
+test18_crop_73.jpg	şikayəti
+test18_crop_74.jpg	baxılması
+test18_crop_75.jpg	üçün
+test18_crop_76.jpg	üzrə
+test18_crop_77.jpg	göndərilib
+test18_crop_78.jpg	baş
+test19_crop_0.jpg	ŞİKAYƏTİN MƏZMUNU
+test19_crop_1.jpg	Tarix:
+test19_crop_2.jpg	13.03.2017
+test19_crop_3.jpg	Soyad
+test19_crop_4.jpg	Ata adı
+test19_crop_5.jpg	Ad
+test19_crop_6.jpg	Vi2aye2 Werim Dhnd
+test19_crop_7.jpg	Telefon nömrəsi:
+test19_crop_8.jpg	Qeydiyyat ünvani:
+test19_crop_9.jpg	MƏRKƏZ TƏRƏFİNDƏN DOLDURULAN BÖLMƏ
+test19_crop_10.jpg	Kamtal
+test19_crop_11.jpg	Banr
+test19_crop_12.jpg	Müraciətin aid olduğu orqan və ya xidmət:
+test19_crop_13.jpg	Şikayət (əsaslı və ya əsassız):
+test19_crop_14.jpg	Gorulmus tadbir:
+test19_crop_15.jpg	Arasdirmanin naticasi:
+test19_crop_16.jpg	Qeydiyyat nömrəsi: 53
+test19_crop_17.jpg	Namiq
+test19_crop_18.jpg	Kapital
+test19_crop_19.jpg	bankın
+test19_crop_20.jpg	bonkamatından
+test19_crop_21.jpg	poçt ünvanı:
+test19_crop_22.jpg	Araşdırmanı aparan məsul şəxsin adım soyadı və vəzifəsi:
+test19_crop_23.jpg	hesab
+test19_crop_24.jpg	anonim
+test19_crop_25.jpg	və
+test19_crop_26.jpg	və
+test19_crop_27.jpg	qeydiyyat
+test19_crop_28.jpg	ünvanın
+test19_crop_29.jpg	nömrəsi
+test19_crop_30.jpg	telefon
+test19_crop_31.jpg	Vətəndaş
+test19_crop_32.jpg	qeyd
+test19_crop_33.jpg	üçün
+test19_crop_34.jpg	şikayətin
+test22_crop_0.jpg	ŞİKAYƏTİN MƏZMUNU
+test22_crop_1.jpg	Tarix:
+test22_crop_2.jpg	Soyad
+test22_crop_3.jpg	Ata adı
+test22_crop_4.jpg	Ad
+test22_crop_5.jpg	Baboye
+test22_crop_6.jpg	Əlxan
+test22_crop_7.jpg	Telefon nömrəsi:
+test22_crop_8.jpg	050-686- 29-57
+test22_crop_9.jpg	Qeydiyyat ünvani:
+test22_crop_10.jpg	Elektron poct ünvani:
+test22_crop_11.jpg	MƏRKƏZ TƏRƏFİNDƏN DOLDURULAN BÖLMƏ
+test22_crop_12.jpg	Müraciətin aid olduğu orqan və ya xidmət:
+test22_crop_13.jpg	Azercell
+test22_crop_14.jpg	Araşdırmanı aparan məsul şəxsin adım soyadı və vəzifəsi:
+test22_crop_15.jpg	Şikayət (əsaslı və ya əsassız):
+
+test22_crop_16.jpg	Araşdırmanın nəticəsi:
+test22_crop_17.jpg	-40320
+test22_crop_18.jpg	Qeydiyyat nömrasi:
+test22_crop_19.jpg	Salam
+test22_crop_20.jpg	Mən
+test22_crop_21.jpg	Azercell-ə
+test22_crop_22.jpg	operator
+test22_crop_23.jpg	etdi
+test22_crop_24.jpg	Görülmüş tədbir:
+test22_crop_25.jpg	TEMPORARY
+test20_crop_0.jpg	giluaz
+test20_crop_1.jpg	Ad:
+test20_crop_2.jpg	Telefon nömrəsi:
+test20_crop_3.jpg	Elektron poçt:
+test20_crop_4.jpg	055-512-29-84
+test20_crop_5.jpg	Müraciətin tarixi:
+test20_crop_6.jpg	29.08.25
+test20_crop_7.jpg	45
+test21_crop_0.jpg	oğlu
+test21_crop_1.jpg	05.11.18
+test21_crop_2.jpg	otağı
+test21_crop_3.jpg	+994 55 343 37 24
+test21_crop_4.jpg	Sizdən
+test21_crop_5.jpg	alıb
+test21_crop_6.jpg	Namaz
+test21_crop_7.jpg	Qeydiyyat nömrəsi:

@@ -22,7 +22,7 @@ def find_max_length_simple(filename):
 
 
 # Использование
-filename = "text/typed_text/az_config_train/rec_gt.txt"  # Укажите путь к вашему файлу
+filename = "text/typed_text/fortrain/rec_gt.txt"  # Укажите путь к вашему файлу
 max_len, max_text = find_max_length_simple(filename)
 
 print(f"Максимальная длина строки: {max_len} символов")

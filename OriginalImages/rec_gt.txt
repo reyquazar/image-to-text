@@ -1385,24 +1385,43 @@ crop_img/test19_crop_34.jpg	şikayətin
 crop_img/test22_crop_0.jpg	ŞİKAYƏTİN MƏZMUNU
 crop_img/test22_crop_1.jpg	Tarix:
 crop_img/test22_crop_2.jpg	Soyad
-crop_img/test22_crop_3.jpg	Ata adi
+crop_img/test22_crop_3.jpg	Ata adı
 crop_img/test22_crop_4.jpg	Ad
 crop_img/test22_crop_5.jpg	Baboye
-crop_img/test22_crop_6.jpg	zuxau
-crop_img/test22_crop_7.jpg	Telefon nōmrasi:
-crop_img/test22_crop_8.jpg	050-686- 28-57
+crop_img/test22_crop_6.jpg	Əlxan
+crop_img/test22_crop_7.jpg	Telefon nömrəsi:
+crop_img/test22_crop_8.jpg	050-686- 29-57
 crop_img/test22_crop_9.jpg	Qeydiyyat ünvani:
 crop_img/test22_crop_10.jpg	Elektron poct ünvani:
-crop_img/test22_crop_11.jpg	MARKOZ TOROFINDAN DOLDURULAN BOLMA
-crop_img/test22_crop_12.jpg	Mūraciatin aid oldugu orqan va ya xidmat:
-crop_img/test22_crop_13.jpg	HzeRcell
-crop_img/test22_crop_14.jpg	Arasdirmani aparan masul saxsin adi,soyadi va vazifasi: . Cozen
-crop_img/test22_crop_15.jpg	Gortimustodir: eldour stoepst yowedilusdl
-crop_img/test22_crop_16.jpg	Sikayat (asasli va ya asassiz):
-crop_img/test22_crop_17.jpg	Arasdirmanin naticasi:
-crop_img/test22_crop_18.jpg	-usdyasndesletelefou loes yalaolileed,olagoaeeae
-crop_img/test22_crop_19.jpg	dondas hes bil soyadu olleepee geyl efeepelk
-crop_img/test22_crop_20.jpg	daslasnuilerestorihoppnatesHsebayea esebliieadu
-crop_img/test22_crop_21.jpg	Salassilusdr.
-crop_img/test22_crop_22.jpg	-40320
-crop_img/test22_crop_23.jpg	Qeydiyyat nömrasi:
+crop_img/test22_crop_11.jpg	MƏRKƏZ TƏRƏFİNDƏN DOLDURULAN BÖLMƏ
+crop_img/test22_crop_12.jpg	Müraciətin aid olduğu orqan və ya xidmət:
+crop_img/test22_crop_13.jpg	Azercell
+crop_img/test22_crop_14.jpg	Araşdırmanı aparan məsul şəxsin adım soyadı və vəzifəsi:
+crop_img/test22_crop_15.jpg	Şikayət (əsaslı və ya əsassız):
+
+crop_img/test22_crop_16.jpg	Araşdırmanın nəticəsi:
+crop_img/test22_crop_17.jpg	-40320
+crop_img/test22_crop_18.jpg	Qeydiyyat nömrasi:
+crop_img/test22_crop_19.jpg	Salam
+crop_img/test22_crop_20.jpg	Mən
+crop_img/test22_crop_21.jpg	Azercell-ə
+crop_img/test22_crop_22.jpg	operator
+crop_img/test22_crop_23.jpg	etdi
+crop_img/test22_crop_24.jpg	Görülmüş tədbir:
+crop_img/test22_crop_25.jpg	TEMPORARY
+crop_img/test20_crop_0.jpg	giluaz
+crop_img/test20_crop_1.jpg	Ad:
+crop_img/test20_crop_2.jpg	Telefon nömrəsi:
+crop_img/test20_crop_3.jpg	Elektron poçt:
+crop_img/test20_crop_4.jpg	055-512-29-84
+crop_img/test20_crop_5.jpg	Müraciətin tarixi:
+crop_img/test20_crop_6.jpg	29.08.25
+crop_img/test20_crop_7.jpg	45
+crop_img/test21_crop_0.jpg	oğlu
+crop_img/test21_crop_1.jpg	05.11.18
+crop_img/test21_crop_2.jpg	otağı
+crop_img/test21_crop_3.jpg	+994 55 343 37 24
+crop_img/test21_crop_4.jpg	Sizdən
+crop_img/test21_crop_5.jpg	alıb
+crop_img/test21_crop_6.jpg	Namaz
+crop_img/test21_crop_7.jpg	Qeydiyyat nömrəsi:

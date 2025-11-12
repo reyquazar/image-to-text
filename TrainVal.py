@@ -51,8 +51,8 @@ if __name__ == "__main__":
     # input_file = './text/debug/rec_gt.txt'
     # output_dir = './text/debug/'
 
-    input_file = './text/typed_text/az_config_train/rec_gt.txt'
-    output_dir = './text/typed_text/az_config_train/'
+    input_file = './text/typed_text/fortrain/rec_gt.txt'
+    output_dir = './text/typed_text/fortrain/'
 
     train_file, val_file = split_dataset(input_file, output_dir)
 
