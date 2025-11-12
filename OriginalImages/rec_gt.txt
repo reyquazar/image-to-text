@@ -1268,3 +1268,141 @@ crop_img/test17_crop_48.jpg	vəzifəsi
 crop_img/test17_crop_49.jpg	qaldırılsın
 crop_img/test17_crop_50.jpg	Təşəkkülər
 crop_img/test17_crop_51.jpg	04 06. 2021
+crop_img/test18_crop_0.jpg	xidmət
+crop_img/test18_crop_1.jpg	asan
+crop_img/test18_crop_2.jpg	ŞİKAYƏTİN MƏZMUNU
+crop_img/test18_crop_3.jpg	Ərizə
+crop_img/test18_crop_4.jpg	Tarix:
+crop_img/test18_crop_5.jpg	13.09.2018
+crop_img/test18_crop_6.jpg	:050-666-77-22
+crop_img/test18_crop_7.jpg	Telefon nömrəsi:
+crop_img/test18_crop_8.jpg	Qeydiyyat ünvanı:
+crop_img/test18_crop_9.jpg	Elektron poçt ünvanı:
+crop_img/test18_crop_10.jpg	MƏRKƏZ TƏRƏFİNDƏN DOLDURULAN BÖLMƏ
+crop_img/test18_crop_11.jpg	Qeydiyyat nömrəsi: 32
+crop_img/test18_crop_12.jpg	Mən
+crop_img/test18_crop_13.jpg	səlimov
+crop_img/test18_crop_14.jpg	Nurlan
+crop_img/test18_crop_15.jpg	Ramana
+crop_img/test18_crop_16.jpg	evimə
+crop_img/test18_crop_17.jpg	həyət
+crop_img/test18_crop_18.jpg	işiq
+crop_img/test18_crop_19.jpg	çəkdirmək
+crop_img/test18_crop_20.jpg	istəyirəm
+crop_img/test18_crop_21.jpg	Asan
+crop_img/test18_crop_22.jpg	xidmətə
+crop_img/test18_crop_23.jpg	şəbəkə
+crop_img/test18_crop_24.jpg	yoxdu
+crop_img/test18_crop_25.jpg	ama
+crop_img/test18_crop_26.jpg	evinin
+crop_img/test18_crop_27.jpg	sənin
+crop_img/test18_crop_28.jpg	mənin
+crop_img/test18_crop_29.jpg	orxa
+crop_img/test18_crop_30.jpg	və
+crop_img/test18_crop_31.jpg	qabaq
+crop_img/test18_crop_32.jpg	tərəfimdə
+crop_img/test18_crop_33.jpg	tərəfimdə
+crop_img/test18_crop_34.jpg	xətdi
+crop_img/test18_crop_35.jpg	keçir
+crop_img/test18_crop_36.jpg	birinci
+crop_img/test18_crop_37.jpg	evdə
+crop_img/test18_crop_38.jpg	elekrtirik
+crop_img/test18_crop_39.jpg	necə
+crop_img/test18_crop_40.jpg	olurki
+crop_img/test18_crop_41.jpg	mənimdi
+crop_img/test18_crop_42.jpg	və
+crop_img/test18_crop_43.jpg	qabaq
+crop_img/test18_crop_44.jpg	orxa
+crop_img/test18_crop_45.jpg	xət
+crop_img/test18_crop_46.jpg	mənd
+crop_img/test18_crop_47.jpg	edirəm
+crop_img/test18_crop_48.jpg	olmur
+crop_img/test18_crop_49.jpg	şəbəkə
+crop_img/test18_crop_50.jpg	xayiş
+crop_img/test18_crop_51.jpg	mənə
+crop_img/test18_crop_52.jpg	şəbəkə
+crop_img/test18_crop_53.jpg	çatana
+crop_img/test18_crop_54.jpg	kimi
+crop_img/test18_crop_55.jpg	qaranliqda
+crop_img/test18_crop_56.jpg	Nurlan
+crop_img/test18_crop_57.jpg	Ad
+crop_img/test18_crop_58.jpg	Soyad
+crop_img/test18_crop_59.jpg	Raqib
+crop_img/test18_crop_60.jpg	Ata adı
+crop_img/test18_crop_61.jpg	Araşdırmanın nəticəsi:
+crop_img/test18_crop_62.jpg	Görülmüş tədbir:
+crop_img/test18_crop_63.jpg	Müraciətin aid
+crop_img/test18_crop_64.jpg	olduğu orqan
+crop_img/test18_crop_65.jpg	və ya xidmət:
+crop_img/test18_crop_66.jpg	Araşdırmanı aparan
+crop_img/test18_crop_67.jpg	məsul şəxsin
+crop_img/test18_crop_68.jpg	adım soyadı və vəzifəsi:
+crop_img/test18_crop_69.jpg	Şikayət
+crop_img/test18_crop_70.jpg	(əsaslı, əsassız
+crop_img/test18_crop_71.jpg	və ya anonim):
+crop_img/test18_crop_72.jpg	Vətəndaşın
+crop_img/test18_crop_73.jpg	şikayəti
+crop_img/test18_crop_74.jpg	baxılması
+crop_img/test18_crop_75.jpg	üçün
+crop_img/test18_crop_76.jpg	üzrə
+crop_img/test18_crop_77.jpg	göndərilib
+crop_img/test18_crop_78.jpg	baş
+crop_img/test19_crop_0.jpg	ŞİKAYƏTİN MƏZMUNU
+crop_img/test19_crop_1.jpg	Tarix:
+crop_img/test19_crop_2.jpg	13.03.2017
+crop_img/test19_crop_3.jpg	Soyad
+crop_img/test19_crop_4.jpg	Ata adı
+crop_img/test19_crop_5.jpg	Ad
+crop_img/test19_crop_6.jpg	Vi2aye2 Werim Dhnd
+crop_img/test19_crop_7.jpg	Telefon nömrəsi:
+crop_img/test19_crop_8.jpg	Qeydiyyat ünvani:
+crop_img/test19_crop_9.jpg	MƏRKƏZ TƏRƏFİNDƏN DOLDURULAN BÖLMƏ
+crop_img/test19_crop_10.jpg	Kamtal
+crop_img/test19_crop_11.jpg	Banr
+crop_img/test19_crop_12.jpg	Müraciətin aid olduğu orqan və ya xidmət:
+crop_img/test19_crop_13.jpg	Şikayət (əsaslı və ya əsassız):
+crop_img/test19_crop_14.jpg	Gorulmus tadbir:
+crop_img/test19_crop_15.jpg	Arasdirmanin naticasi:
+crop_img/test19_crop_16.jpg	Qeydiyyat nömrəsi: 53
+crop_img/test19_crop_17.jpg	Namiq
+crop_img/test19_crop_18.jpg	Kapital
+crop_img/test19_crop_19.jpg	bankın
+crop_img/test19_crop_20.jpg	bonkamatından
+crop_img/test19_crop_21.jpg	poçt ünvanı:
+crop_img/test19_crop_22.jpg	Araşdırmanı aparan məsul şəxsin adım soyadı və vəzifəsi:
+crop_img/test19_crop_23.jpg	hesab
+crop_img/test19_crop_24.jpg	anonim
+crop_img/test19_crop_25.jpg	və
+crop_img/test19_crop_26.jpg	və
+crop_img/test19_crop_27.jpg	qeydiyyat
+crop_img/test19_crop_28.jpg	ünvanın
+crop_img/test19_crop_29.jpg	nömrəsi
+crop_img/test19_crop_30.jpg	telefon
+crop_img/test19_crop_31.jpg	Vətəndaş
+crop_img/test19_crop_32.jpg	qeyd
+crop_img/test19_crop_33.jpg	üçün
+crop_img/test19_crop_34.jpg	şikayətin
+crop_img/test22_crop_0.jpg	ŞİKAYƏTİN MƏZMUNU
+crop_img/test22_crop_1.jpg	Tarix:
+crop_img/test22_crop_2.jpg	Soyad
+crop_img/test22_crop_3.jpg	Ata adi
+crop_img/test22_crop_4.jpg	Ad
+crop_img/test22_crop_5.jpg	Baboye
+crop_img/test22_crop_6.jpg	zuxau
+crop_img/test22_crop_7.jpg	Telefon nōmrasi:
+crop_img/test22_crop_8.jpg	050-686- 28-57
+crop_img/test22_crop_9.jpg	Qeydiyyat ünvani:
+crop_img/test22_crop_10.jpg	Elektron poct ünvani:
+crop_img/test22_crop_11.jpg	MARKOZ TOROFINDAN DOLDURULAN BOLMA
+crop_img/test22_crop_12.jpg	Mūraciatin aid oldugu orqan va ya xidmat:
+crop_img/test22_crop_13.jpg	HzeRcell
+crop_img/test22_crop_14.jpg	Arasdirmani aparan masul saxsin adi,soyadi va vazifasi: . Cozen
+crop_img/test22_crop_15.jpg	Gortimustodir: eldour stoepst yowedilusdl
+crop_img/test22_crop_16.jpg	Sikayat (asasli va ya asassiz):
+crop_img/test22_crop_17.jpg	Arasdirmanin naticasi:
+crop_img/test22_crop_18.jpg	-usdyasndesletelefou loes yalaolileed,olagoaeeae
+crop_img/test22_crop_19.jpg	dondas hes bil soyadu olleepee geyl efeepelk
+crop_img/test22_crop_20.jpg	daslasnuilerestorihoppnatesHsebayea esebliieadu
+crop_img/test22_crop_21.jpg	Salassilusdr.
+crop_img/test22_crop_22.jpg	-40320
+crop_img/test22_crop_23.jpg	Qeydiyyat nömrasi:
