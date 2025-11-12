@@ -45,14 +45,15 @@ def main():
     image_path = args.image_path
     # image_path = './text/typed_text/testWords.png'
 
-    PRec(image_path)  # default paddle model
-    printL("output1", image_path)  # synt data with gDTV2Words.py
-    printL("output2", image_path)  # synt data with gDTV2Words.py
-    printL("output3", image_path)  # synt data with gDTV2Words2.py
-    printL("output4", image_path)  # synt data with gDTV2Words2.py
-    printL("output5", image_path)  # synt data with gDTV2Words3.py
-    printL("output6", image_path)  # synt data with gDTV2Words3.py
-    printL("output", image_path)  # synt data with gDTV2Words3.py + hw
+    # PRec(image_path)  # default paddle model
+    # printL("output1", image_path)  # synt data with gDTV2Words.py
+    # printL("output2", image_path)  # synt data with gDTV2Words.py
+    # printL("output3", image_path)  # synt data with gDTV2Words2.py
+    # printL("output4", image_path)  # synt data with gDTV2Words2.py
+    # printL("output5", image_path)  # synt data with gDTV2Words3.py
+    # printL("output6", image_path)  # synt data with gDTV2Words3.py
+    # printL("output7", image_path)  # hw + copy
+    printL("output", image_path)  # hw + copy
 
 
 if __name__ == "__main__":
