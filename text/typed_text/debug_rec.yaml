@@ -109,7 +109,7 @@ Train:
     is_training: True
   loader:
     shuffle: true
-    batch_size_per_card: 64Я
+    batch_size_per_card: 64
     drop_last: true
     num_workers: 8
 Eval:
