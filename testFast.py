@@ -52,8 +52,8 @@ def main():
     printL("output4", image_path)  # synt data with gDTV2Words2.py
     printL("output5", image_path)  # synt data with gDTV2Words3.py
     printL("output6", image_path)  # synt data with gDTV2Words3.py
-    # printL("output7", image_path)  # hw + copy
-    printL("output", image_path)  # hw + copy
+    printL("output7", image_path)  # hw + copy do 18.png
+    printL("output", image_path)  # hw + copy all.png
 
 
 if __name__ == "__main__":
