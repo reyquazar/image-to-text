@@ -1034,31 +1034,29 @@ crop_img/test11_crop_61.jpg	üçün
 crop_img/test11_crop_62.jpg	nəzərdə
 crop_img/test13_crop_0.jpg	TƏKLİFİN MƏZMUNU
 crop_img/test13_crop_1.jpg	16.07.2021
-crop_img/test13_crop_2.jpg	rayonunun
-crop_img/test13_crop_3.jpg	yeni ASAN
-crop_img/test13_crop_4.jpg	acılsa
-crop_img/test13_crop_5.jpg	xidmət mərkəzi
-crop_img/test13_crop_6.jpg	əhalinin
-crop_img/test13_crop_7.jpg	və
-crop_img/test13_crop_8.jpg	olaraq
-crop_img/test13_crop_9.jpg	H!rm#tl#,
-crop_img/test13_crop_10.jpg	shamn6H
-crop_img/test13_crop_11.jpg	Ad
-crop_img/test13_crop_12.jpg	Soyad
-crop_img/test13_crop_13.jpg	Ata ad`
-crop_img/test13_crop_14.jpg	Telefon nömrasi:
-crop_img/test13_crop_15.jpg	Elektro%n pot ünvan`:
-crop_img/test13_crop_16.jpg	Qeydiyyat n!mr#si:
-crop_img/test13_crop_17.jpg	120
-crop_img/test13_crop_18.jpg	Təklif
-crop_img/test13_crop_19.jpg	edirəm
-crop_img/test13_crop_20.jpg	ki
-crop_img/test13_crop_21.jpg	nəzərə
-crop_img/test13_crop_22.jpg	Yasamal
-crop_img/test13_crop_23.jpg	%ox
-crop_img/test13_crop_24.jpg	muraci#tl#rin
-crop_img/test13_crop_25.jpg	olunma tarixi:
-crop_img/test13_crop_26.jpg	Müraci#tin qeyd
+crop_img/test13_crop_2.jpg	yeni ASAN
+crop_img/test13_crop_3.jpg	acılsa
+crop_img/test13_crop_4.jpg	xidmət mərkəzi
+crop_img/test13_crop_5.jpg	əhalinin
+crop_img/test13_crop_6.jpg	və
+crop_img/test13_crop_7.jpg	olaraq
+crop_img/test13_crop_8.jpg	H!rm#tl#,
+crop_img/test13_crop_9.jpg	Ad
+crop_img/test13_crop_10.jpg	Soyad
+crop_img/test13_crop_11.jpg	Ata ad`
+crop_img/test13_crop_12.jpg	Telefon nömr#si:
+crop_img/test13_crop_13.jpg	Elektron po%t ünvan`:
+crop_img/test13_crop_14.jpg	Qeydiyyat n!mr#si:
+crop_img/test13_crop_15.jpg	120
+crop_img/test13_crop_16.jpg	Təklif
+crop_img/test13_crop_17.jpg	edirəm
+crop_img/test13_crop_18.jpg	ki
+crop_img/test13_crop_19.jpg	nəzərə
+crop_img/test13_crop_20.jpg	Yasamal
+crop_img/test13_crop_21.jpg	%ox
+crop_img/test13_crop_22.jpg	m~raci#tl#rin
+crop_img/test13_crop_23.jpg	olunma tarixi:
+crop_img/test13_crop_24.jpg	Müraci#tin qeyd
 crop_img/test12_crop_0.jpg	ŞİKAYƏTİN MƏZMUNU
 crop_img/test12_crop_1.jpg	Tarix: 11.07.2017 il
 crop_img/test12_crop_2.jpg	Ad
