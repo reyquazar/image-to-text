@@ -1,0 +1,45 @@
+====================================================================================================
+PaddleModel
+====================================================================================================
+Nəqliyyat vasitəsinə sərancam verilmasinədairetibarnamənin tasdiqi Zəruri olan sənədlarin siyahisi Naqliyyat vasitsinə mülkiyət hüququnu tsdiq edan dvlat qeydiyat hadətnaməsi; Etibar edan v etibar edilan xsin xsiytini tsdiq edan sand; Tariiiiidtdii)l münasibtlarinin myn lunmai haqqinda mahkamanin anuni qy minmis qtnamasi.
+====================================================================================================
+======================================================================================================================================================
+output1 synt data with gDTV2Words.py 100k Train 10k Val
+======================================================================================================================================================
+Nəmqliyyat vasitəsinə sərəncam verilməsinə dair etibarnamənin təsdiqi  Zəruri olan sənədlərin siyahısı Nəqliyyat vasitəsinə mülkiyyət hüququnu təsdiq edən dövlət qeydiyyat şəhadətnaməsi Etibar edən və etibar edilən şəxsin şəxsiyyətini təsdiq edən sənəd Tərəflər arasında qohumluq münasibətlərini təsdiq edən sənədlər vətəndaşlıq vəziyyəti aktlarının dövlət qeydiyyatı orqanının verdiyi sənədlər və ya qohumluq münasibətlərinin müəyyən olunması haqında məhkəmənin qanuni qüvvəyə minmiş qətnaməsi 
+======================================================================================================================================================
+======================================================================================================================================================
+output2 synt data with gDTV2Words.py 100k Train 10k Val
+======================================================================================================================================================
+Nəqliyyat vasitəsinə sərəncam verilməsinə dair etibarnamənin təssdiqi Zəruri olan sənədlərin siyahısı Nəqliyyat vasitəsinə mülkiyyət hüququnu təsdiq edən dövlət qeydiyyat şəhadətnaməsiy Etibar edən və etibar edilən şəxsin şəxsiyyətini təsdiq edən sənədş Tərəflər arasında qohumluq münasibətlərini təsdiq edən sənədlər lvətəndaşlıq vəziyyəti aktlarının dövlət qeydiyyatı orqanının verdiyi sənədlər və ya qohumluq münasibətlərinin müəyyən olunması haqında məhkəmənin qanuni qüvvəyə minmiş qətnaməsi
+======================================================================================================================================================
+======================================================================================================================================================
+output3 synt data with gDTV2Words2.py 200k Train 20k Val
+======================================================================================================================================================
+Nəqliyyatvasitəsinəsərəncamverilməsinədairetibarnamənintəsdiqi ZəruriolansənədlərinsiyahıSl Nəqliyyatvasitəsinəmülkiyyəthüququnutəsdiqedəndövlətqeydiyyatşəhadətnaməsİiş Etibaredənvəetibaredilənşəxsinmşəxsiyyətinitəsdiqedənsənədı Tərəflərarasındaqohumluqmünasibətlərinitəsdiqedənsənədlərlvətəndaşlıqvəziyyətiaktlarınındövlətqeydiyyatıorqanınınverdiyisənədlərvəyaqohumluq münasibətlərininmüəyyənolunmasıhaqqındaməhkəməninqanuniqüvvəyəminmişqətnaməsin
+======================================================================================================================================================
+======================================================================================================================================================
+output4 synt data with gDTV2Words2.py 200k Train 20k Val
+======================================================================================================================================================
+Nqliyyat vasitəsinə sərəncam verilməsinə dair etibarnamənin təssdiqi Zruri olansənədlərinsiyahıIsIl Nqliyyat vasitəsinə mülkiyyət hüququnu təsdiqedən dövlət qeydiyyat şəhadəətnaməsi  Etibar edən və etibar edilən şəxsin şəxsiyyətini təsdiq edən sənəd Tərəflər arasında qohumluq münasibətlərini təsdiq edən sənədlər lvətəndaşlıq vəziyyəti aklarının dövlət qeydiyyatı orqanının verdiyi sənədlər vəya qohumluq münasibətlərinin müəyyən olunması haqında məhkəmənin qanuni qüvvəyə minmiş qətnamSiı
+======================================================================================================================================================
+======================================================================================================================================================
+output5 synt data with gDTV2Words3.py 100k Train 10k Val
+======================================================================================================================================================
+Nəqliyyat vasitəsinə sərəncam verilməsinə dair etibarnamənin təsdiqi Zəruri olan sənədlərin siyahısı Nəqliyyat vasitəsinə mülkiyyət hüququnu təsdiq edən dövlət qeydiyat şəhadətnaməslı  Etibar edən və etibar edilən şəxsin şəxsiyətini təsdiq edən sənədı Tərəflər arasında qohumluq münasibətlərini təsdiq edən sənədlər lvətəndaşlq vəziyəti aktlarının dövlət qeydiyatı orqanının verdiyi sənədlərlvə ya qohumq münasibətlərinin müəyyən olunması haqında məhkəmənin qanuni qüvvəyə minmiş qətnaməsi
+======================================================================================================================================================
+======================================================================================================================================================
+output6 synt data with gDTV2Words3.py 100k Train 10k Val
+======================================================================================================================================================
+Nəqliyyat vasitəsinə sərəncam verilməsinə dair etibarnamənin təsdiqil Zəruri olan sənədlərin siyahısı  Nəqliyyat vasitəsinə mülkiyət hüququnu təsdiq edən dövlət qeydiyat şəhadətnaməsi  Etibar edən və etibar edilən şəxsin şəxsiyətini təsdiq edən sənədı  Tərəflər arasında qohumluq münasibətlərini təsdiq edən sənədlər vətəndaşlıq vəziyəti aktlarının dövlət qeydiyatı orqanının verdiyi sənədlərl və ya qohumluq münasibətlərinin müəyən olunması haqında məhkəmənin qanuni qüvvəyə minmiş qətnaməsi 
+======================================================================================================================================================
+======================================================================================================================================================
+output7 hw original + test1-18.png
+======================================================================================================================================================
+Nəqliyyat vasitəsinə sərənçam verilməsinə dair etibarnamənin təsşdiqi Zəruri olan sənədlərin siyahıisi Nəqliyyat vasitəsinə mülKiyyət hüququnu təsdiq edən dövlət qeydiyyat şəhadətnaməsi Etibar edən və etibar edilən şəxsin şəxəsiyyətini təsdiq edən sənəd Tərətlər arasında qoəhumluq münasibətlərini təsdiq edən sənədlər (vətəndaşlıq vəziyyəti aktlarının dövlət qeydiyyat orqanının verdiyi sənədlər və ya qəoəhumluq münasibətlərinin mıüəyyən olunması haqqında məhkəmənin qanuni qüvəyə minmiş qətnaməsi
+======================================================================================================================================================
+======================================================================================================================================================
+output8 hw original + test1-18.png
+======================================================================================================================================================
+Naqliyyat vasitaəsinə sərəncam verilməsinə dair etibarnamanin təsdiqi Zaəruri olan sənaəadlərin siyahısl Naqliyyat vasitəsinə mülkiyyət hüququnu təsdiq edən dövlət qeydiyyat şəhadətnaməsi Etibar edən və eətibar edilən şəxsin şəxsiyyətini təsdiq edən sənədı Taərəaflər arasında qohumluq münasibətlərini təsdiq edən sənədlər (vətəndaşlıq vəziyyəti aktlarının dövlət qeydiyyatı orqanının verdiyi sənədlərə və ya qohumluq münasibatlərinin müəyyən olunması haqqında məhkəmənin qanuni qüvəyə minmiş qətnaməsi
+======================================================================================================================================================
