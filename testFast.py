@@ -53,7 +53,9 @@ def main():
     # printL("output5", image_path, "synt data with gDTV2Words3.py 100k Train 10k Val")  # synt data with gDTV2Words3.py
     # printL("output6", image_path, "synt data with gDTV2Words3.py 100k Train 10k Val")  # synt data with gDTV2Words3.py
     # printL("output7", image_path, "hw original + test1-18.png")  # hw + copy do 18.png
-    printL("output", image_path, "hw original + test1-22.png")  # hw + copy all.png
+    # printL("output8", image_path, "hw original + test1-18.png")  # hw + copy all.png
+
+    printL("output", image_path, "")
 
 
 if __name__ == "__main__":
