@@ -985,3 +985,7 @@
 [2025/11/12 17:46:07] ppocr INFO: save model in ./output/latest
 [2025/11/12 17:46:09] ppocr INFO: epoch: [168/200], global_step: 4510, lr: 0.000023, acc: 0.988235, norm_edit_dis: 0.999015, CTCLoss: 0.057404, NRTRLoss: 1.308920, loss: 1.366078, avg_reader_cost: 0.26816 s, avg_batch_cost: 0.32310 s, avg_samples: 6.4, ips: 19.80803 samples/s, eta: 0:11:20, max_mem_reserved: 20191 MB, max_mem_allocated: 14691 MB
 [2025/11/12 17:46:16] ppocr INFO: epoch: [168/200], global_step: 4520, lr: 0.000022, acc: 0.984375, norm_edit_dis: 0.997907, CTCLoss: 0.093438, NRTRLoss: 1.309129, loss: 1.402613, avg_reader_cost: 0.00287 s, avg_batch_cost: 0.72359 s, avg_samples: 108.7, ips: 150.22298 samples/s, eta: 0:11:13, max_mem_reserved: 20191 MB, max_mem_allocated: 14691 MB
+
+
+нет, у меня мало времени + мало данных чтобы обучать рукописный 
+нужно довести до ума печатный вариант там ситуация  

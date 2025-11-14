@@ -18,3 +18,5 @@ OriginalImages/test17.png	1
 OriginalImages/test18.png	1
 OriginalImages/test19.png	1
 OriginalImages/test22.png	1
+OriginalImages/test20.png	1
+OriginalImages/test21.png	1
