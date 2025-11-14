@@ -2,12 +2,12 @@ Global:
   model_name: PP-OCRv5_server_rec
   debug: true
   use_gpu: true
-  epoch_num: 200
+  epoch_num: 20
   log_smooth_window: 20
   print_batch_step: 10
   save_model_dir: ./output
-  save_epoch_step: 5
-  eval_batch_step: [0, 200]
+  save_epoch_step: 1
+  eval_batch_step: [0, 100]
   cal_metric_during_train: true
   calc_epoch_interval: 1
   pretrained_model: ./text/typed_text/pretrain_models/PP-OCRv5_server_rec_pretrained.pdparams
@@ -36,7 +36,7 @@ Optimizer:
     warmup_epoch: 2
   regularizer:
     name: L2
-    factor: 3.0e-05
+    factor: 0.0003
 
 
 Architecture:
@@ -82,10 +82,10 @@ Train:
   dataset:
     name: MultiScaleDataSet
     ds_width: false
-    data_dir: ./text/typed_text/fortrain/augmented_data/train
+    data_dir: ./text/typed_text/az_config_train
     ext_op_transform_idx: 1
     label_file_list:
-      - ./text/typed_text/fortrain/augmented_data/train_list.txt
+      - ./text/typed_text/az_config_train/train_list.txt
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -109,15 +109,15 @@ Train:
     is_training: True
   loader:
     shuffle: true
-    batch_size_per_card: 64
+    batch_size_per_card: 1500
     drop_last: true
-    num_workers: 8
+    num_workers: 24
 Eval:
   dataset:
     name: SimpleDataSet
-    data_dir: ./text/typed_text/fortrain/augmented_data/val
+    data_dir: ./text/typed_text/az_config_train
     label_file_list:
-      - ./text/typed_text/fortrain/augmented_data/val_list.txt
+      - ./text/typed_text/az_config_train/val_list.txt
     transforms:
     - DecodeImage:
         img_mode: BGR
@@ -136,5 +136,5 @@ Eval:
   loader:
     shuffle: false
     drop_last: false
-    batch_size_per_card: 32
-    num_workers: 8
+    batch_size_per_card: 512
+    num_workers: 24
