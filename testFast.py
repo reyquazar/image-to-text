@@ -45,14 +45,14 @@ def main():
     image_path = args.image_path
     # image_path = './text/typed_text/testWords.png'
 
-    PRec(image_path)  # default paddle model
-    printL("output1", image_path, "synt data with gDTV2Words.py 100k Train 10k Val")  # synt data with gDTV2Words.py
-    printL("output2", image_path, "synt data with gDTV2Words.py 100k Train 10k Val")  # synt data with gDTV2Words.py
-    printL("output3", image_path, "synt data with gDTV2Words2.py 200k Train 20k Val")  # synt data with gDTV2Words2.py
-    printL("output4", image_path, "synt data with gDTV2Words2.py 200k Train 20k Val")  # synt data with gDTV2Words2.py
-    printL("output5", image_path, "synt data with gDTV2Words3.py 100k Train 10k Val")  # synt data with gDTV2Words3.py
-    printL("output6", image_path, "synt data with gDTV2Words3.py 100k Train 10k Val")  # synt data with gDTV2Words3.py
-    printL("output7", image_path, "hw original + test1-18.png")  # hw + copy do 18.png
+    # PRec(image_path)  # default paddle model
+    # printL("output1", image_path, "synt data with gDTV2Words.py 100k Train 10k Val")  # synt data with gDTV2Words.py
+    # printL("output2", image_path, "synt data with gDTV2Words.py 100k Train 10k Val")  # synt data with gDTV2Words.py
+    # printL("output3", image_path, "synt data with gDTV2Words2.py 200k Train 20k Val")  # synt data with gDTV2Words2.py
+    # printL("output4", image_path, "synt data with gDTV2Words2.py 200k Train 20k Val")  # synt data with gDTV2Words2.py
+    # printL("output5", image_path, "synt data with gDTV2Words3.py 100k Train 10k Val")  # synt data with gDTV2Words3.py
+    # printL("output6", image_path, "synt data with gDTV2Words3.py 100k Train 10k Val")  # synt data with gDTV2Words3.py
+    # printL("output7", image_path, "hw original + test1-18.png")  # hw + copy do 18.png
     printL("output", image_path, "hw original + test1-22.png")  # hw + copy all.png
 
 
