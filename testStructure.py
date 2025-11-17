@@ -67,7 +67,7 @@ from paddleocr import PPStructureV3
 pipeline = PPStructureV3(device="gpu",
                          text_recognition_model_dir="./output2/inference/",
                          )  # Use device to specify GPU for model inference
-img_path = "./img_3.png"
+img_path = "./OriginalImages/test2.png"
 output = pipeline.predict(img_path)
 for res in output:
     res.print()  ## Print the structured prediction output
