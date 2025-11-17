@@ -71,5 +71,4 @@ img_path = "./img_3.png"
 output = pipeline.predict(img_path)
 for res in output:
     res.print()  ## Print the structured prediction output
-    res.save_to_json(save_path="output")  ## Save the current image's structured result in JSON format
-    res.save_to_markdown(save_path="output")  ## Save the current image's result in Markdown format
+    res.save_to_markdown(save_path="outputGit")  ## Save the current image's result in Markdown format
