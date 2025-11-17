@@ -44,7 +44,7 @@ output8 hw original test1-18.png
 QEYD xXidmət s ə və sayl Bakı AsAN xidmət və reğional ASsAN xidmət mərkəzlərində (ə saylə Gəncə ə ı saylı ŞSumqayıt və Naxçıvan reğrional AsAN xidmət mərkəzləri istisna olmaqla) göstərilir
 ======================================================================================================================================================
 ======================================================================================================================================================
-output latest output Train 100k Val 10k
+output9 latest output Train 100k Val 10k
 ======================================================================================================================================================
 Q Xidməts  vəsaylı Bakı ASANxidmət və regional ASANxidmt  mrkəzlərində  lsaylı Gncə sayl Sumqayıt və Naxçıvan regional  AsAN xidmət mrkəzləri istisna olmaqlagöstərilir
 ======================================================================================================================================================
