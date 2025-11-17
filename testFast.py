@@ -45,7 +45,7 @@ def main():
     image_path = args.image_path
     # image_path = './text/typed_text/testWords.png'
 
-    PRec(image_path)  # default paddle model
+    # PRec(image_path)  # default paddle model
     # printL("output1", image_path, "synt data gDTV2Words.py Train 100k Val 10k")  # synt data with gDTV2Words.py
     printL("output2", image_path, "synt data gDTV2Words.py Train 100k Val 10k")  # synt data with gDTV2Words.py
     # printL("output3", image_path, "synt data gDTV2Words2.py  Train 200k Val 20k")  # synt data with gDTV2Words2.py
