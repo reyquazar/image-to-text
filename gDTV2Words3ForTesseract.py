@@ -4,6 +4,7 @@ import random
 import os
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import argparse
+import shutil
 
 
 def load_words_from_dataset(dataset_path):
@@ -141,22 +142,42 @@ def apply_safe_augmentations(img_array):
     return img_array, "_".join(aug_types) if aug_types else "A0"
 
 
+def create_tesseract_structure(base_dir="."):
+    """Creates the proper Tesseract directory structure"""
+    # Main directories - стандартная структура tesstrain
+    data_dir = os.path.join(base_dir, "data")
+    ground_truth_dir = os.path.join(data_dir, "aze-ground-truth")  # ВСЕ файлы здесь
+
+    # Create directories
+    os.makedirs(ground_truth_dir, exist_ok=True)
+
+    print(f"📁 Created Tesseract structure:")
+    print(f"  - {ground_truth_dir}")
+
+    return {
+        'data_dir': data_dir,
+        'ground_truth_dir': ground_truth_dir
+    }
+
+
 def generate_synthetic_data():
-    """Main function - generates synthetic text images with document-like appearance"""
-    output_dir = "./text/typed_text/az_config_train"
-    os.makedirs(output_dir, exist_ok=True)
+    """Main function - generates synthetic text images in Tesseract format"""
+
+    # Create Tesseract directory structure
+    dirs = create_tesseract_structure()
 
     dataset_path = './train_cleaned_ocr_perfect.txt'
 
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description='Generate Tesseract training data for Azerbaijani')
     parser.add_argument('train_number', type=int, help='Number of training images')
-    parser.add_argument('val_number', type=int, help='Number of val images')
+    parser.add_argument('val_number', type=int, help='Number of validation images')
     parser.add_argument('--dataset', type=str, default=dataset_path, help='Path to dataset file')
+    parser.add_argument('--output-base', type=str, default='tessdata', help='Base output directory')
     args = parser.parse_args()
 
     azerbaijani_words = load_words_from_dataset(args.dataset)
 
-    fonts_dir = "./text/typed_text/fonts/3"
+    fonts_dir = "./fonts/3/"
 
     print(f"🔍 Find fonts: {fonts_dir}")
     print(f"📊 Total unique words: {len(azerbaijani_words)}")
@@ -263,9 +284,11 @@ def generate_synthetic_data():
             print(f"❌ Error creating text image for '{word}': {e}")
             return None, None, None
 
-    def generate_images(word_list, count, prefix):
-        """Generates images for given word list"""
-        labels = []
+    def generate_tesseract_images(word_list, count, output_dir, prefix):
+        """Generates images in Tesseract format with .gt.txt files"""
+        # Вместо отдельных папок train/eval - все в ground_truth_dir
+        all_texts = []
+
         single_word_count = int(count * 0.6)
         double_word_count = count - single_word_count
 
@@ -319,11 +342,18 @@ def generate_synthetic_data():
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                # Create filename with augmentation info
-                filename = f"{prefix}_single_{aug_string}_{i:09d}.png"
-                cv2.imwrite(os.path.join(output_dir, filename), img_resized)
+                # Create Tesseract-compatible filename (without complex augmentation info)
+                base_filename = f"{prefix}_{i:09d}"
+                image_filename = f"{base_filename}.png"
+                gt_filename = f"{base_filename}.gt.txt"
 
-                labels.append(f"{filename}\t{final_text}")
+                # Save image
+                cv2.imwrite(os.path.join(output_dir, image_filename), img_resized)
+
+                with open(os.path.join(output_dir, gt_filename), 'w', encoding='utf-8') as f:
+                    f.write(final_text)
+
+                all_texts.append(final_text)
 
                 if (i + 1) % 1000 == 0:
                     print(f"✅ {prefix} single-word: {i + 1}/{single_word_count}")
@@ -393,11 +423,17 @@ def generate_synthetic_data():
                 final_width, final_height = 320, 48
                 img_resized = cv2.resize(img_array, (final_width, final_height), interpolation=cv2.INTER_LINEAR)
 
-                # Create filename with augmentation info
-                filename = f"{prefix}_double_{aug_string}_{i:09d}.png"
-                cv2.imwrite(os.path.join(output_dir, filename), img_resized)
+                # Create Tesseract-compatible filename
+                base_filename = f"{prefix}_{single_word_count + i:09d}"
+                image_filename = f"{base_filename}.png"
+                gt_filename = f"{base_filename}.gt.txt"
 
-                labels.append(f"{filename}\t{final_text}")
+                # Save image and ground truth
+                cv2.imwrite(os.path.join(output_dir, image_filename), img_resized)
+                with open(os.path.join(output_dir, gt_filename), 'w', encoding='utf-8') as f:
+                    f.write(final_text)
+
+                all_texts.append(final_text)
 
                 if (i + 1) % 1000 == 0:
                     print(f"✅ {prefix} double-word: {i + 1}/{double_word_count}")
@@ -406,28 +442,32 @@ def generate_synthetic_data():
                 print(f"❌ {prefix} double-word gen error for words '{word1}', '{word2}': {e}")
                 continue
 
-        return labels
+        return all_texts
 
     print("🚀 Generating training data...")
-    labels_train = generate_images(train_words, args.train_number, "train")
+    train_texts = generate_tesseract_images(train_words, args.train_number, dirs['ground_truth_dir'], "train")
 
-    print("🧪 Generating val data...")
-    labels_val = generate_images(val_words, args.val_number, "val")
+    print("🧪 Generating validation data...")
+    eval_texts = generate_tesseract_images(val_words, args.val_number, dirs['ground_truth_dir'], "eval")
+    # Create aze.training_text file with all training texts
+    training_text_path = os.path.join(dirs['data_dir'], "aze.training_text")
+    with open(training_text_path, 'w', encoding='utf-8') as f:
+        for text in train_texts + eval_texts:
+            f.write(text + '\n')
+    # Count generated files - ИСПРАВЛЕННАЯ ВЕРСИЯ
+    ground_truth_files = [f for f in os.listdir(dirs['ground_truth_dir']) if f.endswith('.png')]
+    train_files = len([f for f in ground_truth_files if f.startswith('train_')])
+    eval_files = len([f for f in ground_truth_files if f.startswith('eval_')])
 
-    with open(os.path.join(output_dir, "train_list.txt"), 'w', encoding='utf-8') as f:
-        for label in labels_train:
-            f.write(label + '\n')
-
-    with open(os.path.join(output_dir, "val_list.txt"), 'w', encoding='utf-8') as f:
-        for label in labels_val:
-            f.write(label + '\n')
-
-    unique_train_words = len(set([label.split('\t')[1] for label in labels_train]))
-    unique_val_words = len(set([label.split('\t')[1] for label in labels_val]))
-
-    print(f"\n🎉 Generation completed!")
-    print(f"📊 Training: {len(labels_train)} images, {unique_train_words} unique texts")
-    print(f"📊 Val: {len(labels_val)} images, {unique_val_words} unique texts")
+    print(f"\n🎉 Tesseract data generation completed!")
+    print(f"📁 Output structure:")
+    print(f"  - Training data: {dirs['ground_truth_dir']} ({train_files} images)")
+    print(f"  - Validation data: {dirs['ground_truth_dir']} ({eval_files} images)")
+    print(f"  - Training text: {training_text_path}")
+    print(f"📊 Total texts: {len(train_texts + eval_texts)}")
+    print(f"\n🚀 To train Tesseract, run:")
+    print(f"make training MODEL_NAME=aze START_MODEL=eng TESSDATA=/usr/share/tesseract-ocr/5/tessdata/")
 
 
-generate_synthetic_data()
+if __name__ == "__main__":
+    generate_synthetic_data()
